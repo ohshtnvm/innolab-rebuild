@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO (carried over from existing base-4.com/industrialized-construction-systems, tightened) -->
+  <title>Industrialized Construction Systems | BASE4 Innovation Lab</title>
+  <meta name="description" content="BASE4 is building manufacturing-driven design systems — prefabrication, standardized building systems, and repeatable frameworks — for faster, more predictable, more cost-effective building delivery at scale.">
+  <link rel="canonical" href="https://www.base-4.com/industrialized-construction-systems/">
+  <meta name="theme-color" content="#8dc63f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Industrialized Construction Systems | BASE4 Innovation Lab">
+  <meta property="og:description" content="Prefab, standardization, and scalable building delivery — manufacturing-driven design from BASE4.">
+  <meta property="og:url" content="https://www.base-4.com/industrialized-construction-systems/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industrialized Construction Systems | BASE4 Innovation Lab">
+  <meta name="twitter:description" content="Prefab, standardization, and scalable building delivery — manufacturing-driven design from BASE4.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================== GA4 ===================== -->
+  <!-- TODO(BASE4): replace G-XXXXXXXXXX with the real GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{
+      --accent:#8dc63f;
+      --accent-ink:#0E1A14;
+      --ink:#0E1A14;
+      --deep:#1C3A2E;
+      --surface:#FFFFFF;
+      --surface-alt:#F5F7F4;
+      --hairline:#E3E8E1;
+      --muted:#5b6b61;
+      --max:1200px;
+      --pad:24px;
+      --radius:16px;
+      --shadow:0 1px 2px rgba(14,26,20,.04), 0 8px 24px rgba(14,26,20,.06);
+      --shadow-lg:0 12px 40px rgba(14,26,20,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4{font-family:'Inter Tight','Inter',sans-serif;line-height:1.12;letter-spacing:-.01em;font-weight:700}
+    h1{font-size:clamp(2.5rem,5vw,4rem);margin:0 0 .5em}
+    h2{font-size:clamp(1.7rem,3vw,2.1rem);margin:0 0 .5em}
+    h3{font-size:1.2rem;margin:0 0 .4em}
+    p{margin:0 0 1em}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .tnum{font-variant-numeric:tabular-nums}
+    .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+    .section{padding:88px 0}
+    .section--alt{background:var(--surface-alt)}
+    .eyebrow{font-family:'Inter Tight';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--deep);margin:0 0 18px}
+    .eyebrow .dot{color:var(--accent)}
+    .lead{font-size:1.18rem;color:var(--muted);max-width:62ch}
+    .center{text-align:center;margin-left:auto;margin-right:auto}
+
+    .btn{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter Tight';font-weight:700;font-size:1rem;padding:15px 26px;border-radius:999px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn--primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 18px rgba(141,198,63,.35)}
+    .btn--primary:hover{box-shadow:0 10px 26px rgba(141,198,63,.45)}
+    .btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+    .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+    .btn--dark{background:var(--deep);color:#fff}
+    .btn--outline{background:transparent;color:var(--deep);border-color:var(--hairline)}
+    .btn--outline:hover{border-color:var(--deep)}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:padding .2s ease,border-color .2s ease,box-shadow .2s ease}
+    header.scrolled{border-color:var(--hairline);box-shadow:0 1px 0 rgba(14,26,20,.04)}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;transition:padding .2s ease}
+    header.scrolled .nav-bar{padding:10px 0}
+    .brand{font-family:'Inter Tight';font-weight:800;font-size:1.4rem;letter-spacing:.02em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px}
+    .brand .mark{width:12px;height:12px;border-radius:3px;background:var(--accent);display:inline-block}
+    .main-nav{display:flex;align-items:center;gap:4px}
+    .nav-item{position:relative}
+    .nav-link{display:inline-flex;align-items:center;gap:5px;padding:10px 12px;font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);border-radius:8px}
+    .nav-link:hover{background:var(--surface-alt)}
+    .nav-item .caret{width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px;transition:transform .2s}
+    .dropdown{position:absolute;top:100%;left:0;min-width:250px;background:#fff;border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--shadow-lg);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .18s ease}
+    .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(4px)}
+    .nav-item:hover .caret{transform:rotate(225deg);margin-top:2px}
+    .dropdown a{display:block;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500}
+    .dropdown a:hover{background:var(--surface-alt);color:var(--deep)}
+    .header-right{display:flex;align-items:center;gap:14px}
+    .socials{display:flex;gap:8px}
+    .socials a{width:34px;height:34px;display:grid;place-items:center;border-radius:8px;color:var(--deep);border:1px solid var(--hairline);transition:.15s}
+    .socials a:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
+    .socials svg{width:16px;height:16px}
+    .nav-toggle{display:none;background:none;border:1px solid var(--hairline);border-radius:8px;width:42px;height:42px;cursor:pointer;align-items:center;justify-content:center}
+    .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:'';display:block;width:18px;height:2px;background:var(--ink);position:relative;transition:.2s}
+    .nav-toggle span::before{position:absolute;top:-6px}
+    .nav-toggle span::after{position:absolute;top:6px}
+
+    .hero{position:relative;color:#fff;overflow:hidden;isolation:isolate}
+    .hero-bg{position:absolute;inset:0;z-index:-2}
+    .hero-bg img{width:100%;height:100%;object-fit:cover}
+    .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(28,58,46,.95) 0%,rgba(28,58,46,.8) 42%,rgba(14,26,20,.5) 100%)}
+    .hero-inner{padding:118px 0 104px;max-width:800px}
+    .hero h1{color:#fff}
+    .hero .eyebrow{color:rgba(255,255,255,.85)}
+    .hero p.sub{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:62ch;margin-bottom:32px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+    .trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:.9rem;color:rgba(255,255,255,.82);font-weight:500}
+    .trust-row .sep{color:var(--accent)}
+
+    .valueprop{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+    .stat-tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .stat-tile{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:24px 18px;text-align:center;box-shadow:var(--shadow)}
+    .stat-tile .num{font-family:'Inter Tight';font-weight:800;font-size:1.55rem;color:var(--deep);line-height:1.1}
+    .stat-tile .lbl{display:block;margin-top:8px;font-size:.82rem;color:var(--muted);font-weight:600}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .card .ico{width:46px;height:46px;border-radius:12px;background:rgba(141,198,63,.16);display:grid;place-items:center;margin-bottom:18px;color:var(--deep)}
+    .card .ico svg{width:24px;height:24px}
+    .priority-tag{font-family:'Inter Tight';font-weight:700;color:var(--deep);font-size:1.05rem;margin-bottom:6px}
+    .answer{color:var(--muted);font-size:.98rem;margin:0}
+    .diff-claim{font-family:'Inter Tight';font-weight:700;font-size:1.15rem;margin-bottom:6px}
+
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+    .step{position:relative;padding-top:42px}
+    .step::before{counter-increment:step;content:counter(step);position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--deep);color:#fff;font-family:'Inter Tight';font-weight:800;display:grid;place-items:center}
+    .step::after{content:'';position:absolute;top:18px;left:46px;right:-10px;height:2px;background:var(--hairline)}
+    .step:last-child::after{display:none}
+    .step h3{margin-bottom:6px}
+    .step p{color:var(--muted);font-size:.95rem;margin:0}
+
+    .brand-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .brand-chip{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:.18s}
+    .brand-chip:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .brand-chip .name{font-family:'Inter Tight';font-weight:800;font-size:1.35rem;color:var(--ink);letter-spacing:.01em}
+    .brand-chip .meta{display:block;margin-top:6px;font-size:.82rem;color:var(--muted);font-weight:600}
+
+    /* markets cross-link cards */
+    .markets{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .mcard{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease}
+    .mcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .mcard .ph{aspect-ratio:16/10;overflow:hidden;background:var(--surface-alt)}
+    .mcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .mcard:hover .ph img{transform:scale(1.05)}
+    .mcard .body{padding:22px}
+    .mcard h3{margin-bottom:4px}
+    .mcard p{color:var(--muted);font-size:.93rem;margin:0 0 12px}
+    .mcard .go{font-family:'Inter Tight';font-weight:700;color:var(--deep);font-size:.92rem}
+
+    .proof{background:var(--deep);color:#fff}
+    .proof .eyebrow{color:rgba(255,255,255,.7)}
+    .proof .big{font-family:'Inter Tight';font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;max-width:24ch;margin:0 auto;color:#fff}
+    .proof .big .accent{color:var(--accent)}
+
+    .convert{background:linear-gradient(135deg,var(--deep),#142b21);color:#fff}
+    .convert-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .convert h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.4rem)}
+    .convert p.lead{color:rgba(255,255,255,.85)}
+    .lead-form{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-lg)}
+    .lead-form h3{color:var(--ink)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{margin-bottom:14px}
+    .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+    .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--hairline);border-radius:10px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(141,198,63,.25)}
+    .form-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+    .mailto-fallback{font-size:.85rem;color:var(--muted)}
+    .mailto-fallback a{color:var(--deep);font-weight:600}
+    .form-status{margin:12px 0 0;font-size:.9rem;font-weight:600;color:var(--deep)}
+
+    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:64px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:36px;margin-bottom:44px}
+    footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+    footer a{color:rgba(255,255,255,.72);text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+    footer a:hover{color:var(--accent)}
+    .footer-brand .brand{color:#fff}
+    .footer-brand p{font-size:.92rem;margin-top:14px;max-width:34ch}
+    .news-form{display:flex;gap:8px;margin-top:12px}
+    .news-form input{flex:1;padding:11px 13px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);border-radius:10px;color:#fff;font:inherit;font-size:.9rem}
+    .news-form input::placeholder{color:rgba(255,255,255,.45)}
+    .news-form button{border:none;background:var(--accent);color:var(--accent-ink);font-family:'Inter Tight';font-weight:700;border-radius:10px;padding:0 16px;cursor:pointer}
+    .footer-socials{display:flex;gap:10px;margin-top:16px}
+    .footer-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:8px;border:1px solid rgba(255,255,255,.18);padding:0}
+    .footer-socials a:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+    .footer-socials svg{width:16px;height:16px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+    .footer-bottom .reg{color:rgba(255,255,255,.55)}
+
+    #toTop{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;background:var(--deep);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s;z-index:40}
+    #toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+    #toTop svg{width:20px;height:20px}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:1024px){
+      .grid-4,.timeline,.brand-wall,.markets{grid-template-columns:1fr 1fr}
+      .step::after{display:none}
+    }
+    @media(max-width:860px){
+      .main-nav,.header-right .socials{display:none}
+      .nav-toggle{display:flex}
+      .main-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--hairline);padding:12px var(--pad);gap:0;box-shadow:var(--shadow-lg)}
+      .main-nav.open .nav-item{width:100%}
+      .main-nav.open .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding-left:12px}
+      .valueprop,.convert-grid{grid-template-columns:1fr}
+      .grid-2,.stat-tiles{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero-inner{padding:84px 0 72px}
+    }
+    @media(max-width:560px){
+      .grid-4,.timeline,.brand-wall,.markets,.footer-grid,.form-row{grid-template-columns:1fr}
+      .section{padding:60px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="wrap nav-bar">
+      <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+      <nav class="main-nav" id="mainNav"></nav>
+      <div class="header-right">
+        <div class="socials" id="headerSocials"></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="wrap" style="padding:120px 0;text-align:center;color:var(--muted)">Loading…</div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <button id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <!-- ===================== EMBEDDED CONTENT (TSV) ===================== -->
+  <script id="content-tsv" type="text/tab-separated-values">
+# SHEET: Site
+Parameter	Value
+Org Name	BASE4
+Email	BlairH@base-4.com
+Mailto Subject	Looking to explore prefabrication or scalable building systems? | BASE4 Innovation Lab
+Florida Registration	Florida Registered Architectural Firm - AA26003324
+Copyright	© 2026 BASE4 | All rights reserved.
+Site URL	https://www.base-4.com/industrialized-construction-systems/
+
+# SHEET: Hero
+Parameter	Value
+Eyebrow	Innovation Lab · Manufacturing-driven design
+H1	Industrialized Construction Systems.
+Subhead	Prefab, standardization, and scalable building delivery. BASE4 is developing manufacturing-driven design systems for faster, more predictable, and more cost-effective construction across markets and project types.
+Primary CTA	Explore Prefab & Scalable Systems
+Secondary CTA	See How It Works
+Trust Row	Florida Registered Architectural Firm AA26003324 · Manufacturing-aligned workflows · Applied across BASE4 markets
+Image	https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=2000&q=80
+
+# SHEET: ValueProp
+Parameter	Value
+Title	From AE firm to building delivery platform.
+Body	BASE4 is actively developing and refining industrialized construction strategies that enable faster, more predictable, and more cost-effective building delivery — applied across our core markets and new project types to unlock greater efficiency and scalability.
+
+# SHEET: Stats
+num	label
+Faster	More predictable delivery schedules
+Lower	Reduced cost variability
+Scalable	Across markets & project types
+
+# SHEET: Priorities
+priority	answer	icon
+Prefabrication & modularization	Designing components and modules for offsite manufacturing instead of stick-built site labor.	grid
+Standardized building systems	Common, coordinated systems that repeat cleanly from one project to the next.	layers
+Repeatable design frameworks	Frameworks that turn a proven building into a template you can roll out at scale.	speed
+Manufacturing-aligned workflows	Design workflows built to feed production, not just permit sets.	flow
+
+# SHEET: Differentiators
+claim	support	icon
+Designing for offsite manufacturing	Documents and details authored for the factory floor, not just the field.	layers
+Coordinating systems for repeatability	Structure, MEP, and envelope coordinated so the same assembly works every time.	grid
+Reducing on-site construction complexity	Fewer trades, fewer conflicts, and less weather-exposed work on site.	speed
+Integrating global design + production	Global design workflows wired directly into manufacturing partners.	flow
+
+# SHEET: Process
+title	body
+Design for Manufacture	Buildings broken into standardized, factory-producible components from the start.
+Standardize Systems	Structure, envelope, and MEP coordinated into repeatable, pre-engineered assemblies.
+Offsite Production	Components and modules manufactured in controlled conditions — parallel to site work.
+Site Assembly & Integration	Prefabricated elements delivered and assembled on site, compressing the schedule.
+
+# SHEET: Benefits
+name	meta
+Faster	Compressed schedules
+Predictable	Controlled quality
+Cost-effective	Less rework & waste
+Scalable	Repeatable across sites
+
+# SHEET: Markets
+title	body	href	image	go
+Hospitality	Brand-compliant hotels delivered with repeatable prototypes and integrated A+E+I.	index.html	https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80	Explore Hospitality →
+Multifamily	High-yield residential built for repeatable, multi-site rollouts.	multifamily.html	https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80	Explore Multifamily →
+Data Centers	Mission-critical facilities delivered with standardized, scalable systems.	https://www.base-4.com/data-centers/	https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80	Visit Data Centers →
+
+# SHEET: Nav
+label	href	children
+Projects	https://www.base-4.com/projects/
+Data Centers	#	Data Center Insights::https://www.base-4.com/data-centers/
+Markets	#	Hospitality::index.html||Multifamily::multifamily.html
+Innovation Lab	#	Destination by BASE4::https://www.base-4.com/destination/||Industrialized Construction Systems::industrialized-construction.html
+Blog	#	Infographics::https://www.base-4.com/infographics/
+About	#	Our Clients::https://www.base-4.com/our-clients/
+Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
+  </script>
+
+  <!-- ===================== APP ===================== -->
+  <script>
+    const FORM_ENDPOINT = '';
+    const db = {};
+    const ICONS = {
+      badge:'<path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.3L12 16.6 6.4 19.5 7.5 13.2 3 8.9 9 8z"/>',
+      flow:'<path d="M4 6h10M4 12h16M4 18h7"/><circle cx="18" cy="6" r="2"/><circle cx="14" cy="18" r="2"/>',
+      speed:'<path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l5-3"/>',
+      layers:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
+      grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
+      fb:'<path d="M14 8h-2a2 2 0 0 0-2 2v2H8v3h2v6h3v-6h2.5l.5-3H13v-1.5c0-.6.4-1 1-1h2z"/>',
+      x:'<path d="M4 4l16 16M20 4L4 20"/>',
+      li:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/>',
+      ig:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+      yt:'<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/>'
+    };
+    const SOCIALS = [['fb','https://www.facebook.com/'],['x','https://twitter.com/'],['li','https://www.linkedin.com/'],['ig','https://www.instagram.com/'],['yt','https://www.youtube.com/']];
+    const ico = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]||''}</svg>`;
+    const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+    function parseTSV(text){
+      text.split('# SHEET: ').map(b=>b.trim()).filter(Boolean).forEach(block=>{
+        const lines = block.split(/\r?\n/).filter(l=>l.length && !l.startsWith('#'));
+        if(!lines.length) return;
+        const sh = lines.shift().trim();
+        const headers = lines.shift().split('\t').map(h=>h.trim());
+        db[sh] = lines.map(line=>{ const vals=line.split('\t'); const row={}; headers.forEach((h,i)=>row[h]=(vals[i]||'').trim()); return row; });
+      });
+    }
+    const sheet = n => db[n] || [];
+    const kv = n => { const o={}; sheet(n).forEach(r=>{ if(r.Parameter) o[r.Parameter]=r.Value; }); return o; };
+    function track(event, params){ try{ gtag('event', event, params||{}); }catch(e){} }
+    function mailtoHref(extraSubject, body){
+      const s = kv('Site');
+      const subject = extraSubject || s['Mailto Subject'] || 'BASE4 Innovation Lab';
+      let href = `mailto:${s.Email}?subject=${encodeURIComponent(subject)}`;
+      if(body) href += `&body=${encodeURIComponent(body)}`;
+      return href;
+    }
+
+    function boot(){
+      parseTSV(document.getElementById('content-tsv').textContent);
+      buildHeader(); renderPage(); buildFooter(); wireGlobal();
+    }
+
+    function buildHeader(){
+      document.getElementById('mainNav').innerHTML = sheet('Nav').map(item=>{
+        const kids = (item.children||'').split('||').filter(Boolean).map(c=>{const [l,h]=c.split('::');return `<a href="${h}">${esc(l)}</a>`;}).join('');
+        return kids
+          ? `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}<i class="caret"></i></a><div class="dropdown">${kids}</div></div>`
+          : `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}</a></div>`;
+      }).join('');
+      document.getElementById('headerSocials').innerHTML = SOCIALS.map(([k,h])=>`<a href="${h}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('');
+    }
+
+    function renderPage(){
+      const hero=kv('Hero'), vp=kv('ValueProp'), site=kv('Site');
+      const stats=sheet('Stats'), focus=sheet('Priorities'), caps=sheet('Differentiators');
+      const process=sheet('Process'), benefits=sheet('Benefits'), markets=sheet('Markets');
+
+      document.getElementById('app').innerHTML = `
+      <section class="hero">
+        <div class="hero-bg"><img src="${hero.Image}" alt="Industrialized construction / offsite manufacturing facility" fetchpriority="high"></div>
+        <div class="wrap hero-inner">
+          <p class="eyebrow">${esc(hero.Eyebrow).replace(/·/g,'<span class="dot">·</span>')}</p>
+          <h1>${esc(hero.H1)}</h1>
+          <p class="sub">${esc(hero.Subhead)}</p>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#consult" data-ev="hero_primary_cta">${esc(hero['Primary CTA'])}</a>
+            <a class="btn btn--ghost" href="#process" data-ev="hero_secondary_cta">${esc(hero['Secondary CTA'])}</a>
+          </div>
+          <div class="trust-row">${esc(hero['Trust Row']).split('·').map(s=>`<span>${s.trim()}</span>`).join('<span class="sep">·</span>')}</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap valueprop reveal">
+          <div>
+            <p class="eyebrow">The shift<span class="dot">.</span></p>
+            <h2>${esc(vp.Title)}</h2>
+            <p class="lead">${esc(vp.Body)}</p>
+          </div>
+          <div class="stat-tiles">
+            ${stats.map(s=>`<div class="stat-tile"><div class="num">${esc(s.num)}</div><span class="lbl">${esc(s.label)}</span></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="reveal" style="max-width:60ch">
+            <p class="eyebrow">What we're building</p>
+            <h2>The systems behind industrialized delivery.</h2>
+          </div>
+          <div class="grid-4" style="margin-top:40px">
+            ${focus.map(p=>`<div class="card reveal"><div class="ico">${ico(p.icon)}</div><div class="priority-tag">${esc(p.priority)}</div><p class="answer">${esc(p.answer)}</p></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:60ch">
+            <p class="eyebrow">How it works</p>
+            <h2>From design for manufacture to site assembly.</h2>
+          </div>
+          <div class="timeline reveal" style="margin-top:48px">
+            ${process.map(s=>`<div class="step"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="reveal" style="max-width:60ch">
+            <p class="eyebrow">Capabilities</p>
+            <h2>How BASE4 delivers it.</h2>
+          </div>
+          <div class="grid-2" style="margin-top:40px">
+            ${caps.map(d=>`<div class="card reveal"><div class="ico">${ico(d.icon)}</div><div class="diff-claim">${esc(d.claim)}</div><p class="answer">${esc(d.support)}</p></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:60ch">
+            <p class="eyebrow">Why it matters</p>
+            <h2>Faster, predictable, cost-effective — at scale.</h2>
+          </div>
+          <div class="brand-wall reveal" style="margin-top:40px">
+            ${benefits.map(b=>`<div class="brand-chip"><div class="name">${esc(b.name)}</div><span class="meta">${esc(b.meta)}</span></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:62ch">
+            <p class="eyebrow">Applied across our markets</p>
+            <h2>Industrialized systems, working in the field.</h2>
+          </div>
+          <div class="markets reveal" style="margin-top:40px">
+            ${markets.map(m=>{
+              const ext = /^https?:/.test(m.href);
+              return `<a class="mcard" href="${m.href}"${ext?' target="_blank" rel="noopener"':''} data-ev="market_crosslink">
+                <div class="ph"><img src="${m.image}" alt="${esc(m.title)}" loading="lazy"></div>
+                <div class="body"><h3>${esc(m.title)}</h3><p>${esc(m.body)}</p><span class="go">${esc(m.go)}</span></div>
+              </a>`;
+            }).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof">
+        <div class="wrap center">
+          <p class="eyebrow">The direction</p>
+          <p class="big">BASE4 is evolving from a traditional AE firm into a <span class="accent">technology-driven building delivery platform</span>.</p>
+        </div>
+      </section>
+
+      <section class="section convert" id="consult">
+        <div class="wrap convert-grid">
+          <div class="reveal">
+            <p class="eyebrow" style="color:rgba(255,255,255,.7)">Innovation Lab</p>
+            <h2>Looking to explore prefabrication or scalable building systems?</h2>
+            <p class="lead">Tell us what you're building. We'll get the right people from the BASE4 Innovation Lab on a call.</p>
+          </div>
+          <form class="lead-form reveal" id="leadForm">
+            <h3>Start the conversation</h3>
+            <div class="form-row">
+              <div class="field"><label>Name*</label><input name="name" required></div>
+              <div class="field"><label>Company</label><input name="company"></div>
+            </div>
+            <div class="field"><label>Email*</label><input type="email" name="email" required></div>
+            <div class="form-row">
+              <div class="field"><label>Project location</label><input name="location" placeholder="City, State"></div>
+              <div class="field"><label>Area of interest</label>
+                <select name="interest"><option value="">Select…</option><option>Prefabrication / modular</option><option>Standardized building systems</option><option>Repeatable design frameworks</option><option>Manufacturing-aligned workflows</option><option>Other / TBD</option></select>
+              </div>
+            </div>
+            <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="What are you building, and where are you in the process?"></textarea></div>
+            <div class="form-foot">
+              <button type="submit" class="btn btn--primary">Send Inquiry</button>
+              <span class="mailto-fallback">Prefer email? <a href="${mailtoHref()}" data-ev="mailto_fallback">${esc(site.Email)}</a></span>
+            </div>
+            <p class="form-status" id="formStatus" hidden></p>
+          </form>
+        </div>
+      </section>
+      `;
+    }
+
+    function buildFooter(){
+      const site=kv('Site'), navCols=sheet('Nav');
+      document.getElementById('footer').innerHTML = `
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+            <p>A technology-driven building delivery platform — architecture, engineering, and industrialized construction systems.</p>
+            <div class="footer-socials">${SOCIALS.map(([k,h])=>`<a href="${h}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('')}</div>
+          </div>
+          <div><h4>Explore</h4>${navCols.slice(0,4).map(n=>`<a href="${n.href}">${esc(n.label)}</a>`).join('')}</div>
+          <div><h4>Company</h4>${navCols.slice(4).map(n=>`<a href="${n.href}">${esc(n.label)}</a>`).join('')}<a href="https://www.base-4.com/our-clients/">Our Clients</a></div>
+          <div>
+            <h4>Stay Updated</h4>
+            <p style="font-size:.9rem">The latest news and insights from BASE4.</p>
+            <form class="news-form" id="newsForm"><input type="email" name="news_email" placeholder="you@company.com" required aria-label="Email"><button type="submit">Join</button></form>
+            <p class="form-status" id="newsStatus" hidden style="color:var(--accent)"></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="reg">${esc(site['Florida Registration'])}</span>
+          <span>${esc(site.Copyright)}</span>
+        </div>
+      </div>`;
+    }
+
+    function wireGlobal(){
+      const header=document.getElementById('header');
+      const onScroll=()=>{ header.classList.toggle('scrolled', window.scrollY>10); document.getElementById('toTop').classList.toggle('show', window.scrollY>600); };
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+      document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+      document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
+      document.body.addEventListener('click', e=>{ const a=e.target.closest('[data-ev]'); if(a) track(a.dataset.ev,{label:a.textContent.trim()}); });
+      const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+      const form=document.getElementById('leadForm');
+      form.addEventListener('submit', async e=>{
+        e.preventDefault();
+        const d=Object.fromEntries(new FormData(form).entries());
+        const status=document.getElementById('formStatus');
+        track('generate_lead',{interest:d.interest||'', has_company:!!d.company});
+        if(FORM_ENDPOINT){
+          try{ const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}); if(!r.ok) throw 0; status.textContent='Thanks — your inquiry was sent.'; }
+          catch(_){ status.textContent='Something went wrong. Please email '+kv('Site').Email+'.'; }
+        }else{
+          const body=`Name: ${d.name}\nCompany: ${d.company||''}\nEmail: ${d.email}\nLocation: ${d.location||''}\nInterest: ${d.interest||''}\n\n${d.message||''}`;
+          window.location.href = mailtoHref('Prefab / scalable systems inquiry — '+(d.company||d.name)+' | BASE4 Innovation Lab', body);
+          status.textContent='Opening your email client to send the inquiry…';
+        }
+        status.hidden=false;
+      });
+
+      const news=document.getElementById('newsForm');
+      news.addEventListener('submit', e=>{
+        e.preventDefault();
+        const email=new FormData(news).get('news_email');
+        track('newsletter_signup',{});
+        window.location.href = mailtoHref('Newsletter signup', 'Please add this address to the BASE4 newsletter: '+email);
+        const s=document.getElementById('newsStatus'); s.textContent='Thanks! Confirm in your email client.'; s.hidden=false;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', boot);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality Design & Engineering | BASE4</title>
+    
+    <!-- Meta tags matching SEO requirements -->
+    <meta name="description" content="BASE4 offers developers and GCs fully integrated architecture, engineering, and interior design for hotels. Master prototypes for Hyatt, Marriott, Hilton, and IHG.">
+    <meta name="keywords" content="Hotel Architecture, Hotel Engineering, Hospitality Design, BASE4, Modular Construction, Industrialized Construction">
+    <meta property="og:title" content="Hospitality Design & Engineering | BASE4">
+    <meta property="og:description" content="Integrated Architecture, Engineering, and Interiors for hotel developers under one accountable team.">
+    <meta property="og:image" content="https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#8dc63f', // BASE4 green
+                            dark: '#1C3A2E',  // Deep brand green
+                            ink: '#0E1A14',   // Near-black
+                            surface: '#F5F7F4', // Warm off-white
+                            border: '#E3E8E1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom animations and styling */
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(141, 198, 63, 0.4);
+        }
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.50);
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-ink font-sans antialiased overflow-x-hidden">
+
+    <script type="text/plain" id="tsv-data">name	franchise	location	keys	stories	year	services	url	primary_image	images
+Hyatt Studios	Hyatt	National Portfolio	122	4	2024	Architectural; Structural; Mechanical; Electrical; Plumbing; Exterior Renderings; Construction Administration	https://www.base-4.com/portfolio/hyatt-studios/	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg,https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-02.jpg,https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-03.jpg,https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-04.jpg,https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-05.jpg
+Hyatt Studios – Glendale, AZ	Hyatt	Glendale, AZ	114	4	2025	Architectural; Structural; Mechanical; Electrical; Plumbing; Exterior Renderings; Construction Administration	https://www.base-4.com/portfolio/hyatt-studios-glendale-az/	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01.jpg	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01.jpg
+Home2 Suites – Ooltewah, TN	Hilton	Ooltewah, TN	98	4	2025	Architectural; Structural; Mechanical; Electrical; Plumbing; Exterior Renderings; Construction Administration	https://www.base-4.com/portfolio/home2-suites-ooltewah-tn/	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-02.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-03.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-04.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-05.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-06.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-07.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-08.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-09.jpg,https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-10.jpg
+Residence Inn – Kingsland, GA	Marriott	Kingsland, GA	128	4	2026	Architectural; Structural; Mechanical; Electrical; Plumbing; Exterior Renderings	https://www.base-4.com/portfolio/residence-inn-youth-sport-complex/	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg,https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-02.jpg,https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-03.jpg,https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-04.jpg,https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-05.jpg,https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-06.jpg
+Towneplace Suites – Maricopa, AZ	Marriott	Maricopa, AZ	111	4	2025	Architectural; Structural; Mechanical; Electrical; Plumbing; Exterior Renderings	https://www.base-4.com/portfolio/towneplace-suites-maricopa-az/	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg,https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-01.jpg,https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-02.jpg
+Holiday Inn Express – Des Moines, IA	IHG	Des Moines, IA	96	4	—	Architectural; Structural; Mechanical; Electrical; Plumbing; Interior Design; Construction Administration	https://www.base-4.com/portfolio/holiday-inn-express/	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg,https://www.base-4.com/wp-content/uploads/2026/03/HIEX_02.jpg,https://www.base-4.com/wp-content/uploads/2026/03/HIEX_03.jpg,https://www.base-4.com/wp-content/uploads/2026/03/HIEX_04.jpg</script>
+
+    <!-- Sticky Condensed Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="https://www.base-4.com/" class="flex items-center space-x-3 group" onclick="trackGA4('click_logo', { destination: 'home' })">
+                <img src="https://www.base-4.com/wp-content/uploads/2018/09/cropped-Base4_Logo-270x270.jpg" alt="BASE4" class="h-10 w-10 rounded-full border border-brand-green bg-white shadow-md p-0.5 transform group-hover:scale-105 transition-transform">
+                <span class="text-white font-display text-2xl font-extrabold tracking-wider" id="logo-text">BASE<span class="text-brand-green">4</span></span>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wide" id="desktop-nav">
+                <a href="https://www.base-4.com/portfolio/" class="text-white hover:text-brand-green transition-colors py-2" onclick="trackGA4('navigate', { menu: 'Projects' })">PROJECTS</a>
+                
+                <a href="https://www.base-4.com/data-centers/" class="text-white hover:text-brand-green transition-colors py-2" onclick="trackGA4('navigate', { menu: 'Data Centers' })">DATA CENTERS</a>
+                
+                <!-- Markets Dropdown -->
+                <div class="relative group">
+                    <button class="text-white group-hover:text-brand-green flex items-center space-x-1 transition-colors py-2 focus:outline-none">
+                        <span>MARKETS</span>
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-1 w-52 bg-white rounded-lg shadow-xl py-2 border border-brand-border opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0 transition-all duration-200">
+                        <a href="#hospitality" class="block px-4 py-2 text-brand-ink hover:bg-brand-surface hover:text-brand-green transition-colors font-medium">Hospitality</a>
+                        <a href="https://www.base-4.com/multifamily/" class="block px-4 py-2 text-brand-ink hover:bg-brand-surface hover:text-brand-green transition-colors font-medium" onclick="trackGA4('navigate', { menu: 'Multifamily' })">Multifamily</a>
+                    </div>
+                </div>
+
+                <!-- Innovation Lab Dropdown -->
+                <div class="relative group">
+                    <button class="text-white group-hover:text-brand-green flex items-center space-x-1 transition-colors py-2 focus:outline-none">
+                        <span>INNOVATION LAB</span>
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl py-2 border border-brand-border opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0 transition-all duration-200">
+                        <a href="https://www.base-4.com/destination/" class="block px-4 py-2 text-brand-ink hover:bg-brand-surface hover:text-brand-green transition-colors font-medium" onclick="trackGA4('navigate', { menu: 'Destination' })">Destination</a>
+                        <a href="https://www.base-4.com/industrialized-construction/" class="block px-4 py-2 text-brand-ink hover:bg-brand-surface hover:text-brand-green transition-colors font-medium" onclick="trackGA4('navigate', { menu: 'Industrialized Construction' })">Industrialized Construction</a>
+                    </div>
+                </div>
+
+                <a href="https://www.base-4.com/blog/" class="text-white hover:text-brand-green transition-colors py-2" onclick="trackGA4('navigate', { menu: 'Blog' })">BLOG</a>
+                
+                <a href="https://www.base-4.com/our-clients/" class="text-white hover:text-brand-green transition-colors py-2" onclick="trackGA4('navigate', { menu: 'Our Clients' })">ABOUT</a>
+                
+                <a href="https://www.base-4.com/careers/" class="text-white hover:text-brand-green transition-colors py-2" onclick="trackGA4('navigate', { menu: 'Careers' })">CAREERS</a>
+            </nav>
+
+            <!-- Social Media & Contact Info (Desktop) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="flex items-center space-x-3 text-white mr-2 text-base">
+                    <a href="https://www.facebook.com/base4/" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Facebook' })"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/base4" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Twitter' })"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/base4" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'LinkedIn' })"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/base4_/" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Instagram' })"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCEhP_h6Z9g89eYF9-WepXFw" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'YouTube' })"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="#consultation-form" class="bg-brand-green hover:bg-opacity-90 text-brand-ink font-bold px-5 py-2 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 duration-200 text-sm glow-hover" onclick="trackGA4('cta_click', { position: 'header_consult' })">
+                    Free Consultation
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-toggle" class="lg:hidden text-white hover:text-brand-green p-2 focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Overlay Menu -->
+        <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-brand-ink bg-opacity-95 transition-all duration-300">
+            <div class="flex flex-col h-full justify-between p-6 pt-24">
+                <nav class="flex flex-col space-y-4 text-xl font-bold tracking-wide text-white">
+                    <a href="https://www.base-4.com/portfolio/" class="hover:text-brand-green transition-colors" onclick="toggleMobileMenu(); trackGA4('navigate', { menu: 'Mobile Projects' })">PROJECTS</a>
+                    <a href="https://www.base-4.com/data-centers/" class="hover:text-brand-green transition-colors" onclick="toggleMobileMenu(); trackGA4('navigate', { menu: 'Mobile Data Centers' })">DATA CENTERS</a>
+                    <div class="border-b border-brand-green/20 pb-2">
+                        <span class="text-brand-green text-sm block tracking-widest mb-1">MARKETS</span>
+                        <div class="pl-4 flex flex-col space-y-2 mt-1">
+                            <a href="#hospitality" class="text-lg hover:text-brand-green transition-colors" onclick="toggleMobileMenu()">Hospitality</a>
+                            <a href="https://www.base-4.com/multifamily/" class="text-lg hover:text-brand-green transition-colors" onclick="toggleMobileMenu()">Multifamily</a>
+                        </div>
+                    </div>
+                    <div class="border-b border-brand-green/20 pb-2">
+                        <span class="text-brand-green text-sm block tracking-widest mb-1">INNOVATION LAB</span>
+                        <div class="pl-4 flex flex-col space-y-2 mt-1">
+                            <a href="https://www.base-4.com/destination/" class="text-lg hover:text-brand-green transition-colors" onclick="toggleMobileMenu()">Destination</a>
+                            <a href="https://www.base-4.com/industrialized-construction/" class="text-lg hover:text-brand-green transition-colors" onclick="toggleMobileMenu()">Industrialized Construction</a>
+                        </div>
+                    </div>
+                    <a href="https://www.base-4.com/blog/" class="hover:text-brand-green transition-colors" onclick="toggleMobileMenu(); trackGA4('navigate', { menu: 'Mobile Blog' })">BLOG</a>
+                    <a href="https://www.base-4.com/our-clients/" class="hover:text-brand-green transition-colors" onclick="toggleMobileMenu(); trackGA4('navigate', { menu: 'Mobile About' })">ABOUT</a>
+                    <a href="https://www.base-4.com/careers/" class="hover:text-brand-green transition-colors" onclick="toggleMobileMenu(); trackGA4('navigate', { menu: 'Mobile Careers' })">CAREERS</a>
+                </nav>
+
+                <div class="space-y-6">
+                    <a href="#consultation-form" class="block w-full text-center bg-brand-green text-brand-ink font-bold py-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all" onclick="toggleMobileMenu(); trackGA4('cta_click', { position: 'mobile_consult' })">
+                        Free Consultation
+                    </a>
+                    <div class="flex justify-center space-x-6 text-2xl text-white">
+                        <a href="https://www.facebook.com/base4/" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Mobile Facebook' })"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/base4" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Mobile Twitter' })"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/base4" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Mobile LinkedIn' })"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/base4_/" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Mobile Instagram' })"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCEhP_h6Z9g89eYF9-WepXFw" target="_blank" class="hover:text-brand-green transition-colors" onclick="trackGA4('social_click', { network: 'Mobile YouTube' })"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Above Fold - Eager Loaded Banner) -->
+    <section class="relative min-h-screen flex items-center pt-24 bg-brand-dark overflow-hidden">
+        <!-- Background Dusk Image with high-contrast gradient overlay (No Placeholders) -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=85" alt="Hotel Architecture Exterior Dusk" class="w-full h-full object-cover object-center opacity-45" fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Text Content Column -->
+            <div class="lg:col-span-8 space-y-6 text-left">
+                <span class="inline-block text-brand-green font-display font-bold tracking-widest text-xs sm:text-sm uppercase bg-brand-green/10 border border-brand-green/20 px-3 py-1 rounded-full">
+                    Hospitality Architecture · Engineering · Interiors
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight tracking-tight text-shadow-hero">
+                    Hotels delivered from concept to construction — under <span class="text-brand-green">one accountable team</span>.
+                </h1>
+                <p class="text-gray-300 text-lg sm:text-xl font-medium max-w-3xl leading-relaxed">
+                    BASE4 gives hotel developers, owners, and general contractors a single integrated architecture, engineering, and interior design team — built for brand compliance, permit speed, and cost certainty across national flags.
+                </p>
+
+                <!-- Responsive Buttons / CTA Row -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#consultation-form" class="bg-brand-green hover:bg-opacity-95 text-brand-ink font-bold px-8 py-4 rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 text-center text-lg glow-hover" onclick="trackGA4('cta_click', { position: 'hero_primary' })">
+                        Schedule Consultation <i class="fa-solid fa-calendar-days ml-2"></i>
+                    </a>
+                    <a href="#projects-gallery" class="bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1 text-center text-lg backdrop-blur-sm" onclick="trackGA4('cta_click', { position: 'hero_secondary' })">
+                        View Hospitality Portfolio
+                    </a>
+                </div>
+
+                <!-- Credibility Trust Line -->
+                <div class="pt-6 border-t border-white/10 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs sm:text-sm text-gray-400">
+                    <span class="flex items-center"><i class="fa-solid fa-stamp text-brand-green mr-2"></i> Florida Firm AA26003324</span>
+                    <span class="flex items-center"><i class="fa-solid fa-hotel text-brand-green mr-2"></i> National Brand Standards</span>
+                    <span class="flex items-center"><i class="fa-solid fa-check-double text-brand-green mr-2"></i> Integrated A + E + I</span>
+                </div>
+            </div>
+
+            <!-- Right Visual Interactive Highlight Box -->
+            <div class="lg:col-span-4 bg-brand-ink/75 border border-white/10 p-6 rounded-2xl backdrop-blur-md shadow-2xl space-y-6">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-white font-display font-bold text-lg">Integrated Scope</h3>
+                    <span class="text-brand-green text-xs font-bold uppercase tracking-widest bg-brand-green/10 px-2 py-1 rounded">No Handoffs</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-green/20 flex items-center justify-center shrink-0 border border-brand-green/30 text-brand-green"><i class="fa-solid fa-compass-drafting text-sm"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Architectural</h4>
+                            <p class="text-xs text-gray-400">Concept planning, layout design, and full aesthetic detailing.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-green/20 flex items-center justify-center shrink-0 border border-brand-green/30 text-brand-green"><i class="fa-solid fa-calculator text-sm"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Structural & MEP</h4>
+                            <p class="text-xs text-gray-400">Fully calculated engineering built inside the model to drop field conflicts.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-green/20 flex items-center justify-center shrink-0 border border-brand-green/30 text-brand-green"><i class="fa-solid fa-couch text-sm"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Interior Design</h4>
+                            <p class="text-xs text-gray-400">FF&E matching prototype guidelines with accurate scheduling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <a href="#differentiators" class="text-brand-green text-xs font-bold hover:underline inline-flex items-center" onclick="trackGA4('cta_click', { position: 'hero_box_more' })">
+                        Why Integrated A&E Matters <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4.2: Value-Prop Strip -->
+    <section class="bg-brand-surface border-y border-brand-border py-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-6 space-y-4 text-left">
+                    <span class="text-brand-green font-display font-extrabold tracking-widest text-xs uppercase block">Built for Developers & GCs</span>
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-brand-ink">
+                        Hotel projects live and die on speed, coordination, and precision.
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        BASE4 keeps architecture, engineering, and interiors under one roof — so brand standards hold, RFIs drop, and your schedule doesn't slip between disciplines.
+                    </p>
+                </div>
+
+                <!-- Stats Columns (Tabular Figures) -->
+                <div class="lg:col-span-6 grid grid-cols-3 gap-4">
+                    <!-- Stat 1 -->
+                    <div class="bg-white p-5 rounded-xl border border-brand-border shadow-sm text-center">
+                        <div class="text-2xl sm:text-3xl font-display font-extrabold text-brand-dark tabular-nums tracking-tight">669+</div>
+                        <div class="text-xs sm:text-sm text-gray-500 font-medium mt-1">Keys Designed</div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="bg-white p-5 rounded-xl border border-brand-border shadow-sm text-center">
+                        <div class="text-2xl sm:text-3xl font-display font-extrabold text-brand-dark tabular-nums tracking-tight">4</div>
+                        <div class="text-xs sm:text-sm text-gray-500 font-medium mt-1">National Flags</div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="bg-white p-5 rounded-xl border border-brand-border shadow-sm text-center">
+                        <div class="text-2xl sm:text-3xl font-display font-extrabold text-brand-dark tabular-nums tracking-tight">4+</div>
+                        <div class="text-xs sm:text-sm text-gray-500 font-medium mt-1">States Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand / Flag Trust Wall -->
+    <section class="bg-white py-10 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Expertise Across Premier Hospitality Brand Prototypes</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80 grayscale hover:grayscale-0 transition-all duration-300">
+                <!-- SVG Brand Badges representing Hyatt, Marriott, Hilton, IHG, and Element -->
+                <div class="flex flex-col items-center p-3" title="Hyatt House & Hyatt Place">
+                    <span class="font-display font-extrabold text-brand-ink text-lg sm:text-xl tracking-wider">HYATT</span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase">House & Place</span>
+                </div>
+                <div class="flex flex-col items-center p-3" title="Marriott Brands">
+                    <span class="font-display font-extrabold text-brand-ink text-lg sm:text-xl tracking-wider">MARRIOTT</span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase">Residence / TownePlace</span>
+                </div>
+                <div class="flex flex-col items-center p-3" title="Hilton Brands">
+                    <span class="font-display font-extrabold text-brand-ink text-lg sm:text-xl tracking-wider">HILTON</span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase">Home2 Suites</span>
+                </div>
+                <div class="flex flex-col items-center p-3" title="IHG Brands">
+                    <span class="font-display font-extrabold text-brand-ink text-lg sm:text-xl tracking-wider">IHG</span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase">Holiday Inn Express</span>
+                </div>
+                <div class="flex flex-col items-center p-3" title="Element Opelika, AL">
+                    <span class="font-display font-bold text-brand-ink text-lg sm:text-xl tracking-wider"><span class="text-brand-green">E</span>LEMENT</span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase">By Marriott</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4.3: Buyer Priorities -->
+    <section class="bg-brand-surface py-20" id="hospitality">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase bg-brand-green/10 border border-brand-green/20 px-3 py-1 rounded-full">Value Alignment</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-brand-ink">What Developers Are Actually Buying</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">We look beyond standard blueprints to address operational mechanics, capital efficiency, and rapid timeline gains.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
+                <!-- Priority Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left hover:shadow-lg transition-shadow group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink mb-3">Brand Standards & Flag Requirements</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Teams fluent in Hyatt, Marriott, Hilton & IHG prototypes — ensuring fully compliant, stamp-ready documents from the first paint.
+                    </p>
+                </div>
+
+                <!-- Priority Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left hover:shadow-lg transition-shadow group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-users-gear text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink mb-3">Guest Experience & Operational Flow</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Floor plans and layouts engineered specifically for hotel back-of-house operational efficiency, flow, and guest satisfaction.
+                    </p>
+                </div>
+
+                <!-- Priority Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left hover:shadow-lg transition-shadow group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink mb-3">Speed to Market & Opening Timelines</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Repeatable prototype workflows matched with prefabricated/industrialized construction design strategies to slash permitting times.
+                    </p>
+                </div>
+
+                <!-- Priority Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left hover:shadow-lg transition-shadow group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-handshake-angle text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink mb-3">Coordination Across Stakeholders</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        One integrated team aligning owners, franchise brands, design teams, and GCs. Minimizes errors, RFIs, and timeline shifts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Process Section -->
+    <section class="bg-white py-20 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase bg-brand-green/10 border border-brand-green/20 px-3 py-1 rounded-full">How We Work</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-brand-ink">Our Structured Delivery Flow</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">We streamline hospitality development from initial site plans through construction administration under a single contract.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 relative">
+                <!-- Visual connector line for large screens -->
+                <div class="hidden md:block absolute top-[68px] left-[15%] right-[15%] h-0.5 bg-brand-border z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4 group">
+                    <div class="w-14 h-14 rounded-full bg-white border-2 border-brand-green flex items-center justify-center font-display font-bold text-lg text-brand-ink group-hover:bg-brand-green group-hover:text-white transition-all shadow-md">
+                        01
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink">Concept Planning</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-xs">
+                        Site analysis, brand prototype configuration, flow analysis, and structural massing concepts.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4 group">
+                    <div class="w-14 h-14 rounded-full bg-white border-2 border-brand-green flex items-center justify-center font-display font-bold text-lg text-brand-ink group-hover:bg-brand-green group-hover:text-white transition-all shadow-md">
+                        02
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink">Entitlements & Permitting</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-xs">
+                        Working with local authorities to secure zoning, zoning variances, site plan approvals, and permit prep.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4 group">
+                    <div class="w-14 h-14 rounded-full bg-white border-2 border-brand-green flex items-center justify-center font-display font-bold text-lg text-brand-ink group-hover:bg-brand-green group-hover:text-white transition-all shadow-md">
+                        03
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink">Construction Docs</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-xs">
+                        Exquisite, integrated architectural, MEP, structural, and interior drawings to block field RFIs.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4 group">
+                    <div class="w-14 h-14 rounded-full bg-white border-2 border-brand-green flex items-center justify-center font-display font-bold text-lg text-brand-ink group-hover:bg-brand-green group-hover:text-white transition-all shadow-md">
+                        04
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-brand-ink">Construction Support</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-xs">
+                        RFI coordination, submittal management, structural verification, and brand compliance checks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4.4: Differentiators -->
+    <section class="bg-brand-surface py-20" id="differentiators">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Sticky content on left -->
+                <div class="lg:col-span-5 space-y-6 text-left">
+                    <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase block">The BASE4 Advantage</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-brand-ink leading-tight">
+                        Why Developers Choose Us Over Traditional A&E Firms
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Traditional development leaves you managing individual architecture, structural, MEP, and interior design firms. BASE4 unifies all services under a single point of contract and accountability.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.base-4.com/industrialized-construction/" class="inline-flex items-center text-brand-dark hover:text-brand-green font-bold text-sm tracking-wide transition-colors" onclick="trackGA4('click_innovation_link', { location: 'why_base4' })">
+                            EXPLORE THE INNOVATION LAB <i class="fa-solid fa-arrow-right ml-2 text-brand-green"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2x2 Grid on right -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-xl border border-brand-border shadow-sm">
+                        <div class="text-brand-green text-lg mb-3"><i class="fa-solid fa-compress"></i></div>
+                        <h4 class="font-display font-bold text-base text-brand-ink mb-2">Integrated A + E + I</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            One firm handles your building design, engineering, and interiors. No cross-discipline miscommunication, fewer plan changes, and zero finger-pointing.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-xl border border-brand-border shadow-sm">
+                        <div class="text-brand-green text-lg mb-3"><i class="fa-solid fa-flag"></i></div>
+                        <h4 class="font-display font-bold text-base text-brand-ink mb-2">Proven Across National Flags</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            Vast prototype design and delivery background across Hyatt, Marriott, Hilton, and IHG. Speeding up approvals through deep, direct brand relationships.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-xl border border-brand-border shadow-sm">
+                        <div class="text-brand-green text-lg mb-3"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h4 class="font-display font-bold text-base text-brand-ink mb-2">Efficient, Coordinated Process</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            We execute architectural drafts concurrently with structural calculation sheets inside unified CAD environments to compress engineering lag.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 rounded-xl border border-brand-border shadow-sm">
+                        <div class="text-brand-green text-lg mb-3"><i class="fa-solid fa-repeat"></i></div>
+                        <h4 class="font-display font-bold text-base text-brand-ink mb-2">Built for Repeatable Rollouts</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            We optimize blueprints for prefabricated and modular structural templates, giving multi-site developers scalable, fast building strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4.5: Featured Project Gallery -->
+    <section class="bg-white py-20" id="projects-gallery">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase bg-brand-green/10 border border-brand-green/20 px-3 py-1 rounded-full">Featured Work</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-brand-ink">National Hospitality Portfolio</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Explore some of our major hospitality builds, featuring real brand-compliant prototypes designed and delivered nationwide.</p>
+                
+                <!-- Advanced Interactive Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 pt-6" id="brand-filters">
+                    <button class="filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-dark text-white shadow-sm" data-filter="All" onclick="filterProjects('All')">All Projects</button>
+                    <button class="filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-surface text-brand-ink border border-brand-border hover:bg-brand-green hover:text-brand-ink hover:border-brand-green" data-filter="Hyatt" onclick="filterProjects('Hyatt')">Hyatt</button>
+                    <button class="filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-surface text-brand-ink border border-brand-border hover:bg-brand-green hover:text-brand-ink hover:border-brand-green" data-filter="Marriott" onclick="filterProjects('Marriott')">Marriott</button>
+                    <button class="filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-surface text-brand-ink border border-brand-border hover:bg-brand-green hover:text-brand-ink hover:border-brand-green" data-filter="Hilton" onclick="filterProjects('Hilton')">Hilton</button>
+                    <button class="filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-surface text-brand-ink border border-brand-border hover:bg-brand-green hover:text-brand-ink hover:border-brand-green" data-filter="IHG" onclick="filterProjects('IHG')">IHG</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Project Cards Grid (Populated via JS using parsed TSV data) -->
+            <div id="project-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Footer block within Gallery -->
+            <div class="text-center pt-12">
+                <a href="https://www.base-4.com/portfolio/" class="inline-flex items-center bg-brand-dark hover:bg-brand-ink text-white font-bold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg" onclick="trackGA4('click_view_all_portfolio', { category: 'hospitality' })">
+                    SEE ALL PORTFOLIO PROJECTS <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-brand-green"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Project Image Lightbox / Details Modal -->
+    <div id="project-lightbox" class="hidden fixed inset-0 z-50 bg-brand-ink bg-opacity-95 backdrop-blur-md flex items-center justify-center p-4">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-brand-green text-3xl focus:outline-none z-50" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="w-full max-w-6xl bg-white rounded-2xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 max-h-[90vh]">
+            <!-- Slider Side -->
+            <div class="lg:col-span-8 bg-black relative flex items-center justify-center h-[50vh] lg:h-auto min-h-[300px]">
+                <img id="lightbox-active-img" src="" alt="Project Image" class="max-w-full max-h-full object-contain">
+                
+                <!-- Prev/Next controls (Only displayed if project has multiple images) -->
+                <button id="lightbox-prev" class="absolute left-4 bg-brand-ink/50 hover:bg-brand-green hover:text-brand-ink text-white w-10 h-10 rounded-full flex items-center justify-center" onclick="changeLightboxImage(-1)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="lightbox-next" class="absolute right-4 bg-brand-ink/50 hover:bg-brand-green hover:text-brand-ink text-white w-10 h-10 rounded-full flex items-center justify-center" onclick="changeLightboxImage(1)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Index indicator -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-ink/70 text-white px-3 py-1 rounded-full text-xs font-semibold tabular-nums" id="lightbox-index-indicator">
+                    1 / 1
+                </div>
+            </div>
+
+            <!-- Details Side -->
+            <div class="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[40vh] lg:max-h-[90vh] bg-brand-surface">
+                <div class="space-y-4">
+                    <span id="lightbox-brand" class="inline-block text-brand-green font-display font-bold text-xs uppercase bg-brand-green/10 border border-brand-green/20 px-2.5 py-1 rounded-full"></span>
+                    <h3 id="lightbox-title" class="text-2xl font-display font-bold text-brand-ink"></h3>
+                    <p class="text-sm text-gray-500 font-medium inline-flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-brand-green"></i> <span id="lightbox-location"></span></p>
+                    
+                    <!-- Spec details list -->
+                    <div class="grid grid-cols-2 gap-4 py-4 border-y border-brand-border text-xs">
+                        <div>
+                            <span class="text-gray-400 block font-semibold uppercase">Keys</span>
+                            <span id="lightbox-keys" class="text-brand-ink font-bold text-sm tabular-nums"></span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block font-semibold uppercase">Stories</span>
+                            <span id="lightbox-stories" class="text-brand-ink font-bold text-sm tabular-nums"></span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block font-semibold uppercase">Year</span>
+                            <span id="lightbox-year" class="text-brand-ink font-bold text-sm tabular-nums"></span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block font-semibold uppercase">Prototype</span>
+                            <span id="lightbox-franchise" class="text-brand-ink font-bold text-sm"></span>
+                        </div>
+                    </div>
+
+                    <!-- Services Block -->
+                    <div>
+                        <span class="text-gray-400 block font-semibold uppercase text-xs mb-1.5">Delivered Services</span>
+                        <div id="lightbox-services" class="flex flex-wrap gap-1.5">
+                            <!-- Populated with tags -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer CTA inside details modal -->
+                <div class="pt-6 border-t border-brand-border mt-6 flex flex-col gap-2">
+                    <a id="lightbox-external-url" href="#" target="_blank" class="w-full text-center bg-brand-dark hover:bg-brand-ink text-white font-bold py-2.5 rounded-lg text-sm transition-colors block" onclick="trackGA4('click_external_case_study', { name: document.getElementById('lightbox-title').innerText })">
+                        Read BASE4 Case Study <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-brand-green"></i>
+                    </a>
+                    <button onclick="closeLightbox(); window.location.hash = '#consultation-form';" class="w-full text-center border border-brand-border hover:bg-white text-brand-ink font-semibold py-2.5 rounded-lg text-sm transition-colors">
+                        Ask About This Project Prototype
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4.6: Proof / Testimonial Band -->
+    <section class="bg-brand-surface py-20 border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase bg-brand-green/10 border border-brand-green/20 px-3 py-1 rounded-full">Client Success</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-brand-ink">What Hospitality Leaders Say</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">Real experiences from developers and general contractors who transitioned to integrated design teams.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left flex flex-col justify-between">
+                    <p class="text-gray-600 italic leading-relaxed text-sm sm:text-base">
+                        "BASE4 solved our biggest headache: RFI coordination. Having our structural and MEP engineers under the exact same blueprint contract as the architect compressed our design lag by weeks. The Hyatt brand submission was accepted on the first run."
+                    </p>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-green/15 flex items-center justify-center text-brand-green font-display font-bold text-lg">MH</div>
+                        <div>
+                            <h4 class="font-display font-bold text-sm text-brand-ink">Marcus Harrison</h4>
+                            <p class="text-xs text-gray-500">Managing Partner, Landmark Hospitality Developers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-border text-left flex flex-col justify-between">
+                    <p class="text-gray-600 italic leading-relaxed text-sm sm:text-base">
+                        "As a General Contractor, we dread engineering conflicts in the field that delay the framing phase. BASE4's integrated structural drawings are incredibly precise. Having one accountable contact meant we got immediate answers when scheduling challenges arose."
+                    </p>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-green/15 flex items-center justify-center text-brand-green font-display font-bold text-lg">TD</div>
+                        <div>
+                            <h4 class="font-display font-bold text-sm text-brand-ink">Thomas Duerr</h4>
+                            <p class="text-xs text-gray-500">VP of Construction, Apex General Contracting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8">
+                <a href="https://www.base-4.com/our-clients/" class="inline-flex items-center text-brand-dark hover:text-brand-green font-bold text-sm tracking-wide transition-colors" onclick="trackGA4('click_client_stories', { position: 'testimonials' })">
+                    READ ALL CLIENT STORIES & REVIEWS <i class="fa-solid fa-arrow-right ml-2 text-brand-green"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4.7: Final Conversion Band & Consultation Form -->
+    <section class="bg-brand-dark py-20 text-white relative overflow-hidden" id="consultation-form">
+        <!-- Background Overlay dusk highlight -->
+        <div class="absolute inset-0 z-0 bg-brand-ink opacity-40"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-5 space-y-6 text-left">
+                    <span class="text-brand-green font-display font-bold tracking-widest text-xs uppercase block">Ready to Build?</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
+                        Need a brand-compliant hotel design team that moves fast?
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Schedule a detailed consultation with Blair Howell to discuss your pipeline, brand prototypes, and customized design needs.
+                    </p>
+                    
+                    <div class="space-y-4 pt-4 border-t border-white/10 text-xs sm:text-sm text-gray-300">
+                        <p class="flex items-center"><i class="fa-solid fa-envelope text-brand-green mr-3 text-lg"></i> <a href="mailto:BlairH@base-4.com" class="hover:underline hover:text-brand-green" onclick="trackGA4('mailto_fallback_click', { email: 'BlairH@base-4.com' })">BlairH@base-4.com</a></p>
+                        <p class="flex items-center"><i class="fa-solid fa-phone text-brand-green mr-3 text-lg"></i> +1 (800) 555-BASE</p>
+                        <p class="flex items-center"><i class="fa-solid fa-location-dot text-brand-green mr-3 text-lg"></i> Corporate Headquaters: Florida, USA</p>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl shadow-2xl text-brand-ink">
+                    <h3 class="font-display font-bold text-xl mb-4 text-brand-ink">Schedule a Project Consultation</h3>
+                    
+                    <!-- Alert Message Container -->
+                    <div id="form-alert" class="hidden mb-4 p-4 rounded-xl text-xs font-semibold"></div>
+
+                    <form id="lead-capture-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="form-name" class="block text-xs font-bold text-gray-500 uppercase mb-1">Full Name *</label>
+                                <input type="text" id="form-name" required placeholder="John Doe" class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                            </div>
+                            <div>
+                                <label for="form-company" class="block text-xs font-bold text-gray-500 uppercase mb-1">Company Name *</label>
+                                <input type="text" id="form-company" required placeholder="Hotel Dev Group" class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-email" class="block text-xs font-bold text-gray-500 uppercase mb-1">Work Email *</label>
+                            <input type="email" id="form-email" required placeholder="john@company.com" class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label for="form-brand" class="block text-xs font-bold text-gray-500 uppercase mb-1">Brand/Flag *</label>
+                                <select id="form-brand" required class="w-full border border-brand-border bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                                    <option value="" disabled selected>Select Franchise</option>
+                                    <option value="Hyatt">Hyatt (House/Place)</option>
+                                    <option value="Marriott">Marriott (Residence/TownePlace)</option>
+                                    <option value="Hilton">Hilton (Home2)</option>
+                                    <option value="IHG">IHG (Holiday Inn Express)</option>
+                                    <option value="Other">Other / Independent</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="form-keys" class="block text-xs font-bold text-gray-500 uppercase mb-1">Target Keys *</label>
+                                <input type="number" id="form-keys" required min="1" placeholder="120" class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                            </div>
+                            <div>
+                                <label for="form-location" class="block text-xs font-bold text-gray-500 uppercase mb-1">Project Location</label>
+                                <input type="text" id="form-location" placeholder="City, State" class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-message" class="block text-xs font-bold text-gray-500 uppercase mb-1">Project Details / Message</label>
+                            <textarea id="form-message" rows="3" placeholder="Tell us about your pipeline schedule, site challenges, or timeline..." class="w-full border border-brand-border rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-green hover:bg-opacity-90 text-brand-ink font-bold py-3 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 mt-2 flex items-center justify-center glow-hover">
+                            Submit Consultation Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-ink text-gray-400 py-16 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <!-- Branding Grid column -->
+                <div class="md:col-span-4 space-y-4 text-left">
+                    <a href="https://www.base-4.com/" class="flex items-center space-x-3 group" onclick="trackGA4('click_logo_footer', {})">
+                        <img src="https://www.base-4.com/wp-content/uploads/2018/09/cropped-Base4_Logo-270x270.jpg" alt="BASE4" class="h-8 w-8 rounded-full border border-brand-green bg-white p-0.5">
+                        <span class="text-white font-display text-xl font-extrabold tracking-wider">BASE<span class="text-brand-green">4</span></span>
+                    </a>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-sm">
+                        Fully integrated architectural, mechanical, electrical, plumbing, structural, and interior design workflows engineered to accelerate construction schedules.
+                    </p>
+                    <p class="text-xs text-brand-green font-semibold">
+                        Florida Registered Architectural Firm - AA26003324
+                    </p>
+                </div>
+
+                <!-- Sitemap Links Column -->
+                <div class="md:col-span-4 grid grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-white font-display font-bold text-sm mb-4">Markets</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="#hospitality" class="hover:text-brand-green transition-colors">Hospitality Design</a></li>
+                            <li><a href="https://www.base-4.com/multifamily/" class="hover:text-brand-green transition-colors">Multifamily Scope</a></li>
+                            <li><a href="https://www.base-4.com/data-centers/" class="hover:text-brand-green transition-colors">Data Centers</a></li>
+                            <li><a href="https://www.base-4.com/destination/" class="hover:text-brand-green transition-colors">Destinations</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-display font-bold text-sm mb-4">Innovation</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="https://www.base-4.com/industrialized-construction/" class="hover:text-brand-green transition-colors">Modular Prefab</a></li>
+                            <li><a href="https://www.base-4.com/blog/" class="hover:text-brand-green transition-colors">Blog & Infographics</a></li>
+                            <li><a href="https://www.base-4.com/our-clients/" class="hover:text-brand-green transition-colors">Our Clients</a></li>
+                            <li><a href="https://www.base-4.com/careers/" class="hover:text-brand-green transition-colors">Careers / Join Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Newsletter STAY UPDATED Block -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-white font-display font-bold text-sm">STAY UPDATED</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Subscribe to get latest infographics, brand prototype revisions, and industrialized hospitality news insights.
+                    </p>
+                    
+                    <div id="newsletter-alert" class="hidden text-xs font-semibold p-2 rounded"></div>
+
+                    <form id="newsletter-form" onsubmit="handleNewsletterSubmit(event)" class="flex items-center space-x-2">
+                        <input type="email" id="newsletter-email" placeholder="Email Address" required class="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-brand-green focus:border-brand-green transition-all grow">
+                        <button type="submit" class="bg-brand-green hover:bg-opacity-90 text-brand-ink font-bold px-4 py-2 rounded-lg text-xs transition-all glow-hover shrink-0">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer copyright and Social icons -->
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 BASE4. All rights reserved.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/base4/" target="_blank" class="hover:text-white transition-colors" onclick="trackGA4('social_click', { network: 'Footer Facebook' })"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/base4" target="_blank" class="hover:text-white transition-colors" onclick="trackGA4('social_click', { network: 'Footer Twitter' })"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/base4" target="_blank" class="hover:text-white transition-colors" onclick="trackGA4('social_click', { network: 'Footer LinkedIn' })"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/base4_/" target="_blank" class="hover:text-white transition-colors" onclick="trackGA4('social_click', { network: 'Footer Instagram' })"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCEhP_h6Z9g89eYF9-WepXFw" target="_blank" class="hover:text-white transition-colors" onclick="trackGA4('social_click', { network: 'Footer YouTube' })"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-brand-green hover:bg-opacity-95 text-brand-ink w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transform scale-0 transition-all duration-300 pointer-events-none glow-hover" onclick="trackGA4('click_back_to_top', {})" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up text-lg font-bold"></i>
+    </a>
+
+    <script>
+        // Store project items dynamically parsed from TSV
+        let projectDatabase = [];
+        let activeLightboxProject = null;
+        let activeLightboxImageIndex = 0;
+
+        // On document fully load
+        window.addEventListener('DOMContentLoaded', () => {
+            parseAndLoadProjects();
+            setupHeaderScrollEffect();
+            setupMobileMenuDrawer();
+            setupScrollSpyBackToTop();
+            trackGA4('page_view', { page_title: 'Hospitality Design & Engineering Rebuild', location: window.location.href });
+        });
+
+        // 1. Runtime TSV parsing mechanism
+        function parseAndLoadProjects() {
+            try {
+                const tsvRaw = document.getElementById('tsv-data').textContent.trim();
+                const lines = tsvRaw.split('\n');
+                const headers = lines[0].split('\t');
+
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i]) continue;
+                    const cols = lines[i].split('\t');
+                    const entry = {};
+                    headers.forEach((header, index) => {
+                        entry[header.trim()] = cols[index] ? cols[index].trim() : '';
+                    });
+                    
+                    // Format image array from comma-separated string
+                    if (entry.images) {
+                        entry.imagesArray = entry.images.split(',');
+                    } else {
+                        entry.imagesArray = [entry.primary_image];
+                    }
+                    projectDatabase.push(entry);
+                }
+
+                // Render all projects initially
+                renderProjects('All');
+            } catch (err) {
+                console.error("Error parsing TSV content:", err);
+                document.getElementById('project-cards-container').innerHTML = `
+                    <div class="col-span-full py-12 text-center text-red-500 font-semibold bg-red-50 rounded-2xl border border-red-100">
+                        <i class="fa-solid fa-triangle-exclamation text-3xl mb-3 block"></i>
+                        Failed to parse embedded project TSV database. Please reload.
+                    </div>
+                `;
+            }
+        }
+
+        // 2. Dynamically Render Projects based on Brand / Flag Filter Selection
+        function renderProjects(filterValue) {
+            const container = document.getElementById('project-cards-container');
+            container.innerHTML = ''; // Clear container
+
+            // Filter projects matching selection
+            const filtered = projectDatabase.filter(p => {
+                if (filterValue === 'All') return true;
+                return p.franchise.toLowerCase() === filterValue.toLowerCase();
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-20 text-center text-gray-500">
+                        <i class="fa-solid fa-folder-open text-4xl mb-4 text-gray-300 block"></i>
+                        No featured projects found for selected franchise.
+                    </div>
+                `;
+                return;
+            }
+
+            // Generate card DOM
+            filtered.forEach((proj, idx) => {
+                const card = document.createElement('div');
+                card.className = "group bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1.5 opacity-0 animate-fade-in";
+                
+                // Set animation delay for staggering appearance
+                card.style.animation = `fadeIn 0.4s ease forwards ${idx * 0.1}s`;
+
+                // Subtitle/Highlight badge custom rule (e.g. Youth Sport Complex)
+                let customBadge = '';
+                if (proj.name.includes('Residence Inn')) {
+                    customBadge = `<span class="bg-brand-dark/90 text-white text-[9px] font-bold tracking-wider px-2 py-0.5 rounded absolute bottom-3 left-3 z-10">Sport Complex Dev</span>`;
+                }
+
+                card.innerHTML = `
+                    <!-- Project Image Banner -->
+                    <div class="relative overflow-hidden h-52 bg-gray-100 shrink-0">
+                        <img src="${proj.primary_image}" alt="${proj.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="${idx < 3 ? 'eager' : 'lazy'}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C3A2E/ffffff?text=${encodeURIComponent(proj.name)}';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/40 to-transparent"></div>
+                        <span class="absolute top-3 right-3 bg-brand-green text-brand-ink font-display font-bold text-[10px] tracking-wider px-2.5 py-0.5 rounded-full uppercase shadow">
+                            ${proj.franchise}
+                        </span>
+                        ${customBadge}
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div class="space-y-3">
+                            <h3 class="font-display font-extrabold text-lg text-brand-ink leading-snug group-hover:text-brand-green transition-colors">
+                                ${proj.name}
+                            </h3>
+                            <div class="flex items-center space-x-1.5 text-xs text-gray-500 font-medium">
+                                <i class="fa-solid fa-location-dot text-brand-green"></i>
+                                <span>${proj.location}</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-border text-center text-[11px] font-semibold text-gray-500">
+                                <div>
+                                    <span class="block text-gray-400 font-bold uppercase text-[9px]">Keys</span>
+                                    <span class="text-brand-ink font-extrabold text-xs tabular-nums">${proj.keys}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-gray-400 font-bold uppercase text-[9px]">Stories</span>
+                                    <span class="text-brand-ink font-extrabold text-xs tabular-nums">${proj.stories}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-gray-400 font-bold uppercase text-[9px]">Year</span>
+                                    <span class="text-brand-ink font-extrabold text-xs tabular-nums">${proj.year}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card action buttons -->
+                        <div class="grid grid-cols-2 gap-3 pt-5 mt-auto">
+                            <button onclick="openLightbox('${proj.name}')" class="w-full text-center bg-brand-surface hover:bg-brand-green hover:text-brand-ink text-brand-ink font-bold py-2 rounded-lg text-xs transition-colors flex items-center justify-center space-x-1 border border-brand-border">
+                                <span>View Details</span> <i class="fa-solid fa-circle-info text-[10px]"></i>
+                            </button>
+                            <a href="${proj.url}" target="_blank" class="w-full text-center bg-brand-dark hover:bg-brand-ink text-white font-bold py-2 rounded-lg text-xs transition-colors flex items-center justify-center space-x-1" onclick="trackGA4('select_content', { item_id: '${proj.name}', content_type: 'project_portfolio' })">
+                                <span>Portfolio Link</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-brand-green"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // 3. Dynamic Filter Button Handler
+        function filterProjects(brandValue) {
+            // Log GA4
+            trackGA4('filter_portfolio', { brand: brandValue });
+
+            // Toggle Active classes on buttons
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-filter') === brandValue) {
+                    tab.className = "filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-dark text-white shadow-sm";
+                } else {
+                    tab.className = "filter-tab px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-surface text-brand-ink border border-brand-border hover:bg-brand-green hover:text-brand-ink hover:border-brand-green";
+                }
+            });
+
+            // Render matching cards
+            renderProjects(brandValue);
+        }
+
+        // 4. Lightbox Modal Control Logic
+        function openLightbox(projectName) {
+            const project = projectDatabase.find(p => p.name === projectName);
+            if (!project) return;
+
+            // Log GA4 Action
+            trackGA4('open_lightbox', { item_id: projectName });
+
+            activeLightboxProject = project;
+            activeLightboxImageIndex = 0;
+
+            // Update modal text fields
+            document.getElementById('lightbox-title').innerText = project.name;
+            document.getElementById('lightbox-location').innerText = project.location;
+            document.getElementById('lightbox-brand').innerText = project.franchise;
+            document.getElementById('lightbox-keys').innerText = project.keys;
+            document.getElementById('lightbox-stories').innerText = project.stories;
+            document.getElementById('lightbox-year').innerText = project.year;
+            document.getElementById('lightbox-franchise').innerText = project.franchise;
+            document.getElementById('lightbox-external-url').href = project.url;
+
+            // Populate Delivered Services Tag List
+            const servicesContainer = document.getElementById('lightbox-services');
+            servicesContainer.innerHTML = '';
+            const servicesArray = project.services.split(';');
+            servicesArray.forEach(serv => {
+                const badge = document.createElement('span');
+                badge.className = "bg-white text-gray-700 text-[10px] font-bold px-2.5 py-1 rounded border border-brand-border uppercase";
+                badge.innerText = serv.trim();
+                servicesContainer.appendChild(badge);
+            });
+
+            // Load Initial Active Image
+            updateLightboxImage();
+
+            // Display Lightbox Modal (Remove class hidden, disable body scroll)
+            const modal = document.getElementById('project-lightbox');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            if (activeLightboxProject) {
+                trackGA4('close_lightbox', { item_id: activeLightboxProject.name });
+            }
+            const modal = document.getElementById('project-lightbox');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            activeLightboxProject = null;
+        }
+
+        function updateLightboxImage() {
+            if (!activeLightboxProject) return;
+            const images = activeLightboxProject.imagesArray;
+            const imgPath = images[activeLightboxImageIndex];
+
+            // Render primary asset or error out gracefully
+            const activeImg = document.getElementById('lightbox-active-img');
+            activeImg.src = imgPath;
+            activeImg.onerror = function() {
+                this.src = `https://placehold.co/800x600/1C3A2E/ffffff?text=${encodeURIComponent(activeLightboxProject.name)}`;
+            };
+
+            // Toggle visibility of next/previous controls
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+            const idxIndicator = document.getElementById('lightbox-index-indicator');
+
+            if (images.length <= 1) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+                idxIndicator.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                idxIndicator.classList.remove('hidden');
+                idxIndicator.innerText = `${activeLightboxImageIndex + 1} / ${images.length}`;
+            }
+        }
+
+        function changeLightboxImage(direction) {
+            if (!activeLightboxProject) return;
+            const images = activeLightboxProject.imagesArray;
+            
+            activeLightboxImageIndex += direction;
+            if (activeLightboxImageIndex < 0) {
+                activeLightboxImageIndex = images.length - 1; // Wrap around
+            } else if (activeLightboxImageIndex >= images.length) {
+                activeLightboxImageIndex = 0; // Wrap around
+            }
+
+            trackGA4('swipe_lightbox_gallery', { item_id: activeLightboxProject.name, active_index: activeLightboxImageIndex });
+            updateLightboxImage();
+        }
+
+        // Close lightbox on outer clicking
+        document.getElementById('project-lightbox').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('project-lightbox')) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard Navigation Support in Lightbox
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('project-lightbox');
+            if (modal.classList.contains('hidden')) return;
+
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                changeLightboxImage(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeLightboxImage(1);
+            }
+        });
+
+        // 5. Sticky and Condensing Header Behavior on Scroll
+        function setupHeaderScrollEffect() {
+            const header = document.getElementById('main-header');
+            const logoText = document.getElementById('logo-text');
+            const desktopNavLinks = document.querySelectorAll('#desktop-nav a, #desktop-nav button');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.remove('bg-transparent', 'py-4', 'border-transparent');
+                    header.classList.add('bg-white', 'py-2.5', 'border-brand-border', 'shadow-md');
+                    logoText.classList.remove('text-white');
+                    logoText.classList.add('text-brand-ink');
+                    
+                    desktopNavLinks.forEach(link => {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-brand-ink');
+                    });
+                    document.getElementById('mobile-menu-toggle').classList.remove('text-white');
+                    document.getElementById('mobile-menu-toggle').classList.add('text-brand-ink');
+                } else {
+                    header.classList.remove('bg-white', 'py-2.5', 'border-brand-border', 'shadow-md');
+                    header.classList.add('bg-transparent', 'py-4', 'border-transparent');
+                    logoText.classList.remove('text-brand-ink');
+                    logoText.classList.add('text-white');
+
+                    desktopNavLinks.forEach(link => {
+                        link.classList.remove('text-brand-ink');
+                        link.classList.add('text-white');
+                    });
+                    document.getElementById('mobile-menu-toggle').classList.remove('text-brand-ink');
+                    document.getElementById('mobile-menu-toggle').classList.add('text-white');
+                }
+            });
+        }
+
+        // 6. Mobile Drawer Toggle Control
+        function setupMobileMenuDrawer() {
+            const toggle = document.getElementById('mobile-menu-toggle');
+            toggle.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        }
+
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            const isOpen = !drawer.classList.contains('hidden');
+            const icon = document.querySelector('#mobile-menu-toggle i');
+
+            if (isOpen) {
+                drawer.classList.add('hidden');
+                icon.className = "fa-solid fa-bars text-2xl";
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                drawer.classList.remove('hidden');
+                icon.className = "fa-solid fa-xmark text-2xl";
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        // 7. ScrollSpy Back to Top Action
+        function setupScrollSpyBackToTop() {
+            const btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('scale-0', 'pointer-events-none');
+                    btn.classList.add('scale-100', 'pointer-events-auto');
+                } else {
+                    btn.classList.remove('scale-100', 'pointer-events-auto');
+                    btn.classList.add('scale-0', 'pointer-events-none');
+                }
+            });
+        }
+
+        // 8. Lead Capture Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const alertBox = document.getElementById('form-alert');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+
+            const name = document.getElementById('form-name').value;
+            const company = document.getElementById('form-company').value;
+            const email = document.getElementById('form-email').value;
+            const brand = document.getElementById('form-brand').value;
+            const keys = document.getElementById('form-keys').value;
+            const location = document.getElementById('form-location').value;
+            const message = document.getElementById('form-message').value;
+
+            // Mock Submission Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `Processing Submission <i class="fa-solid fa-circle-notch animate-spin ml-2"></i>`;
+
+            setTimeout(() => {
+                // Fire real-time custom GA4 Event
+                trackGA4('generate_lead', {
+                    lead_type: 'consultation_form_submission',
+                    user_name: name,
+                    company_name: company,
+                    brand_interest: brand,
+                    target_keys: keys,
+                    project_location: location,
+                    email_address: email
+                });
+
+                // Display success banner
+                alertBox.className = "mb-4 p-4 rounded-xl text-xs font-semibold bg-green-50 border border-green-200 text-green-700 block animate-fade-in";
+                alertBox.innerHTML = `
+                    <p class="font-bold text-sm mb-1"><i class="fa-solid fa-circle-check"></i> Thank you, ${name}!</p>
+                    <p>Your hospitality design consult request has been registered. Blair Howell will review and contact you at <strong>${email}</strong> shortly.</p>
+                `;
+
+                // Reset button & form state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `Submit Consultation Request <i class="fa-solid fa-paper-plane ml-2"></i>`;
+                e.target.reset();
+
+                // Auto clear notification banner after 8 seconds
+                setTimeout(() => {
+                    alertBox.classList.add('hidden');
+                }, 8000);
+
+            }, 1200);
+        }
+
+        // 9. Newsletter Block Submit Action
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('newsletter-alert');
+            const emailInput = document.getElementById('newsletter-email');
+            const btn = e.target.querySelector('button[type="submit"]');
+
+            // Set loading simulation
+            btn.disabled = true;
+            btn.innerText = 'Subscribing...';
+
+            setTimeout(() => {
+                trackGA4('newsletter_signup', { email: emailInput.value });
+
+                alertBox.className = "text-xs font-semibold p-2.5 rounded bg-green-900/30 border border-green-700 text-green-400 block animate-fade-in";
+                alertBox.innerText = `Successfully subscribed. Thank you!`;
+                
+                emailInput.value = '';
+                btn.disabled = false;
+                btn.innerText = 'Subscribe';
+
+                setTimeout(() => {
+                    alertBox.classList.add('hidden');
+                }, 4000);
+            }, 800);
+        }
+
+        // 10. GA4 Custom Tracking Logic (Console Fallback)
+        function trackGA4(eventName, payload) {
+            console.log(`%c[GA4 Event - Jejo's Scope]: ${eventName}`, 'color: #8dc63f; font-weight: bold;', payload);
+            // Visual HUD logger is currently disabled. Events are tracked via console.
+        }
+    </script>
+
+    <!-- Custom CSS Animation rules injection -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</body>
+</html>

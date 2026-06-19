@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO (carried over from existing base-4.com/multifamily, tightened) -->
+  <title>Multifamily Architecture, Engineering & Delivery | BASE4</title>
+  <meta name="description" content="BASE4 partners with multifamily developers to design and deliver projects optimized for unit yield, cost control, and speed to market — integrated architecture and engineering, repeatable across your pipeline.">
+  <link rel="canonical" href="https://www.base-4.com/multifamily/">
+  <meta name="theme-color" content="#8dc63f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Multifamily Architecture, Engineering & Delivery | BASE4">
+  <meta property="og:description" content="Integrated A+E for multifamily developers, owners, and general contractors. Built for unit yield, cost certainty, and speed to market.">
+  <meta property="og:url" content="https://www.base-4.com/multifamily/">
+  <meta property="og:image" content="https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multifamily Architecture, Engineering & Delivery | BASE4">
+  <meta name="twitter:description" content="Integrated A+E for multifamily developers, owners, and general contractors.">
+  <meta name="twitter:image" content="https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===================== GA4 ===================== -->
+  <!-- TODO(BASE4): replace G-XXXXXXXXXX with the real GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{
+      --accent:#8dc63f;
+      --accent-ink:#0E1A14;
+      --ink:#0E1A14;
+      --deep:#1C3A2E;
+      --surface:#FFFFFF;
+      --surface-alt:#F5F7F4;
+      --hairline:#E3E8E1;
+      --muted:#5b6b61;
+      --max:1200px;
+      --pad:24px;
+      --radius:16px;
+      --shadow:0 1px 2px rgba(14,26,20,.04), 0 8px 24px rgba(14,26,20,.06);
+      --shadow-lg:0 12px 40px rgba(14,26,20,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+      font-size:1.0625rem;
+      line-height:1.6;
+      color:var(--ink);
+      background:var(--surface);
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3,h4,.display{font-family:'Inter Tight','Inter',sans-serif;line-height:1.12;letter-spacing:-.01em;font-weight:700}
+    h1{font-size:clamp(2.5rem,5vw,4rem);margin:0 0 .5em}
+    h2{font-size:clamp(1.7rem,3vw,2.1rem);margin:0 0 .5em}
+    h3{font-size:1.2rem;margin:0 0 .4em}
+    p{margin:0 0 1em}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .tnum{font-variant-numeric:tabular-nums}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+    .section{padding:88px 0}
+    .section--alt{background:var(--surface-alt)}
+    .eyebrow{font-family:'Inter Tight';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--deep);margin:0 0 18px}
+    .eyebrow .dot{color:var(--accent)}
+    .lead{font-size:1.18rem;color:var(--muted);max-width:62ch}
+    .center{text-align:center;margin-left:auto;margin-right:auto}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;gap:.5em;
+      font-family:'Inter Tight';font-weight:700;font-size:1rem;
+      padding:15px 26px;border-radius:999px;border:2px solid transparent;
+      text-decoration:none;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn--primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 18px rgba(141,198,63,.35)}
+    .btn--primary:hover{box-shadow:0 10px 26px rgba(141,198,63,.45)}
+    .btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+    .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+    .btn--dark{background:var(--deep);color:#fff}
+    .btn--outline{background:transparent;color:var(--deep);border-color:var(--hairline)}
+    .btn--outline:hover{border-color:var(--deep)}
+
+    /* ===================== HEADER ===================== */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:padding .2s ease,border-color .2s ease,box-shadow .2s ease}
+    header.scrolled{border-color:var(--hairline);box-shadow:0 1px 0 rgba(14,26,20,.04)}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;transition:padding .2s ease}
+    header.scrolled .nav-bar{padding:10px 0}
+    .brand{font-family:'Inter Tight';font-weight:800;font-size:1.4rem;letter-spacing:.02em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px}
+    .brand .mark{width:12px;height:12px;border-radius:3px;background:var(--accent);display:inline-block}
+    .main-nav{display:flex;align-items:center;gap:4px}
+    .nav-item{position:relative}
+    .nav-link{display:inline-flex;align-items:center;gap:5px;padding:10px 12px;font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);border-radius:8px}
+    .nav-link:hover{background:var(--surface-alt)}
+    .nav-item .caret{width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px;transition:transform .2s}
+    .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--shadow-lg);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .18s ease}
+    .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(4px)}
+    .nav-item:hover .caret{transform:rotate(225deg);margin-top:2px}
+    .dropdown a{display:block;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500}
+    .dropdown a:hover{background:var(--surface-alt);color:var(--deep)}
+    .header-right{display:flex;align-items:center;gap:14px}
+    .socials{display:flex;gap:8px}
+    .socials a{width:34px;height:34px;display:grid;place-items:center;border-radius:8px;color:var(--deep);border:1px solid var(--hairline);transition:.15s}
+    .socials a:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
+    .socials svg{width:16px;height:16px}
+    .nav-toggle{display:none;background:none;border:1px solid var(--hairline);border-radius:8px;width:42px;height:42px;cursor:pointer;align-items:center;justify-content:center}
+    .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:'';display:block;width:18px;height:2px;background:var(--ink);position:relative;transition:.2s}
+    .nav-toggle span::before{position:absolute;top:-6px}
+    .nav-toggle span::after{position:absolute;top:6px}
+
+    /* ===================== HERO ===================== */
+    .hero{position:relative;color:#fff;overflow:hidden;isolation:isolate}
+    .hero-bg{position:absolute;inset:0;z-index:-2}
+    .hero-bg img{width:100%;height:100%;object-fit:cover}
+    .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(28,58,46,.94) 0%,rgba(28,58,46,.78) 42%,rgba(14,26,20,.45) 100%)}
+    .hero-inner{padding:118px 0 104px;max-width:780px}
+    .hero h1{color:#fff}
+    .hero .eyebrow{color:rgba(255,255,255,.85)}
+    .hero p.sub{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:60ch;margin-bottom:32px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+    .trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:.9rem;color:rgba(255,255,255,.82);font-weight:500}
+    .trust-row .sep{color:var(--accent)}
+
+    /* ===================== VALUE STRIP ===================== */
+    .valueprop{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+    .stat-tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .stat-tile{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:24px 18px;text-align:center;box-shadow:var(--shadow)}
+    .stat-tile .num{font-family:'Inter Tight';font-weight:800;font-size:2.1rem;color:var(--deep);line-height:1}
+    .stat-tile .lbl{display:block;margin-top:8px;font-size:.82rem;color:var(--muted);font-weight:600}
+    .stat-foot{grid-column:1/-1;font-size:.78rem;color:var(--muted);text-align:center;margin-top:4px}
+
+    /* ===================== CARDS ===================== */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .card .ico{width:46px;height:46px;border-radius:12px;background:rgba(141,198,63,.16);display:grid;place-items:center;margin-bottom:18px;color:var(--deep)}
+    .card .ico svg{width:24px;height:24px}
+    .priority-tag{font-family:'Inter Tight';font-weight:700;color:var(--deep);font-size:1.05rem;margin-bottom:6px}
+    .answer{color:var(--muted);font-size:.98rem;margin:0}
+    .diff-claim{font-family:'Inter Tight';font-weight:700;font-size:1.15rem;margin-bottom:6px}
+
+    /* ===================== PROCESS TIMELINE ===================== */
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+    .step{position:relative;padding-top:42px}
+    .step::before{counter-increment:step;content:counter(step);position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--deep);color:#fff;font-family:'Inter Tight';font-weight:800;display:grid;place-items:center}
+    .step::after{content:'';position:absolute;top:18px;left:46px;right:-10px;height:2px;background:var(--hairline)}
+    .step:last-child::after{display:none}
+    .step h3{margin-bottom:6px}
+    .step p{color:var(--muted);font-size:.95rem;margin:0}
+
+    /* ===================== PRODUCT-TYPE BAND ===================== */
+    .brand-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .brand-chip{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:.18s}
+    .brand-chip:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .brand-chip .name{font-family:'Inter Tight';font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:.01em}
+    .brand-chip .meta{display:block;margin-top:6px;font-size:.82rem;color:var(--muted);font-weight:600}
+
+    /* ===================== GALLERY ===================== */
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
+    .filter{font-family:'Inter Tight';font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;transition:.15s;color:var(--ink)}
+    .filter:hover{border-color:var(--deep)}
+    .filter.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .pcard{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;display:flex;flex-direction:column}
+    .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .pcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface-alt)}
+    .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .pcard:hover .ph img{transform:scale(1.05)}
+    .flag-tag{position:absolute;top:12px;left:12px;background:rgba(14,26,20,.82);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+    .pcard .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+    .pcard h3{margin-bottom:4px}
+    .pcard .loc{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+    .pcard .meta-row{display:flex;gap:18px;margin-top:auto;font-size:.88rem;color:var(--ink);border-top:1px solid var(--hairline);padding-top:14px}
+    .pcard .meta-row b{font-family:'Inter Tight';font-weight:800;color:var(--deep)}
+    .callout{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:600;color:var(--deep);background:rgba(141,198,63,.16);padding:4px 10px;border-radius:6px}
+
+    /* ===================== PROOF BAND ===================== */
+    .proof{background:var(--deep);color:#fff}
+    .proof .eyebrow{color:rgba(255,255,255,.7)}
+    .proof-quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .quote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px}
+    .quote p{font-size:1.15rem;font-style:italic}
+    .quote .who{font-style:normal;font-weight:700;color:var(--accent);margin:0}
+    .proof-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .proof-logos .brand-chip{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+    .proof-logos .brand-chip .name{color:#fff}
+    .proof-logos .brand-chip .meta{color:rgba(255,255,255,.6)}
+
+    /* ===================== CONVERSION BAND + FORM ===================== */
+    .convert{background:linear-gradient(135deg,var(--deep),#142b21);color:#fff}
+    .convert-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .convert h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.4rem)}
+    .convert p.lead{color:rgba(255,255,255,.85)}
+    .lead-form{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-lg)}
+    .lead-form h3{color:var(--ink)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{margin-bottom:14px}
+    .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+    .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--hairline);border-radius:10px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(141,198,63,.25)}
+    .form-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+    .mailto-fallback{font-size:.85rem;color:var(--muted)}
+    .mailto-fallback a{color:var(--deep);font-weight:600}
+    .form-status{margin:12px 0 0;font-size:.9rem;font-weight:600;color:var(--deep)}
+
+    /* ===================== FOOTER ===================== */
+    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:64px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:36px;margin-bottom:44px}
+    footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+    footer a{color:rgba(255,255,255,.72);text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+    footer a:hover{color:var(--accent)}
+    .footer-brand .brand{color:#fff}
+    .footer-brand p{font-size:.92rem;margin-top:14px;max-width:34ch}
+    .news-form{display:flex;gap:8px;margin-top:12px}
+    .news-form input{flex:1;padding:11px 13px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);border-radius:10px;color:#fff;font:inherit;font-size:.9rem}
+    .news-form input::placeholder{color:rgba(255,255,255,.45)}
+    .news-form button{border:none;background:var(--accent);color:var(--accent-ink);font-family:'Inter Tight';font-weight:700;border-radius:10px;padding:0 16px;cursor:pointer}
+    .footer-socials{display:flex;gap:10px;margin-top:16px}
+    .footer-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:8px;border:1px solid rgba(255,255,255,.18);padding:0}
+    .footer-socials a:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+    .footer-socials svg{width:16px;height:16px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+    .footer-bottom .reg{color:rgba(255,255,255,.55)}
+
+    /* ===================== BACK TO TOP ===================== */
+    #toTop{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;background:var(--deep);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s;z-index:40}
+    #toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+    #toTop svg{width:20px;height:20px}
+
+    /* ===================== LIGHTBOX ===================== */
+    .lb{position:fixed;inset:0;background:rgba(10,18,14,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+    .lb.open{display:flex}
+    .lb-inner{max-width:1000px;width:100%}
+    .lb-head{display:flex;justify-content:space-between;align-items:flex-end;color:#fff;margin-bottom:14px;gap:16px}
+    .lb-head h3{color:#fff;margin:0}
+    .lb-head p{margin:0;color:rgba(255,255,255,.7);font-size:.9rem}
+    .lb-stage img{width:100%;max-height:64vh;object-fit:contain;border-radius:12px;background:#000}
+    .lb-thumbs{display:flex;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
+    .lb-thumbs img{height:62px;width:84px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.55;border:2px solid transparent}
+    .lb-thumbs img.active{opacity:1;border-color:var(--accent)}
+    .lb-close{position:absolute;top:18px;right:22px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.4rem;cursor:pointer}
+    .lb-actions{margin-top:16px}
+
+    /* ===================== REVEAL ===================== */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ===================== RESPONSIVE ===================== */
+    @media(max-width:1024px){
+      .grid-4,.timeline,.brand-wall,.proof-logos{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .step::after{display:none}
+    }
+    @media(max-width:860px){
+      .main-nav,.header-right .socials{display:none}
+      .nav-toggle{display:flex}
+      .main-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--hairline);padding:12px var(--pad);gap:0;box-shadow:var(--shadow-lg)}
+      .main-nav.open .nav-item{width:100%}
+      .main-nav.open .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding-left:12px}
+      .valueprop,.convert-grid{grid-template-columns:1fr}
+      .grid-2,.stat-tiles{grid-template-columns:1fr}
+      .proof-quotes{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero-inner{padding:84px 0 72px}
+    }
+    @media(max-width:560px){
+      .grid-4,.timeline,.brand-wall,.proof-logos,.gallery,.footer-grid,.form-row{grid-template-columns:1fr}
+      .section{padding:60px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <div class="wrap nav-bar">
+      <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+      <nav class="main-nav" id="mainNav"></nav>
+      <div class="header-right">
+        <div class="socials" id="headerSocials"></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="wrap" style="padding:120px 0;text-align:center;color:var(--muted)">Loading…</div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer"></footer>
+
+  <button id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lb" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <div class="lb-inner">
+      <div class="lb-head"><div><h3 id="lbTitle"></h3><p id="lbMeta"></p></div></div>
+      <div class="lb-stage"><img id="lbStage" alt=""></div>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+      <div class="lb-actions"><a class="btn btn--primary" id="lbLink" href="#" target="_blank" rel="noopener">View full project →</a></div>
+    </div>
+  </div>
+
+  <!-- ===================== EMBEDDED CONTENT (TSV) ===================== -->
+  <!-- Single-file build: edit the data below; the page parses it at runtime. No build step. -->
+  <script id="content-tsv" type="text/tab-separated-values">
+# SHEET: Site
+Parameter	Value
+Org Name	BASE4
+Email	BlairH@base-4.com
+Mailto Subject	I Have a Project I Want to Discuss | Multifamily | BASE4
+Florida Registration	Florida Registered Architectural Firm - AA26003324
+Copyright	© 2026 BASE4 | All rights reserved.
+Site URL	https://www.base-4.com/multifamily/
+
+# SHEET: Hero
+Parameter	Value
+Eyebrow	Multifamily Architecture · Engineering · Delivery
+H1	Multifamily designed for unit yield, built for speed to market.
+Subhead	BASE4 partners with multifamily developers, owners, and general contractors to deliver projects that maximize unit yield and constructability — integrated architecture and engineering, repeatable across your pipeline.
+Primary CTA	Schedule a Project Consultation
+Secondary CTA	View Multifamily Portfolio
+Trust Row	Florida Registered Architectural Firm AA26003324 · High-volume residential experience · Integrated A + E
+Image	https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=80
+
+# SHEET: ValueProp
+Parameter	Value
+Title	Designed for scale and efficiency.
+Body	Multifamily projects live and die on unit yield, cost control, and repeatability. BASE4 keeps architecture and engineering under one roof — maximizing doors per acre while holding quality and constructability, project after project.
+
+# SHEET: Stats
+num	label
+708+	Units designed (4 of 6 featured w/ disclosed counts)
+5	States delivered (AZ · FL · MN · MT · TX)
+6	Featured projects
+
+# SHEET: Priorities
+priority	answer	icon
+Unit efficiency & layout optimization	Plans optimized for doors-per-acre and rentable-area efficiency — without sacrificing livability.	grid
+Cost control & constructability	Engineered for buildable, value-stable details — fewer field surprises, tighter budgets.	speed
+Speed through entitlement & delivery	Coordinated documents that clear entitlement faster and keep delivery on schedule.	flow
+Repetition & scalability across projects	Repeatable prototypes plus industrialized construction, so a winning building travels across your pipeline.	layers
+
+# SHEET: Differentiators
+claim	support	icon
+Integrated A + E	Architecture and engineering under one contract — one team accountable end to end.	layers
+Proven at residential volume	Experience delivering high-volume multifamily for active developers.	badge
+Engineered for yield & cost	Layouts and systems tuned for unit yield and constructability, not just aesthetics.	grid
+Built for repeatable rollouts	Prototype and industrialized construction systems built for multi-site pipelines.	flow
+
+# SHEET: Process
+title	body
+Concept & Programming	Site test-fits, unit-mix studies, and yield analysis — validated before you commit capital.
+Entitlements	Coordinated documents built to clear zoning and jurisdiction review without rework.
+Construction Documents	Fully integrated A/E drawing sets — engineered to reduce RFIs and field conflicts.
+Construction Support	Construction administration and responsive submittal/RFI support straight through to delivery.
+
+# SHEET: ProductTypes
+name	meta
+Garden	2 featured projects
+Mid-Rise	2 featured projects
+Townhome	1 featured project
+Mixed-Use	1 featured project
+
+# SHEET: Testimonials
+quote	who
+# (Leave rows empty until BASE4 supplies approved quotes; the page falls back to a product-type proof wall.)
+
+# SHEET: Projects
+name	type	location	units	stories	year	note	url	primary_image
+Flatz308 – Casa Grande, AZ	Garden	Casa Grande, AZ	204	3	2023		https://www.base-4.com/portfolio/flatz308-casa-grande-az/	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-01.jpg
+Multifamily Townhomes	Townhome	—	24	3	—		https://www.base-4.com/portfolio/multifamily-townhomes/	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
+Community Apartments – Edgewater, FL	Garden	Edgewater, FL	—	—	2023		https://www.base-4.com/portfolio/community-apartments-edgewater-fl/	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-01.jpg
+Riverbend North Phase 2 – Otsego, MN	Mid-Rise	Otsego, MN	—	—	2022	Phase 2 of a multi-phase community	https://www.base-4.com/portfolio/riverbend-north-phase-2-otsego-mn/	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
+Yellowstone Landing – Belgrade, MT	Mid-Rise	Belgrade, MT	168	4	2020		https://www.base-4.com/portfolio/yellowstone-landing-belgrade-mt/	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg
+Fuze512 Development – San Marcos, TX	Mixed-Use	San Marcos, TX	312	—	2020		https://www.base-4.com/portfolio/fuze512-development-san-marcos-tx/	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg
+
+# SHEET: ProjectImages
+project	url
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-01.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-02.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-03.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-04.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-05.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-06.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-07.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-08.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-02.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-03.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-04.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-01.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-02.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-03.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-04.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-05.jpg
+Riverbend North Phase 2 – Otsego, MN	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-001.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-003.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-006.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/10/Yellowstone-Landing-–-Belgrade-MT-11.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/10/Yellowstone-Landing-–-Belgrade-MT-12.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2025/03/Yellowstone-Landing-Belgrade-MT-19.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2025/03/Yellowstone-Landing-Belgrade-MT-20.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-007.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-8.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-9.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-10.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2024/06/Fuze512-Development-San-Marcos-TX-16.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2024/06/Fuze512-Development-San-Marcos-TX-17.jpg
+
+# SHEET: Nav
+label	href	children
+Projects	https://www.base-4.com/projects/
+Data Centers	#	Data Center Insights::https://www.base-4.com/data-centers/
+Markets	#	Hospitality::https://www.base-4.com/hospitality/||Multifamily::https://www.base-4.com/multifamily/
+Innovation Lab	#	Destination by BASE4::https://www.base-4.com/destination/||Industrialized Construction Systems::https://www.base-4.com/industrialized-construction/
+Blog	#	Infographics::https://www.base-4.com/infographics/
+About	#	Our Clients::https://www.base-4.com/our-clients/
+Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
+  </script>
+
+  <!-- ===================== APP ===================== -->
+  <script>
+    /* ---------- config ---------- */
+    // Drop a real lead-capture endpoint here (Cloudflare Pages Function, Formspree, etc.)
+    // to POST leads instead of falling back to mailto. Leave empty to use mailto.
+    const FORM_ENDPOINT = '';
+    const db = {};
+
+    /* ---------- icons ---------- */
+    const ICONS = {
+      badge:'<path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.3L12 16.6 6.4 19.5 7.5 13.2 3 8.9 9 8z"/>',
+      flow:'<path d="M4 6h10M4 12h16M4 18h7"/><circle cx="18" cy="6" r="2"/><circle cx="14" cy="18" r="2"/>',
+      speed:'<path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l5-3"/>',
+      link:'<path d="M9 12a3 3 0 0 1 3-3h3a3 3 0 1 1 0 6h-1"/><path d="M15 12a3 3 0 0 1-3 3H9a3 3 0 1 1 0-6h1"/>',
+      layers:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
+      grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
+      fb:'<path d="M14 8h-2a2 2 0 0 0-2 2v2H8v3h2v6h3v-6h2.5l.5-3H13v-1.5c0-.6.4-1 1-1h2z"/>',
+      x:'<path d="M4 4l16 16M20 4L4 20"/>',
+      li:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/>',
+      ig:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+      yt:'<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/>'
+    };
+    const SOCIALS = [
+      ['fb','https://www.facebook.com/'],['x','https://twitter.com/'],
+      ['li','https://www.linkedin.com/'],['ig','https://www.instagram.com/'],
+      ['yt','https://www.youtube.com/']
+    ];
+    const ico = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]||''}</svg>`;
+    const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+    /* ---------- TSV parsing (matches BASE4/Rockt static pattern) ---------- */
+    function parseTSV(text){
+      text.split('# SHEET: ').map(b=>b.trim()).filter(Boolean).forEach(block=>{
+        const lines = block.split(/\r?\n/).filter(l=>l.length && !l.startsWith('#'));
+        if(!lines.length) return;
+        const sheet = lines.shift().trim();
+        const headers = lines.shift().split('\t').map(h=>h.trim());
+        db[sheet] = lines.map(line=>{
+          const vals = line.split('\t');
+          const row = {};
+          headers.forEach((h,i)=> row[h] = (vals[i]||'').trim());
+          return row;
+        });
+      });
+    }
+    const sheet = n => db[n] || [];
+    const kv = n => { const o={}; sheet(n).forEach(r=>{ if(r.Parameter) o[r.Parameter]=r.Value; }); return o; };
+
+    /* ---------- analytics ---------- */
+    function track(event, params){ try{ gtag('event', event, params||{}); }catch(e){} }
+
+    /* ---------- mailto helper (preserves existing subject pre-fill) ---------- */
+    function mailtoHref(extraSubject, body){
+      const s = kv('Site');
+      const subject = extraSubject || s['Mailto Subject'] || 'Project Consultation';
+      let href = `mailto:${s.Email}?subject=${encodeURIComponent(subject)}`;
+      if(body) href += `&body=${encodeURIComponent(body)}`;
+      return href;
+    }
+
+    /* ---------- build ---------- */
+    function boot(){
+      parseTSV(document.getElementById('content-tsv').textContent);
+      buildHeader();
+      renderPage();
+      buildFooter();
+      wireGlobal();
+    }
+
+    function buildHeader(){
+      const nav = document.getElementById('mainNav');
+      nav.innerHTML = sheet('Nav').map(item=>{
+        const kids = (item.children||'').split('||').filter(Boolean).map(c=>{
+          const [label,href]=c.split('::'); return `<a href="${href}">${esc(label)}</a>`;
+        }).join('');
+        if(kids){
+          return `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}<i class="caret"></i></a><div class="dropdown">${kids}</div></div>`;
+        }
+        return `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}</a></div>`;
+      }).join('');
+      document.getElementById('headerSocials').innerHTML = SOCIALS.map(([k,href])=>
+        `<a href="${href}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('');
+    }
+
+    function renderPage(){
+      const hero = kv('Hero'), vp = kv('ValueProp'), site = kv('Site');
+      const stats = sheet('Stats'), priorities = sheet('Priorities'), diffs = sheet('Differentiators');
+      const process = sheet('Process'), types = sheet('ProductTypes'), quotes = sheet('Testimonials').filter(q=>q.quote);
+
+      document.getElementById('app').innerHTML = `
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg"><img src="${hero.Image}" alt="Multifamily residential building exterior at dusk" fetchpriority="high"></div>
+        <div class="wrap hero-inner">
+          <p class="eyebrow">${esc(hero.Eyebrow).replace(/·/g,'<span class="dot">·</span>')}</p>
+          <h1>${esc(hero.H1)}</h1>
+          <p class="sub">${esc(hero.Subhead)}</p>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#consult" data-ev="hero_primary_cta">${esc(hero['Primary CTA'])}</a>
+            <a class="btn btn--ghost" href="#projects" data-ev="hero_secondary_cta">${esc(hero['Secondary CTA'])}</a>
+          </div>
+          <div class="trust-row">${esc(hero['Trust Row']).split('·').map(s=>`<span>${s.trim()}</span>`).join('<span class="sep">·</span>')}</div>
+        </div>
+      </section>
+
+      <!-- VALUE PROP -->
+      <section class="section">
+        <div class="wrap valueprop reveal">
+          <div>
+            <p class="eyebrow">Why BASE4<span class="dot">.</span></p>
+            <h2>${esc(vp.Title)}</h2>
+            <p class="lead">${esc(vp.Body)}</p>
+          </div>
+          <div class="stat-tiles">
+            ${stats.map(s=>`<div class="stat-tile"><div class="num tnum">${esc(s.num)}</div><span class="lbl">${esc(s.label)}</span></div>`).join('')}
+            <div class="stat-foot">Figures derived from the 6 featured projects below — portfolio-wide totals to be confirmed with BASE4.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT DEVELOPERS ARE BUYING -->
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="reveal" style="max-width:60ch">
+            <p class="eyebrow">What developers are actually buying</p>
+            <h2>Buyer priorities — and how we deliver each one.</h2>
+          </div>
+          <div class="grid-4" style="margin-top:40px">
+            ${priorities.map(p=>`
+              <div class="card reveal">
+                <div class="ico">${ico(p.icon)}</div>
+                <div class="priority-tag">${esc(p.priority)}</div>
+                <p class="answer">${esc(p.answer)}</p>
+              </div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- DIFFERENTIATORS -->
+      <section class="section">
+        <div class="wrap">
+          <div class="reveal" style="max-width:60ch">
+            <p class="eyebrow">The difference</p>
+            <h2>One accountable team. Industrialized to scale.</h2>
+          </div>
+          <div class="grid-2" style="margin-top:40px">
+            ${diffs.map(d=>`
+              <div class="card reveal">
+                <div class="ico">${ico(d.icon)}</div>
+                <div class="diff-claim">${esc(d.claim)}</div>
+                <p class="answer">${esc(d.support)}</p>
+              </div>`).join('')}
+          </div>
+          <p class="reveal" style="margin-top:28px"><a class="btn btn--outline" href="https://www.base-4.com/industrialized-construction/" target="_blank" rel="noopener" data-ev="industrialized_link">Explore Industrialized Construction Systems →</a></p>
+        </div>
+      </section>
+
+      <!-- PROCESS TIMELINE -->
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:60ch">
+            <p class="eyebrow">How we work</p>
+            <h2>A four-step delivery path — built for speed without surprises.</h2>
+          </div>
+          <div class="timeline reveal" style="margin-top:48px">
+            ${process.map(s=>`<div class="step"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT-TYPE BAND -->
+      <section class="section">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:60ch">
+            <p class="eyebrow">Product types we deliver</p>
+            <h2>From garden walk-ups to mixed-use mid-rise.</h2>
+          </div>
+          <div class="brand-wall reveal" style="margin-top:40px">
+            ${types.map(b=>`<div class="brand-chip"><div class="name">${esc(b.name)}</div><span class="meta">${esc(b.meta)}</span></div>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT GALLERY -->
+      <section class="section section--alt" id="projects">
+        <div class="wrap">
+          <div class="reveal" style="max-width:60ch">
+            <p class="eyebrow">Featured multifamily projects</p>
+            <h2>Recent work across product types and markets.</h2>
+          </div>
+          <div class="filters reveal" id="filters"></div>
+          <div class="gallery" id="gallery"></div>
+          <div class="reveal center" style="margin-top:40px">
+            <a class="btn btn--dark" href="https://www.base-4.com/projects/" target="_blank" rel="noopener" data-ev="see_all_projects">See All Projects →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF BAND -->
+      <section class="section proof">
+        <div class="wrap">
+          <div class="reveal center" style="max-width:60ch">
+            <p class="eyebrow">Proof</p>
+            <h2 style="color:#fff">${quotes.length ? 'What developers and GCs say.' : 'Built across product types developers actually deliver.'}</h2>
+          </div>
+          <div style="margin-top:40px">
+            ${quotes.length
+              ? `<div class="proof-quotes reveal">${quotes.map(q=>`<div class="quote"><p>“${esc(q.quote)}”</p><p class="who">${esc(q.who)}</p></div>`).join('')}</div>`
+              : `<div class="proof-logos reveal">${types.map(b=>`<div class="brand-chip"><div class="name">${esc(b.name)}</div><span class="meta">${esc(b.meta)}</span></div>`).join('')}</div>`}
+          </div>
+          <p class="reveal center" style="margin-top:32px"><a class="btn btn--primary" href="https://www.base-4.com/our-clients/" target="_blank" rel="noopener" data-ev="client_stories">Read More Client Stories →</a></p>
+        </div>
+      </section>
+
+      <!-- CONVERSION BAND -->
+      <section class="section convert" id="consult">
+        <div class="wrap convert-grid">
+          <div class="reveal">
+            <p class="eyebrow" style="color:rgba(255,255,255,.7)">Let's build</p>
+            <h2>Planning a multifamily project? Get an integrated A+E team focused on unit yield and speed to market.</h2>
+            <p class="lead">Tell us about the project. We'll get the right architecture and engineering leads on a consultation call.</p>
+          </div>
+          <form class="lead-form reveal" id="leadForm">
+            <h3>Schedule a Project Consultation</h3>
+            <div class="form-row">
+              <div class="field"><label>Name*</label><input name="name" required></div>
+              <div class="field"><label>Company</label><input name="company"></div>
+            </div>
+            <div class="field"><label>Email*</label><input type="email" name="email" required></div>
+            <div class="form-row">
+              <div class="field"><label>Project location</label><input name="location" placeholder="City, State"></div>
+              <div class="field"><label>Product type</label>
+                <select name="ptype"><option value="">Select…</option><option>Garden</option><option>Mid-Rise</option><option>Podium / Wrap</option><option>Townhome</option><option>Mixed-Use</option><option>Build-to-Rent</option><option>Other / TBD</option></select>
+              </div>
+            </div>
+            <div class="field"><label># of units</label><input name="units" type="number" min="0" placeholder="e.g. 200"></div>
+            <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Brief, timeline, scope…"></textarea></div>
+            <div class="form-foot">
+              <button type="submit" class="btn btn--primary">Send Consultation Request</button>
+              <span class="mailto-fallback">Prefer email? <a href="${mailtoHref()}" data-ev="mailto_fallback">${esc(site.Email)}</a></span>
+            </div>
+            <p class="form-status" id="formStatus" hidden></p>
+          </form>
+        </div>
+      </section>
+      `;
+
+      buildGallery();
+    }
+
+    /* ---------- gallery + filters ---------- */
+    const FILTERS = ['All','Garden','Mid-Rise','Townhome','Mixed-Use'];
+    function buildGallery(){
+      const fc = document.getElementById('filters');
+      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
+      const projects = sheet('Projects');
+      const grid = document.getElementById('gallery');
+      const render = (filter)=>{
+        const list = filter==='All' ? projects : projects.filter(p=>p.type===filter);
+        grid.innerHTML = list.map((p,idx)=>{
+          const eager = idx<3 ? 'eager' : 'lazy';
+          const fp = idx<3 ? ' fetchpriority="high"' : '';
+          return `
+          <article class="pcard reveal in" data-project="${esc(p.name)}" data-url="${p.url}">
+            <div class="ph"><span class="flag-tag">${esc(p.type)}</span><img src="${p.primary_image}" alt="${esc(p.name)}" loading="${eager}"${fp}></div>
+            <div class="body">
+              <h3>${esc(p.name)}</h3>
+              <div class="loc">${p.location && p.location!=='—' ? esc(p.location) : 'Location TBD'}</div>
+              <div class="meta-row">
+                ${p.units && p.units!=='—' ? `<span><b class="tnum">${esc(p.units)}</b> units</span>`:''}
+                ${p.stories && p.stories!=='—' ? `<span><b class="tnum">${esc(p.stories)}</b> stories</span>`:''}
+                ${p.year && p.year!=='—' ? `<span><b class="tnum">${esc(p.year)}</b></span>`:''}
+              </div>
+              ${p.note ? `<span class="callout">${esc(p.note)}</span>`:''}
+            </div>
+          </article>`;
+        }).join('') || '<p style="color:var(--muted)">No projects in this category yet.</p>';
+      };
+      render('All');
+      fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+        fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.f);
+        track('project_filter',{filter:btn.dataset.f});
+      }));
+      grid.addEventListener('click', e=>{
+        const card = e.target.closest('.pcard');
+        if(card) openLightbox(card.dataset.project, card.dataset.url);
+      });
+    }
+
+    /* ---------- lightbox ---------- */
+    function openLightbox(name, url){
+      const imgs = sheet('ProjectImages').filter(r=>r.project===name).map(r=>r.url);
+      const proj = sheet('Projects').find(p=>p.name===name) || {};
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lbTitle').textContent = name;
+      document.getElementById('lbMeta').textContent = [proj.location && proj.location!=='—'?proj.location:'', proj.units && proj.units!=='—'?proj.units+' units':'', proj.type].filter(Boolean).join(' · ');
+      const stage = document.getElementById('lbStage');
+      stage.src = imgs[0]||proj.primary_image;
+      document.getElementById('lbThumbs').innerHTML = imgs.map((u,i)=>`<img src="${u}" data-i="${i}" class="${i===0?'active':''}" alt="">`).join('');
+      document.getElementById('lbLink').href = url;
+      document.getElementById('lbThumbs').querySelectorAll('img').forEach(t=>t.addEventListener('click',()=>{
+        stage.src = imgs[t.dataset.i];
+        document.getElementById('lbThumbs').querySelectorAll('img').forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+      }));
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+      track('project_card_click',{project:name});
+    }
+    function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+
+    /* ---------- footer ---------- */
+    function buildFooter(){
+      const site = kv('Site');
+      const navCols = sheet('Nav');
+      document.getElementById('footer').innerHTML = `
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+            <p>Integrated architecture and engineering for multifamily developers, owners, and general contractors.</p>
+            <div class="footer-socials">${SOCIALS.map(([k,href])=>`<a href="${href}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('')}</div>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            ${navCols.slice(0,4).map(n=>`<a href="${n.href}">${esc(n.label)}</a>`).join('')}
+          </div>
+          <div>
+            <h4>Company</h4>
+            ${navCols.slice(4).map(n=>`<a href="${n.href}">${esc(n.label)}</a>`).join('')}
+            <a href="https://www.base-4.com/our-clients/">Our Clients</a>
+          </div>
+          <div>
+            <h4>Stay Updated</h4>
+            <p style="font-size:.9rem">The latest news and insights from BASE4.</p>
+            <form class="news-form" id="newsForm">
+              <input type="email" name="news_email" placeholder="you@company.com" required aria-label="Email">
+              <button type="submit">Join</button>
+            </form>
+            <p class="form-status" id="newsStatus" hidden style="color:var(--accent)"></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="reg">${esc(site['Florida Registration'])}</span>
+          <span>${esc(site.Copyright)}</span>
+        </div>
+      </div>`;
+    }
+
+    /* ---------- global wiring ---------- */
+    function wireGlobal(){
+      const header = document.getElementById('header');
+      const onScroll = ()=>{
+        header.classList.toggle('scrolled', window.scrollY>10);
+        document.getElementById('toTop').classList.toggle('show', window.scrollY>600);
+      };
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+      document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+      document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
+
+      document.getElementById('lbClose').addEventListener('click', closeLightbox);
+      document.getElementById('lightbox').addEventListener('click', e=>{ if(e.target.id==='lightbox') closeLightbox(); });
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+      document.body.addEventListener('click', e=>{
+        const a = e.target.closest('[data-ev]'); if(a) track(a.dataset.ev,{label:a.textContent.trim()});
+      });
+
+      const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+      // lead form
+      const form = document.getElementById('leadForm');
+      form.addEventListener('submit', async e=>{
+        e.preventDefault();
+        const d = Object.fromEntries(new FormData(form).entries());
+        const status = document.getElementById('formStatus');
+        track('generate_lead',{product_type:d.ptype||'', units:d.units||'', has_company:!!d.company});
+        if(FORM_ENDPOINT){
+          try{
+            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+            if(!r.ok) throw new Error();
+            status.textContent='Thanks — your request was sent. We\'ll be in touch shortly.';
+          }catch(_){ status.textContent='Something went wrong. Please email '+kv('Site').Email+'.'; }
+        }else{
+          const body = `Name: ${d.name}\nCompany: ${d.company||''}\nEmail: ${d.email}\nLocation: ${d.location||''}\nProduct type: ${d.ptype||''}\nUnits: ${d.units||''}\n\n${d.message||''}`;
+          window.location.href = mailtoHref('Project Consultation Request — '+(d.company||d.name)+' | Multifamily | BASE4', body);
+          status.textContent='Opening your email client to send the request…';
+        }
+        status.hidden=false;
+      });
+
+      // newsletter (folded into footer) — routes via mailto until a list is wired
+      const news = document.getElementById('newsForm');
+      news.addEventListener('submit', e=>{
+        e.preventDefault();
+        const email = new FormData(news).get('news_email');
+        track('newsletter_signup',{});
+        window.location.href = mailtoHref('Newsletter signup', 'Please add this address to the BASE4 newsletter: '+email);
+        const s=document.getElementById('newsStatus'); s.textContent='Thanks! Confirm in your email client.'; s.hidden=false;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', boot);
+  </script>
+</body>
+</html>
