@@ -670,8 +670,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           </div>
           <div style="margin-top:40px">
             ${quotes.length
-              ? `<div class="proof-quotes reveal">${quotes.map(q=>`<div class="quote"><p class="q">“${esc(q.quote)}”</p><p class="who">${esc(q.who)}</p>${q.role?`<p class="role">${esc(q.role)}</p>`:''}</div>`).join('')}</div>
-                 <p class="proof-note">Sample testimonials shown for layout review — to be replaced with approved client quotes (Leila / Operations).</p>`
+              ? `<div class="proof-quotes reveal">${quotes.map(q=>`<div class="quote"><p class="q">“${esc(q.quote)}”</p><p class="who">${esc(q.who)}</p>${q.role?`<p class="role">${esc(q.role)}</p>`:''}</div>`).join('')}</div>`
               : `<div class="proof-logos reveal">${brands.map(b=>`<div class="chip"><img src="${b.logo}" alt="${esc(b.name)}" loading="lazy"></div>`).join('')}</div>`}
           </div>
           <p class="reveal center" style="margin-top:28px"><a class="btn btn--primary" href="https://www.base-4.com/our-clients/" target="_blank" rel="noopener" data-ev="client_stories">Read More Client Stories →</a></p>
