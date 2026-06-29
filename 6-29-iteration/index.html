@@ -601,12 +601,10 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
                 <a class="btn btn--primary" href="#projects" data-ev="hero_primary_cta">${esc(hero['Primary CTA'])}</a>
                 <button class="btn btn--ghost" type="button" data-consult data-ev="hero_secondary_cta">${esc(hero['Secondary CTA'])}</button>
               </div>
-              <div class="trust-row">${esc(hero['Trust Row']).split('·').map(s=>`<span>${s.trim()}</span>`).join('<span class="sep">·</span>')}</div>
             </div>
             <div class="hero-stats">
               <div class="stat-tiles">
                 ${stats.map(s=>`<div class="stat-tile"><div class="num tnum">${esc(s.num)}</div><span class="lbl">${esc(s.label)}</span></div>`).join('')}
-                <div class="stat-foot">Figures derived from the six featured projects below — portfolio-wide totals to be confirmed with BASE4 Operations.</div>
               </div>
             </div>
           </div>
@@ -648,44 +646,12 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         </div>
       </section>
 
-      <!-- SUPPORTING — BUYER PRIORITIES (kept from approved build) -->
-      <section class="section section--alt">
-        <div class="wrap">
-          <div class="reveal" style="max-width:60ch">
-            <p class="eyebrow">What developers are actually buying</p>
-            <h2>Buyer priorities — and how we deliver each one.</h2>
-          </div>
-          <div class="grid-4" style="margin-top:40px">
-            ${priorities.map(p=>`
-              <div class="card reveal">
-                <div class="ico">${ico(p.icon)}</div>
-                <div class="priority-tag">${esc(p.priority)}</div>
-                <p class="answer">${esc(p.answer)}</p>
-              </div>`).join('')}
-          </div>
-        </div>
-      </section>
-
-      <!-- SUPPORTING — PROCESS TIMELINE (kept from approved build) -->
-      <section class="section">
-        <div class="wrap">
-          <div class="reveal center" style="max-width:60ch">
-            <p class="eyebrow">How we work</p>
-            <h2>A four-step delivery path — built for speed without surprises.</h2>
-          </div>
-          <div class="timeline reveal" style="margin-top:48px">
-            ${process.map(s=>`<div class="step"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></div>`).join('')}
-          </div>
-        </div>
-      </section>
-
       <!-- SECTION 5 — NATIONAL HOSPITALITY PORTFOLIO -->
       <section class="section section--alt" id="projects">
         <div class="wrap">
           <div class="reveal" style="max-width:64ch">
             <p class="eyebrow">Featured work</p>
             <h2>Hospitality portfolio.</h2>
-            <p class="lead" style="font-size:1.05rem">Six recent hotels delivered across Hyatt, Marriott, Hilton, and IHG flags. Filter by brand to see relevant experience — tap any project to view the full image set.</p>
           </div>
           <div class="filters reveal" id="filters" style="margin-top:24px"></div>
           <div class="gallery" id="gallery"></div>
