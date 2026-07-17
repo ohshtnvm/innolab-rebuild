@@ -218,12 +218,15 @@
     .pcard:hover .view .arw{transform:translateX(4px)}
     .callout{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:600;color:var(--deep);background:rgba(141,198,63,.16);padding:4px 10px;border-radius:6px}
 
-    /* ===================== RENDER → REALITY ===================== */
-    .rvr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .rvr-item{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:var(--surface-alt);aspect-ratio:1/1;margin:0}
+    /* ===================== RENDER → REALITY (carousel) ===================== */
+    .rvr-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .rvr-track{display:flex;width:max-content;padding:8px 0;animation:marquee 70s linear infinite}
+    .rvr-marquee:hover .rvr-track{animation-play-state:paused}
+    .rvr-item{flex:0 0 auto;width:min(360px,78vw);margin:0 20px 0 0;position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:var(--surface-alt);aspect-ratio:1/1}
     .rvr-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
     .rvr-item:hover img{transform:scale(1.04)}
     .rvr-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 16px 14px;color:#fff;font-family:'Inter Tight';font-weight:600;font-size:.98rem;background:linear-gradient(180deg,transparent,rgba(14,26,20,.82))}
+    @media(prefers-reduced-motion:reduce){.rvr-track{animation:none}.rvr-marquee{overflow-x:auto}}
 
     /* ===================== PROOF BAND ===================== */
     .proof{background:var(--deep);color:#fff}
@@ -313,7 +316,6 @@
     @media(max-width:1024px){
       .grid-4,.timeline{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
-      .rvr-grid{grid-template-columns:1fr 1fr}
       .diff-grid{grid-template-columns:1fr;gap:32px}
       .proof-logos{grid-template-columns:repeat(3,1fr)}
       .step::after{display:none}
@@ -331,7 +333,7 @@
       .hero-inner{padding-top:88px;padding-bottom:76px}
     }
     @media(max-width:560px){
-      .grid-4,.timeline,.gallery,.rvr-grid,.footer-grid,.form-row,.proof-logos{grid-template-columns:1fr}
+      .grid-4,.timeline,.gallery,.footer-grid,.form-row,.proof-logos{grid-template-columns:1fr}
       .section{padding:60px 0}
     }
   </style>
@@ -702,7 +704,9 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <h2>Render to reality.</h2>
             <p class="lead" style="font-size:1.05rem">What BASE4 designs is what opens. See our renderings side by side with the finished, operating hotels — same lines, same materials, same result.</p>
           </div>
-          <div class="rvr-grid reveal" id="rvrGrid" style="margin-top:32px"></div>
+        </div>
+        <div class="rvr-marquee reveal" style="margin-top:32px">
+          <div class="rvr-track" id="rvrTrack"></div>
         </div>
       </section>
 
@@ -743,14 +747,16 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     /* ---------- render → reality ---------- */
     function buildRvr(){
       const items = sheet('RenderReality').filter(r=>r.file);
-      const grid = document.getElementById('rvrGrid');
-      if(!grid) return;
-      grid.innerHTML = items.map((r,i)=>`
-        <figure class="rvr-item" data-file="${r.file}" data-label="${esc(r.label)}">
-          <img src="${r.file}" alt="${esc(r.label)} — BASE4 rendering beside the built hotel" loading="${i<3?'eager':'lazy'}">
+      const track = document.getElementById('rvrTrack');
+      if(!track) return;
+      const card = (r,dup)=>`
+        <figure class="rvr-item" data-file="${r.file}" data-label="${esc(r.label)}"${dup?' aria-hidden="true"':''}>
+          <img src="${r.file}" alt="${esc(r.label)} — BASE4 rendering beside the built hotel" loading="lazy">
           <figcaption class="rvr-cap">${esc(r.label)}</figcaption>
-        </figure>`).join('');
-      grid.addEventListener('click', e=>{
+        </figure>`;
+      // duplicate the set so the marquee loops seamlessly
+      track.innerHTML = items.map(r=>card(r,false)).join('') + items.map(r=>card(r,true)).join('');
+      track.addEventListener('click', e=>{
         const it = e.target.closest('.rvr-item');
         if(it) openRvr(it.dataset.file, it.dataset.label);
       });
