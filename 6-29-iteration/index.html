@@ -218,6 +218,13 @@
     .pcard:hover .view .arw{transform:translateX(4px)}
     .callout{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:600;color:var(--deep);background:rgba(141,198,63,.16);padding:4px 10px;border-radius:6px}
 
+    /* ===================== RENDER → REALITY ===================== */
+    .rvr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .rvr-item{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:var(--surface-alt);aspect-ratio:1/1;margin:0}
+    .rvr-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .rvr-item:hover img{transform:scale(1.04)}
+    .rvr-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 16px 14px;color:#fff;font-family:'Inter Tight';font-weight:600;font-size:.98rem;background:linear-gradient(180deg,transparent,rgba(14,26,20,.82))}
+
     /* ===================== PROOF BAND ===================== */
     .proof{background:var(--deep);color:#fff}
     .proof .eyebrow{color:rgba(255,255,255,.7)}
@@ -306,6 +313,7 @@
     @media(max-width:1024px){
       .grid-4,.timeline{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
+      .rvr-grid{grid-template-columns:1fr 1fr}
       .diff-grid{grid-template-columns:1fr;gap:32px}
       .proof-logos{grid-template-columns:repeat(3,1fr)}
       .step::after{display:none}
@@ -323,7 +331,7 @@
       .hero-inner{padding-top:88px;padding-bottom:76px}
     }
     @media(max-width:560px){
-      .grid-4,.timeline,.gallery,.footer-grid,.form-row,.proof-logos{grid-template-columns:1fr}
+      .grid-4,.timeline,.gallery,.rvr-grid,.footer-grid,.form-row,.proof-logos{grid-template-columns:1fr}
       .section{padding:60px 0}
     }
   </style>
@@ -420,7 +428,7 @@ Body	Hotel projects live and die on speed, coordination, and precision. BASE4 ke
 num	label
 80,000+	Keys Designed
 74	Different Hotel Brands
-43	States Represented
+45	States Represented
 
 # SHEET: Priorities
 priority	answer	icon
@@ -431,10 +439,10 @@ Coordination across ownership, brand & design	One integrated team means one poin
 
 # SHEET: Differentiators
 claim	support	icon	image
-Integrated A&E + Interiors	Architecture, engineering, and interiors work together from the start, so decisions stay aligned across the project.	layers	integrated-teams.png
-Proven Across Major Brands	Experience delivering projects across all of the major hotel brands.	badge	https://www.base-4.com/wp-content/uploads/2025/07/Tapestry-Ft-Worth-TX-11.jpg
+Integrated A&E + Interiors	Architecture, engineering, and interiors work together from the start, so decisions stay aligned across the project.	layers	usp-1.webp
+Proven Across Major Brands	Experience delivering projects across all of the major hotel brands.	badge	usp-2.webp
 100% Revit / BIM Delivery	Every project is delivered in BIM, helping teams catch conflicts earlier, reduce rework, and produce tighter documents.	grid	bim-integrated.png
-Cheaper, Faster Delivery	BASE4 designs with cost, schedule, and constructability in mind, helping developers move from concept to permit to build with fewer delays and better coordination.	speed	faster-delivery.png
+Cheaper, Faster Delivery	BASE4 designs with cost, schedule, and constructability in mind, helping developers move from concept to permit to build with fewer delays and better coordination.	speed	usp-4.webp
 
 # SHEET: Process
 title	body
@@ -497,6 +505,23 @@ Cambria – Colorado Springs, CO	https://www.base-4.com/wp-content/uploads/2022/
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_01.jpg
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_02.jpg
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_03.jpg
+
+# SHEET: RenderReality
+file	label
+rvr/fairfield.png	Fairfield Inn & Suites by Marriott
+rvr/tru-hilton.png	Tru by Hilton
+rvr/hyatt-place.png	Hyatt Place
+rvr/holiday-inn-express.png	Holiday Inn Express by IHG
+rvr/residence-inn.png	Residence Inn by Marriott
+rvr/woodspring-suites.png	WoodSpring Suites by Choice
+rvr/courtyard.png	Courtyard by Marriott
+rvr/home2-suites.png	Home2 Suites by Hilton
+rvr/hampton-inn.png	Hampton Inn & Suites by Hilton
+rvr/hyatt-house.png	Hyatt House
+rvr/towneplace-suites.png	TownePlace Suites by Marriott
+rvr/residence-inn-2.png	Residence Inn by Marriott
+rvr/woodspring-suites-2.png	WoodSpring Suites by Choice
+rvr/rooftop-lounge.png	Rooftop Lounge Interior
 
 # SHEET: Nav
 label	href	children
@@ -669,6 +694,18 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         </div>
       </section>
 
+      <!-- SECTION 5.5 — RENDER TO REALITY -->
+      <section class="section" id="render-reality">
+        <div class="wrap">
+          <div class="reveal" style="max-width:64ch">
+            <p class="eyebrow">Design that gets built</p>
+            <h2>Render to reality.</h2>
+            <p class="lead" style="font-size:1.05rem">What BASE4 designs is what opens. See our renderings side by side with the finished, operating hotels — same lines, same materials, same result.</p>
+          </div>
+          <div class="rvr-grid reveal" id="rvrGrid" style="margin-top:32px"></div>
+        </div>
+      </section>
+
       <!-- SECTION 6 — TESTIMONIALS -->
       <section class="section proof">
         <div class="wrap">
@@ -700,6 +737,34 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       `;
 
       buildGallery();
+      buildRvr();
+    }
+
+    /* ---------- render → reality ---------- */
+    function buildRvr(){
+      const items = sheet('RenderReality').filter(r=>r.file);
+      const grid = document.getElementById('rvrGrid');
+      if(!grid) return;
+      grid.innerHTML = items.map((r,i)=>`
+        <figure class="rvr-item" data-file="${r.file}" data-label="${esc(r.label)}">
+          <img src="${r.file}" alt="${esc(r.label)} — BASE4 rendering beside the built hotel" loading="${i<3?'eager':'lazy'}">
+          <figcaption class="rvr-cap">${esc(r.label)}</figcaption>
+        </figure>`).join('');
+      grid.addEventListener('click', e=>{
+        const it = e.target.closest('.rvr-item');
+        if(it) openRvr(it.dataset.file, it.dataset.label);
+      });
+    }
+    function openRvr(file, label){
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lbTitle').textContent = label;
+      document.getElementById('lbMeta').textContent = 'Rendering → Reality';
+      document.getElementById('lbStage').src = file;
+      document.getElementById('lbThumbs').innerHTML = '';
+      document.getElementById('lbLink').style.display = 'none';
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+      track('render_reality_view',{image:label});
     }
 
     /* ---------- gallery + filters ---------- */
@@ -754,7 +819,8 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       const stage = document.getElementById('lbStage');
       stage.src = imgs[0]||proj.primary_image;
       document.getElementById('lbThumbs').innerHTML = imgs.map((u,i)=>`<img src="${u}" data-i="${i}" class="${i===0?'active':''}" alt="">`).join('');
-      document.getElementById('lbLink').href = url;
+      const lbLink = document.getElementById('lbLink');
+      lbLink.href = url; lbLink.style.display = '';
       document.getElementById('lbThumbs').querySelectorAll('img').forEach(t=>t.addEventListener('click',()=>{
         stage.src = imgs[t.dataset.i];
         document.getElementById('lbThumbs').querySelectorAll('img').forEach(x=>x.classList.remove('active'));
