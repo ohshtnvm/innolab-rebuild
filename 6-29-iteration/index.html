@@ -140,7 +140,7 @@
     .hero-stats .stat-foot{color:rgba(255,255,255,.72)}
     @media(prefers-reduced-motion:reduce){
       .hero-bg video{display:none}
-      .hero-bg{background-image:url('base4-hero-poster.jpg')}
+      .hero-bg{background-image:url('https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/base4-hero-poster.jpg')}
     }
     @media(max-width:900px){
       .hero-grid{grid-template-columns:1fr;gap:34px}
@@ -346,7 +346,7 @@
   <!-- ===================== HEADER ===================== -->
   <header id="header">
     <div class="wrap nav-bar">
-      <a class="brand" href="https://www.base-4.com/" aria-label="BASE4 home"><img src="logos/base4-logo.png" alt="BASE4"></a>
+      <a class="brand" href="https://www.base-4.com/" aria-label="BASE4 home"><img src="https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/logos/base4-logo.png" alt="BASE4"></a>
       <nav class="main-nav" id="mainNav"></nav>
       <div class="header-right">
         <div class="socials" id="headerSocials"></div>
@@ -545,6 +545,12 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     // Drop a real lead-capture endpoint here (Cloudflare Pages Function, Web3Forms, Formspree, etc.)
     // to POST leads instead of falling back to mailto. Leave empty to use mailto.
     const FORM_ENDPOINT = '';
+    // Absolute base for LOCAL assets (logos, usp, rvr, hero video + poster) so this single file can be
+    // embedded on any origin and still load its assets from the hosted repo copy. Assets already served
+    // from an absolute URL (e.g. base-4.com photos) pass through untouched.
+    // To use Cloudflare Pages instead, swap to: 'https://innolab-rebuild.pages.dev/6-29-iteration/'
+    const ASSET_BASE = 'https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/';
+    const asset = p => (!p || /^(https?:|data:|\/\/)/.test(p)) ? p : ASSET_BASE + p.replace(/^\.?\//,'');
     const db = {};
 
     /* ---------- icons ---------- */
@@ -624,8 +630,8 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       <!-- SECTION 1 — HERO (video bg + value-prop content + stats) -->
       <section class="hero">
         <div class="hero-bg">
-          <video autoplay muted loop playsinline poster="base4-hero-poster.jpg" preload="auto" aria-hidden="true">
-            <source src="base4-hero.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline poster="${asset('base4-hero-poster.jpg')}" preload="auto" aria-hidden="true">
+            <source src="${asset('base4-hero.mp4')}" type="video/mp4">
           </video>
         </div>
         <div class="wrap hero-inner">
@@ -657,7 +663,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         </div>
         <div class="logo-marquee reveal" style="margin-top:44px">
           <div class="logo-track">
-            ${loops.map(b=>`<img src="${b.logo}" alt="${esc(b.name)}" loading="lazy">`).join('')}
+            ${loops.map(b=>`<img src="${asset(b.logo)}" alt="${esc(b.name)}" loading="lazy">`).join('')}
           </div>
         </div>
       </section>
@@ -673,7 +679,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           </div>
           <div class="grid-2">
             ${diffs.map(d=>{
-              const src = /^https?:\/\//.test(d.image)?d.image:'usp/'+d.image;
+              const src = asset(/^https?:\/\//.test(d.image)?d.image:'usp/'+d.image);
               const img = `<img src="${src}" alt="${esc(d.claim)}" loading="lazy">`;
               const media = d.url
                 ? `<a class="usp-img" href="${d.url}" target="_blank" rel="noopener" data-ev="usp_project" aria-label="View ${esc(d.claim)} project">${img}</a>`
@@ -734,7 +740,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           <div style="margin-top:40px">
             ${quotes.length
               ? `<div class="proof-quotes reveal">${quotes.map(q=>`<div class="quote"><p class="q">“${esc(q.quote)}”</p><p class="who">${esc(q.who)}</p>${q.role?`<p class="role">${esc(q.role)}</p>`:''}</div>`).join('')}</div>`
-              : `<div class="proof-logos reveal">${brands.map(b=>`<div class="chip"><img src="${b.logo}" alt="${esc(b.name)}" loading="lazy"></div>`).join('')}</div>`}
+              : `<div class="proof-logos reveal">${brands.map(b=>`<div class="chip"><img src="${asset(b.logo)}" alt="${esc(b.name)}" loading="lazy"></div>`).join('')}</div>`}
           </div>
           <p class="reveal center" style="margin-top:28px"><a class="btn btn--primary" href="https://www.base-4.com/our-clients/" target="_blank" rel="noopener" data-ev="client_stories">Read More Client Stories →</a></p>
         </div>
@@ -742,7 +748,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
 
       <!-- SECTION 7 — CLOSING CTA -->
       <section class="closing" id="consult">
-        <div class="closing-bg" style="background-image:url('base4-hero-poster.jpg')"></div>
+        <div class="closing-bg" style="background-image:url('${asset('base4-hero-poster.jpg')}')"></div>
         <div class="wrap">
           <div class="inner reveal">
             <p class="eyebrow" style="color:rgba(255,255,255,.75)">Ready to build</p>
@@ -765,7 +771,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       if(!track) return;
       const card = (r,dup)=>`
         <figure class="rvr-item" data-file="${r.file}" data-label="${esc(r.label)}"${dup?' aria-hidden="true"':''}>
-          <img src="${r.file}" alt="${esc(r.label)} — BASE4 rendering beside the built hotel" loading="lazy">
+          <img src="${asset(r.file)}" alt="${esc(r.label)} — BASE4 rendering beside the built hotel" loading="lazy">
           <figcaption class="rvr-cap">${esc(r.label)}</figcaption>
         </figure>`;
       // duplicate the set so the marquee loops seamlessly
@@ -779,7 +785,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       const lb = document.getElementById('lightbox');
       document.getElementById('lbTitle').textContent = label;
       document.getElementById('lbMeta').textContent = 'Rendering → Reality';
-      document.getElementById('lbStage').src = file;
+      document.getElementById('lbStage').src = asset(file);
       document.getElementById('lbThumbs').innerHTML = '';
       document.getElementById('lbLink').style.display = 'none';
       lb.classList.add('open');
@@ -870,7 +876,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       <div class="wrap">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="brand-logo" href="https://www.base-4.com/" aria-label="BASE4 home"><img src="logos/base4-logo.png" alt="BASE4"></a>
+            <a class="brand-logo" href="https://www.base-4.com/" aria-label="BASE4 home"><img src="${asset('logos/base4-logo.png')}" alt="BASE4"></a>
             <p>Integrated architecture, engineering, and interior design for hospitality developers, owners, and general contractors.</p>
             <div class="footer-socials">${SOCIALS.map(([k,href])=>`<a href="${href}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('')}</div>
           </div>
