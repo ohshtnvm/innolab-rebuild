@@ -181,10 +181,13 @@
     .diff-intro h2{font-size:clamp(1.7rem,3vw,2.3rem)}
     /* USP cards with image banners */
     .usp-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-    .usp-img{aspect-ratio:16/10;overflow:hidden;background:var(--surface-alt)}
+    .usp-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--surface-alt)}
     .usp-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
     .usp-card:hover .usp-img img{transform:scale(1.04)}
     .usp-body{padding:22px 24px 24px}
+    .usp-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:'Inter Tight';font-weight:700;font-size:.86rem;color:var(--deep);text-decoration:none}
+    .usp-link .arw{transition:transform .2s}
+    .usp-link:hover .arw{transform:translateX(4px)}
 
     /* ===================== PROCESS TIMELINE ===================== */
     .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
@@ -440,11 +443,11 @@ Speed to market & opening timelines	Repeatable prototype workflows plus industri
 Coordination across ownership, brand & design	One integrated team means one point of accountability, fewer handoffs, and fewer RFIs.	link
 
 # SHEET: Differentiators
-claim	support	icon	image
-Integrated A&E + Interiors	Architecture, engineering, and interiors work together from the start, so decisions stay aligned across the project.	layers	usp-1.webp
+claim	support	icon	image	url
+Integrated A&E + Interiors	Architecture, engineering, and interiors work together from the start, so decisions stay aligned across the project.	layers	https://www.base-4.com/wp-content/uploads/2024/09/Element-Albuquerque-NM-005.jpg	https://www.base-4.com/portfolio/element-albuquerque-nm/
 Proven Across Major Brands	Experience delivering projects across all of the major hotel brands.	badge	usp-2.webp
 100% Revit / BIM Delivery	Every project is delivered in BIM, helping teams catch conflicts earlier, reduce rework, and produce tighter documents.	grid	bim-integrated.png
-Cheaper, Faster Delivery	BASE4 designs with cost, schedule, and constructability in mind, helping developers move from concept to permit to build with fewer delays and better coordination.	speed	usp-4.webp
+Cheaper, Faster Delivery	BASE4 designs with cost, schedule, and constructability in mind, helping developers move from concept to permit to build with fewer delays and better coordination.	speed	https://www.base-4.com/wp-content/uploads/2024/03/Hyatt-Place-Orlando-FL-001.jpg	https://www.base-4.com/portfolio/hyatt-place-orlando-fl/
 
 # SHEET: Process
 title	body
@@ -669,14 +672,25 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <p style="margin-top:8px"><a class="btn btn--outline" href="https://www.base-4.com/industrialized-construction-systems/" target="_blank" rel="noopener" data-ev="one_team_delivery">Explore One-Team Delivery →</a></p>
           </div>
           <div class="grid-2">
-            ${diffs.map(d=>`
+            ${diffs.map(d=>{
+              const src = /^https?:\/\//.test(d.image)?d.image:'usp/'+d.image;
+              const img = `<img src="${src}" alt="${esc(d.claim)}" loading="lazy">`;
+              const media = d.url
+                ? `<a class="usp-img" href="${d.url}" target="_blank" rel="noopener" data-ev="usp_project" aria-label="View ${esc(d.claim)} project">${img}</a>`
+                : `<div class="usp-img">${img}</div>`;
+              const link = d.url
+                ? `<a class="usp-link" href="${d.url}" target="_blank" rel="noopener" data-ev="usp_project">View project <span class="arw">→</span></a>`
+                : '';
+              return `
               <div class="card usp-card reveal">
-                <div class="usp-img"><img src="${/^https?:\/\//.test(d.image)?d.image:'usp/'+d.image}" alt="${esc(d.claim)}" loading="lazy"></div>
+                ${media}
                 <div class="usp-body">
                   <div class="diff-claim">${esc(d.claim)}</div>
                   <p class="answer">${esc(d.support)}</p>
+                  ${link}
                 </div>
-              </div>`).join('')}
+              </div>`;
+            }).join('')}
           </div>
         </div>
       </section>
