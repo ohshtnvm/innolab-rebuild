@@ -970,6 +970,27 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         window.location.href = `mailto:${kv('Site').Email}?subject=${encodeURIComponent('Newsletter signup')}&body=${encodeURIComponent('Please add this address to the BASE4 newsletter: '+email)}`;
         const s=document.getElementById('newsStatus'); s.textContent='Thanks! Confirm in your email client.'; s.hidden=false;
       });
+
+      wireEmbed();
+    }
+
+    /* ---------- iframe embed height reporter (Route B) ----------
+       Inert unless the page is loaded inside an iframe. Posts the content height to the
+       parent so an auto-height embed can resize to fit. Parent listens for
+       {type:'base4-embed-height', height:<px>}. See HANDOFF-IFRAME.md. */
+    function wireEmbed(){
+      if(window.self === window.top) return;            // not embedded — do nothing
+      document.documentElement.classList.add('is-embedded');
+      const postHeight = ()=>{
+        const h = Math.ceil(document.documentElement.scrollHeight);
+        try{ window.parent.postMessage({type:'base4-embed-height', height:h}, '*'); }catch(e){}
+      };
+      window.addEventListener('load', postHeight);
+      window.addEventListener('resize', postHeight);
+      if('ResizeObserver' in window){ new ResizeObserver(postHeight).observe(document.body); }
+      document.addEventListener('click', ()=>setTimeout(postHeight, 80)); // filters, nav toggle, lightbox
+      setTimeout(postHeight, 400); setTimeout(postHeight, 1500);          // catch late-loading images
+      postHeight();
     }
 
     document.addEventListener('DOMContentLoaded', boot);
