@@ -4,29 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO (carried over from existing base-4.com/hospitality, tightened) -->
-  <title>Hospitality Architecture, Engineering & Interiors | BASE4</title>
-  <meta name="description" content="BASE4 delivers hotels from concept to construction under one accountable architecture, engineering, and interior design team — built for brand compliance, permit speed, and cost certainty across national flags.">
-  <link rel="canonical" href="https://www.base-4.com/hospitality/">
+  <title>Infographics & Technical Resources | BASE4</title>
+  <meta name="description" content="Free PDF guides from BASE4 — Hotel HVAC systems, modular construction, bathroom pods, tankless water heaters, and more. Practical technical resources for hotel developers and contractors.">
+  <link rel="canonical" href="https://www.base-4.com/infographics/">
   <meta name="theme-color" content="#8dc63f">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hospitality Architecture, Engineering & Interiors | BASE4">
-  <meta property="og:description" content="One integrated A+E+I team for hotel developers, owners, and general contractors. Brand-compliant, permit-ready, cost-certain.">
-  <meta property="og:url" content="https://www.base-4.com/hospitality/">
-  <meta property="og:image" content="https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg">
+  <meta property="og:title" content="Infographics & Technical Resources | BASE4">
+  <meta property="og:description" content="Free PDF guides on hotel HVAC, modular construction, and more from BASE4's integrated A+E+I team.">
+  <meta property="og:url" content="https://www.base-4.com/infographics/">
+  <meta property="og:image" content="https://www.base-4.com/wp-content/uploads/2023/11/infographics-banner-01.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hospitality Architecture, Engineering & Interiors | BASE4">
-  <meta name="twitter:description" content="One integrated A+E+I team for hotel developers, owners, and general contractors.">
-  <meta name="twitter:image" content="https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg">
+  <meta name="twitter:title" content="Infographics & Technical Resources | BASE4">
+  <meta name="twitter:description" content="Free PDF guides on hotel HVAC, modular construction, and more from BASE4's integrated A+E+I team.">
+  <meta name="twitter:image" content="https://www.base-4.com/wp-content/uploads/2023/11/infographics-banner-01.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- ===================== GA4 ===================== -->
-  <!-- TODO(BASE4): replace G-XXXXXXXXXX with the real GA4 Measurement ID -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -63,16 +61,15 @@
       -webkit-font-smoothing:antialiased;
     }
     h1,h2,h3,h4,.display{font-family:'Inter Tight','Inter',sans-serif;line-height:1.12;letter-spacing:-.01em;font-weight:700}
-    h1{font-size:clamp(2.5rem,5vw,4rem);margin:0 0 .5em}
+    h1{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:0 0 .5em}
     h2{font-size:clamp(1.7rem,3vw,2.1rem);margin:0 0 .5em}
-    h3{font-size:1.2rem;margin:0 0 .4em}
+    h3{font-size:1.1rem;margin:0 0 .4em}
     p{margin:0 0 1em}
     img{max-width:100%;display:block}
     a{color:inherit}
-    .tnum{font-variant-numeric:tabular-nums}
 
     .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-    .section{padding:88px 0}
+    .section{padding:80px 0}
     .section--alt{background:var(--surface-alt)}
     .eyebrow{font-family:'Inter Tight';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--deep);margin:0 0 18px}
     .eyebrow .dot{color:var(--accent)}
@@ -94,19 +91,21 @@
     .btn--dark{background:var(--deep);color:#fff}
     .btn--outline{background:transparent;color:var(--deep);border-color:var(--hairline)}
     .btn--outline:hover{border-color:var(--deep)}
+    .btn--sm{padding:10px 18px;font-size:.88rem}
 
     /* ===================== HEADER ===================== */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:padding .2s ease,border-color .2s ease,box-shadow .2s ease}
     header.scrolled{border-color:var(--hairline);box-shadow:0 1px 0 rgba(14,26,20,.04)}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;transition:padding .2s ease}
-    header.scrolled .nav-bar{padding:10px 0}
-    .brand{font-family:'Inter Tight';font-weight:800;font-size:1.4rem;letter-spacing:.02em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px}
-    .brand .mark{width:12px;height:12px;border-radius:3px;background:var(--accent);display:inline-block}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0;transition:padding .2s ease}
+    header.scrolled .nav-bar{padding:9px 0}
+    .brand{display:flex;align-items:center;text-decoration:none}
+    .brand img{height:32px;width:auto;display:block}
+    header.scrolled .brand img{height:28px}
     .main-nav{display:flex;align-items:center;gap:4px}
     .nav-item{position:relative}
     .nav-link{display:inline-flex;align-items:center;gap:5px;padding:10px 12px;font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);border-radius:8px}
     .nav-link:hover{background:var(--surface-alt)}
-    .nav-item .caret{width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px;transition:transform .2s}
+    .nav-item .caret{font-style:normal;display:inline-block;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px;transition:transform .2s}
     .dropdown{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--shadow-lg);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .18s ease}
     .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(4px)}
     .nav-item:hover .caret{transform:rotate(225deg);margin-top:2px}
@@ -122,100 +121,141 @@
     .nav-toggle span::before{position:absolute;top:-6px}
     .nav-toggle span::after{position:absolute;top:6px}
 
-    /* ===================== HERO ===================== */
-    .hero{position:relative;color:#fff;overflow:hidden;isolation:isolate}
-    .hero-bg{position:absolute;inset:0;z-index:-2}
-    .hero-bg img{width:100%;height:100%;object-fit:cover}
-    .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(28,58,46,.94) 0%,rgba(28,58,46,.78) 42%,rgba(14,26,20,.45) 100%)}
-    .hero-inner{padding:118px 0 104px;max-width:780px}
-    .hero h1{color:#fff}
-    .hero .eyebrow{color:rgba(255,255,255,.85)}
-    .hero p.sub{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:60ch;margin-bottom:32px}
-    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-    .trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:.9rem;color:rgba(255,255,255,.82);font-weight:500}
-    .trust-row .sep{color:var(--accent)}
+    /* ===================== PAGE HERO (compact) ===================== */
+    .page-hero{background:var(--deep);color:#fff;padding:80px 0 72px;position:relative;overflow:hidden;isolation:isolate}
+    .page-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 120% at 80% 50%,rgba(141,198,63,.12) 0%,transparent 70%)}
+    .page-hero .eyebrow{color:rgba(255,255,255,.72)}
+    .page-hero h1{color:#fff;max-width:22ch}
+    .page-hero .lead{color:rgba(255,255,255,.82);margin-bottom:0}
+    .page-hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+    .page-hero-stat{text-align:right}
+    .page-hero-stat .num{font-family:'Inter Tight';font-weight:800;font-size:3.4rem;color:var(--accent);line-height:1;letter-spacing:-.02em}
+    .page-hero-stat .lbl{font-size:.88rem;color:rgba(255,255,255,.65);margin-top:4px;white-space:nowrap}
+    @media(max-width:860px){
+      .page-hero-grid{grid-template-columns:1fr}
+      .page-hero-stat{text-align:left}
+    }
 
-    /* ===================== VALUE STRIP ===================== */
-    .valueprop{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
-    .stat-tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-    .stat-tile{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:24px 18px;text-align:center;box-shadow:var(--shadow)}
-    .stat-tile .num{font-family:'Inter Tight';font-weight:800;font-size:2.1rem;color:var(--deep);line-height:1}
-    .stat-tile .lbl{display:block;margin-top:8px;font-size:.82rem;color:var(--muted);font-weight:600}
-    .stat-foot{grid-column:1/-1;font-size:.78rem;color:var(--muted);text-align:center;margin-top:4px}
+    /* ===================== CATEGORY FILTERS ===================== */
+    .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 36px}
+    .filter-btn{font-family:'Inter Tight';font-weight:600;font-size:.9rem;padding:9px 18px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;transition:.15s;color:var(--ink);white-space:nowrap}
+    .filter-btn:hover{border-color:var(--deep);color:var(--deep)}
+    .filter-btn.active{background:var(--deep);color:#fff;border-color:var(--deep)}
 
-    /* ===================== CARDS ===================== */
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-    .card .ico{width:46px;height:46px;border-radius:12px;background:rgba(141,198,63,.16);display:grid;place-items:center;margin-bottom:18px;color:var(--deep)}
-    .card .ico svg{width:24px;height:24px}
-    .priority-tag{font-family:'Inter Tight';font-weight:700;color:var(--deep);font-size:1.05rem;margin-bottom:6px}
-    .answer{color:var(--muted);font-size:.98rem;margin:0}
-    .diff-claim{font-family:'Inter Tight';font-weight:700;font-size:1.15rem;margin-bottom:6px}
+    /* ===================== RESOURCE GRID ===================== */
+    .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .rcard{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .22s ease, box-shadow .22s ease;display:flex;flex-direction:column}
+    .rcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+    .rcard.hidden{display:none}
 
-    /* ===================== PROCESS TIMELINE ===================== */
-    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
-    .step{position:relative;padding-top:42px}
-    .step::before{counter-increment:step;content:counter(step);position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--deep);color:#fff;font-family:'Inter Tight';font-weight:800;display:grid;place-items:center}
-    .step::after{content:'';position:absolute;top:18px;left:46px;right:-10px;height:2px;background:var(--hairline)}
-    .step:last-child::after{display:none}
-    .step h3{margin-bottom:6px}
-    .step p{color:var(--muted);font-size:.95rem;margin:0}
+    /* Thumbnail block */
+    .rcard-thumb{position:relative;aspect-ratio:16/10;background:var(--deep);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .rcard-thumb svg.thumb-ico{width:52px;height:52px;color:rgba(255,255,255,.2)}
+    .rcard-thumb-img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .rcard:hover .rcard-thumb-img{transform:scale(1.04)}
+    .rcard-cat{position:absolute;top:12px;left:12px;background:var(--accent);color:var(--accent-ink);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    .rcard-new{position:absolute;top:12px;right:12px;background:#fff;color:var(--deep);font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--hairline)}
 
-    /* ===================== BRAND WALL ===================== */
-    .brand-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .brand-chip{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:.18s}
-    .brand-chip:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
-    .brand-chip .name{font-family:'Inter Tight';font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:.01em}
-    .brand-chip .meta{display:block;margin-top:6px;font-size:.82rem;color:var(--muted);font-weight:600}
+    /* Card body */
+    .rcard-body{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column}
+    .rcard-body h3{font-size:1.05rem;margin-bottom:6px;color:var(--ink)}
+    .rcard-body p{font-size:.92rem;color:var(--muted);flex:1;margin-bottom:18px}
+    .rcard-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--hairline);padding-top:16px;margin-top:auto}
+    .rcard-meta{font-size:.8rem;color:var(--muted);font-weight:500}
+    .rcard-meta span{color:var(--deep);font-weight:700}
 
-    /* ===================== GALLERY ===================== */
-    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
-    .filter{font-family:'Inter Tight';font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;transition:.15s;color:var(--ink)}
-    .filter:hover{border-color:var(--deep)}
-    .filter.active{background:var(--deep);color:#fff;border-color:var(--deep)}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .pcard{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;display:flex;flex-direction:column}
-    .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-    .pcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface-alt)}
-    .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-    .pcard:hover .ph img{transform:scale(1.05)}
-    .flag-tag{position:absolute;top:12px;left:12px;background:rgba(14,26,20,.82);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px)}
-    .pcard .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
-    .pcard h3{margin-bottom:4px}
-    .pcard .loc{color:var(--muted);font-size:.92rem;margin-bottom:14px}
-    .pcard .meta-row{display:flex;gap:18px;margin-top:auto;font-size:.88rem;color:var(--ink);border-top:1px solid var(--hairline);padding-top:14px}
-    .pcard .meta-row b{font-family:'Inter Tight';font-weight:800;color:var(--deep)}
-    .callout{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:600;color:var(--deep);background:rgba(141,198,63,.16);padding:4px 10px;border-radius:6px}
+    /* ===================== FEATURED RESOURCE (wide card) ===================== */
+    .featured-resource{background:var(--deep);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;margin-bottom:48px;box-shadow:var(--shadow-lg)}
+    .featured-resource .fr-body{padding:44px 40px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+    .featured-resource .fr-eyebrow{font-family:'Inter Tight';font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;color:var(--accent);margin-bottom:16px}
+    .featured-resource h2{color:#fff;font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:12px}
+    .featured-resource p{color:rgba(255,255,255,.78);font-size:.98rem;margin-bottom:24px}
+    .featured-resource .fr-img{position:relative;background:rgba(141,198,63,.1);display:flex;align-items:center;justify-content:center}
+    .featured-resource .fr-img svg{width:80px;height:80px;color:rgba(255,255,255,.15)}
+    .featured-resource .fr-img img{width:100%;height:100%;object-fit:cover}
+    @media(max-width:780px){
+      .featured-resource{grid-template-columns:1fr}
+      .featured-resource .fr-img{min-height:200px}
+    }
 
-    /* ===================== PROOF BAND ===================== */
-    .proof{background:var(--deep);color:#fff}
-    .proof .eyebrow{color:rgba(255,255,255,.7)}
-    .proof-quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .quote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px}
-    .quote p{font-size:1.15rem;font-style:italic}
-    .quote .who{font-style:normal;font-weight:700;color:var(--accent);margin:0}
-    .proof-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .proof-logos .brand-chip{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
-    .proof-logos .brand-chip .name{color:#fff}
-    .proof-logos .brand-chip .meta{color:rgba(255,255,255,.6)}
+    /* ===================== PDF COVER IFRAME ===================== */
+    /* Google Docs Viewer renders the PDF first page inside an iframe.
+       We clip it to show only the top portion (the cover), scale it up
+       so it fills the card thumb, and pointer-events:none so the card
+       click still works. The fallback SVG shows while the frame loads. */
+    .pdf-cover-frame{
+      position:absolute;inset:0;width:100%;height:100%;
+      border:none;pointer-events:none;
+      /* Scale the viewer content up — GDocs viewer has a lot of chrome;
+         we zoom in so only the document page fills the frame */
+      transform:scale(1.35);transform-origin:top center;
+    }
+    .pdf-cover-fallback{
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      /* Sits behind the iframe; becomes visible if frame fails to load */
+      z-index:-1;
+    }
+    /* Featured card: taller frame, slightly less aggressive scale */
+    .featured-resource .pdf-cover-frame{
+      transform:scale(1.15);transform-origin:top center;
+    }
 
-    /* ===================== CONVERSION BAND + FORM ===================== */
-    .convert{background:linear-gradient(135deg,var(--deep),#142b21);color:#fff}
-    .convert-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    .convert h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.4rem)}
-    .convert p.lead{color:rgba(255,255,255,.85)}
-    .lead-form{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-lg)}
-    .lead-form h3{color:var(--ink)}
+    /* ===================== CARD THUMB GRADIENT ===================== */
+    /* White-to-alpha gradient from top-left so the category pill pops */
+    .rcard-thumb::after{
+      content:'';
+      position:absolute;inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 55%);
+      pointer-events:none;
+      z-index:1;
+    }
+    /* Keep category pill and new badge above the gradient layer */
+    .rcard-cat,.rcard-new{ z-index:2; position:absolute; }
+
+    /* ===================== MODAL (shared base) ===================== */
+    .modal{position:fixed;inset:0;background:rgba(10,18,14,.78);backdrop-filter:blur(4px);z-index:120;display:none;align-items:flex-start;justify-content:center;padding:40px 18px;overflow-y:auto}
+    .modal.open{display:flex}
+    .modal-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:560px;width:100%;padding:30px;position:relative;animation:modalIn .22s ease}
+    @keyframes modalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    .modal-card h3{color:var(--ink);margin-bottom:4px;font-size:1.4rem}
+    .modal-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+    .modal-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:var(--surface-alt);border:none;color:var(--ink);font-size:1.3rem;cursor:pointer;line-height:1;display:grid;place-items:center}
+    .modal-close:hover{background:var(--hairline)}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .field{margin-bottom:14px}
     .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:5px}
-    .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--hairline);border-radius:10px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff}
+    .field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--hairline);border-radius:10px;font:inherit;font-size:.95rem;color:var(--ink);background:#fff;box-sizing:border-box}
     .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(141,198,63,.25)}
-    .form-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+    .field-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;cursor:pointer}
+    .field-check input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);margin-top:2px;flex-shrink:0;cursor:pointer}
+    .field-check span{font-size:.88rem;color:var(--muted);line-height:1.45}
+    .form-foot{display:flex;flex-direction:column;gap:10px;margin-top:4px}
     .mailto-fallback{font-size:.85rem;color:var(--muted)}
     .mailto-fallback a{color:var(--deep);font-weight:600}
     .form-status{margin:12px 0 0;font-size:.9rem;font-weight:600;color:var(--deep)}
+    /* consultation link below download button */
+    .consult-nudge{display:block;text-align:center;font-size:.83rem;color:var(--muted);margin-top:9px;cursor:pointer;background:none;border:none;padding:0;font-family:inherit;text-decoration:underline;text-underline-offset:2px}
+    .consult-nudge:hover{color:var(--deep)}
+    @media(max-width:540px){.form-row{grid-template-columns:1fr}}
+    .empty-state{text-align:center;padding:72px 24px;color:var(--muted);display:none}
+    .empty-state svg{width:48px;height:48px;margin:0 auto 16px;color:var(--hairline)}
+    .empty-state p{font-size:1rem}
+
+    /* ===================== CTA BAND ===================== */
+    .cta-band{background:var(--deep);color:#fff;text-align:center;padding:80px 0}
+    .cta-band h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);max-width:42ch;margin:0 auto 14px}
+    .cta-band p{color:rgba(255,255,255,.78);max-width:52ch;margin:0 auto 28px}
+    .cta-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+    /* ===================== TOPICS BAND ===================== */
+    .topics-band{background:var(--surface-alt)}
+    .topics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+    .topic-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);padding:24px 20px;text-align:center;box-shadow:var(--shadow);transition:border-color .15s, box-shadow .15s;cursor:default}
+    .topic-card:hover{border-color:var(--accent);box-shadow:var(--shadow-lg)}
+    .topic-card .ico{width:44px;height:44px;border-radius:12px;background:rgba(141,198,63,.14);display:grid;place-items:center;margin:0 auto 14px;color:var(--deep)}
+    .topic-card .ico svg{width:22px;height:22px}
+    .topic-card h4{font-size:.95rem;color:var(--deep);margin-bottom:6px}
+    .topic-card p{font-size:.85rem;color:var(--muted);margin:0}
 
     /* ===================== FOOTER ===================== */
     footer{background:var(--ink);color:rgba(255,255,255,.72);padding:64px 0 32px}
@@ -223,14 +263,16 @@
     footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
     footer a{color:rgba(255,255,255,.72);text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
     footer a:hover{color:var(--accent)}
-    .footer-brand .brand{color:#fff}
+    .footer-brand .brand-txt{font-family:'Inter Tight';font-weight:800;font-size:1.4rem;color:#fff;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+    .footer-brand .brand-txt .mark{width:12px;height:12px;border-radius:3px;background:var(--accent)}
+    .footer-brand .brand-logo img{height:30px;width:auto;filter:brightness(0) invert(1)}
     .footer-brand p{font-size:.92rem;margin-top:14px;max-width:34ch}
     .news-form{display:flex;gap:8px;margin-top:12px}
     .news-form input{flex:1;padding:11px 13px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);border-radius:10px;color:#fff;font:inherit;font-size:.9rem}
     .news-form input::placeholder{color:rgba(255,255,255,.45)}
     .news-form button{border:none;background:var(--accent);color:var(--accent-ink);font-family:'Inter Tight';font-weight:700;border-radius:10px;padding:0 16px;cursor:pointer}
     .footer-socials{display:flex;gap:10px;margin-top:16px}
-    .footer-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:8px;border:1px solid rgba(255,255,255,.18);padding:0}
+    .footer-socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:8px;border:1px solid rgba(255,255,255,.18);padding:0;color:rgba(255,255,255,.8)}
     .footer-socials a:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
     .footer-socials svg{width:16px;height:16px}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
@@ -241,29 +283,15 @@
     #toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
     #toTop svg{width:20px;height:20px}
 
-    /* ===================== LIGHTBOX ===================== */
-    .lb{position:fixed;inset:0;background:rgba(10,18,14,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
-    .lb.open{display:flex}
-    .lb-inner{max-width:1000px;width:100%}
-    .lb-head{display:flex;justify-content:space-between;align-items:flex-end;color:#fff;margin-bottom:14px;gap:16px}
-    .lb-head h3{color:#fff;margin:0}
-    .lb-head p{margin:0;color:rgba(255,255,255,.7);font-size:.9rem}
-    .lb-stage img{width:100%;max-height:64vh;object-fit:contain;border-radius:12px;background:#000}
-    .lb-thumbs{display:flex;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
-    .lb-thumbs img{height:62px;width:84px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.55;border:2px solid transparent}
-    .lb-thumbs img.active{opacity:1;border-color:var(--accent)}
-    .lb-close{position:absolute;top:18px;right:22px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.4rem;cursor:pointer}
-    .lb-actions{margin-top:16px}
-
     /* ===================== REVEAL ===================== */
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease}
     .reveal.in{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
     /* ===================== RESPONSIVE ===================== */
     @media(max-width:1024px){
-      .grid-4,.timeline,.brand-wall,.proof-logos{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr 1fr}
-      .step::after{display:none}
+      .resource-grid{grid-template-columns:1fr 1fr}
+      .topics-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:860px){
       .main-nav,.header-right .socials{display:none}
@@ -271,16 +299,17 @@
       .main-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--hairline);padding:12px var(--pad);gap:0;box-shadow:var(--shadow-lg)}
       .main-nav.open .nav-item{width:100%}
       .main-nav.open .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding-left:12px}
-      .valueprop,.convert-grid{grid-template-columns:1fr}
-      .grid-2,.stat-tiles{grid-template-columns:1fr}
-      .proof-quotes{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
-      .hero-inner{padding:84px 0 72px}
     }
     @media(max-width:560px){
-      .grid-4,.timeline,.brand-wall,.proof-logos,.gallery,.footer-grid,.form-row{grid-template-columns:1fr}
-      .section{padding:60px 0}
+      .resource-grid,.topics-grid,.footer-grid{grid-template-columns:1fr}
+      .section{padding:56px 0}
+      .page-hero{padding:64px 0 56px}
     }
+
+    /* ===================== EMBEDDED IFRAME COMPAT ===================== */
+    .is-embedded header,.is-embedded footer,.is-embedded #toTop{display:none!important}
+    .is-embedded .page-hero{padding-top:48px}
   </style>
 </head>
 <body>
@@ -288,7 +317,9 @@
   <!-- ===================== HEADER ===================== -->
   <header id="header">
     <div class="wrap nav-bar">
-      <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+      <a class="brand" href="https://www.base-4.com/" aria-label="BASE4 home">
+        <img src="https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/logos/base4-logo.png" alt="BASE4">
+      </a>
       <nav class="main-nav" id="mainNav"></nav>
       <div class="header-right">
         <div class="socials" id="headerSocials"></div>
@@ -297,28 +328,167 @@
     </div>
   </header>
 
-  <main id="app">
-    <div class="wrap" style="padding:120px 0;text-align:center;color:var(--muted)">Loading…</div>
-  </main>
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-grid">
+        <div>
+          <p class="eyebrow"><span class="dot">■</span> Technical Resources</p>
+          <h1>Free guides from the people who build hotels.</h1>
+          <p class="lead">HVAC systems, modular construction, structural assemblies — practical PDF resources produced by BASE4's integrated A+E+I team.</p>
+        </div>
+        <div class="page-hero-stat">
+          <div class="num">15+</div>
+          <div class="lbl">Free guides available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESOURCE LIBRARY ===================== -->
+  <section class="section" id="library">
+    <div class="wrap">
+
+      <!-- Category filters -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-cat="all">All Resources</button>
+        <button class="filter-btn" data-cat="hvac">HVAC &amp; MEP</button>
+        <button class="filter-btn" data-cat="modular">Modular Construction</button>
+        <button class="filter-btn" data-cat="structural">Structural Systems</button>
+        <button class="filter-btn" data-cat="plumbing">Plumbing</button>
+        <button class="filter-btn" data-cat="acoustics">Acoustics</button>
+      </div>
+
+      <!-- Featured resource -->
+      <div class="featured-resource reveal" id="featuredCard">
+        <!-- injected by JS -->
+      </div>
+
+      <!-- Resource grid -->
+      <div class="resource-grid" id="resourceGrid">
+        <!-- injected by JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6M9 16h4M6 4h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        <p>No resources in this category yet. Check back soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== TOPICS WE COVER ===================== -->
+  <section class="section topics-band section--alt">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot">■</span> Expertise Areas</p>
+      <h2 class="center" style="max-width:42ch;margin-left:auto;margin-right:auto">The technical depth behind every BASE4 project.</h2>
+      <div class="topics-grid">
+        <div class="topic-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h4>Hotel HVAC Systems</h4>
+          <p>PTAC, VRF, DOAS — selection criteria, pros, cons, and cost comparisons for hospitality applications.</p>
+        </div>
+        <div class="topic-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+          <h4>Modular &amp; Industrialized Construction</h4>
+          <p>Logistics, tolerances, and sequencing for volumetric modular and panelized systems in hotel projects.</p>
+        </div>
+        <div class="topic-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M10 20v-5h4v5"/></svg></div>
+          <h4>Structural Assemblies</h4>
+          <p>Trusses, I-joists, CFS panels — the tradeoffs BASE4 evaluates on every hotel structural scope.</p>
+        </div>
+        <div class="topic-card reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <h4>Plumbing &amp; Water Systems</h4>
+          <p>Tankless water heaters, bathroom pods, and water efficiency strategies for multi-key hotel builds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Have a specific technical question on your project?</h2>
+      <p>BASE4's integrated A+E+I team has delivered 80,000+ hotel keys across 74 brands and 45 states. Talk to us directly.</p>
+      <div class="cta-buttons">
+        <a href="https://www.base-4.com/contact-page/" class="btn btn--primary">Schedule a Consultation</a>
+        <a href="https://www.base-4.com/hospitality/" class="btn btn--ghost">Explore Our Hospitality Work</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer id="footer"></footer>
 
-  <button id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-
-  <!-- ===================== LIGHTBOX ===================== -->
-  <div class="lb" id="lightbox">
-    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
-    <div class="lb-inner">
-      <div class="lb-head"><div><h3 id="lbTitle"></h3><p id="lbMeta"></p></div></div>
-      <div class="lb-stage"><img id="lbStage" alt=""></div>
-      <div class="lb-thumbs" id="lbThumbs"></div>
-      <div class="lb-actions"><a class="btn btn--primary" id="lbLink" href="#" target="_blank" rel="noopener">View full project →</a></div>
+  <!-- ===================== DOWNLOAD GATE MODAL ===================== -->
+  <div class="modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="downloadClose" aria-label="Close">&times;</button>
+      <h3 id="downloadTitle">Get the free guide</h3>
+      <p class="sub" id="downloadSub">Enter your details and we'll open the PDF instantly.</p>
+      <form id="downloadForm">
+        <div class="form-row">
+          <div class="field"><label>Full name*</label><input name="name" required placeholder="Jane Smith"></div>
+          <div class="field"><label>Company</label><input name="company" placeholder="Developer LLC"></div>
+        </div>
+        <div class="field"><label>Work email*</label><input type="email" name="email" required placeholder="you@company.com"></div>
+        <div class="form-row">
+          <div class="field"><label>Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="tel" name="phone" placeholder="+1 555 000 0000"></div>
+          <div class="field"><label>Company role</label><input name="role" placeholder="Developer, GC, Owner…"></div>
+        </div>
+        <label class="field-check">
+          <input type="checkbox" name="newsletter" value="yes" checked>
+          <span>Send me future BASE4 guides, infographics, and technical resources. No spam — unsubscribe anytime.</span>
+        </label>
+        <div class="form-foot">
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </button>
+          <button type="button" class="consult-nudge" data-consult>I want to schedule a consultation instead</button>
+        </div>
+        <p class="form-status" id="downloadStatus" hidden></p>
+      </form>
     </div>
   </div>
 
+  <!-- ===================== CONSULTATION MODAL (from reference) ===================== -->
+  <div class="modal" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="consultClose" aria-label="Close">&times;</button>
+      <h3 id="consultTitle">Schedule a Project Consultation</h3>
+      <p class="sub">Tell us about the project — brand, site, key count, and timeline. We'll get the right A+E+I leads on a call.</p>
+      <form id="leadForm">
+        <div class="form-row">
+          <div class="field"><label>Full name*</label><input name="name" required></div>
+          <div class="field"><label>Company</label><input name="company"></div>
+        </div>
+        <div class="field"><label>Work email*</label><input type="email" name="email" required></div>
+        <div class="form-row">
+          <div class="field"><label>Project location</label><input name="location" placeholder="City, State"></div>
+          <div class="field"><label>Brand / flag</label>
+            <select name="flag"><option value="">Select…</option><option>Hyatt</option><option>Marriott</option><option>Hilton</option><option>IHG</option><option>Choice</option><option>Other / TBD</option></select>
+          </div>
+        </div>
+        <div class="field"><label># of keys</label><input name="keys" type="number" min="0" placeholder="e.g. 120"></div>
+        <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Brief, timeline, scope…"></textarea></div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Send Consultation Request</button>
+          <span class="mailto-fallback">Prefer email? <a href="mailto:BlairH@base-4.com" data-ev="mailto_fallback">BlairH@base-4.com</a></span>
+        </div>
+        <p class="form-status" id="consultStatus" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <button id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
   <!-- ===================== EMBEDDED CONTENT (TSV) ===================== -->
-  <!-- Single-file build: edit the data below; the page parses it at runtime. No build step. -->
   <script id="content-tsv" type="text/tab-separated-values">
 # SHEET: Site
 Parameter	Value
@@ -326,129 +496,42 @@ Org Name	BASE4
 Email	BlairH@base-4.com
 Florida Registration	Florida Registered Architectural Firm - AA26003324
 Copyright	© 2026 BASE4 | All rights reserved.
-Site URL	https://www.base-4.com/hospitality/
-
-# SHEET: Hero
-Parameter	Value
-Eyebrow	Hospitality Architecture · Engineering · Interiors
-H1	Hotels delivered from concept to construction — under one accountable team.
-Subhead	BASE4 gives hotel developers, owners, and general contractors a single integrated architecture, engineering, and interior design team — built for brand compliance, permit speed, and cost certainty across national flags.
-Primary CTA	Schedule a Project Consultation
-Secondary CTA	View Hospitality Portfolio
-Trust Row	Florida Registered Architectural Firm AA26003324 · National brand experience · Integrated A + E + I
-Image	https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80
-
-# SHEET: ValueProp
-Parameter	Value
-Title	Built for developers and general contractors.
-Body	Hotel projects live and die on speed, coordination, and precision. BASE4 keeps architecture, engineering, and interiors under one roof — so brand standards hold, RFIs drop, and your schedule doesn't slip between disciplines.
-
-# SHEET: Stats
-num	label
-669+	Keys designed (6 featured projects)
-4	National flags served
-4+	States licensed
-
-# SHEET: Priorities
-priority	answer	icon
-Brand standards & flag requirements	Teams fluent in Hyatt, Marriott, Hilton & IHG prototypes — compliant documents the first time.	badge
-Guest experience & operational flow	Layouts engineered for back-of-house efficiency and smooth guest flow.	flow
-Speed to market & opening timelines	Repeatable prototype workflows plus industrialized construction — faster to permit and to opening.	speed
-Coordination across ownership, brand & design	One integrated team means one point of accountability, fewer handoffs, and fewer RFIs.	link
-
-# SHEET: Differentiators
-claim	support	icon
-Integrated A + E + I	Architecture, engineering, and interiors under one contract — one team accountable end to end.	layers
-Proven across national flags	Delivery experience across multiple hotel brands and brand-standard prototypes.	badge
-Efficient, coordinated process	Fewer handoffs, fewer conflicts, tighter construction documents.	flow
-Built for repeatable, large-scale rollouts	Prototype and industrialized construction systems built for multi-site developers.	grid
-
-# SHEET: Process
-title	body
-Concept	Brand-aligned massing, site test-fits, and feasibility — validated against flag prototypes before you commit.
-Entitlements & Permitting	Coordinated documents that clear zoning, jurisdiction review, and brand approval the first time.
-Construction Documents	Fully integrated A/E/I drawing sets — engineered to reduce RFIs and field conflicts.
-Construction Support	Construction administration and responsive submittal/RFI support straight through to opening.
-
-# SHEET: Brands
-name	meta
-Hyatt	2 featured projects
-Marriott	2 featured projects
-Hilton	1 featured project
-IHG	1 featured project
-
-# SHEET: Testimonials
-quote	who
-# (Leave rows empty until BASE4 supplies approved quotes; the page falls back to a brand proof wall.)
-
-# SHEET: Projects
-name	franchise	location	keys	stories	year	type	note	url	primary_image
-Hyatt Studios	Hyatt	—	122	4	2024	Select-service hotel		https://www.base-4.com/portfolio/hyatt-studios/	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg
-Hyatt Studios – Glendale, AZ	Hyatt	Glendale, AZ	114	4	2025	Select-service hotel		https://www.base-4.com/portfolio/hyatt-studios-glendale-az/	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01.jpg
-Home2 Suites – Ooltewah, TN	Hilton	Ooltewah, TN	98	4	2025	Extended-stay hotel		https://www.base-4.com/portfolio/home2-suites-ooltewah-tn/	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg
-Residence Inn – Kingsland, GA	Marriott	Kingsland, GA	128	4	2026	Extended-stay hotel	Part of a Youth Sport Complex development	https://www.base-4.com/portfolio/residence-inn-youth-sport-complex/	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg
-Towneplace Suites – Maricopa, AZ	Marriott	Maricopa, AZ	111	4	2025	Extended-stay hotel		https://www.base-4.com/portfolio/towneplace-suites-maricopa-az/	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg
-Holiday Inn Express – Des Moines, IA	IHG	Des Moines, IA	96	4	—	Select-service hotel		https://www.base-4.com/portfolio/holiday-inn-express/	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg
-
-# SHEET: ProjectImages
-project	url
-Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg
-Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-02.jpg
-Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-03.jpg
-Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-04.jpg
-Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-05.jpg
-Hyatt Studios – Glendale, AZ	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-02.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-03.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-04.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-05.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-06.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-07.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-08.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-09.jpg
-Home2 Suites – Ooltewah, TN	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-10.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-02.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-03.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-04.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-05.jpg
-Residence Inn – Kingsland, GA	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-06.jpg
-Towneplace Suites – Maricopa, AZ	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg
-Towneplace Suites – Maricopa, AZ	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-01.jpg
-Towneplace Suites – Maricopa, AZ	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-02.jpg
-Holiday Inn Express – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg
-Holiday Inn Express – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2026/03/HIEX_02.jpg
-Holiday Inn Express – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2026/03/HIEX_03.jpg
-Holiday Inn Express – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2026/03/HIEX_04.jpg
+Site URL	https://www.base-4.com/infographics/
 
 # SHEET: Nav
 label	href	children
-Projects	https://www.base-4.com/projects/
-Data Centers	https://www.base-4.com/data-centers/
+Projects	https://www.base-4.com/portfolio/	
+Data Centers	https://www.base-4.com/data-centers/	
 Markets	#	Hospitality::https://www.base-4.com/hospitality/||Multifamily::https://www.base-4.com/multifamily/
-Innovation Lab	#	Destination::https://www.base-4.com/destination/||Industrialized Construction::https://www.base-4.com/industrialized-construction/
-Blog	#	Infographics::https://www.base-4.com/infographics/
+Innovation Lab	#	Destination::https://www.base-4.com/destination/||Industrialized Construction::https://www.base-4.com/industrialized-construction-systems/
+Blog	https://www.base-4.com/blog/	Infographics::https://www.base-4.com/infographics/
 About	#	Our Clients::https://www.base-4.com/our-clients/
 Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
+
+# SHEET: Resources
+title	desc	cat	pdf	thumb	new	featured
+Hotel HVAC Systems	A complete guide to HVAC options for hotel projects — PTAC, VRF, DOAS, and hybrid approaches — covering performance, cost, and brand compliance considerations.	hvac	https://www.base-4.com/wp-content/uploads/2025/11/Hotel-HVAC-Systems-Infographics.pdf		true	true
+Hotel HVAC: What Are My Options?	Side-by-side comparison of hotel HVAC system types. Designed for developers and owners evaluating system selection early in the project.	hvac	https://www.base-4.com/wp-content/uploads/2023/10/Hotel-HVAC-What-are-my-options.pdf			
+Multifamily HVAC Infographic	HVAC system selection and considerations for multifamily residential projects — useful for mixed-use hotel and apartment developments.	hvac	https://www.base-4.com/wp-content/uploads/2023/10/Multifamily-HVAC_Infographic.pdf			
+Hotel HVAC Infographic	Foundational overview of hotel mechanical systems — how heating, cooling, and ventilation strategies impact guest comfort and operating cost.	hvac	https://www.base-4.com/wp-content/uploads/2023/10/Hotel-HVAC-Infographic.pdf			
+Understanding Hotel Noise	Acoustic performance guide for hotel construction — STC ratings, floor/wall assembly strategies, and noise control between guest rooms.	acoustics	https://www.base-4.com/wp-content/uploads/2025/11/Understanding-Hotel-Noise-Infographic.pdf		true	
+Modular Construction Logistics	Step-by-step logistics overview for volumetric modular hotel construction — from factory coordination to on-site stacking and completion.	modular	https://www.base-4.com/wp-content/uploads/2023/11/Modular-Construction-Logistics.pdf			
+Modular Construction FAQ — Part 1	Answers to the most common questions about modular construction for hotel projects, including cost, schedule, and quality.	modular	https://www.base-4.com/wp-content/uploads/2025/10/Modular-Construction-FAQ-Part-1.pdf		true	
+Modular Construction FAQ — Part 2	Continued Q&A on modular construction — coordination with brand standards, MEP integration, and fire/life safety compliance.	modular	https://www.base-4.com/wp-content/uploads/2025/10/Modular-Construction-FAQ-Part-2.pdf		true	
+Modular Construction Tips	Practical tips and lessons learned from BASE4's modular hotel projects — avoiding common pitfalls on volumetric builds.	modular	https://www.base-4.com/wp-content/uploads/2025/12/MODULAR-TIPS-Infographic.pdf		true	
+Bathroom Pods Infographic (2025)	How bathroom pod systems work in hotel construction — tolerances, sequencing, connections, and coordination with structural systems.	modular	https://www.base-4.com/wp-content/uploads/2025/11/Bathroom-Pods-Infographic-BASE4.pdf		true	
+Bathroom Pods Infographic	Original BASE4 guide to bathroom pod integration in hotel projects — the case for pods, the constraints, and how to spec them correctly.	modular	https://www.base-4.com/wp-content/uploads/2023/11/Bathroom-Pods_Infographic.pdf			
+Trusses vs. I-Joists	Direct comparison of roof and floor framing options for hotel construction — load capacity, depth, span, and cost implications.	structural	https://www.base-4.com/wp-content/uploads/2025/11/TRUSSES-vs.-I-Joists-Infographics.pdf		true	
+Panelized CFS Systems	Cold-formed steel panelized wall systems for hotel construction — how they differ from stick framing, and when they add value.	structural	https://www.base-4.com/wp-content/uploads/2025/11/PANELIZED-CFS-Infographics.pdf		true	
+Tankless Water Heater Infographic (2025)	Updated guide to tankless water heater selection and sizing for hotels — energy savings, code compliance, and installation considerations.	plumbing	https://www.base-4.com/wp-content/uploads/2025/12/Tankless-Water-Heater-Infographic.pdf		true	
+Tankless Water Heater Infographic	BASE4's original guide to specifying and sizing tankless water heaters in hotel projects.	plumbing	https://www.base-4.com/wp-content/uploads/2023/11/Tankless-Water-Heater_Infographic.pdf			
   </script>
 
-  <!-- ===================== APP ===================== -->
   <script>
-    /* ---------- config ---------- */
-    // Drop a real lead-capture endpoint here (Cloudflare Pages Function, Formspree, etc.)
-    // to POST leads instead of falling back to mailto. Leave empty to use mailto.
-    const FORM_ENDPOINT = '';
-    const db = {};
+    const ASSET_BASE = 'https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/';
+    const asset = p => (!p || /^(https?:|data:|[/][/])/.test(p)) ? p : ASSET_BASE + p.replace(/^[.]?[/]/,'');
 
-    /* ---------- icons ---------- */
     const ICONS = {
-      badge:'<path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.3L12 16.6 6.4 19.5 7.5 13.2 3 8.9 9 8z"/>',
-      flow:'<path d="M4 6h10M4 12h16M4 18h7"/><circle cx="18" cy="6" r="2"/><circle cx="14" cy="18" r="2"/>',
-      speed:'<path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l5-3"/>',
-      link:'<path d="M9 12a3 3 0 0 1 3-3h3a3 3 0 1 1 0 6h-1"/><path d="M15 12a3 3 0 0 1-3 3H9a3 3 0 1 1 0-6h1"/>',
-      layers:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
-      grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
       fb:'<path d="M14 8h-2a2 2 0 0 0-2 2v2H8v3h2v6h3v-6h2.5l.5-3H13v-1.5c0-.6.4-1 1-1h2z"/>',
       x:'<path d="M4 4l16 16M20 4L4 20"/>',
       li:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/>',
@@ -456,288 +539,213 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       yt:'<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/>'
     };
     const SOCIALS = [
-      ['fb','https://www.facebook.com/'],['x','https://twitter.com/'],
-      ['li','https://www.linkedin.com/'],['ig','https://www.instagram.com/'],
-      ['yt','https://www.youtube.com/']
+      ['li','https://www.linkedin.com/company/base-4-international'],
+      ['ig','https://www.instagram.com/base4_aec/'],
+      ['yt','https://www.youtube.com/@BASE4_architects-eng-designers/featured'],
+      ['fb','https://www.facebook.com/Base4AEC/'],
+      ['x','https://x.com/base4_aec']
     ];
     const ico = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]||''}</svg>`;
-    const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-    /* ---------- TSV parsing (matches BASE4/Rockt static pattern) ---------- */
+    /* ---------- TSV Parser (matches reference page pattern) ---------- */
+    const db = {};
     function parseTSV(text){
-      text.split('# SHEET: ').map(b=>b.trim()).filter(Boolean).forEach(block=>{
-        const lines = block.split(/\r?\n/).filter(l=>l.length && !l.startsWith('#'));
-        if(!lines.length) return;
-        const sheet = lines.shift().trim();
-        const headers = lines.shift().split('\t').map(h=>h.trim());
-        db[sheet] = lines.map(line=>{
-          const vals = line.split('\t');
-          const row = {};
-          headers.forEach((h,i)=> row[h] = (vals[i]||'').trim());
-          return row;
-        });
-      });
+      let cur = null, keys = [];
+      for(const raw of text.split('\n')){
+        const line = raw.trimEnd();
+        if(!line || line.startsWith('//')) continue;
+        if(line.startsWith('# SHEET:')){
+          cur = line.replace('# SHEET:','').trim();
+          db[cur] = []; keys = [];
+          continue;
+        }
+        const cols = line.split('\t');
+        if(!keys.length){ keys = cols; continue; }
+        const row = {};
+        keys.forEach((k,i) => row[k] = (cols[i]||'').trim());
+        db[cur].push(row);
+      }
     }
-    const sheet = n => db[n] || [];
-    const kv = n => { const o={}; sheet(n).forEach(r=>{ if(r.Parameter) o[r.Parameter]=r.Value; }); return o; };
+    /* sheet(name) → array of row objects; kv(name) → first row as key:value map */
+    const sheet = name => db[name] || [];
+    const kv    = name => sheet(name).reduce((o,r) => { o[r.Parameter] = r.Value; return o; }, {});
 
-    /* ---------- analytics ---------- */
-    function track(event, params){ try{ gtag('event', event, params||{}); }catch(e){} }
+    /* ---------- Category label map ---------- */
+    const CAT_LABELS = {
+      hvac:'HVAC &amp; MEP',
+      modular:'Modular',
+      structural:'Structural',
+      plumbing:'Plumbing',
+      acoustics:'Acoustics'
+    };
 
-    /* ---------- build ---------- */
+    /* ---------- Category colour accents ---------- */
+    const CAT_BG = {
+      hvac:'#1C3A2E',
+      modular:'#2d4a3e',
+      structural:'#243d32',
+      plumbing:'#1a3428',
+      acoustics:'#20382d'
+    };
+
+    /* ---------- PDF cover via Google Docs Viewer ----------
+       Renders the first page of any public PDF as a live preview.
+       Falls back to a styled placeholder if the PDF is unreachable.
+    --------------------------------------------------------- */
+    const PDF_COVER = (pdfUrl, title) => {
+      const encoded = encodeURIComponent(pdfUrl);
+      const viewerUrl = `https://docs.google.com/viewer?url=${encoded}&embedded=true`;
+      return `
+        <iframe
+          src="${viewerUrl}"
+          title="Preview: ${title.replace(/"/g,'&quot;')}"
+          loading="lazy"
+          class="pdf-cover-frame"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+        <div class="pdf-cover-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="thumb-ico"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>`;
+    };
+    /* Plain icon — used only where no PDF URL is available */
+    const PDF_ICO = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="thumb-ico"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
+
+    /* ---------- Download icon ---------- */
+    const DL_ICO = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+
+    /* ====================================================
+       BOOT
+    ==================================================== */
     function boot(){
       parseTSV(document.getElementById('content-tsv').textContent);
       buildHeader();
-      renderPage();
+      buildFeatured();
+      buildGrid();
       buildFooter();
+      wireFilters();
       wireGlobal();
+      wireEmbed();
     }
 
+    /* ---------- Header (exact reference implementation) ---------- */
     function buildHeader(){
       const nav = document.getElementById('mainNav');
-      nav.innerHTML = sheet('Nav').map(item=>{
-        const kids = (item.children||'').split('||').filter(Boolean).map(c=>{
-          const [label,href]=c.split('::'); return `<a href="${href}">${esc(label)}</a>`;
+      nav.innerHTML = sheet('Nav').map(item => {
+        const kids = (item.children||'').split('||').filter(Boolean).map(c => {
+          const [label,href] = c.split('::');
+          return `<a href="${href}">${esc(label)}</a>`;
         }).join('');
         if(kids){
           return `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}<i class="caret"></i></a><div class="dropdown">${kids}</div></div>`;
         }
         return `<div class="nav-item"><a class="nav-link" href="${item.href}">${esc(item.label)}</a></div>`;
       }).join('');
-      document.getElementById('headerSocials').innerHTML = SOCIALS.map(([k,href])=>
+      document.getElementById('headerSocials').innerHTML = SOCIALS.map(([k,href]) =>
         `<a href="${href}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('');
     }
 
-    function renderPage(){
-      const hero = kv('Hero'), vp = kv('ValueProp'), site = kv('Site');
-      const stats = sheet('Stats'), priorities = sheet('Priorities'), diffs = sheet('Differentiators');
-      const process = sheet('Process'), brands = sheet('Brands'), quotes = sheet('Testimonials').filter(q=>q.quote);
-
-      document.getElementById('app').innerHTML = `
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-bg"><img src="${hero.Image}" alt="Hotel exterior at dusk" fetchpriority="high"></div>
-        <div class="wrap hero-inner">
-          <p class="eyebrow">${esc(hero.Eyebrow).replace(/·/g,'<span class="dot">·</span>')}</p>
-          <h1>${esc(hero.H1)}</h1>
-          <p class="sub">${esc(hero.Subhead)}</p>
-          <div class="hero-cta">
-            <a class="btn btn--primary" href="#consult" data-ev="hero_primary_cta">${esc(hero['Primary CTA'])}</a>
-            <a class="btn btn--ghost" href="#projects" data-ev="hero_secondary_cta">${esc(hero['Secondary CTA'])}</a>
-          </div>
-          <div class="trust-row">${esc(hero['Trust Row']).split('·').map(s=>`<span>${s.trim()}</span>`).join('<span class="sep">·</span>')}</div>
+    /* ---------- Featured resource ---------- */
+    function buildFeatured(){
+      const resources = sheet('Resources');
+      const feat = resources.find(r => r.featured==='true');
+      if(!feat){document.getElementById('featuredCard').style.display='none';return;}
+      const catLabel = CAT_LABELS[feat.cat]||feat.cat;
+      const bgColor = CAT_BG[feat.cat]||'var(--deep)';
+      document.getElementById('featuredCard').innerHTML = `
+        <div class="fr-body">
+          <div class="fr-eyebrow">Featured Guide · ${catLabel}</div>
+          <h2>${esc(feat.title)}</h2>
+          <p>${esc(feat.desc)}</p>
+          <a href="${esc(feat.pdf)}" target="_blank" rel="noopener" class="btn btn--primary" data-download data-pdf="${esc(feat.pdf)}" data-title="${esc(feat.title)}" data-ev="infographic_gate_open">
+            ${DL_ICO} Download PDF
+          </a>
+          <button type="button" class="consult-nudge" data-consult style="color:rgba(255,255,255,.6);text-align:left;margin-top:4px">I want to schedule a consultation instead</button>
         </div>
-      </section>
-
-      <!-- VALUE PROP -->
-      <section class="section">
-        <div class="wrap valueprop reveal">
-          <div>
-            <p class="eyebrow">Why BASE4<span class="dot">.</span></p>
-            <h2>${esc(vp.Title)}</h2>
-            <p class="lead">${esc(vp.Body)}</p>
-          </div>
-          <div class="stat-tiles">
-            ${stats.map(s=>`<div class="stat-tile"><div class="num tnum">${esc(s.num)}</div><span class="lbl">${esc(s.label)}</span></div>`).join('')}
-            <div class="stat-foot">Figures derived from the 6 featured projects below — portfolio-wide totals to be confirmed with BASE4.</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHAT DEVELOPERS ARE BUYING -->
-      <section class="section section--alt">
-        <div class="wrap">
-          <div class="reveal" style="max-width:60ch">
-            <p class="eyebrow">What developers are actually buying</p>
-            <h2>Buyer priorities — and how we deliver each one.</h2>
-          </div>
-          <div class="grid-4" style="margin-top:40px">
-            ${priorities.map(p=>`
-              <div class="card reveal">
-                <div class="ico">${ico(p.icon)}</div>
-                <div class="priority-tag">${esc(p.priority)}</div>
-                <p class="answer">${esc(p.answer)}</p>
-              </div>`).join('')}
-          </div>
-        </div>
-      </section>
-
-      <!-- DIFFERENTIATORS -->
-      <section class="section">
-        <div class="wrap">
-          <div class="reveal" style="max-width:60ch">
-            <p class="eyebrow">The difference</p>
-            <h2>One accountable team. Industrialized to scale.</h2>
-          </div>
-          <div class="grid-2" style="margin-top:40px">
-            ${diffs.map(d=>`
-              <div class="card reveal">
-                <div class="ico">${ico(d.icon)}</div>
-                <div class="diff-claim">${esc(d.claim)}</div>
-                <p class="answer">${esc(d.support)}</p>
-              </div>`).join('')}
-          </div>
-          <p class="reveal" style="margin-top:28px"><a class="btn btn--outline" href="https://www.base-4.com/industrialized-construction/" target="_blank" rel="noopener" data-ev="industrialized_link">Explore Industrialized Construction Systems →</a></p>
-        </div>
-      </section>
-
-      <!-- PROCESS TIMELINE -->
-      <section class="section section--alt">
-        <div class="wrap">
-          <div class="reveal center" style="max-width:60ch">
-            <p class="eyebrow">How we work</p>
-            <h2>A four-step delivery path — built for speed without surprises.</h2>
-          </div>
-          <div class="timeline reveal" style="margin-top:48px">
-            ${process.map(s=>`<div class="step"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></div>`).join('')}
-          </div>
-        </div>
-      </section>
-
-      <!-- BRAND WALL -->
-      <section class="section">
-        <div class="wrap">
-          <div class="reveal center" style="max-width:60ch">
-            <p class="eyebrow">National flag experience</p>
-            <h2>Brand-fluent across the families developers build.</h2>
-          </div>
-          <div class="brand-wall reveal" style="margin-top:40px">
-            ${brands.map(b=>`<div class="brand-chip"><div class="name">${esc(b.name)}</div><span class="meta">${esc(b.meta)}</span></div>`).join('')}
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECT GALLERY -->
-      <section class="section section--alt" id="projects">
-        <div class="wrap">
-          <div class="reveal" style="max-width:60ch">
-            <p class="eyebrow">Featured hospitality projects</p>
-            <h2>Recent work across national flags.</h2>
-          </div>
-          <div class="filters reveal" id="filters"></div>
-          <div class="gallery" id="gallery"></div>
-          <div class="reveal center" style="margin-top:40px">
-            <a class="btn btn--dark" href="https://www.base-4.com/projects/" target="_blank" rel="noopener" data-ev="see_all_projects">See All Projects →</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROOF BAND -->
-      <section class="section proof">
-        <div class="wrap">
-          <div class="reveal center" style="max-width:60ch">
-            <p class="eyebrow">Proof</p>
-            <h2 style="color:#fff">${quotes.length ? 'What developers and GCs say.' : 'Trusted across the brands developers build.'}</h2>
-          </div>
-          <div style="margin-top:40px">
-            ${quotes.length
-              ? `<div class="proof-quotes reveal">${quotes.map(q=>`<div class="quote"><p>“${esc(q.quote)}”</p><p class="who">${esc(q.who)}</p></div>`).join('')}</div>`
-              : `<div class="proof-logos reveal">${brands.map(b=>`<div class="brand-chip"><div class="name">${esc(b.name)}</div><span class="meta">${esc(b.meta)}</span></div>`).join('')}</div>`}
-          </div>
-          <p class="reveal center" style="margin-top:32px"><a class="btn btn--primary" href="https://www.base-4.com/our-clients/" target="_blank" rel="noopener" data-ev="client_stories">Read More Client Stories →</a></p>
-        </div>
-      </section>
-
-      <!-- CONVERSION BAND -->
-      <section class="section convert" id="consult">
-        <div class="wrap convert-grid">
-          <div class="reveal">
-            <p class="eyebrow" style="color:rgba(255,255,255,.7)">Let's build</p>
-            <h2>Need a brand-compliant hotel design team that moves fast across architecture, engineering, and interiors?</h2>
-            <p class="lead">Tell us about the project. We'll get the right A+E+I leads on a consultation call.</p>
-          </div>
-          <form class="lead-form reveal" id="leadForm">
-            <h3>Schedule a Project Consultation</h3>
-            <div class="form-row">
-              <div class="field"><label>Name*</label><input name="name" required></div>
-              <div class="field"><label>Company</label><input name="company"></div>
-            </div>
-            <div class="field"><label>Email*</label><input type="email" name="email" required></div>
-            <div class="form-row">
-              <div class="field"><label>Project location</label><input name="location" placeholder="City, State"></div>
-              <div class="field"><label>Brand / flag</label>
-                <select name="flag"><option value="">Select…</option><option>Hyatt</option><option>Marriott</option><option>Hilton</option><option>IHG</option><option>Other / TBD</option></select>
-              </div>
-            </div>
-            <div class="field"><label># of keys</label><input name="keys" type="number" min="0" placeholder="e.g. 120"></div>
-            <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Brief, timeline, scope…"></textarea></div>
-            <div class="form-foot">
-              <button type="submit" class="btn btn--primary">Send Consultation Request</button>
-              <span class="mailto-fallback">Prefer email? <a href="mailto:${esc(site.Email)}" data-ev="mailto_fallback">${esc(site.Email)}</a></span>
-            </div>
-            <p class="form-status" id="formStatus" hidden></p>
-          </form>
-        </div>
-      </section>
-      `;
-
-      buildGallery();
+        <div class="fr-img" style="background:${bgColor};position:relative;overflow:hidden;min-height:260px">
+          ${feat.pdf ? PDF_COVER(feat.pdf, feat.title) : PDF_ICO}
+        </div>`;
     }
 
-    /* ---------- gallery + filters ---------- */
-    const FILTERS = ['All','Hyatt','Marriott','Hilton','IHG'];
-    function buildGallery(){
-      const fc = document.getElementById('filters');
-      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
-      const projects = sheet('Projects');
-      const grid = document.getElementById('gallery');
-      const render = (filter)=>{
-        const list = filter==='All' ? projects : projects.filter(p=>p.franchise===filter);
-        grid.innerHTML = list.map((p,idx)=>{
-          const eager = idx<3 ? 'eager' : 'lazy';
-          const fp = idx<3 ? ' fetchpriority="high"' : '';
-          return `
-          <article class="pcard reveal in" data-project="${esc(p.name)}" data-url="${p.url}">
-            <div class="ph"><span class="flag-tag">${esc(p.franchise)}</span><img src="${p.primary_image}" alt="${esc(p.name)}" loading="${eager}"${fp}></div>
-            <div class="body">
-              <h3>${esc(p.name)}</h3>
-              <div class="loc">${p.location && p.location!=='—' ? esc(p.location)+' · ' : ''}${esc(p.type)}</div>
-              <div class="meta-row">
-                <span><b class="tnum">${esc(p.keys)}</b> keys</span>
-                <span><b class="tnum">${esc(p.stories)}</b> stories</span>
-                ${p.year && p.year!=='—' ? `<span><b class="tnum">${esc(p.year)}</b></span>`:''}
-              </div>
-              ${p.note ? `<span class="callout">${esc(p.note)}</span>`:''}
+    /* ---------- Resource grid ---------- */
+    function buildGrid(){
+      const resources = sheet('Resources');
+      const nonFeatured = resources.filter(r => r.featured!=='true');
+      const grid = document.getElementById('resourceGrid');
+      grid.innerHTML = nonFeatured.map(r => {
+        const catLabel = CAT_LABELS[r.cat]||r.cat;
+        const bgColor = CAT_BG[r.cat]||'var(--deep)';
+        return `
+        <div class="rcard reveal" data-cat="${esc(r.cat)}">
+          <div class="rcard-thumb" style="background:${bgColor}">
+            ${r.thumb
+              ? `<img class="rcard-thumb-img" src="${esc(r.thumb)}" alt="${esc(r.title)}" loading="lazy">`
+              : r.pdf ? PDF_COVER(r.pdf, r.title) : PDF_ICO}
+            <span class="rcard-cat">${catLabel}</span>
+            ${r.new==='true'?'<span class="rcard-new">New</span>':''}
+          </div>
+          <div class="rcard-body">
+            <h3>${esc(r.title)}</h3>
+            <p>${esc(r.desc)}</p>
+            <div class="rcard-footer">
+              <span class="rcard-meta">Free <span>PDF</span></span>
+              <button class="btn btn--dark btn--sm" data-download data-pdf="${esc(r.pdf)}" data-title="${esc(r.title)}" data-ev="infographic_gate_open">
+                ${DL_ICO} Download
+              </button>
             </div>
-          </article>`;
-        }).join('') || '<p style="color:var(--muted)">No projects in this category yet.</p>';
-      };
-      render('All');
-      fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
-        fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    /* ---------- Filter wiring ---------- */
+    function wireFilters(){
+      const bar = document.getElementById('filterBar');
+      const grid = document.getElementById('resourceGrid');
+      const feat = document.getElementById('featuredCard');
+      const empty = document.getElementById('emptyState');
+
+      bar.addEventListener('click', e => {
+        const btn = e.target.closest('.filter-btn');
+        if(!btn) return;
+
+        bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        render(btn.dataset.f);
-        track('project_filter',{filter:btn.dataset.f});
-      }));
-      grid.addEventListener('click', e=>{
-        const card = e.target.closest('.pcard');
-        if(card) openLightbox(card.dataset.project, card.dataset.url);
+
+        const cat = btn.dataset.cat;
+
+        // Featured card visibility
+        const resources = sheet('Resources');
+        const featData = resources.find(r=>r.featured==='true');
+        if(featData){
+          feat.style.display = (cat==='all' || cat===featData.cat) ? '' : 'none';
+        }
+
+        // Grid cards
+        const cards = grid.querySelectorAll('.rcard');
+        let visible = 0;
+        cards.forEach(card => {
+          const match = cat==='all' || card.dataset.cat===cat;
+          card.classList.toggle('hidden', !match);
+          if(match) visible++;
+        });
+
+        empty.style.display = (visible===0 && (cat!=='all')) ? 'block' : 'none';
+
+        // re-trigger reveal for newly visible cards
+        triggerReveal();
       });
     }
 
-    /* ---------- lightbox ---------- */
-    function openLightbox(name, url){
-      const imgs = sheet('ProjectImages').filter(r=>r.project===name).map(r=>r.url);
-      const proj = sheet('Projects').find(p=>p.name===name) || {};
-      const lb = document.getElementById('lightbox');
-      document.getElementById('lbTitle').textContent = name;
-      document.getElementById('lbMeta').textContent = [proj.location && proj.location!=='—'?proj.location:'', proj.keys?proj.keys+' keys':'', proj.type].filter(Boolean).join(' · ');
-      const stage = document.getElementById('lbStage');
-      stage.src = imgs[0]||proj.primary_image;
-      document.getElementById('lbThumbs').innerHTML = imgs.map((u,i)=>`<img src="${u}" data-i="${i}" class="${i===0?'active':''}" alt="">`).join('');
-      document.getElementById('lbLink').href = url;
-      document.getElementById('lbThumbs').querySelectorAll('img').forEach(t=>t.addEventListener('click',()=>{
-        stage.src = imgs[t.dataset.i];
-        document.getElementById('lbThumbs').querySelectorAll('img').forEach(x=>x.classList.remove('active'));
-        t.classList.add('active');
-      }));
-      lb.classList.add('open');
-      document.body.style.overflow='hidden';
-      track('project_card_click',{project:name});
+    /* ---------- Scroll reveal ---------- */
+    function triggerReveal(){
+      const io = new IntersectionObserver(es=>es.forEach(en=>{
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      }),{threshold:.1});
+      document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
     }
-    function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
 
-    /* ---------- footer ---------- */
+    /* ---------- Footer ---------- */
     function buildFooter(){
       const site = kv('Site');
       const navCols = sheet('Nav');
@@ -745,7 +753,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       <div class="wrap">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="brand" href="https://www.base-4.com/"><span class="mark"></span>BASE4</a>
+            <a class="brand-logo" href="https://www.base-4.com/" aria-label="BASE4 home"><img src="${asset('logos/base4-logo.png')}" alt="BASE4"></a>
             <p>Integrated architecture, engineering, and interior design for hospitality developers, owners, and general contractors.</p>
             <div class="footer-socials">${SOCIALS.map(([k,href])=>`<a href="${href}" target="_blank" rel="noopener" aria-label="${k}">${ico(k)}</a>`).join('')}</div>
           </div>
@@ -765,19 +773,95 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <input type="email" name="news_email" placeholder="you@company.com" required aria-label="Email">
               <button type="submit">Join</button>
             </form>
-            <p class="form-status" id="newsStatus" hidden style="color:var(--accent)"></p>
+            <p class="form-status" id="newsStatus" hidden></p>
           </div>
         </div>
         <div class="footer-bottom">
-          <span class="reg">${esc(site['Florida Registration'])}</span>
           <span>${esc(site.Copyright)}</span>
         </div>
       </div>`;
+
+      document.getElementById('newsForm').addEventListener('submit', async e=>{
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const s = document.getElementById('newsStatus');
+        const email = new FormData(e.target).get('news_email');
+        btn.disabled = true; btn.textContent = '…';
+        try {
+          await w3fSubmit({
+            subject:      'Newsletter Opt-in — BASE4 Infographics',
+            from_name:    email,
+            email:        email,
+            'Lead Type':  'Newsletter Opt-in',
+            'Email':      email,
+            'Source':     'Footer — Infographics Page',
+          });
+          s.textContent = 'You\'re in! Watch for the next BASE4 update.';
+          s.hidden = false;
+          btn.textContent = '✓';
+        } catch(err) {
+          // mailto fallback
+          window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Newsletter signup')}&body=${encodeURIComponent('Please add to BASE4 newsletter: '+email)}`;
+          s.textContent = 'Opening your email client to confirm.';
+          s.hidden = false;
+          btn.disabled = false; btn.textContent = 'Join';
+        }
+      });
     }
 
-    /* ---------- global wiring ---------- */
+    /* ==========================================================
+       WEB3FORMS CONFIG
+       — Replace W3F_KEY with your real key from web3forms.com
+       — All three forms (download gate, consultation, newsletter)
+         post to the same Web3Forms endpoint automatically.
+    ========================================================== */
+    const W3F_KEY      = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE'; // ← swap this
+    const W3F_ENDPOINT = 'https://api.web3forms.com/submit';
+    const CONTACT_EMAIL = 'BlairH@base-4.com'; // fallback mailto
+
+    /* ---------- Shared Web3Forms POST helper ---------- */
+    async function w3fSubmit(payload){
+      const r = await fetch(W3F_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ access_key: W3F_KEY, ...payload })
+      });
+      const json = await r.json();
+      if(!json.success) throw new Error(json.message || 'Submission failed');
+      return json;
+    }
+
+    let _pendingPdf = '';
+
+    function openDownload(pdfUrl, title){
+      _pendingPdf = pdfUrl;
+      document.getElementById('downloadSub').textContent =
+        `Enter your details and we'll open "${title}" instantly.`;
+      document.getElementById('downloadForm').reset();
+      document.getElementById('downloadStatus').hidden = true;
+      document.getElementById('downloadModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(()=>{ const f = document.querySelector('#downloadModal input[name="name"]'); if(f) f.focus(); }, 60);
+      try{ gtag('event','infographic_gate_open',{resource_title:title}); }catch(_){}
+    }
+    function closeDownload(){
+      document.getElementById('downloadModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function openConsult(){
+      document.getElementById('downloadModal').classList.remove('open');
+      document.getElementById('consultModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(()=>{ const f = document.querySelector('#consultModal input[name="name"]'); if(f) f.focus(); }, 60);
+      try{ gtag('event','consult_open',{}); }catch(_){}
+    }
+    function closeConsult(){
+      document.getElementById('consultModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ---------- Global wiring ---------- */
     function wireGlobal(){
-      // header condense
       const header = document.getElementById('header');
       const onScroll = ()=>{
         header.classList.toggle('scrolled', window.scrollY>10);
@@ -785,57 +869,126 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       };
       window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-      // back to top
       document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-      // mobile nav
       document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
 
-      // lightbox close
-      document.getElementById('lbClose').addEventListener('click', closeLightbox);
-      document.getElementById('lightbox').addEventListener('click', e=>{ if(e.target.id==='lightbox') closeLightbox(); });
-      document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
-
-      // GA4 on tagged links
+      // Download gate — any [data-download] triggers modal
       document.body.addEventListener('click', e=>{
-        const a = e.target.closest('[data-ev]'); if(a) track(a.dataset.ev,{label:a.textContent.trim()});
+        const btn = e.target.closest('[data-download]');
+        if(btn){ e.preventDefault(); openDownload(btn.dataset.pdf||'', btn.dataset.title||''); return; }
+        // Consult modal — any [data-consult]
+        const ct = e.target.closest('[data-consult]');
+        if(ct){ e.preventDefault(); openConsult(); return; }
+        // GA4 on tagged elements
+        const a = e.target.closest('[data-ev]');
+        if(a) try{ gtag('event', a.dataset.ev, {resource_title: a.dataset.title||''}); }catch(_){}
       });
 
-      // reveal
-      const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.12});
-      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+      // Download modal close
+      document.getElementById('downloadClose').addEventListener('click', closeDownload);
+      document.getElementById('downloadModal').addEventListener('click', e=>{ if(e.target.id==='downloadModal') closeDownload(); });
 
-      // lead form
-      const form = document.getElementById('leadForm');
-      form.addEventListener('submit', async e=>{
+      // Consult modal close
+      document.getElementById('consultClose').addEventListener('click', closeConsult);
+      document.getElementById('consultModal').addEventListener('click', e=>{ if(e.target.id==='consultModal') closeConsult(); });
+
+      // Escape key closes whichever modal is open
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeDownload(); closeConsult(); } });
+
+      // ---- Download gate form submission ----
+      document.getElementById('downloadForm').addEventListener('submit', async e=>{
         e.preventDefault();
-        const d = Object.fromEntries(new FormData(form).entries());
-        const status = document.getElementById('formStatus');
-        track('generate_lead',{flag:d.flag||'', keys:d.keys||'', has_company:!!d.company});
-        if(FORM_ENDPOINT){
-          try{
-            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
-            if(!r.ok) throw new Error();
-            status.textContent='Thanks — your request was sent. We\'ll be in touch shortly.';
-          }catch(_){ status.textContent='Something went wrong. Please email '+kv('Site').Email+'.'; }
-        }else{
-          // No backend configured: route through existing mailto so the lead lands where it does today.
-          const body = `Name: ${d.name}\nCompany: ${d.company||''}\nEmail: ${d.email}\nLocation: ${d.location||''}\nBrand/Flag: ${d.flag||''}\nKeys: ${d.keys||''}\n\n${d.message||''}`;
-          window.location.href = `mailto:${kv('Site').Email}?subject=${encodeURIComponent('Project Consultation Request — '+(d.company||d.name))}&body=${encodeURIComponent(body)}`;
-          status.textContent='Opening your email client to send the request…';
+        const btn = e.target.querySelector('[type=submit]');
+        const status = document.getElementById('downloadStatus');
+        const d = Object.fromEntries(new FormData(e.target).entries());
+        btn.disabled = true; btn.textContent = 'Sending…';
+
+        try{ gtag('event','infographic_download',{resource_title: d['pdf-title']||_pendingPdf}); }catch(_){}
+
+        try {
+          await w3fSubmit({
+            subject:         `Resource Download — ${d.company || d.name}`,
+            from_name:       d.name,
+            email:           d.email,
+            'Lead Type':     'Resource Download',
+            'Full Name':     d.name,
+            'Company':       d.company || '—',
+            'Email':         d.email,
+            'Phone':         d.phone || '—',
+            'Role':          d.role || '—',
+            'Newsletter':    d.newsletter === 'yes' ? 'Yes' : 'No',
+            'Requested PDF': _pendingPdf,
+          });
+          status.textContent = 'Done! Opening your PDF now.';
+          status.hidden = false;
+          if(_pendingPdf) window.open(_pendingPdf, '_blank', 'noopener');
+          setTimeout(closeDownload, 2000);
+        } catch(err) {
+          // Web3Forms failed or key not set yet — mailto fallback
+          const body = `Name: ${d.name}\nCompany: ${d.company||''}\nEmail: ${d.email}\nPhone: ${d.phone||''}\nRole: ${d.role||''}\nNewsletter: ${d.newsletter==='yes'?'Yes':'No'}\n\nRequested PDF:\n${_pendingPdf}`;
+          window.open(`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Resource Download — '+(d.company||d.name))}&body=${encodeURIComponent(body)}`);
+          if(_pendingPdf) window.open(_pendingPdf, '_blank', 'noopener');
+          status.textContent = 'Opening your PDF now. We\'ll be in touch!';
+          status.hidden = false;
+          setTimeout(closeDownload, 2200);
+        } finally {
+          btn.disabled = false; btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF`;
         }
-        status.hidden=false;
       });
 
-      // newsletter (folded into footer) — routes via mailto until a list is wired
-      const news = document.getElementById('newsForm');
-      news.addEventListener('submit', e=>{
+      // ---- Consultation form submission ----
+      document.getElementById('leadForm').addEventListener('submit', async e=>{
         e.preventDefault();
-        const email = new FormData(news).get('news_email');
-        track('newsletter_signup',{});
-        window.location.href = `mailto:${kv('Site').Email}?subject=${encodeURIComponent('Newsletter signup')}&body=${encodeURIComponent('Please add this address to the BASE4 newsletter: '+email)}`;
-        const s=document.getElementById('newsStatus'); s.textContent='Thanks! Confirm in your email client.'; s.hidden=false;
+        const btn = e.target.querySelector('[type=submit]');
+        const status = document.getElementById('consultStatus');
+        const d = Object.fromEntries(new FormData(e.target).entries());
+        btn.disabled = true; btn.textContent = 'Sending…';
+
+        try{ gtag('event','generate_lead',{flag:d.flag||'',keys:d.keys||'',has_company:!!d.company}); }catch(_){}
+
+        try {
+          await w3fSubmit({
+            subject:            `Consultation Request — ${d.company || d.name}`,
+            from_name:          d.name,
+            email:              d.email,
+            'Lead Type':        'Project Consultation',
+            'Full Name':        d.name,
+            'Company':          d.company || '—',
+            'Email':            d.email,
+            'Project Location': d.location || '—',
+            'Brand / Flag':     d.flag || '—',
+            '# of Keys':        d.keys || '—',
+            'Message':          d.message || '—',
+          });
+          status.textContent = 'Sent! We\'ll be in touch shortly.';
+          status.hidden = false;
+          btn.textContent = '✓ Request sent';
+        } catch(err) {
+          // mailto fallback
+          const body = `Name: ${d.name}\nCompany: ${d.company||''}\nEmail: ${d.email}\nLocation: ${d.location||''}\nBrand/Flag: ${d.flag||''}\nKeys: ${d.keys||''}\n\n${d.message||''}`;
+          window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Project Consultation Request — '+(d.company||d.name))}&body=${encodeURIComponent(body)}`;
+          status.textContent = 'Opening your email client…';
+          status.hidden = false;
+          btn.disabled = false; btn.textContent = 'Send Consultation Request';
+        }
       });
+
+      triggerReveal();
+    }
+
+    /* ---------- Iframe embed height reporter ---------- */
+    function wireEmbed(){
+      if(window.self===window.top) return;
+      document.documentElement.classList.add('is-embedded');
+      const postH = ()=>{
+        try{ window.parent.postMessage({type:'base4-embed-height',height:Math.ceil(document.documentElement.scrollHeight)},'*'); }catch(e){}
+      };
+      window.addEventListener('load',postH);
+      window.addEventListener('resize',postH);
+      if('ResizeObserver' in window) new ResizeObserver(postH).observe(document.body);
+      document.addEventListener('click',()=>setTimeout(postH,80));
+      setTimeout(postH,400); setTimeout(postH,1500);
+      postH();
     }
 
     document.addEventListener('DOMContentLoaded', boot);
