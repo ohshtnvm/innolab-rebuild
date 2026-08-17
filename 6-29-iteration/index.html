@@ -260,6 +260,14 @@
        them over the parent's visible viewport so they open where the visitor is looking. */
     html.is-embedded .modal,html.is-embedded .lb{position:absolute}
     html.is-embedded #toTop{display:none}
+    /* Use WordPress's built-in header/footer: hide THIS page's own header + footer
+       when it runs inside the iframe embed, so they don't duplicate the theme's
+       nav/footer. Standalone/direct view keeps them. To always hide them (e.g. when
+       pasting the body into a WP template that already has chrome), delete the two
+       "html.is-embedded " prefixes below. To keep the page's own nav/footer in the
+       embed instead, delete these two rules. */
+    html.is-embedded #header{display:none}
+    html.is-embedded #footer{display:none}
     .modal-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:560px;width:100%;padding:30px;position:relative}
     .modal-card h3{color:var(--ink);margin-bottom:4px;font-size:1.4rem}
     .modal-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
