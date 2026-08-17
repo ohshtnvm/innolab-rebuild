@@ -255,6 +255,11 @@
     /* ===================== MODAL (consultation) ===================== */
     .modal{position:fixed;inset:0;background:rgba(10,18,14,.78);backdrop-filter:blur(4px);z-index:120;display:none;align-items:flex-start;justify-content:center;padding:40px 18px;overflow-y:auto}
     .modal.open{display:flex}
+    /* Embed (iframe) mode: overlays are position:fixed, which pins them to the top of the
+       tall auto-height iframe. When embedded we switch to absolute; wireEmbed() then places
+       them over the parent's visible viewport so they open where the visitor is looking. */
+    html.is-embedded .modal,html.is-embedded .lb{position:absolute}
+    html.is-embedded #toTop{display:none}
     .modal-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:560px;width:100%;padding:30px;position:relative}
     .modal-card h3{color:var(--ink);margin-bottom:4px;font-size:1.4rem}
     .modal-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
@@ -991,6 +996,31 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       document.addEventListener('click', ()=>setTimeout(postHeight, 80)); // filters, nav toggle, lightbox
       setTimeout(postHeight, 400); setTimeout(postHeight, 1500);          // catch late-loading images
       postHeight();
+
+      /* Modal positioning: overlays (.modal, .lb) are position:fixed and would pin to the top
+         of this tall iframe — off-screen for a visitor scrolled further down. The parent tells
+         us which slice of the iframe is currently visible; we place any open overlay there. */
+      let vp = null;
+      const placeOverlays = ()=>{
+        if(!vp) return;
+        document.querySelectorAll('.modal.open, .lb.open').forEach(o=>{
+          o.style.top = vp.top + 'px';
+          o.style.height = vp.height + 'px';
+          o.style.bottom = 'auto';
+        });
+      };
+      window.addEventListener('message', e=>{
+        const d = e.data || {};
+        if(d.type === 'base4-embed-viewport' && typeof d.top === 'number'){
+          vp = {top:d.top, height:d.height};
+          placeOverlays();
+        }
+      });
+      const requestViewport = ()=>{ try{ window.parent.postMessage({type:'base4-embed-request-viewport'}, '*'); }catch(e){} };
+      // Reposition the moment an overlay opens (uses the cached viewport; also refreshes it).
+      const overlayObserver = new MutationObserver(()=>{ requestViewport(); placeOverlays(); });
+      document.querySelectorAll('.modal, .lb').forEach(o=> overlayObserver.observe(o, {attributes:true, attributeFilter:['class']}));
+      requestViewport();
     }
 
     document.addEventListener('DOMContentLoaded', boot);
