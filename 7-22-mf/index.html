@@ -140,7 +140,7 @@
     .hero-stats .stat-foot{color:rgba(255,255,255,.72)}
     @media(prefers-reduced-motion:reduce){
       .hero-bg video{display:none}
-      .hero-bg{background-image:url('https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/base4-hero-poster.jpg')}
+      .hero-bg{background-image:url('https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/multifamily-hero-poster.jpg')}
     }
     @media(max-width:900px){
       .hero-grid{grid-template-columns:1fr;gap:34px}
@@ -205,6 +205,12 @@
     .step p{color:var(--muted);font-size:.95rem;margin:0}
 
     /* ===================== GALLERY ===================== */
+    .portfolio-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:24px 0 30px}
+    .portfolio-tools .filters{margin:0}
+    .sort-wrap{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);font-weight:600}
+    .sort-wrap select{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:999px;padding:9px 34px 9px 14px;cursor:pointer}
+    .more-projects-label{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:18px 0 2px;font-family:'Inter Tight';font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
+    .more-projects-label::after{content:'';height:1px;background:var(--hairline);flex:1}
     .filters{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
     .filter{font-family:'Inter Tight';font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;transition:.15s;color:var(--ink)}
     .filter:hover{border-color:var(--deep)}
@@ -266,6 +272,9 @@
        them over the parent's visible viewport so they open where the visitor is looking. */
     html.is-embedded .modal,html.is-embedded .lb{position:absolute}
     html.is-embedded #toTop{display:none}
+    /* Use the host's built-in header/footer when embedded (avoid duplicate nav/footer). */
+    html.is-embedded #header{display:none}
+    html.is-embedded #footer{display:none}
     .modal-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:560px;width:100%;padding:30px;position:relative}
     .modal-card h3{color:var(--ink);margin-bottom:4px;font-size:1.4rem}
     .modal-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
@@ -394,6 +403,7 @@
       <h3 id="consultTitle">Schedule a Project Consultation</h3>
       <p class="sub">Tell us about the project — product type, site, unit count, and timeline. We'll get the right A + E leads on a call.</p>
       <form id="leadForm">
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="form-row">
           <div class="field"><label>Full name*</label><input name="name" required></div>
           <div class="field"><label>Company</label><input name="company"></div>
@@ -409,7 +419,7 @@
         <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Brief, timeline, scope…"></textarea></div>
         <div class="form-foot">
           <button type="submit" class="btn btn--primary">Send Consultation Request</button>
-          <span class="mailto-fallback">Prefer email? <a href="mailto:BlairH@base-4.com" data-ev="mailto_fallback">BlairH@base-4.com</a></span>
+          <span class="mailto-fallback">Prefer email? <a href="mailto:info@base-4.com" data-ev="mailto_fallback">info@base-4.com</a></span>
         </div>
         <p class="form-status" id="formStatus" hidden></p>
       </form>
@@ -422,7 +432,7 @@
 # SHEET: Site
 Parameter	Value
 Org Name	BASE4
-Email	BlairH@base-4.com
+Email	info@base-4.com
 Mailto Subject	I Have a Project I Want to Discuss | Multifamily | BASE4
 Florida Registration	Florida Registered Architectural Firm - AA26003324
 Copyright	© 2026 BASE4 | All rights reserved.
@@ -435,7 +445,7 @@ H1	Multifamily designed for unit yield, built for speed to market.
 Subhead	BASE4 partners with multifamily developers, owners, and general contractors to deliver projects that maximize unit yield and constructability — integrated architecture, engineering, and interior design, repeatable across your pipeline.
 Primary CTA	View Multifamily Portfolio
 Secondary CTA	Schedule a Consultation
-Trust Row	Florida Registered Architectural Firm AA26003324 · High-volume residential experience · Integrated A + E
+Trust Row	Florida Registered Architectural Firm AA26003324 · High-volume residential experience · Architecture / Structural / MEP / ID
 
 # SHEET: ValueProp
 Parameter	Value
@@ -457,8 +467,8 @@ Repetition & scalability across projects	Repeatable prototypes plus industrializ
 
 # SHEET: Differentiators
 claim	support	icon	image	url
-Integrated A + E	Architecture and engineering aligned from concept through construction documents for faster decisions and better coordination.	layers	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg	https://www.base-4.com/portfolio/yellowstone-landing-belgrade-mt/
-Proven at Residential Volume	Experience delivering high-volume multifamily for active, pipeline-driven developers.	badge	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg	https://www.base-4.com/portfolio/fuze512-development-san-marcos-tx/
+Architecture · Structural · MEP · Interiors	One in-house team across architecture, structural, MEP, and interior design — coordinated from concept through construction documents for faster decisions and fewer field surprises.	layers	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg	https://www.base-4.com/portfolio/yellowstone-landing-belgrade-mt/
+Proven at Residential Volume	Experience delivering high-volume multifamily for active, pipeline-driven developers.	badge	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg	https://www.base-4.com/portfolio/fuze512-development-san-marcos-tx/
 Engineered for Yield & Cost	Layouts and systems tuned for unit yield and constructability, not just aesthetics.	grid	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-01.jpg	https://www.base-4.com/portfolio/flatz308-casa-grande-az/
 Built for Repeatable Rollouts	Prototype and industrialized construction systems built for multi-site pipelines.	flow	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg	https://www.base-4.com/portfolio/riverbend-north-phase-2-otsego-mn/
 
@@ -480,27 +490,135 @@ Mixed-Use	1 featured project
 quote	who	role
 Worked with this firm on my first construction project. They were able to provide me advice through every step of the way and garned rave reviews from the brand. They are highly experienced and know exactly what they are doing. Available to you whenever you may need and will design the project exactly as you wished. This is who you will want to use.	Simar Singh	★★★★★ · Google review
 Base4 has always been great to work with, as they are professional, work within defined budgets, quick to review shop drawings, change orders, and answer contractor's questions. I highly recommend Base4 and look forward to working with them on our next hotel project.	Philip Richardson	★★★★★ · Google review
+Witness Investment has partnered with the BASE4 team on multiple hotel developments and they've been an outstanding design partner every time. Their team is incredibly responsive allowing us to move quickly on projects, especially during the critical early phases when speed and clarity matter most. Their BIM/3D process is a major advantage. The level of detail within their models and designs reduces surprises in the field and creates a smoother path from design through construction. A strong partner for any developer looking for reliability, speed, and precision.	Ethan Palazzo	★★★★★ · Google review
+Our company has worked with Base4 on several hospitality projects with great success. Blair and his team remember that architecture is a service business as well as a profession that balances art, program and function. They understand innovation, cost and deadlines. They are efficient and effective in their approach to a project which serves the entire team very well.	Brian Walsh	★★★★★ · Google review
 
 # SHEET: Projects
-name	type	location	units	stories	year	note	url	primary_image
-Flatz308 – Casa Grande, AZ	Garden	Casa Grande, AZ	204	3	2023		https://www.base-4.com/portfolio/flatz308-casa-grande-az/	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-01.jpg
-Yellowstone Landing – Belgrade, MT	Mid-Rise	Belgrade, MT	168	4	2020		https://www.base-4.com/portfolio/yellowstone-landing-belgrade-mt/	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg
-Fuze512 Development – San Marcos, TX	Mixed-Use	San Marcos, TX	312	—	2020		https://www.base-4.com/portfolio/fuze512-development-san-marcos-tx/	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg
-Riverbend North Phase 2 – Otsego, MN	Mid-Rise	Otsego, MN	—	—	2022	Phase 2 of a multi-phase community	https://www.base-4.com/portfolio/riverbend-north-phase-2-otsego-mn/	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
-Community Apartments – Edgewater, FL	Garden	Edgewater, FL	—	—	2023		https://www.base-4.com/portfolio/community-apartments-edgewater-fl/	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-01.jpg
-Multifamily Townhomes	Townhome	—	24	3	—		https://www.base-4.com/portfolio/multifamily-townhomes/	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
+name	type	location	units	stories	year	note	url	primary_image	featured	featured_order
+Uptown East and West – Normal, IL	Other	Normal, IL					https://www.base-4.com/portfolio/uptown-east-and-west/	https://www.base-4.com/wp-content/uploads/2026/06/Uptown-East-and-West-01.jpg		
+Flatz202 – Laveen, AZ	Other	Laveen, AZ					https://www.base-4.com/portfolio/flatz202-laveen-az/	https://www.base-4.com/wp-content/uploads/2025/02/Flatz202-%E2%80%93-Laveen-AZ-01.jpg		
+Flatz308 – Casa Grande, AZ	Garden	Casa Grande, AZ	204	3	2023		https://www.base-4.com/portfolio/flatz308-casa-grande-az/	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-%E2%80%93-Casa-Grande-AZ-01.jpg	1	1
+Multifamily Townhomes	Townhome		24	3			https://www.base-4.com/portfolio/multifamily-townhomes/	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg	1	6
+Multifamily Development	Garden		93	3			https://www.base-4.com/portfolio/multifamily-development/	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-01.jpg		
+Community Apartments – Edgewater, FL	Garden	Edgewater, FL			2023		https://www.base-4.com/portfolio/community-apartments-edgewater-fl/	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-%E2%80%93-Edgewater-FL-01.jpg	1	5
+Riverbend North Phase 2 – Otsego, MN	Mid-Rise	Otsego, MN			2022	Phase 2 of a multi-phase community	https://www.base-4.com/portfolio/riverbend-north-phase-2-otsego-mn/	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg	1	4
+Spruell Apartments – Coolidge, AZ	Other	Coolidge, AZ			2022		https://www.base-4.com/portfolio/spruell-apartments-coolidge-az/	https://www.base-4.com/wp-content/uploads/2022/11/Spruell-Apartments-Coolidge-AZ.jpg		
+Bluewater Flats – Superior, WI	Other	Superior, WI			2022		https://www.base-4.com/portfolio/bluewater-flats-superior-wi/	https://www.base-4.com/wp-content/uploads/2024/12/Bluewater-Flats-Superior-WI-001.jpg		
+Apartments – Mesa, AZ	Other	Mesa, AZ			2021		https://www.base-4.com/portfolio/apartments-mesa-az/	https://www.base-4.com/wp-content/uploads/2022/11/Apartments-Mesa-AZ-01.jpg		
+The Flats 528 – Santa Rosa, CA	Other	Santa Rosa, CA			2021		https://www.base-4.com/portfolio/the-flats-528-santa-rosa-ca/	https://www.base-4.com/wp-content/uploads/2022/11/The-Flats-528-Santa-Rosa-CA-01.jpg		
+Yellowstone Landing – Belgrade, MT	Mid-Rise	Belgrade, MT	168	4	2020		https://www.base-4.com/portfolio/yellowstone-landing-belgrade-mt/	https://www.base-4.com/wp-content/uploads/2022/08/Yellowstone-Landing-Belgrade-MT-001.jpg	1	2
+Flatz 487	Other						https://www.base-4.com/portfolio/flatz-487-tx/	https://www.base-4.com/wp-content/uploads/2025/03/Flatz-487-01.jpg		
+Lox Apartments – Midwest, USA	Other	Midwest, USA					https://www.base-4.com/portfolio/lox-multifamily-wisconsin/	https://www.base-4.com/wp-content/uploads/2022/01/Lox-Multifamily-%E2%80%93-Wisconsin-001.jpg		
+Villas on Rodeo – Casa Grande, AZ	Garden	Casa Grande, AZ	176	3	2021		https://www.base-4.com/portfolio/villas-on-rodeo-casa-grande-az/	https://www.base-4.com/wp-content/uploads/2022/01/Villas-on-Rodeo-%E2%80%93-Casa-Grande-AZ-01.jpg		
+Villas at Southside Gardens – Chattanooga, TN	Garden	Chattanooga, TN	32	2	2021		https://www.base-4.com/portfolio/villas-at-southside-gardens-chattanooga-tn/	https://www.base-4.com/wp-content/uploads/2021/10/Villas-at-Southside-Gardens-%E2%80%93-Chattanooga-TN-1.jpg		
+The Wilshire – Phoenix, AZ	Garden	Phoenix, AZ	32	2	2021		https://www.base-4.com/portfolio/the-wilshire-phoenix-az/	https://www.base-4.com/wp-content/uploads/2021/09/The-Wilshire-Phoenix-AZ-001.jpg		
+View House Apartments – Albuquerque, NM	Mid-Rise	Albuquerque, NM	163	4	2020		https://www.base-4.com/portfolio/view-house-apartments-albuquerque-nm/	https://www.base-4.com/wp-content/uploads/2021/09/View-House-Apartments-Albuquerque-NM-001.jpg		
+Stay APT Suites – Nationwide	Other	Nationwide					https://www.base-4.com/portfolio/stay-apt-suites-nationwide/	https://www.base-4.com/wp-content/uploads/2021/08/Stay-APT-Suites-01.jpg		
+Townhomes at Southside Gardens – Chattanooga, TN	Townhome	Chattanooga, TN	37	3	2021		https://www.base-4.com/portfolio/townhomes-at-southside-gardens-chattanooga-tn/	https://www.base-4.com/wp-content/uploads/2021/08/Townhomes-at-Southside-Gardens.jpg		
+Farm Apartments – Northeast, United States	Mid-Rise	Northeast, United States	184	4	2021		https://www.base-4.com/portfolio/farm-apartments-northeast-united-states/	https://www.base-4.com/wp-content/uploads/2021/08/Farm-Apartments-01.jpg		
+Faith Apartments – Florida	Other	Florida					https://www.base-4.com/portfolio/faith-apartments-florida/	https://www.base-4.com/wp-content/uploads/2021/08/Karma-Apartments-Clermont-FL.jpg		
+Luxury Beachfront Resort and Villas – Trinidad and Tobago	Garden	Trinidad and Tobago	72	3	2021		https://www.base-4.com/portfolio/luxury-beachfront-resort-and-villas-trinidad-and-tobago/	https://www.base-4.com/wp-content/uploads/2023/05/Luxury-Beachfront-Resort-and-Villas-0001.jpg		
+Green Park Apartments – Saint Louis, MO	Other	Saint Louis, MO					https://www.base-4.com/portfolio/green-park-apartments-saint-louis-mo/	https://www.base-4.com/wp-content/uploads/2021/06/Green-Park-Apartments.jpg		
+Waterview-Chattanooga, TN	Townhome	Chattanooga, TN	41	3	2020		https://www.base-4.com/portfolio/waterview-chattanooga-tn/	https://www.base-4.com/wp-content/uploads/2021/05/Waterview-Chattanooga-TN.jpg		
+Leesburg Apartments – Nationwide	Other	Nationwide					https://www.base-4.com/portfolio/leesburg-apartments-nationwide/	https://www.base-4.com/wp-content/uploads/2021/04/Leesburg-Apartments-Nationwide.jpg		
+Novo Residences – Horizontal Apartment Prototype	Garden	Nationwide	18+		2021	Horizontal apartment prototype	https://www.base-4.com/portfolio/novo-residences-horizontal-apartment-prototype/	https://www.base-4.com/wp-content/uploads/2021/03/Novo-Residences-1.jpg		
+SLP Living – Saint Louis Park, MN	Mid-Rise	Saint Louis Park, MN	233	7	2020		https://www.base-4.com/portfolio/slp-living-saint-louis-park-mn/	https://www.base-4.com/wp-content/uploads/2021/01/i4-Platia-Place-Saint-Louis-Park-MN-05.jpg		
+Picoma-L54 Building – TX	Other	TX					https://www.base-4.com/portfolio/picoma-l54-building-tx/	https://www.base-4.com/wp-content/uploads/2020/12/Picoma-L54-Building-TX-01.jpg		
+Picoma-L66 Building – TX	Other	TX					https://www.base-4.com/portfolio/picoma-l66-building-tx/	https://www.base-4.com/wp-content/uploads/2020/12/Picoma-L66-Building-TX-01.jpg		
+Picoma-L48 Building – AZ	Other	AZ					https://www.base-4.com/portfolio/picoma-l48-building-az/	https://www.base-4.com/wp-content/uploads/2021/04/Picoma-L48-Building-AZ.jpg		
+Picoma-L42 Building – AZ	Other	AZ					https://www.base-4.com/portfolio/picoma-l42-building-az/	https://www.base-4.com/wp-content/uploads/2021/04/Picoma-L42-Building-AZ.jpg		
+Fuze130 Development – Austin, TX	Other	Austin, TX	396		2020	8 buildings	https://www.base-4.com/portfolio/fuze130-development-austin-tx/	https://www.base-4.com/wp-content/uploads/2020/12/Fuze512-Development-Austin-TX1.jpg		
+Bayview Flats at Harbour Island – Tampa, FL	Mixed-Use	Tampa, FL	70		2020	7 buildings · retail space · structured parking	https://www.base-4.com/portfolio/bayview-flats-at-harbour-island/	https://www.base-4.com/wp-content/uploads/2020/11/Podium-Apartment-Building-01.jpg		
+The Oasis − Nationwide	Other	Nationwide					https://www.base-4.com/portfolio/the-oasis/	https://www.base-4.com/wp-content/uploads/2020/11/Midrise-Apartment-Design-Podiums-vs-Wraps-01.jpg		
+Fuze520 – Maricopa, AZ	Other	Maricopa, AZ					https://www.base-4.com/portfolio/fuze520-development-maricopa-az/	https://www.base-4.com/wp-content/uploads/2020/11/Fuze520-Maricopa-AZ-1.jpg		
+Wheatland Garden Style Prototype – TX	Garden	TX				Garden style prototype	https://www.base-4.com/portfolio/wheatland-garden-style-prototype-tx/	https://www.base-4.com/wp-content/uploads/2020/10/Wheatland-Garden-Style-Prototype.jpg		
+Garden View Flats – Chattanooga, TN	Garden	Chattanooga, TN					https://www.base-4.com/portfolio/garden-view-flats-chattanooga-tn/	https://www.base-4.com/wp-content/uploads/2020/11/C1-MF-Greenway-Flats-at-Eastgate-Chattanooga-TN-01.jpg		
+Fuze512 Development – San Marcos, TX	Mixed-Use	San Marcos, TX	312		2020	6 buildings	https://www.base-4.com/portfolio/fuze512-development-san-marcos-tx/	https://www.base-4.com/wp-content/uploads/2024/06/Fuze512-Development-San-Marcos-TX-001.jpg	1	3
+Fuze602 Development – Phoenix, AZ	Other	Phoenix, AZ					https://www.base-4.com/portfolio/fuze602-development-phoenix-az/	https://www.base-4.com/wp-content/uploads/2020/10/Fuze602-Development-Phoenix-AZ-01-1.jpg		
+The Cypress − Sunrise, FL	Garden	Sunrise, FL	6	2	2017	3 buildings	https://www.base-4.com/portfolio/the-cypress-at-sunrise-fl/	https://www.base-4.com/wp-content/uploads/2020/10/The-Cypress-at-SunriseFL-01.jpg		
+Multifamily Tampa – FL (Harbour Island Blvd.)	Mid-Rise	Tampa, FL	96	12	2020	Structured parking	https://www.base-4.com/portfolio/multifamily-tampa-fl-harbour-island-blvd/	https://www.base-4.com/wp-content/uploads/2020/10/Multifamily-Tampa.jpg		
+MF Apartments – Lakewood, CO	Mid-Rise	Lakewood, CO	240	5	2020	Structured parking	https://www.base-4.com/portfolio/mf-apartments-lakewood-co/	https://www.base-4.com/wp-content/uploads/2020/10/MF-Lakewood-Apartments-CO-01.jpg		
+Picoma 4 Garden Style Prototype – TX/AZ	Garden	TX/AZ				Garden style prototype	https://www.base-4.com/portfolio/picoma-4-building-tx/	https://www.base-4.com/wp-content/uploads/2020/08/Picoma-4-Building-TX-01.jpg		
+Zekelman Garden Style Prototype – TX/AZ	Garden	TX/AZ				Garden style prototype	https://www.base-4.com/portfolio/48-unit-apartment-texas/	https://www.base-4.com/wp-content/uploads/2020/03/48-Unit-Apartment-Texas-1.jpg		
+18 Waves Housing – Lake Worth, FL	Other	Lake Worth, FL			2020		https://www.base-4.com/portfolio/modular-urban-housing-nationwide/	https://www.base-4.com/wp-content/uploads/2020/04/WHL-01.jpg		
+Atlas Garden Style Prototype – TX	Garden	Texas - Statewide Approvals	30	3	2019	Garden style prototype	https://www.base-4.com/portfolio/30-unit-modular-2/	https://www.base-4.com/wp-content/uploads/2020/07/30-Unit-Modular-8.jpg		
+Thompson – Tampa, FL (Bayshore Blvd.)	Other	Tampa, FL			2020		https://www.base-4.com/portfolio/thompson-tampa-fl/	https://www.base-4.com/wp-content/uploads/2020/06/Thompson-Tampa-FL.jpg		
+ADU 4.0, Nationwide	Townhome	Nationwide				ADU prototype	https://www.base-4.com/portfolio/light-gage-adu-nationwide/	https://www.base-4.com/wp-content/uploads/2020/05/ADU-4.jpg		
+Fuze432 – Midland, TX	Other	Midland, TX	342		2019	9 buildings	https://www.base-4.com/portfolio/the-tenley-midland-tx/	https://www.base-4.com/wp-content/uploads/2020/04/FUZE432-%E2%80%93-MIDLAND-TX.jpg		
 
 # SHEET: ProjectImages
 project	url
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-01.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-02.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-03.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-04.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-05.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-06.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-07.jpg
-Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-Casa-Grande-AZ-08.jpg
-Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/12/Yellowstone-Landing-Belgrade-MT-001.jpg
+Uptown East and West – Normal, IL	https://www.base-4.com/wp-content/uploads/2026/06/Uptown-East-and-West-01.jpg
+Flatz202 – Laveen, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz202-%E2%80%93-Laveen-AZ-01.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-%E2%80%93-Casa-Grande-AZ-01.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-01.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-%E2%80%93-Edgewater-FL-01.jpg
+Riverbend North Phase 2 – Otsego, MN	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
+Spruell Apartments – Coolidge, AZ	https://www.base-4.com/wp-content/uploads/2022/11/Spruell-Apartments-Coolidge-AZ.jpg
+Bluewater Flats – Superior, WI	https://www.base-4.com/wp-content/uploads/2024/12/Bluewater-Flats-Superior-WI-001.jpg
+Apartments – Mesa, AZ	https://www.base-4.com/wp-content/uploads/2022/11/Apartments-Mesa-AZ-01.jpg
+The Flats 528 – Santa Rosa, CA	https://www.base-4.com/wp-content/uploads/2022/11/The-Flats-528-Santa-Rosa-CA-01.jpg
+Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2022/08/Yellowstone-Landing-Belgrade-MT-001.jpg
+Flatz 487	https://www.base-4.com/wp-content/uploads/2025/03/Flatz-487-01.jpg
+Lox Apartments – Midwest, USA	https://www.base-4.com/wp-content/uploads/2022/01/Lox-Multifamily-%E2%80%93-Wisconsin-001.jpg
+Villas on Rodeo – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2022/01/Villas-on-Rodeo-%E2%80%93-Casa-Grande-AZ-01.jpg
+Villas at Southside Gardens – Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2021/10/Villas-at-Southside-Gardens-%E2%80%93-Chattanooga-TN-1.jpg
+The Wilshire – Phoenix, AZ	https://www.base-4.com/wp-content/uploads/2021/09/The-Wilshire-Phoenix-AZ-001.jpg
+View House Apartments – Albuquerque, NM	https://www.base-4.com/wp-content/uploads/2021/09/View-House-Apartments-Albuquerque-NM-001.jpg
+Stay APT Suites – Nationwide	https://www.base-4.com/wp-content/uploads/2021/08/Stay-APT-Suites-01.jpg
+Townhomes at Southside Gardens – Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2021/08/Townhomes-at-Southside-Gardens.jpg
+Farm Apartments – Northeast, United States	https://www.base-4.com/wp-content/uploads/2021/08/Farm-Apartments-01.jpg
+Faith Apartments – Florida	https://www.base-4.com/wp-content/uploads/2021/08/Karma-Apartments-Clermont-FL.jpg
+Luxury Beachfront Resort and Villas – Trinidad and Tobago	https://www.base-4.com/wp-content/uploads/2023/05/Luxury-Beachfront-Resort-and-Villas-0001.jpg
+Green Park Apartments – Saint Louis, MO	https://www.base-4.com/wp-content/uploads/2021/06/Green-Park-Apartments.jpg
+Waterview-Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2021/05/Waterview-Chattanooga-TN.jpg
+Leesburg Apartments – Nationwide	https://www.base-4.com/wp-content/uploads/2021/04/Leesburg-Apartments-Nationwide.jpg
+Novo Residences – Horizontal Apartment Prototype	https://www.base-4.com/wp-content/uploads/2021/03/Novo-Residences-1.jpg
+SLP Living – Saint Louis Park, MN	https://www.base-4.com/wp-content/uploads/2021/01/i4-Platia-Place-Saint-Louis-Park-MN-05.jpg
+Picoma-L54 Building – TX	https://www.base-4.com/wp-content/uploads/2020/12/Picoma-L54-Building-TX-01.jpg
+Picoma-L66 Building – TX	https://www.base-4.com/wp-content/uploads/2020/12/Picoma-L66-Building-TX-01.jpg
+Picoma-L48 Building – AZ	https://www.base-4.com/wp-content/uploads/2021/04/Picoma-L48-Building-AZ.jpg
+Picoma-L42 Building – AZ	https://www.base-4.com/wp-content/uploads/2021/04/Picoma-L42-Building-AZ.jpg
+Fuze130 Development – Austin, TX	https://www.base-4.com/wp-content/uploads/2020/12/Fuze512-Development-Austin-TX1.jpg
+Bayview Flats at Harbour Island – Tampa, FL	https://www.base-4.com/wp-content/uploads/2020/11/Podium-Apartment-Building-01.jpg
+The Oasis − Nationwide	https://www.base-4.com/wp-content/uploads/2020/11/Midrise-Apartment-Design-Podiums-vs-Wraps-01.jpg
+Fuze520 – Maricopa, AZ	https://www.base-4.com/wp-content/uploads/2020/11/Fuze520-Maricopa-AZ-1.jpg
+Wheatland Garden Style Prototype – TX	https://www.base-4.com/wp-content/uploads/2020/10/Wheatland-Garden-Style-Prototype.jpg
+Garden View Flats – Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2020/11/C1-MF-Greenway-Flats-at-Eastgate-Chattanooga-TN-01.jpg
+Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg
+Fuze602 Development – Phoenix, AZ	https://www.base-4.com/wp-content/uploads/2020/10/Fuze602-Development-Phoenix-AZ-01-1.jpg
+The Cypress − Sunrise, FL	https://www.base-4.com/wp-content/uploads/2020/10/The-Cypress-at-SunriseFL-01.jpg
+Multifamily Tampa – FL (Harbour Island Blvd.)	https://www.base-4.com/wp-content/uploads/2020/10/Multifamily-Tampa.jpg
+MF Apartments – Lakewood, CO	https://www.base-4.com/wp-content/uploads/2020/10/MF-Lakewood-Apartments-CO-01.jpg
+Picoma 4 Garden Style Prototype – TX/AZ	https://www.base-4.com/wp-content/uploads/2020/08/Picoma-4-Building-TX-01.jpg
+Zekelman Garden Style Prototype – TX/AZ	https://www.base-4.com/wp-content/uploads/2020/03/48-Unit-Apartment-Texas-1.jpg
+18 Waves Housing – Lake Worth, FL	https://www.base-4.com/wp-content/uploads/2020/04/WHL-01.jpg
+Atlas Garden Style Prototype – TX	https://www.base-4.com/wp-content/uploads/2020/07/30-Unit-Modular-8.jpg
+Thompson – Tampa, FL (Bayshore Blvd.)	https://www.base-4.com/wp-content/uploads/2020/06/Thompson-Tampa-FL.jpg
+ADU 4.0, Nationwide	https://www.base-4.com/wp-content/uploads/2020/05/ADU-4.jpg
+Fuze432 – Midland, TX	https://www.base-4.com/wp-content/uploads/2020/04/FUZE432-%E2%80%93-MIDLAND-TX.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-02-700x393_c.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/07/Flatz308-Casa-Grande-AZ-03-700x393_c.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-04.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-05.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-06.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-07.jpg
+Flatz308 – Casa Grande, AZ	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-–-Casa-Grande-AZ-08.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-02.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-03.jpg
+Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-04.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-02-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-03-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-04-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-05-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-06-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-07-700x393_c.jpg
+Multifamily Development	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Development-08-700x393_c.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-02.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-03.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-04.jpg
+Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-05.jpg
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-001.jpg
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-003.jpg
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/06/Yellowstone-Landing-–-Belgrade-MT-006.jpg
@@ -508,23 +626,12 @@ Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/10/Yellowstone-Landing-–-Belgrade-MT-12.jpg
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2025/03/Yellowstone-Landing-Belgrade-MT-19.jpg
 Yellowstone Landing – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2025/03/Yellowstone-Landing-Belgrade-MT-20.jpg
-Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2020/11/Fuze512-Development-San-Marcos-TX-001.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-007.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-8.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-9.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2021/12/Fuze512-Development-San-Marcos-TX-10.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2024/06/Fuze512-Development-San-Marcos-TX-16.jpg
 Fuze512 Development – San Marcos, TX	https://www.base-4.com/wp-content/uploads/2024/06/Fuze512-Development-San-Marcos-TX-17.jpg
-Riverbend North Phase 2 – Otsego, MN	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
-Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-01.jpg
-Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-02.jpg
-Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-03.jpg
-Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-04.jpg
-Community Apartments – Edgewater, FL	https://www.base-4.com/wp-content/uploads/2023/01/Community-Apartments-–-Edgewater-FL-05.jpg
-Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
-Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-02.jpg
-Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-03.jpg
-Multifamily Townhomes	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-04.jpg
 
 # SHEET: RenderReality
 file	label
@@ -545,7 +652,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     /* ---------- config ---------- */
     // Drop a real lead-capture endpoint here (Cloudflare Pages Function, Web3Forms, Formspree, etc.)
     // to POST leads instead of falling back to mailto. Leave empty to use mailto.
-    const FORM_ENDPOINT = '';
+    const FORM_ENDPOINT = 'https://www.base-4.com/wp-json/base4/v1/lead';
     // Absolute base for LOCAL assets (logos, usp, rvr, hero video + poster) so this single file can be
     // embedded on any origin and still load its assets from the hosted repo copy. Assets already served
     // from an absolute URL (e.g. base-4.com photos) pass through untouched.
@@ -630,8 +737,8 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       <!-- SECTION 1 — HERO (video bg + value-prop content + stats) -->
       <section class="hero">
         <div class="hero-bg">
-          <video autoplay muted loop playsinline poster="${asset('base4-hero-poster.jpg')}" preload="auto" aria-hidden="true">
-            <source src="${asset('base4-hero.mp4')}" type="video/mp4">
+          <video autoplay muted loop playsinline poster="${asset('multifamily-hero-poster.jpg')}" preload="auto" aria-hidden="true">
+            <source src="${asset('multifamily-hero.mp4')}" type="video/mp4">
           </video>
         </div>
         <div class="wrap hero-inner">
@@ -707,10 +814,21 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <p class="eyebrow">Featured work</p>
             <h2>Multifamily portfolio.</h2>
           </div>
-          <div class="filters reveal" id="filters" style="margin-top:24px"></div>
+          <div class="portfolio-tools reveal">
+            <div class="filters" id="filters"></div>
+            <label class="sort-wrap">Sort
+              <select id="projectSort" aria-label="Sort multifamily projects">
+                <option value="featured">Featured first</option>
+                <option value="newest">Newest year</option>
+                <option value="oldest">Oldest year</option>
+                <option value="az">Name A–Z</option>
+                <option value="za">Name Z–A</option>
+              </select>
+            </label>
+          </div>
           <div class="gallery" id="gallery"></div>
           <div class="reveal center" style="margin-top:40px">
-            <a class="btn btn--dark" href="https://www.base-4.com/portfolio/" target="_blank" rel="noopener" data-ev="see_all_projects">See All Projects →</a>
+            <button class="btn btn--dark" type="button" id="seeAllProjects" data-ev="see_all_projects" aria-expanded="false">See All Multifamily Projects →</button>
           </div>
         </div>
       </section>
@@ -796,18 +914,37 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     }
 
     /* ---------- gallery + filters ---------- */
-    const FILTERS = ['All','Garden','Mid-Rise','Townhome','Mixed-Use'];
+    const FILTERS = ['All','Garden','Mid-Rise','Townhome','Mixed-Use','Other'];
     function buildGallery(){
       const fc = document.getElementById('filters');
-      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
-      const projects = sheet('Projects');
       const grid = document.getElementById('gallery');
-      const render = (filter)=>{
-        const list = filter==='All' ? projects : projects.filter(p=>p.type===filter);
-        grid.innerHTML = list.map((p,idx)=>{
-          const eager = idx<3 ? 'eager' : 'lazy';
-          const fp = idx<3 ? ' fetchpriority="high"' : '';
-          return `
+      const sortEl = document.getElementById('projectSort');
+      const seeAll = document.getElementById('seeAllProjects');
+      const projects = sheet('Projects');
+      let activeFilter = 'All';
+      let expanded = false;
+
+      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
+
+      const yearNum = p => /^\d{4}$/.test(p.year||'') ? Number(p.year) : null;
+      const sortList = (list, mode) => [...list].sort((a,b)=>{
+        if(mode==='az') return a.name.localeCompare(b.name);
+        if(mode==='za') return b.name.localeCompare(a.name);
+        if(mode==='newest' || mode==='oldest'){
+          const ay=yearNum(a), by=yearNum(b);
+          if(ay===null && by===null) return a.name.localeCompare(b.name);
+          if(ay===null) return 1;
+          if(by===null) return -1;
+          return mode==='newest' ? (by-ay || a.name.localeCompare(b.name)) : (ay-by || a.name.localeCompare(b.name));
+        }
+        const ao=Number(a.featured_order)||999, bo=Number(b.featured_order)||999;
+        return ao-bo || (yearNum(b)||0)-(yearNum(a)||0) || a.name.localeCompare(b.name);
+      });
+
+      const card = (p,idx)=>{
+        const eager = idx<3 ? 'eager' : 'lazy';
+        const fp = idx<3 ? ' fetchpriority="high"' : '';
+        return `
           <article class="pcard reveal in" data-project="${esc(p.name)}" data-url="${p.url}">
             <div class="ph"><span class="flag-tag">${esc(p.type)}</span><img src="${p.primary_image}" alt="${esc(p.name)}" loading="${eager}"${fp}></div>
             <div class="body">
@@ -822,18 +959,47 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <span class="view">View project <span class="arw">→</span></span>
             </div>
           </article>`;
-        }).join('') || '<p style="color:var(--muted)">No projects in this category yet.</p>';
       };
-      render('All');
+
+      function render(){
+        const filtered = projects.filter(p=>activeFilter==='All' || p.type===activeFilter);
+        const featured = sortList(filtered.filter(p=>p.featured==='1'), sortEl.value);
+        const more = sortList(filtered.filter(p=>p.featured!=='1'), sortEl.value);
+        let html = featured.map(card).join('');
+        if(expanded && more.length){
+          html += `<div class="more-projects-label">More multifamily projects</div>` + more.map((p,i)=>card(p,featured.length+i)).join('');
+        }
+        if(!html) html = `<p style="color:var(--muted)">${expanded ? 'No projects in this category yet.' : 'No featured projects in this category. Select See All Multifamily Projects to view the full catalog.'}</p>`;
+        grid.innerHTML = html;
+        seeAll.textContent = expanded ? 'Show Featured Projects ↑' : 'See All Multifamily Projects →';
+        seeAll.setAttribute('aria-expanded', String(expanded));
+        seeAll.hidden = !more.length && !expanded;
+      }
+
+      render();
       fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
         fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        render(btn.dataset.f);
-        track('project_filter',{filter:btn.dataset.f});
+        activeFilter = btn.dataset.f;
+        render();
+        track('project_filter',{filter:activeFilter,expanded});
       }));
+      sortEl.addEventListener('change',()=>{
+        render();
+        track('project_sort',{sort:sortEl.value,expanded});
+      });
+      seeAll.addEventListener('click',()=>{
+        expanded = !expanded;
+        render();
+        track(expanded?'see_all_projects':'show_featured_projects',{filter:activeFilter,sort:sortEl.value});
+        if(expanded){
+          const moreLabel = grid.querySelector('.more-projects-label');
+          if(moreLabel) moreLabel.scrollIntoView({behavior:'smooth',block:'nearest'});
+        }
+      });
       grid.addEventListener('click', e=>{
-        const card = e.target.closest('.pcard');
-        if(card) openLightbox(card.dataset.project, card.dataset.url);
+        const c = e.target.closest('.pcard');
+        if(c) openLightbox(c.dataset.project, c.dataset.url);
       });
     }
 
@@ -951,7 +1117,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         track('generate_lead',{product:d.product||'', units:d.units||'', has_company:!!d.company});
         if(FORM_ENDPOINT){
           try{
-            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d, source:'Multifamily Project Consultation'})});
             if(!r.ok) throw new Error();
             status.textContent='Thanks — your request was sent. We\'ll be in touch shortly.';
           }catch(_){ status.textContent='Something went wrong. Please email '+kv('Site').Email+'.'; }

@@ -199,6 +199,12 @@
     .step p{color:var(--muted);font-size:.95rem;margin:0}
 
     /* ===================== GALLERY ===================== */
+    .portfolio-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:24px 0 30px}
+    .portfolio-tools .filters{margin:0}
+    .sort-wrap{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);font-weight:600}
+    .sort-wrap select{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:999px;padding:9px 34px 9px 14px;cursor:pointer}
+    .more-projects-label{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:18px 0 2px;font-family:'Inter Tight';font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
+    .more-projects-label::after{content:'';height:1px;background:var(--hairline);flex:1}
     .filters{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
     .filter{font-family:'Inter Tight';font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:999px;border:1px solid var(--hairline);background:#fff;cursor:pointer;transition:.15s;color:var(--ink)}
     .filter:hover{border-color:var(--deep)}
@@ -395,6 +401,7 @@
       <h3 id="consultTitle">Schedule a Project Consultation</h3>
       <p class="sub">Tell us about the project — brand, site, key count, and timeline. We'll get the right A+E+I leads on a call.</p>
       <form id="leadForm">
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="form-row">
           <div class="field"><label>Full name*</label><input name="name" required></div>
           <div class="field"><label>Company</label><input name="company"></div>
@@ -410,7 +417,7 @@
         <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Brief, timeline, scope…"></textarea></div>
         <div class="form-foot">
           <button type="submit" class="btn btn--primary">Send Consultation Request</button>
-          <span class="mailto-fallback">Prefer email? <a href="mailto:BlairH@base-4.com" data-ev="mailto_fallback">BlairH@base-4.com</a></span>
+          <span class="mailto-fallback">Prefer email? <a href="mailto:info@base-4.com" data-ev="mailto_fallback">info@base-4.com</a></span>
         </div>
         <p class="form-status" id="formStatus" hidden></p>
       </form>
@@ -423,7 +430,7 @@
 # SHEET: Site
 Parameter	Value
 Org Name	BASE4
-Email	BlairH@base-4.com
+Email	info@base-4.com
 Florida Registration	Florida Registered Architectural Firm - AA26003324
 Copyright	© 2026 BASE4 | All rights reserved.
 Site URL	https://www.base-4.com/hospitality/
@@ -484,14 +491,373 @@ Base4 has been a trusted partner on multiple new development projects, including
 A terrific firm to work with. All personnel are very professional and responsive in a timely manner. Luis Almonte in particular is guiding us on a challenging project with a hotel and has been great to work with. I would gladly recommend this firm.	Murali Veeramachaneni	★★★★★ · Google review
 
 # SHEET: Projects
-name	franchise	location	keys	stories	year	type	note	url	primary_image
-Hyatt Studios	Hyatt	—	122	4	2024	Select-service hotel		https://www.base-4.com/portfolio/hyatt-studios/	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg
-Residence Inn – Kingsland, GA	Marriott	Kingsland, GA	128	4	2026	Extended-stay hotel	Part of a Youth Sport Complex development	https://www.base-4.com/portfolio/residence-inn-youth-sport-complex/	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg
-Home2 Suites – Ooltewah, TN	Hilton	Ooltewah, TN	98	4	2025	Extended-stay hotel		https://www.base-4.com/portfolio/home2-suites-ooltewah-tn/	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg
-Holiday Inn Express – Des Moines, IA	IHG	Des Moines, IA	96	4	—	Select-service hotel		https://www.base-4.com/portfolio/holiday-inn-express/	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg
-Cambria – Colorado Springs, CO	Choice	Colorado Springs, CO	—	—	2020	Upscale hotel		https://www.base-4.com/portfolio/cambria-colorado-springs-co/	https://www.base-4.com/wp-content/uploads/2022/11/Cambria-Colorado-Springs-CO-01.jpg
-Hawthorn – Wildwood, FL	Wyndham	Wildwood, FL	—	—	2024	Extended-stay hotel		https://www.base-4.com/portfolio/hawthorn-wildwood-fl/	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_01.jpg
-
+name	franchise	location	keys	stories	year	type	note	url	primary_image	featured	featured_order	catalog_order
+Hyatt Studios	Hyatt		122	4	2024	Select-service hotel		https://www.base-4.com/portfolio/hyatt-studios/	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg	1	1	5
+Residence Inn – Kingsland, GA	Marriott	Kingsland, GA	128	4	2026	Extended-stay hotel	Part of a Youth Sport Complex development	https://www.base-4.com/portfolio/residence-inn-youth-sport-complex/	https://www.base-4.com/wp-content/uploads/2026/04/Residence-Inn-Kingsland-GA-01.jpg	1	2	8
+Home2 Suites – Ooltewah, TN	Hilton	Ooltewah, TN	98	4	2025	Extended-stay hotel		https://www.base-4.com/portfolio/home2-suites-ooltewah-tn/	https://www.base-4.com/wp-content/uploads/2026/05/Home2-Suites-Ooltewah-TN-01.jpg	1	3	7
+Holiday Inn Express – Des Moines, IA	IHG	Des Moines, IA	96	4		Select-service hotel		https://www.base-4.com/portfolio/holiday-inn-express/	https://www.base-4.com/wp-content/uploads/2026/03/HIEX-01.jpg	1	4	10
+Cambria – Colorado Springs, CO	Choice	Colorado Springs, CO			2020	Upscale hotel		https://www.base-4.com/portfolio/cambria-colorado-springs-co/	https://www.base-4.com/wp-content/uploads/2022/11/Cambria-Colorado-Springs-CO-01.jpg	1	5	67
+Hawthorn – Wildwood, FL	Wyndham	Wildwood, FL			2024	Extended-stay hotel		https://www.base-4.com/portfolio/hawthorn-wildwood-fl/	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_01.jpg	1	6	44
+StudioRes – Shalimar, FL	Marriott	Shalimar, FL				Hotel		https://www.base-4.com/portfolio/studiores-shalimar-fl/	https://www.base-4.com/wp-content/uploads/2026/08/StudioRes-Shalimar-FL-01-555x358_c.jpg			1
+Hyatt Studios – Clarksville, TN	Hyatt	Clarksville, TN				Hotel		https://www.base-4.com/portfolio/hyatt-studios-clarksville-tn/	https://www.base-4.com/wp-content/uploads/2026/07/Hyatt-Studios-Clarksville-TN-01-555x358_c.jpg			2
+Towneplace Suites & Fairfield Inn – Greenville, SC	Marriott	Greenville, SC				Hotel		https://www.base-4.com/portfolio/towneplace-suites-fairfield-inn-greenville-sc/	https://www.base-4.com/wp-content/uploads/2026/07/Towneplace-Suites-Fairfield-Inn-Greenville-SC-01-555x358_c.jpg			3
+Atwell Suites	IHG					Hotel		https://www.base-4.com/portfolio/atwell-suites-hotel/	https://www.base-4.com/wp-content/uploads/2026/07/Atwell-Suites-01-555x358_c.jpg			4
+Hyatt Studios – Glendale, AZ	Hyatt	Glendale, AZ				Hotel		https://www.base-4.com/portfolio/hyatt-studios-glendale-az/	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01-555x358_c.jpg			6
+Towneplace Suites – Maricopa, AZ	Marriott	Maricopa, AZ	111	4	2025	Hotel		https://www.base-4.com/portfolio/towneplace-suites-maricopa-az/	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg			9
+Towneplace Suites & Fairfield Inn	Marriott	Pleasant View, TN	136	4	2025	Hotel		https://www.base-4.com/portfolio/towneplace-suites-fairfield-inn/	https://www.base-4.com/wp-content/uploads/2026/02/Towneplace-Suites-Fairfield-Inn-01.jpg			11
+Dual Avid & Atwell Suites	IHG		109	4	2023	Hotel		https://www.base-4.com/portfolio/dual-avid-atwell-suites/	https://www.base-4.com/wp-content/uploads/2026/02/Dual-Avid-Atwell-Suites-01.jpg			12
+Fairfield Inn & Suites – Cayce, SC	Marriott	Cayce, SC				Hotel			https://www.base-4.com/wp-content/uploads/2026/05/Fairfield-Inn-Suites-Cayce-SC-01.jpg			13
+Residence Inn	Marriott					Hotel			https://www.base-4.com/wp-content/uploads/2026/01/Residence-Inn-01-1.jpg			14
+Candlewood Suites – Mankato, MN	IHG	Mankato, MN				Hotel			https://www.base-4.com/wp-content/uploads/2025/11/CWS-Mankato-MN-01.jpg			15
+Atwell Suites – Montgomery, AL	IHG	Montgomery, AL	120	5	2024	Atwell Suites		https://www.base-4.com/portfolio/atwell-suites/	https://www.base-4.com/wp-content/uploads/2025/10/Atwell-Suites-Montgomery-AL-01.jpg			16
+Hyatt House & Hyatt Place	Hyatt	Nationwide			2025	Hotel		https://www.base-4.com/portfolio/hyatt-house-hyatt-place/	https://www.base-4.com/wp-content/uploads/2026/02/Hyatt-House-Hyatt-Place-01.jpg			17
+TRU by Hilton – Gainesville, VA	Hilton	Gainesville, VA				Hotel			https://www.base-4.com/wp-content/uploads/2025/09/TRU-by-Hilton-Gainesville-VA-01.jpg			18
+Towneplace Suites – Kokomo, IN	Marriott	Kokomo, IN				Hotel			https://www.base-4.com/wp-content/uploads/2025/08/Towneplace-Suites-Kokomo-IN-01.jpg			19
+Sleep Inn – Prosser, WA	Choice	Prosser, WA				Hotel			https://www.base-4.com/wp-content/uploads/2025/07/Sleep-Inn-Prosser-WA-01.jpg			20
+Element – Ocala, FL	Marriott	Ocala, FL				Hotel			https://www.base-4.com/wp-content/uploads/2025/07/Element-Ocala-FL-01.jpg			21
+LOGE at Mount Snow	Other					Hospitality			https://www.base-4.com/wp-content/uploads/2025/06/LOGE-Mount-Snow-01.jpg			22
+Hampton by Hilton – St. Thomas, VI	Hilton	St. Thomas, VI		5	2022	Hampton by Hilton		https://www.base-4.com/portfolio/hampton-by-hilton-st-thomas-vi/	https://www.base-4.com/wp-content/uploads/2024/01/Hampton-by-Hilton-%E2%80%93-St.-Thomas-VI-001.jpg			23
+Caribbean Hotel in Bahamas	Other				2024	Hospitality		https://www.base-4.com/portfolio/caribbean-hotel-in-bahamas/	https://www.base-4.com/wp-content/uploads/2025/06/Caribbean-Hotel-in-Bahamas-01.jpg			24
+Carribean Mixed-Use Project in Puerto Rico	Other				2025	Hospitality		https://www.base-4.com/portfolio/carribean-mixed-use-project-in-puerto-rico/	https://www.base-4.com/wp-content/uploads/2025/06/Carribean-Mixed-Use-Project-01.jpg			25
+Dual SpringHill Suites & TownePlace Suites	Marriott	Nationwide			2024	Hotel		https://www.base-4.com/portfolio/dual-springhill-suites-towneplace-suites/	https://www.base-4.com/wp-content/uploads/2025/03/Dual-SpringHill-Suites-TownePlace-Suites-01.jpg			26
+Hampton by Hilton – Jacksonville, FL	Hilton	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2025/03/Hampton-by-Hilton-Jacksonville-FL-01.jpg			27
+SpringHill Suites – Leeds, AL	Marriott	Leeds, AL			2024	Hotel		https://www.base-4.com/portfolio/springhill-suites-leeds-al/	https://www.base-4.com/wp-content/uploads/2025/02/SpringHill-Suites-%E2%80%93-Leeds-AL-01.jpg			28
+Hampton by Hilton – Manhattan, KS	Hilton	Manhattan, KS				Hotel			https://www.base-4.com/wp-content/uploads/2025/01/Hampton-by-Hilton-%E2%80%93-Manhattan-KS-01.jpg			29
+Dual Home2 Suites & LivSmart Studios – Nationwide	Hilton	Nationwide			2024	Hotel		https://www.base-4.com/portfolio/dual-home2-suites-livsmart-studios/	https://www.base-4.com/wp-content/uploads/2025/01/Dual-Home2-Suites-LivSmart-Studios-01.jpg			30
+Avid & Candlewood Suites – Richmond Hill, GA	IHG	Richmond Hill, GA				Hotel			https://www.base-4.com/wp-content/uploads/2024/11/Avid-Candlewood-Suites-%E2%80%93-Richmond-Hill-GA-01.jpg			31
+Hyatt Studios – Chesapeake, VA	Hyatt	Chesapeake, VA				Hotel			https://www.base-4.com/wp-content/uploads/2024/11/Hyatt-Studios-Chesapeake-VA-01.jpg			32
+AC – North Charleston, SC	Marriott	North Charleston, SC			2021	Hospitality			https://www.base-4.com/wp-content/uploads/2024/11/AC-%E2%80%93-North-Charleston-SC-01.jpg			33
+Homewood Suites & Tempo	Hilton					Hotel			https://www.base-4.com/wp-content/uploads/2024/11/Homewood-Suites-Tempo-%E2%80%93-Hallandale-FL-001.jpg			34
+Dual Holiday Inn & Express Staybridge Suites – Pooler, GA	IHG	Pooler, GA				Hotel			https://www.base-4.com/wp-content/uploads/2024/10/Dual-Holiday-Inn-Express-Staybridge-Suites-%E2%80%93-Pooler-GA-01.jpg			35
+Hilton Garden Inn – Cape Canaveral, FL	Hilton	Cape Canaveral, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/10/Hilton-Garden-Inn-Cape-Canaveral-FL-01.jpg			36
+LivSmart & TRU – Huntsville, AL	Hilton	Huntsville, AL				Hotel			https://www.base-4.com/wp-content/uploads/2025/03/Dual-LivSmart-Tru-Huntsville-AL-001.jpg			37
+Dual AVID & Candlewood Suites – Sanford, FL	IHG	Sanford, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/09/Dual-AVID-Candlewood-Suites-%E2%80%93-Sanford-FL-01.jpg			38
+Dual AVID & Candlewood Suites – Christiansburg, VA	IHG	Christiansburg, VA				Hotel			https://www.base-4.com/wp-content/uploads/2024/07/Dual-AVID-Candlewood-Suites-Christiansburg-VA-01.jpg			39
+Dual Element & Courtyard – Fort Worth, TX	Marriott	Fort Worth, TX				Hotel			https://www.base-4.com/wp-content/uploads/2024/07/Dual-Element-Courtyard-Fort-Worth-TX-01.jpg			40
+Avid – Florence, SC	IHG	Florence, SC				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/Avid-%E2%80%93-Florence-SC-01.jpg			41
+Dual Courtyard and Residence Inn by Marriot	Marriott					Hotel			https://www.base-4.com/wp-content/uploads/2024/05/Dual-Courtyard-By-Marriott-Residence-Inn-By-Marriott-01.jpg			42
+Hampton Inn & Suites – Hot Springs, AR	Hilton	Hot Springs, AR				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/Hampton-Inn-Suites-Hot-Springs-AR-01.jpg			43
+LivSmart Studios – Nationwide	Hilton	Nationwide				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/LivSmart-Studios-01.jpg			45
+StudioRes – Nationwide	Marriott	Nationwide				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/StudioRes-01.jpg			46
+Dual Home2 Suites & Tru Hotel – West Columbia, SC	Hilton	West Columbia, SC				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/Dual-Home2-Suites-Tru-Hotel-West-Columbia-SC-01.jpg			47
+Dual Avid & Candlewood Suites – Clovis, CA	IHG	Clovis, CA				Hotel			https://www.base-4.com/wp-content/uploads/2024/03/Dual-Avid-Candlewood-Suites-%E2%80%93-Clovis-CA-01.jpg			48
+Dual Hampton by Hilton & Home2 Suites – Missoula, MT	Hilton	Missoula, MT				Hotel			https://www.base-4.com/wp-content/uploads/2024/05/Dual-Hampton-by-Hilton-Home2-Suites-Missoula-MT-01.jpg			49
+Fairfield Inn and Suites – Springdale, SC	Marriott	Springdale, SC				Hotel			https://www.base-4.com/wp-content/uploads/2024/01/Fairfield-Inn-and-Suites-%E2%80%93-Springdale-SC.jpg			50
+Curio	Hilton					Hotel			https://www.base-4.com/wp-content/uploads/2025/07/Curio-01.jpg			51
+Hyatt House – Orlando, FL	Hyatt	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Hyatt-House-Orlando-FL-001.jpg			52
+ESA – Fort Myers, FL	Other	Fort Myers, FL				Hospitality			https://www.base-4.com/wp-content/uploads/2023/03/ESA-Fort-Myers-FL-01.jpg			53
+Tru Hotel – Warner Robins, GA	Hilton	Warner Robins, GA				Hotel			https://www.base-4.com/wp-content/uploads/2023/03/Tru-Hotel-Warner-Robins-GA-01.jpg			54
+Springhill Suites – Boone, NC	Marriott	Boone, NC				Hotel			https://www.base-4.com/wp-content/uploads/2024/04/Springhill-Suites-%E2%80%93-Boone-NC-001.jpg			55
+Homewood Suites – Charlotte, NC	Hilton	Charlotte, NC				Hotel			https://www.base-4.com/wp-content/uploads/2023/03/Homewood-Suites-Charlotte-NC-01.jpg			56
+Towneplace Suites – Crown Point, IN	Marriott	Crown Point, IN				Hotel			https://www.base-4.com/wp-content/uploads/2023/03/Towneplace-Suites-Crown-Point-IN-01.jpg			57
+Royal Cliff Resort – Pench, India	Other	Pench, India				Hospitality			https://www.base-4.com/wp-content/uploads/2024/02/Hotel-Royal-Cliff-Resort-%E2%80%93-Pench-India_01.jpg			58
+Hotel-Royal Cliff Resort – Pench, India	Other	Pench, India				Hospitality			https://www.base-4.com/wp-content/uploads/2024/01/Hotel-Royal-Cliff-Resort-%E2%80%93-Pench-India-01.jpg			59
+Tapestry – Ft Worth, TX	Hilton	Ft Worth, TX				Hotel			https://www.base-4.com/wp-content/uploads/2024/10/Tapestry-%E2%80%93-Ft-Worth-TX-0001.jpg			60
+Home2 Suites – Medford, OR	Hilton	Medford, OR				Hotel			https://www.base-4.com/wp-content/uploads/2022/11/Home2-Suites-Medford-OR.jpg			61
+Towneplace Suites – Hadley, MA	Marriott	Hadley, MA				Hotel			https://www.base-4.com/wp-content/uploads/2022/11/Towneplace-Suites-Hadley-MA-01.jpg			62
+Sleep Inn & Mainstay Suites – Brownsville, TN	Choice	Brownsville, TN				Hotel			https://www.base-4.com/wp-content/uploads/2022/11/Sleep-Inn-Mainstay-Suites-Brownsville-TN-01.jpg			63
+AC + Condos – Grand Cayman	Marriott	Grand Cayman				Hospitality			https://www.base-4.com/wp-content/uploads/2023/05/AC-Condos-Grand-Cayman-01.jpg			64
+Fairfield Inn & Suites – Conway, SC	Marriott	Conway, SC				Hotel			https://www.base-4.com/wp-content/uploads/2022/11/Fairfield-Inn-Suites-Conway-SC-01.jpg			65
+Hyatt Place – New Smyrna Beach, FL	Hyatt	New Smyrna Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2022/11/Hyatt-Place-New-Smyrna-Beach-FL-001.jpg			66
+Residence Inn – Medford, OR	Marriott	Medford, OR				Hotel			https://www.base-4.com/wp-content/uploads/2022/10/Residence-Inn-Medford-OR-01.jpg			68
+Dual Home2 Suites & Tru Hotel – Concord, NC	Hilton	Concord, NC				Hotel			https://www.base-4.com/wp-content/uploads/2022/06/Dual-H2S-Tru-%E2%80%93-Concord-NC-01.jpg			69
+Dual Hotel – Myrtle Beach, SC	Other	Myrtle Beach, SC				Hospitality			https://www.base-4.com/wp-content/uploads/2023/05/Dual-Hotel-Myrtle-Beach-SC-01.jpg			70
+Tru – Orlando, FL	Hilton	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/08/Tru-Orlando-FL-05.jpg			71
+Candlewood Suites – Oakwood, GA	IHG	Oakwood, GA				Hotel			https://www.base-4.com/wp-content/uploads/2022/02/Candlewood-Suites-%E2%80%93-Oakwood-GA.jpg			72
+Embassy Suites – Jacksonville, FL	Hilton	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2021/12/Embassy-Suites-%E2%80%93-South-East-1.jpg			73
+Even – Belgrade, MT	IHG	Belgrade, MT				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Even-Belgrade-MT-001.jpg			74
+Home2 Suites – Kinston, NC	Hilton	Kinston, NC				Hotel			https://www.base-4.com/wp-content/uploads/2021/09/Home2-Suites-Kingston-NC.jpg			75
+Stay APT Suites – Nationwide	Other	Nationwide				Hospitality			https://www.base-4.com/wp-content/uploads/2021/08/Stay-APT-Suites-01.jpg			76
+Tru – Yakima, WA	Hilton	Yakima, WA				Hotel			https://www.base-4.com/wp-content/uploads/2021/11/Tru-Yakima-WA-001.jpg			77
+TownePlace Suites – Iron Mountain, MI	Marriott	Iron Mountain, MI				Hotel			https://www.base-4.com/wp-content/uploads/2021/08/TownePlace-Suites-Iron-Mountain-MI.jpg			78
+Luxury Beachfront Resort and Villas – Trinidad and Tobago	Other	Trinidad and Tobago				Hospitality			https://www.base-4.com/wp-content/uploads/2023/05/Luxury-Beachfront-Resort-and-Villas-0001.jpg			79
+SpringHillSuites – Goldsboro, NC	Marriott	Goldsboro, NC				Hotel			https://www.base-4.com/wp-content/uploads/2021/04/SpringHillSuites-Goldsboro-NC-01.jpg			80
+Dual Residence Inn & Springhill Suites – Indianapolis, IN	Marriott	Indianapolis, IN				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Dual-Residence-Inn-Springhill-Suites-Indianapolis-IN.jpg			81
+Staybridge Suites – Santa Fe, NM	IHG	Santa Fe, NM				Hotel			https://www.base-4.com/wp-content/uploads/2020/09/SBS-Santa-Fe-NM-01.jpg			82
+Tapestry Collection – Basalt, CO	Hilton	Basalt, CO				Hotel			https://www.base-4.com/wp-content/uploads/2021/09/Tapestry-Collection-Basalt-CO-001.jpg			83
+Hyatt Place – Cape Canaveral, FL	Hyatt	Cape Canaveral, FL				Hotel			https://www.base-4.com/wp-content/uploads/2020/08/Hyatt-Place-Cape-Canaveral-FL-01.jpg			84
+Element – Opelika, AL	Marriott	Opelika, AL				Hotel			https://www.base-4.com/wp-content/uploads/2020/07/Element-OpelikaAL-04.jpg			85
+Thompson – Tampa, FL (Bayshore Blvd.)	Hyatt	Tampa, FL (Bayshore Blvd.)				Hotel			https://www.base-4.com/wp-content/uploads/2020/06/Thompson-Tampa-FL.jpg			86
+Cambria – Orlando, FL	Choice	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2020/06/Cambria-Orlando-FL-01.jpg			87
+Hilton Garden Inn – Chamblee, GA	Hilton	Chamblee, GA				Hotel			https://www.base-4.com/wp-content/uploads/2020/07/HGI-Chamblee-GA-01.jpg			88
+Hampton Inn – Logan, UT	Hilton	Logan, UT				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Hampton-Inn-Logan-UT-001.jpg			89
+Residence Inn – Township, MI	Marriott	Township, MI				Hotel			https://www.base-4.com/wp-content/uploads/2019/12/Residence-Inn-Clinton-Township-MI-01.jpg			90
+Hampton Inn & Suites – Miami, FL (Airport)	Hilton	Miami, FL (Airport)				Hotel			https://www.base-4.com/wp-content/uploads/2020/02/HIEX-Miami-FL-03-1.jpg			91
+Thompson Hotel – FL (Harbour Island Blvd.)	Hyatt	FL (Harbour Island Blvd.)				Hotel			https://www.base-4.com/wp-content/uploads/2020/03/Thompson-Hotel-FL-01.jpg			92
+Moxy – Des Moines, IA	Marriott	Des Moines, IA				Hotel			https://www.base-4.com/wp-content/uploads/2020/03/Moxy-Des-Moines-IA-01.jpg			93
+Courtyard – Pittsburgh, CA	Marriott	Pittsburgh, CA				Hotel			https://www.base-4.com/wp-content/uploads/2020/02/CYM-pitsburgh-1.jpg			94
+Hyatt Place – Paso Robles, CA	Hyatt	Paso Robles, CA				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/Hyat-Place-Pase-Robles-01.jpg			95
+Home2 Suites – Orlando, FL	Hilton	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Orlando-FL-Parallax-001.gif			96
+Holiday Inn Express – New Smyrna Beach, FL	IHG	New Smyrna Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/09/HIEXS-New-Smyrna-Beach-FL.jpg			97
+Staybridge Suites – Orlando, FL	IHG	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/10/SBS-Orlando-FL-01.jpg			98
+Springhill Suites – West Melbourne, FL	Marriott	West Melbourne, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Springhill-Suites-West-Melbourne-FL-Parallax-001.gif			99
+Fairfield Inn – Altamonte Springs, FL	Marriott	Altamonte Springs, FL				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/FFIS-Altamonte-Springs-05.jpg			100
+Residence Inn – Clayton, MO	Marriott	Clayton, MO				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Residence-Inn-Clayton-MO-01.jpg			101
+Hyatt Place – Oxford, MS	Hyatt	Oxford, MS				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/HP-Oxford-MI-01.jpg			102
+Residence Inn – Ocean, NJ	Marriott	Ocean, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/Residence-Inn-Ocean-NJ-01.jpg			103
+WoodSpring Suites – Concord, NC	Choice	Concord, NC				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/WoodSpring-Suites-Concord-NC-001.jpg			104
+Home2 Suites – Hillsboro, OR	Hilton	Hillsboro, OR				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Home2-Hillsboro-OR.jpg			105
+Hotel Indigo – Huntsville, AL	IHG	Huntsville, AL				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/Hotel-Indigo-Huntsville-AL-03.jpg			106
+Home2 Suites – State College, PA	Hilton	State College, PA				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/H2S-State-College-PA-01.jpg			107
+Fairfield Inn & Towneplace Suites – Edina, MN	Marriott	Edina, MN				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/Fairfield-Inn-Towneplace-Suites-Edina-MN-001.jpg			108
+Waterwalk Hotel	Wyndham					Hotel			https://www.base-4.com/wp-content/uploads/2019/10/Waterwalk-Hotel.jpg			109
+Hampton – Guatemala	Hilton	Guatemala				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/HT-Guatemala-1.jpg			110
+Compass Hotel	Other					Hospitality			https://www.base-4.com/wp-content/uploads/2019/11/Compass-Hotel-01.jpg			111
+Reverb Hotel	Other					Hospitality			https://www.base-4.com/wp-content/uploads/2019/11/REVERB-Proto-01.jpg			112
+Hampton Inn – Farmingdale, NY	Hilton	Farmingdale, NY				Hotel			https://www.base-4.com/wp-content/uploads/2019/10/HIS-Farmingdale-NY-01-New.jpg			113
+Residence Inn – Franklin, TN	Marriott	Franklin, TN				Hotel			https://www.base-4.com/wp-content/uploads/2019/10/Residence-Inn-Franklin-TN-1.jpg			114
+Home2 Suites – Wildwood, FL	Hilton	Wildwood, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Home2-Suites-Wildwood-FL-001.jpg			115
+Holiday Inn Express – Onalaska, WI	IHG	Onalaska, WI				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Holiday-Inn-Express-OnalaskaWI-001.jpg			116
+WoodSpring Suites – Michigan	Choice	Michigan				Hotel			https://www.base-4.com/wp-content/uploads/2019/08/Woodspring-Suites-Michigan-01.jpg			117
+Springhill Suites – Plantation, FL	Marriott	Plantation, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Springhill-Suites-Plantation-FL-05.jpg			118
+Residence Inn – Springfield, MA	Marriott	Springfield, MA				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Residence-Inn-Springfield-MA.jpg			119
+Courtyard – Jacksonville, FL	Marriott	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Courtyard-Marriott-Jacksonville-FL-01.jpg			120
+Dual Homewood & HGI	Hilton					Hotel			https://www.base-4.com/wp-content/uploads/2019/03/HWSHGI-Myrtle-Beach-01.jpg			121
+Comfort Inn & Suites – Tobago	Choice	Tobago				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Comfort-Inn-Suites-Tobago-01.jpg			122
+Home2 Suites – Branchburg, NJ	Hilton	Branchburg, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Branchburg-NJ-Parallax-001.gif			123
+WoodSpring Suites – Jacksonville, FL	Choice	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/WoodSpring-Suites-Jacksonville-FL-001.jpg			124
+Fairfield Inn – Plainfield, IN	Marriott	Plainfield, IN				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Fairfield-Inn-Plainfield-IN-001.jpg			125
+Holiday Inn Express – Milwaukee, WI	IHG	Milwaukee, WI				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Holiday-Inn-Express-Milwaukee-WI-01.jpg			126
+Towneplace Suites – Ironton, OH	Marriott	Ironton, OH				Hotel			https://www.base-4.com/wp-content/uploads/2021/10/Towneplace-Suites-Ironton-OH-001.jpg			127
+Holiday Inn Express – Wildwood, FL	IHG	Wildwood, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Express-Wildwood-FL-Parallax-001.gif			128
+Aloft – Champaign, IL	Marriott	Champaign, IL				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Aloft-Champaign-IL-01.jpg			129
+Tapestry Collection – Fisher, IN	Hilton	Fisher, IN				Hotel			https://www.base-4.com/wp-content/uploads/2019/05/Tapestry-Fisher-IN-02.jpg			130
+Fairfield Inn & Suites – Yulee, FL	Marriott	Yulee, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Fairfield-Inn-Suites-Yulee-FL-03.jpg			131
+Element – Albuquerque, NM	Marriott	Albuquerque, NM				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Element-Albuquerque-NM-001.jpg			132
+Residence Inn – Roseland, NJ	Marriott	Roseland, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Residence-Inn-Roseland-NJ-Parallax-001.gif			133
+Homewood Suites – Parsippany, NJ	Hilton	Parsippany, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/HWS-Parsippany-NJ-01.jpg			134
+Courtyard – Toms River, NJ	Marriott	Toms River, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Courtyard-Toms-River-NJ-01.jpg			135
+Grant Hotel	Other					Hospitality			https://www.base-4.com/wp-content/uploads/2019/07/Destination-hotel-1.jpg			136
+Element – Chattanooga, TN	Marriott	Chattanooga, TN				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Element-Chattanooga-TN-03.jpg			137
+Hyatt House – Tampa, FL	Hyatt	Tampa, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Hyatt-House-Tampa-FL-001.jpg			138
+Hyatt Place – Orlando, FL	Hyatt	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Hyatt-Place-Orlando-FL-Parallax-001.gif			139
+Hilton Garden Inn – Austin, TX	Hilton	Austin, TX				Hotel			https://www.base-4.com/wp-content/uploads/2019/05/HGI-Austin-TX-01.jpg			140
+Home2 Suites – Tifton, GA	Hilton	Tifton, GA				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Home2-Tifton-GA-01.-1.jpg			141
+Fairfield Inn – Gladstone, MO	Marriott	Gladstone, MO				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Fairfield-Inn-Gladstone-MO-001.jpg			142
+Holiday Inn Express – Redmond, OR	IHG	Redmond, OR				Hotel			https://www.base-4.com/wp-content/uploads/2019/05/HIEX-Redmond-OR-01.jpg			143
+Holiday Inn Express – Melbourne, FL	IHG	Melbourne, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/04/Holiday-Inn-Express-001.jpg			144
+Element – Morris Plains, NJ	Marriott	Morris Plains, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2019/04/Element-Morris-Plains-NJ-03-New.jpg			145
+Tru by Hilton – Cedar Rapids, IA	Hilton	Cedar Rapids, IA				Hotel			https://www.base-4.com/wp-content/uploads/2019/03/TRU_Cedar-Rapids-Iowa-01.jpg			146
+Springhill Suites – Punta Gorda, FL	Marriott	Punta Gorda, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/SHS-Real-701.jpg			147
+Hampton Inn – Leavenworth, WA	Hilton	Leavenworth, WA				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/HIS-Leavenworth-3.jpg			148
+Tru by Hilton – North Platte, NE	Hilton	North Platte, NE				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Tru-North-Platte-Real1-4.jpg			149
+Towneplace – Altamonte Springs, FL	Marriott	Altamonte Springs, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/mcosg-exterior-night-0012-hor-wide.jpg			150
+Holiday Inn Express – Alachua, FL	IHG	Alachua, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Holiday-Inn-Express-Alachua-FL-001.jpg			151
+Aloft – Seatac, WA	Marriott	Seatac, WA				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/aloft_seatac_exterior_2_final.jpg			152
+Moxy – Chattanooga, TN	Marriott	Chattanooga, TN				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Moxy-Chattanooga-real-pic-01.jpg			153
+Residence Inn – Miami Airport Doral, FL	Marriott	Miami Airport Doral, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Residence-Inn-Miami-Airport-Doral-FL-001.jpg			154
+Hyatt Place – Jacksonville, FL	Hyatt	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/01/HPJacksonville-Real-Photo-1.jpg			155
+Springhill Suites – Ames, IA	Marriott	Ames, IA				Hotel			https://www.base-4.com/wp-content/uploads/2019/04/Springhill-Ames-IA-02.jpg			156
+Dual Home2 & Hampton Inn – Aurora, CO	Hilton	Aurora, CO				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Home2Hampton-Inn-Aurora-CO-01.jpg			157
+Best Western Plus – Winter Haven, FL	Other	Winter Haven, FL				Hospitality			https://www.base-4.com/wp-content/uploads/2019/11/Best-Western-Plus-Winter-Haven-FL-02.jpg			158
+Courtyard – Pensacola, FL	Marriott	Pensacola, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Courtyard-Pensacola-FL-001.jpg			159
+Residence Inn – Ft Wayne, IN	Marriott	Ft Wayne, IN				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Residence-Inn-Ft-WayneIN-02.jpg			160
+Element – North Charleston, SC	Marriott	North Charleston, SC				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Element-North-Charleston-SC-Parallax-001.gif			161
+Residence Inn – Jonesboro, AR	Marriott	Jonesboro, AR				Hotel			https://www.base-4.com/wp-content/uploads/2024/12/Residence-Inn-Jonesboro-AR-001.jpg			162
+Courtyard – Hamilton, NJ	Marriott	Hamilton, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Courtyard-Hamilton-NJ-Parallax-001.gif			163
+Staybridge Suites – Charlotte, NC	IHG	Charlotte, NC				Hotel			https://www.base-4.com/wp-content/uploads/2019/10/SBS-Charlotte-NC-04-New.jpg			164
+Home2 Suites – Ft Myers, FL	Hilton	Ft Myers, FL				Hotel			https://www.base-4.com/wp-content/uploads/2021/11/Home2-Suites-Ft-Myers-FL-001.jpg			165
+Fairfield Inn – Denver, CO	Marriott	Denver, CO				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Fairfield-Inn-Denver-CO-Parallax-001.gif			166
+Hampton Inn – Fort Myers, FL	Hilton	Fort Myers, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Hampton-inn-Fort-Myers-FL-01.jpg			167
+Hampton Inn – Orland Park, IL	Hilton	Orland Park, IL				Hotel			https://www.base-4.com/wp-content/uploads/2019/06/Hampton-Inn-Orland-Park-IL-09-New.jpg			168
+Towneplace Suites – Timonium, MD	Marriott	Timonium, MD				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/TPS-Timonium-MD.jpg			169
+Residence Inn – Lanham, MD	Marriott	Lanham, MD				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Residence-Inn-Lanham-MD-02.jpg			170
+Tru by Hilton – Peru, IL	Hilton	Peru, IL				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Tru-Peru-IL.jpg			171
+Tru by Hilton – Pensacola, FL	Hilton	Pensacola, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Tru-Pensacola-FL.jpg			172
+Staybridge Suites – Ft Wayne, IN	IHG	Ft Wayne, IN				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Staybridge-Suites-Ft-Wayne-IN.jpg			173
+Avid – Savannah, GA	IHG	Savannah, GA				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Avid-Savannah-GA-1.jpg			174
+SpringHill Suites – North Charleston, SC	Marriott	North Charleston, SC				Hotel			https://www.base-4.com/wp-content/uploads/2021/09/Springhill-Suites-North-Charleston-SC-001.jpg			175
+Residence Inn – Romulus, MI	Marriott	Romulus, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Romulus-MI.jpg			176
+Courtyard – Tinley Park, IL	Marriott	Tinley Park, IL				Hotel			https://www.base-4.com/wp-content/uploads/2019/08/Courtyard-Marriott-Tinley-Park-IL-06.jpg			177
+Dual Staybridge & Holiday Inn – Grapevine, TX	IHG	Grapevine, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Staybridge-Holiday-Inn-Grapevine-TX.jpg			178
+Homewood Suites – Puyallup, WA	Hilton	Puyallup, WA				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HWS-PuyallupWA-1.jpg			179
+Holiday Inn – Summit Township, PA	IHG	Summit Township, PA				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Holiday-Inn-Summit-TownshipPA-02.jpg			180
+Residence Inn – Cincinnati, OH	Marriott	Cincinnati, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Residence-InnCincinnati-OH.jpg			181
+Hampton Inn – Worthington, OH	Hilton	Worthington, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HIS-WorthingtonOH-02-1.jpg			182
+Towneplace – Lake Buena Vista, FL	Marriott	Lake Buena Vista, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/TownePlace-Suites-Orlando-04.jpg			183
+Fairfield Inn – Taylor, MI	Marriott	Taylor, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Taylor-MI.jpg			184
+Hyatt House – Alpharetta, GA	Hyatt	Alpharetta, GA				Hotel			https://www.base-4.com/wp-content/uploads/2019/05/Hyatt-House-Alpharetta-GA-01.jpg			185
+Towneplace Suites – Taylor, MI	Marriott	Taylor, MI				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/TPS-Taylor-MI-02.jpg			186
+Home2 Suites – Bend, OR	Hilton	Bend, OR				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Bend-OR-01.jpg			187
+Home2 Suites & Tru – Milwaukee, WI	Hilton	Milwaukee, WI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2Tru-Milwaukee-WI-01-3.jpg			188
+Residence Inn – Jacksonville, FL	Marriott	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Residence-Inn-Jacksonville-FL-Parallax-001.gif			189
+Homewood Suites – Poughkeepsie, NY	Hilton	Poughkeepsie, NY				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/HWS-Poughkeepsie-NY-07.jpg			190
+SpringHill Suites – Yulee, FL	Marriott	Yulee, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/03/Springhill-YuleeFL-01.jpg			191
+Holiday Inn Express – Ruskin, FL	IHG	Ruskin, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HIEX-Ruskin-FL-1.jpg			192
+Fairfield Inn – Columbus, OH	Marriott	Columbus, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Columbus-OH-03-2.jpg			193
+Holiday Inn – Erie, PA	IHG	Erie, PA				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Erie-PA-Parallax-001.gif			194
+Autograph Collection by Marriott – West Palm Beach, FL	Marriott	West Palm Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Autograph-Collection-By-Marriott-West-Palm-Beach-2.jpg			195
+Hyatt Place – Fort Wayne, IN	Hyatt	Fort Wayne, IN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-Place-FtWayne-IN-1.jpg			196
+Element – Wood-Ridge, NJ	Marriott	Wood-Ridge, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/ElementWood-Ridge-NJ-01.jpg			197
+Home2 Suites – Toledo, OH	Hilton	Toledo, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Toledo-OH.jpg			198
+Homewood Suites – Edison, NJ	Hilton	Edison, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Homewood-Suites-Edison-NJ-Parallax.gif			199
+Home2 Suites – Carmel, IN	Hilton	Carmel, IN				Hotel			https://www.base-4.com/wp-content/uploads/2021/09/Home2-Suites-Carmel-IN-001.jpg			200
+Hampton Inn – Redmond, OR	Hilton	Redmond, OR				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-Redmond-OR-02-1.jpg			201
+Cambria & Fairfield Inn – Minneapolis, MN	Marriott	Minneapolis, MN				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Cambria-FAIRFIELD-INN-Minneapolis-MN-Parallax-001.gif			202
+Home2 Suites – Columbus, IN	Hilton	Columbus, IN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Columbus-IN-02-1.jpg			203
+Home2 Suites – Eau Claire, WI	Hilton	Eau Claire, WI				Hotel			https://www.base-4.com/wp-content/uploads/2021/11/Home2-Suites-Eau-Claire-WI-010.jpg			204
+Home2 Suites – Lexington, KY	Hilton	Lexington, KY				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Lexington-KY-03-1.jpg			205
+Towneplace Suites – Orlando, FL	Marriott	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/B4-141-1702-TPS-Orlando-FL-01.jpg			206
+Element – Nashville, TN	Marriott	Nashville, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Element-Nashville-01-1.jpg			207
+AC & Hampton Inn – Durango, CO	Hilton	Durango, CO				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Dual-Durango-Hotel-01-1.jpg			208
+Hyatt House – Bloomington, MN	Hyatt	Bloomington, MN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Bloomington-MN-03.jpg			209
+Hyatt Place – Columbus, OH	Hyatt	Columbus, OH				Hotel			https://www.base-4.com/wp-content/uploads/2019/04/Hyatt-Place-Columbus-OH-07.jpg			210
+Moxy – Omaha, NE	Marriott	Omaha, NE				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Moxy-Omaha-NE-2018.01-03.jpg			211
+Home2 Suites – Marysville, OH	Hilton	Marysville, OH				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Marysville-OH-Parallax-001.gif			212
+Hilton Garden Inn – Hanover, MD	Hilton	Hanover, MD				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HGI-Hanover.jpg			213
+Home2 Suites – Columbus, OH	Hilton	Columbus, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Columbus-OH.jpg			214
+Staybridge Suites – Concord, NC	IHG	Concord, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/SBS-Concord-NC-01.jpg			215
+Hampton Inn – Chelsea, MA	Hilton	Chelsea, MA				Hotel			https://www.base-4.com/wp-content/uploads/2020/01/Hampton-Inn-Chelsea-MA-04.jpg			216
+Tru by Hilton – Troy, MI	Hilton	Troy, MI				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Tru-Troy-MI-04.jpg			217
+Springhill Suites – Estero, FL	Marriott	Estero, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/Springhill-Suites-Estero-FL-11.jpg			218
+Tru by Hilton – Gainesville, FL	Hilton	Gainesville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/12/Tru-Gainesville-03.jpg			219
+Hilton Garden Inn – Clinton Township, MI	Hilton	Clinton Township, MI				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/HGI-Clinton-03.jpg			220
+Springhill Suites – Bridgewater, NJ	Marriott	Bridgewater, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/SHS-Bridgewater-NJ.jpg			221
+Residence Inn – Bridgewater, NJ	Marriott	Bridgewater, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/RI-Bridgewater-NJ-01.jpg			222
+Homewood Suites – Hanover, MD	Hilton	Hanover, MD				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HWS-Hanover-MD-01.jpg			223
+Hyatt House – Albany, NY	Hyatt	Albany, NY				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Albany-NY-02-1.jpg			224
+Residence – Clinton Township, MI	Marriott	Clinton Township, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HGI-RI-Clinton-01-1.jpg			225
+Hampton Inn – Lexington, KY	Hilton	Lexington, KY				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-Lexington-KY-02-1.jpg			226
+Tru by Hilton – Louisville, KY	Hilton	Louisville, KY				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Tru-Louisville-KY-1.jpg			227
+Residence Inn – Myrtle Beach, SC	Marriott	Myrtle Beach, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Residence-Inn-Myrtle-Beach-04.jpg			228
+Residence Inn – Traverse City, MI	Marriott	Traverse City, MI				Hotel			https://www.base-4.com/wp-content/uploads/2019/08/Residence-Inn-Traverse-City-MI-01.jpg			229
+Staybridge Suites – Traverse City, MI	IHG	Traverse City, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/SBS-Traverse-CityMI-1.jpg			230
+Residence – Greenville, SC	Marriott	Greenville, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Springhill-Greenville-SC-1.jpg			231
+Towneplace Suites – Marion, IA	Marriott	Marion, IA				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/TPS-Marion-IA-03.jpg			232
+Tru by Hilton – Cheyenne, WY	Hilton	Cheyenne, WY				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Tru-Cheyenne-01.jpg			233
+Fairfield Inn – Kansas City, MO	Marriott	Kansas City, MO				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/CYM-FFIS-Kansas-City-Mo-1.jpg			234
+Fairfield Inn – Eagan, MN	Marriott	Eagan, MN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Inn-Eagan-MN-01.jpg			235
+Hyatt Place & House – Madison, WI	Hyatt	Madison, WI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Middleton-WI-02-1.jpg			236
+Springhill Suites – Arden Hills, MN	Marriott	Arden Hills, MN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Springhill-Arden-Hills-MN-01-1.jpg			237
+Homewood Suites – Greensboro, NC	Hilton	Greensboro, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Homewood-Suites-Greensboro-NC-01.jpg			238
+Holiday Inn – Walker, MI	IHG	Walker, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Holiday-Inn-Walker-MI-02-2.jpg			239
+Aloft – Lake Buena Vista, FL	Marriott	Lake Buena Vista, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Aloft-LBV-FL-01-1.jpg			240
+HIE & Fairfield Inn – Bellevue, TN	IHG	Bellevue, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HIEXFIS-Bellevue-TN-1.jpg			241
+Residence Inn – Paso Robles, CA	Marriott	Paso Robles, CA				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Paso-Robles-CA-02-1.jpg			242
+Dual Homewood & HGI – Broomfield, CO	Hilton	Broomfield, CO				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Homewood-Hilton-Garden-Inn-Broomfield-CO-001.jpg			243
+Marriott AC – Bridgewater, NJ	Marriott	Bridgewater, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/AC-Hotels-Bridgewater-New-Jersey-01-1.jpg			244
+Holiday Inn Express – Brookfield, WI	IHG	Brookfield, WI				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/HIEX-Brookfield-Wisconsin.jpg			245
+Fairfield Inn – Brookfield, WI	Marriott	Brookfield, WI				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/FFIS-Brookfield-Wisconsin-02.jpg			246
+Aloft – Orlando, FL	Marriott	Orlando, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Aloft-Orlando-Florida.jpg			247
+Residence Inn – Tinley Park, IL	Marriott	Tinley Park, IL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Tinley-Park-IL-001.jpg			248
+Hampton Inn – El Cajon, CA	Hilton	El Cajon, CA				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-El-Cajon-CA.jpg			249
+Hyatt House – Franklin, TN	Hyatt	Franklin, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Franklin-Tennessee-05.jpg			250
+Holiday Inn – Full Service Concept	IHG					Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Holiday-Inn-Pigeon-Forge-Tennessee-1.jpg			251
+Tru by Hilton – Asheville, NC	Hilton	Asheville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Tru-Asheville-NC.jpg			252
+Home2 Suites – Pensacola, FL	Hilton	Pensacola, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Pensacola-View1.jpg			253
+Home2 Suites – Gatlinburg, TN	Hilton	Gatlinburg, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Home2-Gatlinburg.jpg			254
+Aloft – West Chester, OH	Marriott	West Chester, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/11/Aloft-West-Chester-OH.jpg			255
+Fairfield Inn – Shakopee, MN	Marriott	Shakopee, MN				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/FFS-Shakopee-01.jpg			256
+Staybridge Suites – Franklin, TN	IHG	Franklin, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/SBS-Franklin-TN-01.jpg			257
+Holiday Inn Express – Huntsville, AL	IHG	Huntsville, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HIEX-%E2%80%93-Huntsville.jpg			258
+Element – Baton Rouge, LA	Marriott	Baton Rouge, LA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Element-Baton-Rouge-LA.jpg			259
+Candlewood Suites – Asheville, NC	IHG	Asheville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/Candlewood-Suites-Asheville-NC-08.jpg			260
+Home2 Suites – Portland, OR	Hilton	Portland, OR				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Home2-Downtown-Portland.jpg			261
+Holiday Inn Express – Seminole, TX	IHG	Seminole, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/Holiday-Inn-Express-Image-02.jpg			262
+Hyatt Place – Fort Walton Beach, FL	Hyatt	Fort Walton Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-Place-Ft-Walton-Beach-FL.jpg			263
+Springhill Suites – Bradenton, FL	Marriott	Bradenton, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Springhill-Suites-Bradenton.jpg			264
+Hampton Inn – Thornton, CO	Hilton	Thornton, CO				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Thornton-CO.jpg			265
+Tru by Hilton – Charlotte, NC	Hilton	Charlotte, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Tru-Charlotte-01.jpg			266
+TownePlace Suites – Cincinnati, OH	Marriott	Cincinnati, OH				Hotel			https://www.base-4.com/wp-content/uploads/2018/12/TPS-Cincinnati-Ohio.jpg			267
+Holiday Inn Express – Nationwide	IHG	Nationwide				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HIEX-Nationwide-Prototype.jpg			268
+Home2 Suites – Birmingham, AL	Hilton	Birmingham, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Home2-Birmingham-Alabama1.jpg			269
+Fairfield Inn – Menifee, CA	Marriott	Menifee, CA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Menifee-California.jpg			270
+Towneplace Suites – Shelton, CT	Marriott	Shelton, CT				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/TPS-Shelton-Connecticut.jpg			271
+Hampton Inn – Lakeville, MN	Hilton	Lakeville, MN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Lakeville-MN.jpg			272
+Springhill Suites – Escondido, CA	Marriott	Escondido, CA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Springhill-Suites-Escondido-California.jpg			273
+Starwood Aloft – Charlotte, NC	Marriott	Charlotte, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Aloft-Mooresville-01-New.jpg			274
+Hilton Garden Inn – Gallatin, TN	Hilton	Gallatin, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HGI-Gallatin-Tennessee.jpg			275
+Holiday Inn Express – Lenexa, KS	IHG	Lenexa, KS				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HIEX-Lenexa-Kansas-01.jpg			276
+Fairfield Inn – Birmingham, AL	Marriott	Birmingham, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Birmingham-Alabama.jpg			277
+Hampton Inn – Antioch, TN	Hilton	Antioch, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/CYM-Hampton-Inn-Antioch-Tennessee.jpg			278
+Courtyard – Des Moines, IA	Marriott	Des Moines, IA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/CYM-Sumter-South-Carolina.jpg			279
+Element – Des Moines, IA	Marriott	Des Moines, IA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/ELMENT-DES-MOINES.jpg			280
+Towneplace Suites – Branchburg, NJ	Marriott	Branchburg, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/TPS-Branchburg.jpg			281
+Garden Inn – Lawrenceville, NJ	Hilton	Lawrenceville, NJ			2016	Hospitality			https://www.base-4.com/wp-content/uploads/2018/10/HGILawrenceville_NJ.jpg			282
+Hyatt Place – Wesley Chapel, FL	Hyatt	Wesley Chapel, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HYATTPLACE_WESLEYCHAPEL.jpg			283
+Aloft & Element – Charleston, SC	Marriott	Charleston, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/DualBrandedStarwood_CharlestonSC-1.jpg			284
+Starwood Aloft – Nashville, TN	Marriott	Nashville, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Aloft-Nashville_Tennessee-1.jpg			285
+Wingate – Dania Beach, FL	Wyndham	Dania Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Wintage-Dania-Beach-Florida.jpg			286
+Tru by Hilton – Cary, NC	Hilton	Cary, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Tru-Cary-NC-New.jpg			287
+TownePlace Suites – Wheeling, WV	Marriott	Wheeling, WV				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/TPS_Wheeling-West-Virginia01.jpg			288
+Moxy & Residence – South FL	Marriott	South FL				Hotel			https://www.base-4.com/wp-content/uploads/2023/05/Dual-Moxy-Residence-Inn-01.jpg			289
+Best Western Vib – Milwaukee, WI	Other	Milwaukee, WI				Hospitality			https://www.base-4.com/wp-content/uploads/2018/10/BestWestern_VibMilwaukee.jpg			290
+Tru by Hilton – Auburn, AL	Hilton	Auburn, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Tru-By-Hilton_Auburn-Alabama.jpg			291
+Tru by Hilton – Raleigh, NC	Hilton	Raleigh, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Tru-RDU-Airport.jpg			292
+Holiday Inn & La Quinta – Kansas City, MO	IHG	Kansas City, MO				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HI.LQ-Kansas-City.jpg			293
+Home2 Suites – Charleston, SC	Hilton	Charleston, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Home2-Charleston-SC_031.jpg			294
+Comfort Inn – Gulf Shores, AL	Choice	Gulf Shores, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Inn-and-Suites-Gulf-Shores1.jpg			295
+Comfort Inn – Tonidale, PA	Choice	Tonidale, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Inn-Tonidale-PA.jpg			296
+Wingate – Huntsville, AL	Wyndham	Huntsville, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Wingate-Huntsville-AL.jpg			297
+Starwood Element – Asheville, NC	Marriott	Asheville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Starwood-Element-Asheville-North-Carolina.jpg			298
+Hilton Garden Inn – Wesley Chapel, FL	Hilton	Wesley Chapel, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/11/HGI-Wesley-Chapel-01.jpg			299
+Candlewood – Lake Buena Vista, FL	IHG	Lake Buena Vista, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Lake-Buena-Vista_View-1.jpg			300
+Homewood Suites – San Antonio, TX	Hilton	San Antonio, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Dual-Hilton-Riverwalk_021.jpg			301
+Tru by Hilton – Columbia, SC	Hilton	Columbia, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Tru-by-Hilton.jpg			302
+Homewood Suites – Greenville, SC	Hilton	Greenville, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HWS-Greenville.jpg			303
+Candlewood Suites – Miami, FL	IHG	Miami, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Suites-MIAMI.jpg			304
+Dual HOLIDAY INN & Staybridge – West Palm Beach, FL	IHG	West Palm Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/StaybridgeSuitesWestPalmBeachFlorida.jpg			305
+Homewood Suites – Cary, NC	Hilton	Cary, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Homewood-Suites-Cary-NC.jpg			306
+Fairfield Inn – Harlingen, TX	Marriott	Harlingen, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Harlingen-TX-01.jpg			307
+Comfort Suites – Asheville, NC	Choice	Asheville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites-Asheville-NC.jpg			308
+Intercontinental Hotel – MSP Airport	IHG	MSP Airport				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Intercontinental-MSP.jpg			309
+Holiday Inn – Jacksonville, FL	IHG	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HIS-Jacksonville-FL.jpg			310
+Holiday Inn – Clearwater, FL	IHG	Clearwater, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HolidayInn_ClearwaterFlorida.jpg			311
+Courtyard – Sumter, SC	Marriott	Sumter, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Courtyard-Marriott_Sumter-South-Carolina.jpg			312
+Towneplace – Montgomery, AL	Marriott	Montgomery, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/TPS_Montgomery-Alabama.jpg			313
+Holiday Inn Express – Chalmette, LA	IHG	Chalmette, LA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HIE-CHALMETTE-LA.jpg			314
+Fairfield & Home2 – Birmingham, AL	Hilton	Birmingham, AL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HOME2-FFIS-BIRMINGHAM-AL.jpg			315
+Candlewood Suites – Fort Bliss, TX	IHG	Fort Bliss, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Suites-Fort-Bliss-Texas.jpg			316
+Best Western Vib – Omaha, NE	Other	Omaha, NE				Hospitality			https://www.base-4.com/wp-content/uploads/2018/10/Best-Western-Vib.jpg			317
+Hampton Inn – Kennebunk, ME	Hilton	Kennebunk, ME				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Kennebunk-Maine.jpg			318
+Springhill Suites – Pittsburgh, PA	Marriott	Pittsburgh, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Dual-Branded-Marriott_01.jpg			319
+Towneplace Suites – Irving, TX	Marriott	Irving, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/TPSIrving-Texas.jpg			320
+Towneplace Suites – Charlotte, NC	Marriott	Charlotte, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Towneplace-SuitesIrving-Texas.jpg			321
+Hyatt House – North Strabane, PA	Hyatt	North Strabane, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-House_NorthStrabanePennsylvania.jpg			322
+Fairfield Inn – Nashville, TN	Marriott	Nashville, TN				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites_Nashville.jpg			323
+MainStay & Sleep Inn – Florence, SC	Choice	Florence, SC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Mainstay-Suites-Florence.jpg			324
+Homewood Suites – Gretna, LA	Hilton	Gretna, LA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HOMEWOOD-SUITES-GRETNA-RENDERING.jpg			325
+HIE & Staybridge – Gainesville, FL	IHG	Gainesville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Dual-Branded-IHG_01.jpg			326
+Hilton Garden Inn – Lutz, FL	Hilton	Lutz, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/HGI-NORTH-POINTE-VILLAGE-LUTZ-FL.jpg			327
+Home2 Suites – North Conway, NH	Hilton	North Conway, NH				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Home2-North-Conway.jpg			328
+Comfort Suites – Clarkston, MI	Choice	Clarkston, MI				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites_01.jpg			329
+Comfort Suites – Pittsburgh, PA	Choice	Pittsburgh, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites-Pittsburgh.jpg			330
+Cobblestone Inn – Quinter, KS	Other	Quinter, KS				Hospitality			https://www.base-4.com/wp-content/uploads/2019/08/FINAL-SIBLEY-without-logo.jpg			331
+Fairfield Inn – Willow Grove, PA	Marriott	Willow Grove, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Willow-Grove-Pennsylvania.jpg			332
+Hyatt Place – Fort Worth, TX	Hyatt	Fort Worth, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-Place_FortWorth_Texas.jpg			333
+Fairfield Inn – Rockaway, NJ	Marriott	Rockaway, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites_RockawayNew-Jersey.jpg			334
+La Quinta – St Augustine, FL	Wyndham	St Augustine, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/La-Quinta-Inn-Suites-St-Augustine.jpg			335
+Best Western – Watford City, ND	Other	Watford City, ND				Hospitality			https://www.base-4.com/wp-content/uploads/2018/10/Best-Western_Watford-City-North-Dakota.jpg			336
+Holiday Inn Express – Trinity, FL	IHG	Trinity, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Holiday-Inn-Express-Suites_Trinity-Florida.jpg			337
+Springhill Suites – Amarillo, TX	Marriott	Amarillo, TX				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/SpringhillSuites_AmarilloTexas.jpg			338
+Home2 Suites – Dickinson, ND	Hilton	Dickinson, ND				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Home2Suites_DickinsonNorthDakota.jpg			339
+Hilton Garden Inn – Minot, ND	Hilton	Minot, ND				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hilton-Garden-Inn_Minot-North-Dakota.jpg			340
+Holiday Inn Express – Salem, OR	IHG	Salem, OR				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Holiday-Inn-Express-Suites_Salem.jpg			341
+Hampton Inn – Vero Beach, FL	Hilton	Vero Beach, FL				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Vero-Beach02.jpg			342
+Homewood Suites – Fayetteville, NC	Hilton	Fayetteville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Homewood-Suites-Fayetteville.jpg			343
+Hampton Inn – Reno, NV	Hilton	Reno, NV				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Reno1.jpg			344
+Courtyard – Bensalem, PA	Marriott	Bensalem, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Courtyard-Marriott-Bensalem.jpg			345
+Fairfield Inn – Wyomissing, PA	Marriott	Wyomissing, PA				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites-Wyomissing01.jpg			346
+Cobblestone – St. Marys, PA	Other	St. Marys, PA				Hospitality			https://www.base-4.com/wp-content/uploads/2018/10/Cobblestone_01.jpg			347
+Aloft – Chandigarh, India	Marriott	Chandigarh, India				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Aloft_Chandigarh01.jpg			348
+Holiday Inn – Miami, FL	IHG	Miami, FL				Hotel			https://www.base-4.com/wp-content/uploads/2022/08/Holiday-Inn-Miami-FL-1.jpg			349
+Holiday Inn Express – Beaver Dam, WI	IHG	Beaver Dam, WI				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Express-Beaver-Dam-WI-Parallax-001.gif			350
+Sheraton – Islamabad, Pakistan	Marriott	Islamabad, Pakistan				Hotel			https://www.base-4.com/wp-content/uploads/2018/10/Pakistan_Sheraton_01.jpg			351
+Holiday Inn Express – Moundsville, WV	IHG	Moundsville, WV				Hotel			https://www.base-4.com/wp-content/uploads/2019/01/HIEXS-Moundsville-WV.jpg			352
+Aloft – Mooresville, NC	Marriott	Mooresville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2018/09/Aloft-Mooresville-01-New.jpg			353
+Tru by Hilton – Mooresville, NC	Hilton	Mooresville, NC				Hotel			https://www.base-4.com/wp-content/uploads/2019/09/Tru-Mooresville-NC-01.jpg			354
+Radisson Blu – FL	Other	FL				Hospitality			https://www.base-4.com/wp-content/uploads/2019/01/Radisson-Blu-01.jpg			355
+Element – West Windsor, NJ	Marriott	West Windsor, NJ				Hotel			https://www.base-4.com/wp-content/uploads/2024/08/Element-West-Windsor-NJ-Parallax-001.gif			356
+Hampton Inn – Cedar Falls, IA	Hilton	Cedar Falls, IA				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Hampton-Inn-Cedar-Falls-IA-06.jpg			357
+Marriott AC – Jacksonville, FL	Marriott	Jacksonville, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/AC-Jacksonville-FL-New01.jpg			358
+Fairfield Inn – Paso Robles, CA	Marriott	Paso Robles, CA				Hotel			https://www.base-4.com/wp-content/uploads/2019/01/FFIS-Paso-Robles-CA-01.jpg			359
+Towneplace Suites – Southaven, MS	Marriott	Southaven, MS				Hotel			https://www.base-4.com/wp-content/uploads/2018/02/TPS-Southaven-MS-01.jpg			360
+Holiday Inn Express – Boulder, CO	IHG	Boulder, CO				Hotel			https://www.base-4.com/wp-content/uploads/2019/02/HIEXS-Boulder-CO-01.jpg			361
+Element – Iowa	Marriott	Iowa				Hotel			https://www.base-4.com/wp-content/uploads/2019/01/Element-Des-Moines-IA-01.jpg			362
+Home2 Suites – Happy Valley, OR	Hilton	Happy Valley, OR				Hotel			https://www.base-4.com/wp-content/uploads/2019/07/Home2-Happy-Valley-OR-02.jpg			363
+Holiday Inn – Tallahassee, FL	IHG	Tallahassee, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/03/Holiday-Inn-Tallahassee-FL.jpg			364
+LaQuinta – St Augistine, FL	Wyndham	St Augistine, FL				Hotel			https://www.base-4.com/wp-content/uploads/2019/03/LaQuinta-St-Augistine-FL.jpg			365
+Hard Rock Hotel and Casino – Punta Cana	Other	Punta Cana				Hospitality			https://www.base-4.com/wp-content/uploads/2023/05/Hard-Rock-Hotel-and-Casino-03.jpg			366
 # SHEET: ProjectImages
 project	url
 Hyatt Studios	https://www.base-4.com/wp-content/uploads/2026/06/Hyatt-Studios-01.jpg
@@ -523,6 +889,366 @@ Cambria – Colorado Springs, CO	https://www.base-4.com/wp-content/uploads/2022/
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_01.jpg
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_02.jpg
 Hawthorn – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/05/Hawthorn-Wildwood-FL_03.jpg
+StudioRes – Shalimar, FL	https://www.base-4.com/wp-content/uploads/2026/08/StudioRes-Shalimar-FL-01-555x358_c.jpg
+Hyatt Studios – Clarksville, TN	https://www.base-4.com/wp-content/uploads/2026/07/Hyatt-Studios-Clarksville-TN-01-555x358_c.jpg
+Towneplace Suites & Fairfield Inn – Greenville, SC	https://www.base-4.com/wp-content/uploads/2026/07/Towneplace-Suites-Fairfield-Inn-Greenville-SC-01-555x358_c.jpg
+Atwell Suites	https://www.base-4.com/wp-content/uploads/2026/07/Atwell-Suites-01-555x358_c.jpg
+Hyatt Studios – Glendale, AZ	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01-555x358_c.jpg
+Towneplace Suites – Maricopa, AZ	https://www.base-4.com/wp-content/uploads/2026/03/Towneplace-Suites-Maricopa-AZ-001.jpg
+Towneplace Suites & Fairfield Inn	https://www.base-4.com/wp-content/uploads/2026/02/Towneplace-Suites-Fairfield-Inn-01.jpg
+Dual Avid & Atwell Suites	https://www.base-4.com/wp-content/uploads/2026/02/Dual-Avid-Atwell-Suites-01.jpg
+Fairfield Inn & Suites – Cayce, SC	https://www.base-4.com/wp-content/uploads/2026/05/Fairfield-Inn-Suites-Cayce-SC-01.jpg
+Residence Inn	https://www.base-4.com/wp-content/uploads/2026/01/Residence-Inn-01-1.jpg
+Candlewood Suites – Mankato, MN	https://www.base-4.com/wp-content/uploads/2025/11/CWS-Mankato-MN-01.jpg
+Atwell Suites – Montgomery, AL	https://www.base-4.com/wp-content/uploads/2025/10/Atwell-Suites-Montgomery-AL-01.jpg
+Hyatt House & Hyatt Place	https://www.base-4.com/wp-content/uploads/2026/02/Hyatt-House-Hyatt-Place-01.jpg
+TRU by Hilton – Gainesville, VA	https://www.base-4.com/wp-content/uploads/2025/09/TRU-by-Hilton-Gainesville-VA-01.jpg
+Towneplace Suites – Kokomo, IN	https://www.base-4.com/wp-content/uploads/2025/08/Towneplace-Suites-Kokomo-IN-01.jpg
+Sleep Inn – Prosser, WA	https://www.base-4.com/wp-content/uploads/2025/07/Sleep-Inn-Prosser-WA-01.jpg
+Element – Ocala, FL	https://www.base-4.com/wp-content/uploads/2025/07/Element-Ocala-FL-01.jpg
+LOGE at Mount Snow	https://www.base-4.com/wp-content/uploads/2025/06/LOGE-Mount-Snow-01.jpg
+Hampton by Hilton – St. Thomas, VI	https://www.base-4.com/wp-content/uploads/2024/01/Hampton-by-Hilton-%E2%80%93-St.-Thomas-VI-001.jpg
+Caribbean Hotel in Bahamas	https://www.base-4.com/wp-content/uploads/2025/06/Caribbean-Hotel-in-Bahamas-01.jpg
+Carribean Mixed-Use Project in Puerto Rico	https://www.base-4.com/wp-content/uploads/2025/06/Carribean-Mixed-Use-Project-01.jpg
+Dual SpringHill Suites & TownePlace Suites	https://www.base-4.com/wp-content/uploads/2025/03/Dual-SpringHill-Suites-TownePlace-Suites-01.jpg
+Hampton by Hilton – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2025/03/Hampton-by-Hilton-Jacksonville-FL-01.jpg
+SpringHill Suites – Leeds, AL	https://www.base-4.com/wp-content/uploads/2025/02/SpringHill-Suites-%E2%80%93-Leeds-AL-01.jpg
+Hampton by Hilton – Manhattan, KS	https://www.base-4.com/wp-content/uploads/2025/01/Hampton-by-Hilton-%E2%80%93-Manhattan-KS-01.jpg
+Dual Home2 Suites & LivSmart Studios – Nationwide	https://www.base-4.com/wp-content/uploads/2025/01/Dual-Home2-Suites-LivSmart-Studios-01.jpg
+Avid & Candlewood Suites – Richmond Hill, GA	https://www.base-4.com/wp-content/uploads/2024/11/Avid-Candlewood-Suites-%E2%80%93-Richmond-Hill-GA-01.jpg
+Hyatt Studios – Chesapeake, VA	https://www.base-4.com/wp-content/uploads/2024/11/Hyatt-Studios-Chesapeake-VA-01.jpg
+AC – North Charleston, SC	https://www.base-4.com/wp-content/uploads/2024/11/AC-%E2%80%93-North-Charleston-SC-01.jpg
+Homewood Suites & Tempo	https://www.base-4.com/wp-content/uploads/2024/11/Homewood-Suites-Tempo-%E2%80%93-Hallandale-FL-001.jpg
+Dual Holiday Inn & Express Staybridge Suites – Pooler, GA	https://www.base-4.com/wp-content/uploads/2024/10/Dual-Holiday-Inn-Express-Staybridge-Suites-%E2%80%93-Pooler-GA-01.jpg
+Hilton Garden Inn – Cape Canaveral, FL	https://www.base-4.com/wp-content/uploads/2024/10/Hilton-Garden-Inn-Cape-Canaveral-FL-01.jpg
+LivSmart & TRU – Huntsville, AL	https://www.base-4.com/wp-content/uploads/2025/03/Dual-LivSmart-Tru-Huntsville-AL-001.jpg
+Dual AVID & Candlewood Suites – Sanford, FL	https://www.base-4.com/wp-content/uploads/2024/09/Dual-AVID-Candlewood-Suites-%E2%80%93-Sanford-FL-01.jpg
+Dual AVID & Candlewood Suites – Christiansburg, VA	https://www.base-4.com/wp-content/uploads/2024/07/Dual-AVID-Candlewood-Suites-Christiansburg-VA-01.jpg
+Dual Element & Courtyard – Fort Worth, TX	https://www.base-4.com/wp-content/uploads/2024/07/Dual-Element-Courtyard-Fort-Worth-TX-01.jpg
+Avid – Florence, SC	https://www.base-4.com/wp-content/uploads/2024/05/Avid-%E2%80%93-Florence-SC-01.jpg
+Dual Courtyard and Residence Inn by Marriot	https://www.base-4.com/wp-content/uploads/2024/05/Dual-Courtyard-By-Marriott-Residence-Inn-By-Marriott-01.jpg
+Hampton Inn & Suites – Hot Springs, AR	https://www.base-4.com/wp-content/uploads/2024/05/Hampton-Inn-Suites-Hot-Springs-AR-01.jpg
+LivSmart Studios – Nationwide	https://www.base-4.com/wp-content/uploads/2024/05/LivSmart-Studios-01.jpg
+StudioRes – Nationwide	https://www.base-4.com/wp-content/uploads/2024/05/StudioRes-01.jpg
+Dual Home2 Suites & Tru Hotel – West Columbia, SC	https://www.base-4.com/wp-content/uploads/2024/05/Dual-Home2-Suites-Tru-Hotel-West-Columbia-SC-01.jpg
+Dual Avid & Candlewood Suites – Clovis, CA	https://www.base-4.com/wp-content/uploads/2024/03/Dual-Avid-Candlewood-Suites-%E2%80%93-Clovis-CA-01.jpg
+Dual Hampton by Hilton & Home2 Suites – Missoula, MT	https://www.base-4.com/wp-content/uploads/2024/05/Dual-Hampton-by-Hilton-Home2-Suites-Missoula-MT-01.jpg
+Fairfield Inn and Suites – Springdale, SC	https://www.base-4.com/wp-content/uploads/2024/01/Fairfield-Inn-and-Suites-%E2%80%93-Springdale-SC.jpg
+Curio	https://www.base-4.com/wp-content/uploads/2025/07/Curio-01.jpg
+Hyatt House – Orlando, FL	https://www.base-4.com/wp-content/uploads/2024/12/Hyatt-House-Orlando-FL-001.jpg
+ESA – Fort Myers, FL	https://www.base-4.com/wp-content/uploads/2023/03/ESA-Fort-Myers-FL-01.jpg
+Tru Hotel – Warner Robins, GA	https://www.base-4.com/wp-content/uploads/2023/03/Tru-Hotel-Warner-Robins-GA-01.jpg
+Springhill Suites – Boone, NC	https://www.base-4.com/wp-content/uploads/2024/04/Springhill-Suites-%E2%80%93-Boone-NC-001.jpg
+Homewood Suites – Charlotte, NC	https://www.base-4.com/wp-content/uploads/2023/03/Homewood-Suites-Charlotte-NC-01.jpg
+Towneplace Suites – Crown Point, IN	https://www.base-4.com/wp-content/uploads/2023/03/Towneplace-Suites-Crown-Point-IN-01.jpg
+Royal Cliff Resort – Pench, India	https://www.base-4.com/wp-content/uploads/2024/02/Hotel-Royal-Cliff-Resort-%E2%80%93-Pench-India_01.jpg
+Hotel-Royal Cliff Resort – Pench, India	https://www.base-4.com/wp-content/uploads/2024/01/Hotel-Royal-Cliff-Resort-%E2%80%93-Pench-India-01.jpg
+Tapestry – Ft Worth, TX	https://www.base-4.com/wp-content/uploads/2024/10/Tapestry-%E2%80%93-Ft-Worth-TX-0001.jpg
+Home2 Suites – Medford, OR	https://www.base-4.com/wp-content/uploads/2022/11/Home2-Suites-Medford-OR.jpg
+Towneplace Suites – Hadley, MA	https://www.base-4.com/wp-content/uploads/2022/11/Towneplace-Suites-Hadley-MA-01.jpg
+Sleep Inn & Mainstay Suites – Brownsville, TN	https://www.base-4.com/wp-content/uploads/2022/11/Sleep-Inn-Mainstay-Suites-Brownsville-TN-01.jpg
+AC + Condos – Grand Cayman	https://www.base-4.com/wp-content/uploads/2023/05/AC-Condos-Grand-Cayman-01.jpg
+Fairfield Inn & Suites – Conway, SC	https://www.base-4.com/wp-content/uploads/2022/11/Fairfield-Inn-Suites-Conway-SC-01.jpg
+Hyatt Place – New Smyrna Beach, FL	https://www.base-4.com/wp-content/uploads/2022/11/Hyatt-Place-New-Smyrna-Beach-FL-001.jpg
+Residence Inn – Medford, OR	https://www.base-4.com/wp-content/uploads/2022/10/Residence-Inn-Medford-OR-01.jpg
+Dual Home2 Suites & Tru Hotel – Concord, NC	https://www.base-4.com/wp-content/uploads/2022/06/Dual-H2S-Tru-%E2%80%93-Concord-NC-01.jpg
+Dual Hotel – Myrtle Beach, SC	https://www.base-4.com/wp-content/uploads/2023/05/Dual-Hotel-Myrtle-Beach-SC-01.jpg
+Tru – Orlando, FL	https://www.base-4.com/wp-content/uploads/2019/08/Tru-Orlando-FL-05.jpg
+Candlewood Suites – Oakwood, GA	https://www.base-4.com/wp-content/uploads/2022/02/Candlewood-Suites-%E2%80%93-Oakwood-GA.jpg
+Embassy Suites – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2021/12/Embassy-Suites-%E2%80%93-South-East-1.jpg
+Even – Belgrade, MT	https://www.base-4.com/wp-content/uploads/2024/12/Even-Belgrade-MT-001.jpg
+Home2 Suites – Kinston, NC	https://www.base-4.com/wp-content/uploads/2021/09/Home2-Suites-Kingston-NC.jpg
+Stay APT Suites – Nationwide	https://www.base-4.com/wp-content/uploads/2021/08/Stay-APT-Suites-01.jpg
+Tru – Yakima, WA	https://www.base-4.com/wp-content/uploads/2021/11/Tru-Yakima-WA-001.jpg
+TownePlace Suites – Iron Mountain, MI	https://www.base-4.com/wp-content/uploads/2021/08/TownePlace-Suites-Iron-Mountain-MI.jpg
+Luxury Beachfront Resort and Villas – Trinidad and Tobago	https://www.base-4.com/wp-content/uploads/2023/05/Luxury-Beachfront-Resort-and-Villas-0001.jpg
+SpringHillSuites – Goldsboro, NC	https://www.base-4.com/wp-content/uploads/2021/04/SpringHillSuites-Goldsboro-NC-01.jpg
+Dual Residence Inn & Springhill Suites – Indianapolis, IN	https://www.base-4.com/wp-content/uploads/2024/12/Dual-Residence-Inn-Springhill-Suites-Indianapolis-IN.jpg
+Staybridge Suites – Santa Fe, NM	https://www.base-4.com/wp-content/uploads/2020/09/SBS-Santa-Fe-NM-01.jpg
+Tapestry Collection – Basalt, CO	https://www.base-4.com/wp-content/uploads/2021/09/Tapestry-Collection-Basalt-CO-001.jpg
+Hyatt Place – Cape Canaveral, FL	https://www.base-4.com/wp-content/uploads/2020/08/Hyatt-Place-Cape-Canaveral-FL-01.jpg
+Element – Opelika, AL	https://www.base-4.com/wp-content/uploads/2020/07/Element-OpelikaAL-04.jpg
+Thompson – Tampa, FL (Bayshore Blvd.)	https://www.base-4.com/wp-content/uploads/2020/06/Thompson-Tampa-FL.jpg
+Cambria – Orlando, FL	https://www.base-4.com/wp-content/uploads/2020/06/Cambria-Orlando-FL-01.jpg
+Hilton Garden Inn – Chamblee, GA	https://www.base-4.com/wp-content/uploads/2020/07/HGI-Chamblee-GA-01.jpg
+Hampton Inn – Logan, UT	https://www.base-4.com/wp-content/uploads/2024/12/Hampton-Inn-Logan-UT-001.jpg
+Residence Inn – Township, MI	https://www.base-4.com/wp-content/uploads/2019/12/Residence-Inn-Clinton-Township-MI-01.jpg
+Hampton Inn & Suites – Miami, FL (Airport)	https://www.base-4.com/wp-content/uploads/2020/02/HIEX-Miami-FL-03-1.jpg
+Thompson Hotel – FL (Harbour Island Blvd.)	https://www.base-4.com/wp-content/uploads/2020/03/Thompson-Hotel-FL-01.jpg
+Moxy – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2020/03/Moxy-Des-Moines-IA-01.jpg
+Courtyard – Pittsburgh, CA	https://www.base-4.com/wp-content/uploads/2020/02/CYM-pitsburgh-1.jpg
+Hyatt Place – Paso Robles, CA	https://www.base-4.com/wp-content/uploads/2020/01/Hyat-Place-Pase-Robles-01.jpg
+Home2 Suites – Orlando, FL	https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Orlando-FL-Parallax-001.gif
+Holiday Inn Express – New Smyrna Beach, FL	https://www.base-4.com/wp-content/uploads/2019/09/HIEXS-New-Smyrna-Beach-FL.jpg
+Staybridge Suites – Orlando, FL	https://www.base-4.com/wp-content/uploads/2019/10/SBS-Orlando-FL-01.jpg
+Springhill Suites – West Melbourne, FL	https://www.base-4.com/wp-content/uploads/2024/08/Springhill-Suites-West-Melbourne-FL-Parallax-001.gif
+Fairfield Inn – Altamonte Springs, FL	https://www.base-4.com/wp-content/uploads/2020/01/FFIS-Altamonte-Springs-05.jpg
+Residence Inn – Clayton, MO	https://www.base-4.com/wp-content/uploads/2019/11/Residence-Inn-Clayton-MO-01.jpg
+Hyatt Place – Oxford, MS	https://www.base-4.com/wp-content/uploads/2019/11/HP-Oxford-MI-01.jpg
+Residence Inn – Ocean, NJ	https://www.base-4.com/wp-content/uploads/2020/01/Residence-Inn-Ocean-NJ-01.jpg
+WoodSpring Suites – Concord, NC	https://www.base-4.com/wp-content/uploads/2024/12/WoodSpring-Suites-Concord-NC-001.jpg
+Home2 Suites – Hillsboro, OR	https://www.base-4.com/wp-content/uploads/2019/11/Home2-Hillsboro-OR.jpg
+Hotel Indigo – Huntsville, AL	https://www.base-4.com/wp-content/uploads/2020/01/Hotel-Indigo-Huntsville-AL-03.jpg
+Home2 Suites – State College, PA	https://www.base-4.com/wp-content/uploads/2020/01/H2S-State-College-PA-01.jpg
+Fairfield Inn & Towneplace Suites – Edina, MN	https://www.base-4.com/wp-content/uploads/2020/01/Fairfield-Inn-Towneplace-Suites-Edina-MN-001.jpg
+Waterwalk Hotel	https://www.base-4.com/wp-content/uploads/2019/10/Waterwalk-Hotel.jpg
+Hampton – Guatemala	https://www.base-4.com/wp-content/uploads/2019/11/HT-Guatemala-1.jpg
+Compass Hotel	https://www.base-4.com/wp-content/uploads/2019/11/Compass-Hotel-01.jpg
+Reverb Hotel	https://www.base-4.com/wp-content/uploads/2019/11/REVERB-Proto-01.jpg
+Hampton Inn – Farmingdale, NY	https://www.base-4.com/wp-content/uploads/2019/10/HIS-Farmingdale-NY-01-New.jpg
+Residence Inn – Franklin, TN	https://www.base-4.com/wp-content/uploads/2019/10/Residence-Inn-Franklin-TN-1.jpg
+Home2 Suites – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/12/Home2-Suites-Wildwood-FL-001.jpg
+Holiday Inn Express – Onalaska, WI	https://www.base-4.com/wp-content/uploads/2024/12/Holiday-Inn-Express-OnalaskaWI-001.jpg
+WoodSpring Suites – Michigan	https://www.base-4.com/wp-content/uploads/2019/08/Woodspring-Suites-Michigan-01.jpg
+Springhill Suites – Plantation, FL	https://www.base-4.com/wp-content/uploads/2019/07/Springhill-Suites-Plantation-FL-05.jpg
+Residence Inn – Springfield, MA	https://www.base-4.com/wp-content/uploads/2019/07/Residence-Inn-Springfield-MA.jpg
+Courtyard – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2019/07/Courtyard-Marriott-Jacksonville-FL-01.jpg
+Dual Homewood & HGI	https://www.base-4.com/wp-content/uploads/2019/03/HWSHGI-Myrtle-Beach-01.jpg
+Comfort Inn & Suites – Tobago	https://www.base-4.com/wp-content/uploads/2019/07/Comfort-Inn-Suites-Tobago-01.jpg
+Home2 Suites – Branchburg, NJ	https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Branchburg-NJ-Parallax-001.gif
+WoodSpring Suites – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2024/12/WoodSpring-Suites-Jacksonville-FL-001.jpg
+Fairfield Inn – Plainfield, IN	https://www.base-4.com/wp-content/uploads/2024/12/Fairfield-Inn-Plainfield-IN-001.jpg
+Holiday Inn Express – Milwaukee, WI	https://www.base-4.com/wp-content/uploads/2019/07/Holiday-Inn-Express-Milwaukee-WI-01.jpg
+Towneplace Suites – Ironton, OH	https://www.base-4.com/wp-content/uploads/2021/10/Towneplace-Suites-Ironton-OH-001.jpg
+Holiday Inn Express – Wildwood, FL	https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Express-Wildwood-FL-Parallax-001.gif
+Aloft – Champaign, IL	https://www.base-4.com/wp-content/uploads/2019/02/Aloft-Champaign-IL-01.jpg
+Tapestry Collection – Fisher, IN	https://www.base-4.com/wp-content/uploads/2019/05/Tapestry-Fisher-IN-02.jpg
+Fairfield Inn & Suites – Yulee, FL	https://www.base-4.com/wp-content/uploads/2019/11/Fairfield-Inn-Suites-Yulee-FL-03.jpg
+Element – Albuquerque, NM	https://www.base-4.com/wp-content/uploads/2024/12/Element-Albuquerque-NM-001.jpg
+Residence Inn – Roseland, NJ	https://www.base-4.com/wp-content/uploads/2024/08/Residence-Inn-Roseland-NJ-Parallax-001.gif
+Homewood Suites – Parsippany, NJ	https://www.base-4.com/wp-content/uploads/2019/07/HWS-Parsippany-NJ-01.jpg
+Courtyard – Toms River, NJ	https://www.base-4.com/wp-content/uploads/2019/07/Courtyard-Toms-River-NJ-01.jpg
+Grant Hotel	https://www.base-4.com/wp-content/uploads/2019/07/Destination-hotel-1.jpg
+Element – Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2019/11/Element-Chattanooga-TN-03.jpg
+Hyatt House – Tampa, FL	https://www.base-4.com/wp-content/uploads/2024/12/Hyatt-House-Tampa-FL-001.jpg
+Hyatt Place – Orlando, FL	https://www.base-4.com/wp-content/uploads/2024/08/Hyatt-Place-Orlando-FL-Parallax-001.gif
+Hilton Garden Inn – Austin, TX	https://www.base-4.com/wp-content/uploads/2019/05/HGI-Austin-TX-01.jpg
+Home2 Suites – Tifton, GA	https://www.base-4.com/wp-content/uploads/2019/07/Home2-Tifton-GA-01.-1.jpg
+Fairfield Inn – Gladstone, MO	https://www.base-4.com/wp-content/uploads/2024/12/Fairfield-Inn-Gladstone-MO-001.jpg
+Holiday Inn Express – Redmond, OR	https://www.base-4.com/wp-content/uploads/2019/05/HIEX-Redmond-OR-01.jpg
+Holiday Inn Express – Melbourne, FL	https://www.base-4.com/wp-content/uploads/2019/04/Holiday-Inn-Express-001.jpg
+Element – Morris Plains, NJ	https://www.base-4.com/wp-content/uploads/2019/04/Element-Morris-Plains-NJ-03-New.jpg
+Tru by Hilton – Cedar Rapids, IA	https://www.base-4.com/wp-content/uploads/2019/03/TRU_Cedar-Rapids-Iowa-01.jpg
+Springhill Suites – Punta Gorda, FL	https://www.base-4.com/wp-content/uploads/2019/02/SHS-Real-701.jpg
+Hampton Inn – Leavenworth, WA	https://www.base-4.com/wp-content/uploads/2019/02/HIS-Leavenworth-3.jpg
+Tru by Hilton – North Platte, NE	https://www.base-4.com/wp-content/uploads/2019/02/Tru-North-Platte-Real1-4.jpg
+Towneplace – Altamonte Springs, FL	https://www.base-4.com/wp-content/uploads/2019/02/mcosg-exterior-night-0012-hor-wide.jpg
+Holiday Inn Express – Alachua, FL	https://www.base-4.com/wp-content/uploads/2024/12/Holiday-Inn-Express-Alachua-FL-001.jpg
+Aloft – Seatac, WA	https://www.base-4.com/wp-content/uploads/2019/02/aloft_seatac_exterior_2_final.jpg
+Moxy – Chattanooga, TN	https://www.base-4.com/wp-content/uploads/2019/02/Moxy-Chattanooga-real-pic-01.jpg
+Residence Inn – Miami Airport Doral, FL	https://www.base-4.com/wp-content/uploads/2019/02/Residence-Inn-Miami-Airport-Doral-FL-001.jpg
+Hyatt Place – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2019/01/HPJacksonville-Real-Photo-1.jpg
+Springhill Suites – Ames, IA	https://www.base-4.com/wp-content/uploads/2019/04/Springhill-Ames-IA-02.jpg
+Dual Home2 & Hampton Inn – Aurora, CO	https://www.base-4.com/wp-content/uploads/2019/02/Home2Hampton-Inn-Aurora-CO-01.jpg
+Best Western Plus – Winter Haven, FL	https://www.base-4.com/wp-content/uploads/2019/11/Best-Western-Plus-Winter-Haven-FL-02.jpg
+Courtyard – Pensacola, FL	https://www.base-4.com/wp-content/uploads/2024/12/Courtyard-Pensacola-FL-001.jpg
+Residence Inn – Ft Wayne, IN	https://www.base-4.com/wp-content/uploads/2018/12/Residence-Inn-Ft-WayneIN-02.jpg
+Element – North Charleston, SC	https://www.base-4.com/wp-content/uploads/2024/08/Element-North-Charleston-SC-Parallax-001.gif
+Residence Inn – Jonesboro, AR	https://www.base-4.com/wp-content/uploads/2024/12/Residence-Inn-Jonesboro-AR-001.jpg
+Courtyard – Hamilton, NJ	https://www.base-4.com/wp-content/uploads/2024/08/Courtyard-Hamilton-NJ-Parallax-001.gif
+Staybridge Suites – Charlotte, NC	https://www.base-4.com/wp-content/uploads/2019/10/SBS-Charlotte-NC-04-New.jpg
+Home2 Suites – Ft Myers, FL	https://www.base-4.com/wp-content/uploads/2021/11/Home2-Suites-Ft-Myers-FL-001.jpg
+Fairfield Inn – Denver, CO	https://www.base-4.com/wp-content/uploads/2024/08/Fairfield-Inn-Denver-CO-Parallax-001.gif
+Hampton Inn – Fort Myers, FL	https://www.base-4.com/wp-content/uploads/2018/12/Hampton-inn-Fort-Myers-FL-01.jpg
+Hampton Inn – Orland Park, IL	https://www.base-4.com/wp-content/uploads/2019/06/Hampton-Inn-Orland-Park-IL-09-New.jpg
+Towneplace Suites – Timonium, MD	https://www.base-4.com/wp-content/uploads/2018/12/TPS-Timonium-MD.jpg
+Residence Inn – Lanham, MD	https://www.base-4.com/wp-content/uploads/2019/07/Residence-Inn-Lanham-MD-02.jpg
+Tru by Hilton – Peru, IL	https://www.base-4.com/wp-content/uploads/2018/12/Tru-Peru-IL.jpg
+Tru by Hilton – Pensacola, FL	https://www.base-4.com/wp-content/uploads/2018/12/Tru-Pensacola-FL.jpg
+Staybridge Suites – Ft Wayne, IN	https://www.base-4.com/wp-content/uploads/2019/02/Staybridge-Suites-Ft-Wayne-IN.jpg
+Avid – Savannah, GA	https://www.base-4.com/wp-content/uploads/2018/12/Avid-Savannah-GA-1.jpg
+SpringHill Suites – North Charleston, SC	https://www.base-4.com/wp-content/uploads/2021/09/Springhill-Suites-North-Charleston-SC-001.jpg
+Residence Inn – Romulus, MI	https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Romulus-MI.jpg
+Courtyard – Tinley Park, IL	https://www.base-4.com/wp-content/uploads/2019/08/Courtyard-Marriott-Tinley-Park-IL-06.jpg
+Dual Staybridge & Holiday Inn – Grapevine, TX	https://www.base-4.com/wp-content/uploads/2018/11/Staybridge-Holiday-Inn-Grapevine-TX.jpg
+Homewood Suites – Puyallup, WA	https://www.base-4.com/wp-content/uploads/2018/11/HWS-PuyallupWA-1.jpg
+Holiday Inn – Summit Township, PA	https://www.base-4.com/wp-content/uploads/2019/07/Holiday-Inn-Summit-TownshipPA-02.jpg
+Residence Inn – Cincinnati, OH	https://www.base-4.com/wp-content/uploads/2018/11/Residence-InnCincinnati-OH.jpg
+Hampton Inn – Worthington, OH	https://www.base-4.com/wp-content/uploads/2018/11/HIS-WorthingtonOH-02-1.jpg
+Towneplace – Lake Buena Vista, FL	https://www.base-4.com/wp-content/uploads/2018/12/TownePlace-Suites-Orlando-04.jpg
+Fairfield Inn – Taylor, MI	https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Taylor-MI.jpg
+Hyatt House – Alpharetta, GA	https://www.base-4.com/wp-content/uploads/2019/05/Hyatt-House-Alpharetta-GA-01.jpg
+Towneplace Suites – Taylor, MI	https://www.base-4.com/wp-content/uploads/2019/07/TPS-Taylor-MI-02.jpg
+Home2 Suites – Bend, OR	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Bend-OR-01.jpg
+Home2 Suites & Tru – Milwaukee, WI	https://www.base-4.com/wp-content/uploads/2018/11/Home2Tru-Milwaukee-WI-01-3.jpg
+Residence Inn – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2024/08/Residence-Inn-Jacksonville-FL-Parallax-001.gif
+Homewood Suites – Poughkeepsie, NY	https://www.base-4.com/wp-content/uploads/2018/12/HWS-Poughkeepsie-NY-07.jpg
+SpringHill Suites – Yulee, FL	https://www.base-4.com/wp-content/uploads/2019/03/Springhill-YuleeFL-01.jpg
+Holiday Inn Express – Ruskin, FL	https://www.base-4.com/wp-content/uploads/2018/11/HIEX-Ruskin-FL-1.jpg
+Fairfield Inn – Columbus, OH	https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Columbus-OH-03-2.jpg
+Holiday Inn – Erie, PA	https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Erie-PA-Parallax-001.gif
+Autograph Collection by Marriott – West Palm Beach, FL	https://www.base-4.com/wp-content/uploads/2018/11/Autograph-Collection-By-Marriott-West-Palm-Beach-2.jpg
+Hyatt Place – Fort Wayne, IN	https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-Place-FtWayne-IN-1.jpg
+Element – Wood-Ridge, NJ	https://www.base-4.com/wp-content/uploads/2018/11/ElementWood-Ridge-NJ-01.jpg
+Home2 Suites – Toledo, OH	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Toledo-OH.jpg
+Homewood Suites – Edison, NJ	https://www.base-4.com/wp-content/uploads/2024/08/Homewood-Suites-Edison-NJ-Parallax.gif
+Home2 Suites – Carmel, IN	https://www.base-4.com/wp-content/uploads/2021/09/Home2-Suites-Carmel-IN-001.jpg
+Hampton Inn – Redmond, OR	https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-Redmond-OR-02-1.jpg
+Cambria & Fairfield Inn – Minneapolis, MN	https://www.base-4.com/wp-content/uploads/2024/08/Cambria-FAIRFIELD-INN-Minneapolis-MN-Parallax-001.gif
+Home2 Suites – Columbus, IN	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Columbus-IN-02-1.jpg
+Home2 Suites – Eau Claire, WI	https://www.base-4.com/wp-content/uploads/2021/11/Home2-Suites-Eau-Claire-WI-010.jpg
+Home2 Suites – Lexington, KY	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Lexington-KY-03-1.jpg
+Towneplace Suites – Orlando, FL	https://www.base-4.com/wp-content/uploads/2020/01/B4-141-1702-TPS-Orlando-FL-01.jpg
+Element – Nashville, TN	https://www.base-4.com/wp-content/uploads/2018/11/Element-Nashville-01-1.jpg
+AC & Hampton Inn – Durango, CO	https://www.base-4.com/wp-content/uploads/2018/11/Dual-Durango-Hotel-01-1.jpg
+Hyatt House – Bloomington, MN	https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Bloomington-MN-03.jpg
+Hyatt Place – Columbus, OH	https://www.base-4.com/wp-content/uploads/2019/04/Hyatt-Place-Columbus-OH-07.jpg
+Moxy – Omaha, NE	https://www.base-4.com/wp-content/uploads/2018/12/Moxy-Omaha-NE-2018.01-03.jpg
+Home2 Suites – Marysville, OH	https://www.base-4.com/wp-content/uploads/2024/08/Home2-Suites-Marysville-OH-Parallax-001.gif
+Hilton Garden Inn – Hanover, MD	https://www.base-4.com/wp-content/uploads/2018/11/HGI-Hanover.jpg
+Home2 Suites – Columbus, OH	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Columbus-OH.jpg
+Staybridge Suites – Concord, NC	https://www.base-4.com/wp-content/uploads/2018/11/SBS-Concord-NC-01.jpg
+Hampton Inn – Chelsea, MA	https://www.base-4.com/wp-content/uploads/2020/01/Hampton-Inn-Chelsea-MA-04.jpg
+Tru by Hilton – Troy, MI	https://www.base-4.com/wp-content/uploads/2019/11/Tru-Troy-MI-04.jpg
+Springhill Suites – Estero, FL	https://www.base-4.com/wp-content/uploads/2019/02/Springhill-Suites-Estero-FL-11.jpg
+Tru by Hilton – Gainesville, FL	https://www.base-4.com/wp-content/uploads/2019/12/Tru-Gainesville-03.jpg
+Hilton Garden Inn – Clinton Township, MI	https://www.base-4.com/wp-content/uploads/2019/11/HGI-Clinton-03.jpg
+Springhill Suites – Bridgewater, NJ	https://www.base-4.com/wp-content/uploads/2018/11/SHS-Bridgewater-NJ.jpg
+Residence Inn – Bridgewater, NJ	https://www.base-4.com/wp-content/uploads/2018/11/RI-Bridgewater-NJ-01.jpg
+Homewood Suites – Hanover, MD	https://www.base-4.com/wp-content/uploads/2018/11/HWS-Hanover-MD-01.jpg
+Hyatt House – Albany, NY	https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Albany-NY-02-1.jpg
+Residence – Clinton Township, MI	https://www.base-4.com/wp-content/uploads/2018/11/HGI-RI-Clinton-01-1.jpg
+Hampton Inn – Lexington, KY	https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-Lexington-KY-02-1.jpg
+Tru by Hilton – Louisville, KY	https://www.base-4.com/wp-content/uploads/2018/11/Tru-Louisville-KY-1.jpg
+Residence Inn – Myrtle Beach, SC	https://www.base-4.com/wp-content/uploads/2018/12/Residence-Inn-Myrtle-Beach-04.jpg
+Residence Inn – Traverse City, MI	https://www.base-4.com/wp-content/uploads/2019/08/Residence-Inn-Traverse-City-MI-01.jpg
+Staybridge Suites – Traverse City, MI	https://www.base-4.com/wp-content/uploads/2018/11/SBS-Traverse-CityMI-1.jpg
+Residence – Greenville, SC	https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Springhill-Greenville-SC-1.jpg
+Towneplace Suites – Marion, IA	https://www.base-4.com/wp-content/uploads/2019/11/TPS-Marion-IA-03.jpg
+Tru by Hilton – Cheyenne, WY	https://www.base-4.com/wp-content/uploads/2018/11/Tru-Cheyenne-01.jpg
+Fairfield Inn – Kansas City, MO	https://www.base-4.com/wp-content/uploads/2018/11/CYM-FFIS-Kansas-City-Mo-1.jpg
+Fairfield Inn – Eagan, MN	https://www.base-4.com/wp-content/uploads/2018/11/Fairfield-Inn-Eagan-MN-01.jpg
+Hyatt Place & House – Madison, WI	https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Middleton-WI-02-1.jpg
+Springhill Suites – Arden Hills, MN	https://www.base-4.com/wp-content/uploads/2018/11/Springhill-Arden-Hills-MN-01-1.jpg
+Homewood Suites – Greensboro, NC	https://www.base-4.com/wp-content/uploads/2018/11/Homewood-Suites-Greensboro-NC-01.jpg
+Holiday Inn – Walker, MI	https://www.base-4.com/wp-content/uploads/2018/11/Holiday-Inn-Walker-MI-02-2.jpg
+Aloft – Lake Buena Vista, FL	https://www.base-4.com/wp-content/uploads/2018/11/Aloft-LBV-FL-01-1.jpg
+HIE & Fairfield Inn – Bellevue, TN	https://www.base-4.com/wp-content/uploads/2018/11/HIEXFIS-Bellevue-TN-1.jpg
+Residence Inn – Paso Robles, CA	https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Paso-Robles-CA-02-1.jpg
+Dual Homewood & HGI – Broomfield, CO	https://www.base-4.com/wp-content/uploads/2018/11/Homewood-Hilton-Garden-Inn-Broomfield-CO-001.jpg
+Marriott AC – Bridgewater, NJ	https://www.base-4.com/wp-content/uploads/2018/11/AC-Hotels-Bridgewater-New-Jersey-01-1.jpg
+Holiday Inn Express – Brookfield, WI	https://www.base-4.com/wp-content/uploads/2018/11/HIEX-Brookfield-Wisconsin.jpg
+Fairfield Inn – Brookfield, WI	https://www.base-4.com/wp-content/uploads/2018/12/FFIS-Brookfield-Wisconsin-02.jpg
+Aloft – Orlando, FL	https://www.base-4.com/wp-content/uploads/2018/11/Aloft-Orlando-Florida.jpg
+Residence Inn – Tinley Park, IL	https://www.base-4.com/wp-content/uploads/2018/11/Residence-Inn-Tinley-Park-IL-001.jpg
+Hampton Inn – El Cajon, CA	https://www.base-4.com/wp-content/uploads/2018/11/Hampton-Inn-El-Cajon-CA.jpg
+Hyatt House – Franklin, TN	https://www.base-4.com/wp-content/uploads/2018/11/Hyatt-House-Franklin-Tennessee-05.jpg
+Holiday Inn – Full Service Concept	https://www.base-4.com/wp-content/uploads/2018/11/Holiday-Inn-Pigeon-Forge-Tennessee-1.jpg
+Tru by Hilton – Asheville, NC	https://www.base-4.com/wp-content/uploads/2018/11/Tru-Asheville-NC.jpg
+Home2 Suites – Pensacola, FL	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Pensacola-View1.jpg
+Home2 Suites – Gatlinburg, TN	https://www.base-4.com/wp-content/uploads/2018/11/Home2-Gatlinburg.jpg
+Aloft – West Chester, OH	https://www.base-4.com/wp-content/uploads/2018/11/Aloft-West-Chester-OH.jpg
+Fairfield Inn – Shakopee, MN	https://www.base-4.com/wp-content/uploads/2019/07/FFS-Shakopee-01.jpg
+Staybridge Suites – Franklin, TN	https://www.base-4.com/wp-content/uploads/2018/10/SBS-Franklin-TN-01.jpg
+Holiday Inn Express – Huntsville, AL	https://www.base-4.com/wp-content/uploads/2018/10/HIEX-%E2%80%93-Huntsville.jpg
+Element – Baton Rouge, LA	https://www.base-4.com/wp-content/uploads/2018/10/Element-Baton-Rouge-LA.jpg
+Candlewood Suites – Asheville, NC	https://www.base-4.com/wp-content/uploads/2019/11/Candlewood-Suites-Asheville-NC-08.jpg
+Home2 Suites – Portland, OR	https://www.base-4.com/wp-content/uploads/2018/10/Home2-Downtown-Portland.jpg
+Holiday Inn Express – Seminole, TX	https://www.base-4.com/wp-content/uploads/2018/12/Holiday-Inn-Express-Image-02.jpg
+Hyatt Place – Fort Walton Beach, FL	https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-Place-Ft-Walton-Beach-FL.jpg
+Springhill Suites – Bradenton, FL	https://www.base-4.com/wp-content/uploads/2018/10/Springhill-Suites-Bradenton.jpg
+Hampton Inn – Thornton, CO	https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Thornton-CO.jpg
+Tru by Hilton – Charlotte, NC	https://www.base-4.com/wp-content/uploads/2018/10/Tru-Charlotte-01.jpg
+TownePlace Suites – Cincinnati, OH	https://www.base-4.com/wp-content/uploads/2018/12/TPS-Cincinnati-Ohio.jpg
+Holiday Inn Express – Nationwide	https://www.base-4.com/wp-content/uploads/2018/10/HIEX-Nationwide-Prototype.jpg
+Home2 Suites – Birmingham, AL	https://www.base-4.com/wp-content/uploads/2018/10/Home2-Birmingham-Alabama1.jpg
+Fairfield Inn – Menifee, CA	https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Menifee-California.jpg
+Towneplace Suites – Shelton, CT	https://www.base-4.com/wp-content/uploads/2018/10/TPS-Shelton-Connecticut.jpg
+Hampton Inn – Lakeville, MN	https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Lakeville-MN.jpg
+Springhill Suites – Escondido, CA	https://www.base-4.com/wp-content/uploads/2018/10/Springhill-Suites-Escondido-California.jpg
+Starwood Aloft – Charlotte, NC	https://www.base-4.com/wp-content/uploads/2018/10/Aloft-Mooresville-01-New.jpg
+Hilton Garden Inn – Gallatin, TN	https://www.base-4.com/wp-content/uploads/2018/10/HGI-Gallatin-Tennessee.jpg
+Holiday Inn Express – Lenexa, KS	https://www.base-4.com/wp-content/uploads/2018/10/HIEX-Lenexa-Kansas-01.jpg
+Fairfield Inn – Birmingham, AL	https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Birmingham-Alabama.jpg
+Hampton Inn – Antioch, TN	https://www.base-4.com/wp-content/uploads/2018/10/CYM-Hampton-Inn-Antioch-Tennessee.jpg
+Courtyard – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2018/10/CYM-Sumter-South-Carolina.jpg
+Element – Des Moines, IA	https://www.base-4.com/wp-content/uploads/2018/10/ELMENT-DES-MOINES.jpg
+Towneplace Suites – Branchburg, NJ	https://www.base-4.com/wp-content/uploads/2018/10/TPS-Branchburg.jpg
+Garden Inn – Lawrenceville, NJ	https://www.base-4.com/wp-content/uploads/2018/10/HGILawrenceville_NJ.jpg
+Hyatt Place – Wesley Chapel, FL	https://www.base-4.com/wp-content/uploads/2018/10/HYATTPLACE_WESLEYCHAPEL.jpg
+Aloft & Element – Charleston, SC	https://www.base-4.com/wp-content/uploads/2018/10/DualBrandedStarwood_CharlestonSC-1.jpg
+Starwood Aloft – Nashville, TN	https://www.base-4.com/wp-content/uploads/2018/10/Aloft-Nashville_Tennessee-1.jpg
+Wingate – Dania Beach, FL	https://www.base-4.com/wp-content/uploads/2018/10/Wintage-Dania-Beach-Florida.jpg
+Tru by Hilton – Cary, NC	https://www.base-4.com/wp-content/uploads/2018/10/Tru-Cary-NC-New.jpg
+TownePlace Suites – Wheeling, WV	https://www.base-4.com/wp-content/uploads/2018/10/TPS_Wheeling-West-Virginia01.jpg
+Moxy & Residence – South FL	https://www.base-4.com/wp-content/uploads/2023/05/Dual-Moxy-Residence-Inn-01.jpg
+Best Western Vib – Milwaukee, WI	https://www.base-4.com/wp-content/uploads/2018/10/BestWestern_VibMilwaukee.jpg
+Tru by Hilton – Auburn, AL	https://www.base-4.com/wp-content/uploads/2018/10/Tru-By-Hilton_Auburn-Alabama.jpg
+Tru by Hilton – Raleigh, NC	https://www.base-4.com/wp-content/uploads/2018/10/Tru-RDU-Airport.jpg
+Holiday Inn & La Quinta – Kansas City, MO	https://www.base-4.com/wp-content/uploads/2018/10/HI.LQ-Kansas-City.jpg
+Home2 Suites – Charleston, SC	https://www.base-4.com/wp-content/uploads/2018/10/Home2-Charleston-SC_031.jpg
+Comfort Inn – Gulf Shores, AL	https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Inn-and-Suites-Gulf-Shores1.jpg
+Comfort Inn – Tonidale, PA	https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Inn-Tonidale-PA.jpg
+Wingate – Huntsville, AL	https://www.base-4.com/wp-content/uploads/2018/10/Wingate-Huntsville-AL.jpg
+Starwood Element – Asheville, NC	https://www.base-4.com/wp-content/uploads/2018/10/Starwood-Element-Asheville-North-Carolina.jpg
+Hilton Garden Inn – Wesley Chapel, FL	https://www.base-4.com/wp-content/uploads/2019/11/HGI-Wesley-Chapel-01.jpg
+Candlewood – Lake Buena Vista, FL	https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Lake-Buena-Vista_View-1.jpg
+Homewood Suites – San Antonio, TX	https://www.base-4.com/wp-content/uploads/2018/10/Dual-Hilton-Riverwalk_021.jpg
+Tru by Hilton – Columbia, SC	https://www.base-4.com/wp-content/uploads/2018/10/Tru-by-Hilton.jpg
+Homewood Suites – Greenville, SC	https://www.base-4.com/wp-content/uploads/2018/10/HWS-Greenville.jpg
+Candlewood Suites – Miami, FL	https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Suites-MIAMI.jpg
+Dual HOLIDAY INN & Staybridge – West Palm Beach, FL	https://www.base-4.com/wp-content/uploads/2018/10/StaybridgeSuitesWestPalmBeachFlorida.jpg
+Homewood Suites – Cary, NC	https://www.base-4.com/wp-content/uploads/2018/10/Homewood-Suites-Cary-NC.jpg
+Fairfield Inn – Harlingen, TX	https://www.base-4.com/wp-content/uploads/2018/10/FFIS-Harlingen-TX-01.jpg
+Comfort Suites – Asheville, NC	https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites-Asheville-NC.jpg
+Intercontinental Hotel – MSP Airport	https://www.base-4.com/wp-content/uploads/2018/10/Intercontinental-MSP.jpg
+Holiday Inn – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2018/10/HIS-Jacksonville-FL.jpg
+Holiday Inn – Clearwater, FL	https://www.base-4.com/wp-content/uploads/2018/10/HolidayInn_ClearwaterFlorida.jpg
+Courtyard – Sumter, SC	https://www.base-4.com/wp-content/uploads/2018/10/Courtyard-Marriott_Sumter-South-Carolina.jpg
+Towneplace – Montgomery, AL	https://www.base-4.com/wp-content/uploads/2018/10/TPS_Montgomery-Alabama.jpg
+Holiday Inn Express – Chalmette, LA	https://www.base-4.com/wp-content/uploads/2018/10/HIE-CHALMETTE-LA.jpg
+Fairfield & Home2 – Birmingham, AL	https://www.base-4.com/wp-content/uploads/2018/10/HOME2-FFIS-BIRMINGHAM-AL.jpg
+Candlewood Suites – Fort Bliss, TX	https://www.base-4.com/wp-content/uploads/2018/10/Candlewood-Suites-Fort-Bliss-Texas.jpg
+Best Western Vib – Omaha, NE	https://www.base-4.com/wp-content/uploads/2018/10/Best-Western-Vib.jpg
+Hampton Inn – Kennebunk, ME	https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Kennebunk-Maine.jpg
+Springhill Suites – Pittsburgh, PA	https://www.base-4.com/wp-content/uploads/2018/10/Dual-Branded-Marriott_01.jpg
+Towneplace Suites – Irving, TX	https://www.base-4.com/wp-content/uploads/2018/10/TPSIrving-Texas.jpg
+Towneplace Suites – Charlotte, NC	https://www.base-4.com/wp-content/uploads/2018/10/Towneplace-SuitesIrving-Texas.jpg
+Hyatt House – North Strabane, PA	https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-House_NorthStrabanePennsylvania.jpg
+Fairfield Inn – Nashville, TN	https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites_Nashville.jpg
+MainStay & Sleep Inn – Florence, SC	https://www.base-4.com/wp-content/uploads/2018/10/Mainstay-Suites-Florence.jpg
+Homewood Suites – Gretna, LA	https://www.base-4.com/wp-content/uploads/2018/10/HOMEWOOD-SUITES-GRETNA-RENDERING.jpg
+HIE & Staybridge – Gainesville, FL	https://www.base-4.com/wp-content/uploads/2018/10/Dual-Branded-IHG_01.jpg
+Hilton Garden Inn – Lutz, FL	https://www.base-4.com/wp-content/uploads/2018/10/HGI-NORTH-POINTE-VILLAGE-LUTZ-FL.jpg
+Home2 Suites – North Conway, NH	https://www.base-4.com/wp-content/uploads/2018/10/Home2-North-Conway.jpg
+Comfort Suites – Clarkston, MI	https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites_01.jpg
+Comfort Suites – Pittsburgh, PA	https://www.base-4.com/wp-content/uploads/2018/10/Comfort-Suites-Pittsburgh.jpg
+Cobblestone Inn – Quinter, KS	https://www.base-4.com/wp-content/uploads/2019/08/FINAL-SIBLEY-without-logo.jpg
+Fairfield Inn – Willow Grove, PA	https://www.base-4.com/wp-content/uploads/2018/10/Willow-Grove-Pennsylvania.jpg
+Hyatt Place – Fort Worth, TX	https://www.base-4.com/wp-content/uploads/2018/10/Hyatt-Place_FortWorth_Texas.jpg
+Fairfield Inn – Rockaway, NJ	https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites_RockawayNew-Jersey.jpg
+La Quinta – St Augustine, FL	https://www.base-4.com/wp-content/uploads/2018/10/La-Quinta-Inn-Suites-St-Augustine.jpg
+Best Western – Watford City, ND	https://www.base-4.com/wp-content/uploads/2018/10/Best-Western_Watford-City-North-Dakota.jpg
+Holiday Inn Express – Trinity, FL	https://www.base-4.com/wp-content/uploads/2018/10/Holiday-Inn-Express-Suites_Trinity-Florida.jpg
+Springhill Suites – Amarillo, TX	https://www.base-4.com/wp-content/uploads/2018/10/SpringhillSuites_AmarilloTexas.jpg
+Home2 Suites – Dickinson, ND	https://www.base-4.com/wp-content/uploads/2018/10/Home2Suites_DickinsonNorthDakota.jpg
+Hilton Garden Inn – Minot, ND	https://www.base-4.com/wp-content/uploads/2018/10/Hilton-Garden-Inn_Minot-North-Dakota.jpg
+Holiday Inn Express – Salem, OR	https://www.base-4.com/wp-content/uploads/2018/10/Holiday-Inn-Express-Suites_Salem.jpg
+Hampton Inn – Vero Beach, FL	https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Vero-Beach02.jpg
+Homewood Suites – Fayetteville, NC	https://www.base-4.com/wp-content/uploads/2018/10/Homewood-Suites-Fayetteville.jpg
+Hampton Inn – Reno, NV	https://www.base-4.com/wp-content/uploads/2018/10/Hampton-Inn-Suites-Reno1.jpg
+Courtyard – Bensalem, PA	https://www.base-4.com/wp-content/uploads/2018/10/Courtyard-Marriott-Bensalem.jpg
+Fairfield Inn – Wyomissing, PA	https://www.base-4.com/wp-content/uploads/2018/10/Fairfield-Inn-Suites-Wyomissing01.jpg
+Cobblestone – St. Marys, PA	https://www.base-4.com/wp-content/uploads/2018/10/Cobblestone_01.jpg
+Aloft – Chandigarh, India	https://www.base-4.com/wp-content/uploads/2018/10/Aloft_Chandigarh01.jpg
+Holiday Inn – Miami, FL	https://www.base-4.com/wp-content/uploads/2022/08/Holiday-Inn-Miami-FL-1.jpg
+Holiday Inn Express – Beaver Dam, WI	https://www.base-4.com/wp-content/uploads/2024/08/Holiday-Inn-Express-Beaver-Dam-WI-Parallax-001.gif
+Sheraton – Islamabad, Pakistan	https://www.base-4.com/wp-content/uploads/2018/10/Pakistan_Sheraton_01.jpg
+Holiday Inn Express – Moundsville, WV	https://www.base-4.com/wp-content/uploads/2019/01/HIEXS-Moundsville-WV.jpg
+Aloft – Mooresville, NC	https://www.base-4.com/wp-content/uploads/2018/09/Aloft-Mooresville-01-New.jpg
+Tru by Hilton – Mooresville, NC	https://www.base-4.com/wp-content/uploads/2019/09/Tru-Mooresville-NC-01.jpg
+Radisson Blu – FL	https://www.base-4.com/wp-content/uploads/2019/01/Radisson-Blu-01.jpg
+Element – West Windsor, NJ	https://www.base-4.com/wp-content/uploads/2024/08/Element-West-Windsor-NJ-Parallax-001.gif
+Hampton Inn – Cedar Falls, IA	https://www.base-4.com/wp-content/uploads/2019/07/Hampton-Inn-Cedar-Falls-IA-06.jpg
+Marriott AC – Jacksonville, FL	https://www.base-4.com/wp-content/uploads/2019/07/AC-Jacksonville-FL-New01.jpg
+Fairfield Inn – Paso Robles, CA	https://www.base-4.com/wp-content/uploads/2019/01/FFIS-Paso-Robles-CA-01.jpg
+Towneplace Suites – Southaven, MS	https://www.base-4.com/wp-content/uploads/2018/02/TPS-Southaven-MS-01.jpg
+Holiday Inn Express – Boulder, CO	https://www.base-4.com/wp-content/uploads/2019/02/HIEXS-Boulder-CO-01.jpg
+Element – Iowa	https://www.base-4.com/wp-content/uploads/2019/01/Element-Des-Moines-IA-01.jpg
+Home2 Suites – Happy Valley, OR	https://www.base-4.com/wp-content/uploads/2019/07/Home2-Happy-Valley-OR-02.jpg
+Holiday Inn – Tallahassee, FL	https://www.base-4.com/wp-content/uploads/2019/03/Holiday-Inn-Tallahassee-FL.jpg
+LaQuinta – St Augistine, FL	https://www.base-4.com/wp-content/uploads/2019/03/LaQuinta-St-Augistine-FL.jpg
+Hard Rock Hotel and Casino – Punta Cana	https://www.base-4.com/wp-content/uploads/2023/05/Hard-Rock-Hotel-and-Casino-03.jpg
 
 # SHEET: RenderReality
 file	label
@@ -557,7 +1283,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     /* ---------- config ---------- */
     // Drop a real lead-capture endpoint here (Cloudflare Pages Function, Web3Forms, Formspree, etc.)
     // to POST leads instead of falling back to mailto. Leave empty to use mailto.
-    const FORM_ENDPOINT = '';
+    const FORM_ENDPOINT = 'https://www.base-4.com/wp-json/base4/v1/lead';
     // Absolute base for LOCAL assets (logos, usp, rvr, hero video + poster) so this single file can be
     // embedded on any origin and still load its assets from the hosted repo copy. Assets already served
     // from an absolute URL (e.g. base-4.com photos) pass through untouched.
@@ -721,10 +1447,21 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <p class="eyebrow">Featured work</p>
             <h2>Hospitality portfolio.</h2>
           </div>
-          <div class="filters reveal" id="filters" style="margin-top:24px"></div>
+          <div class="portfolio-tools reveal">
+            <div class="filters" id="filters"></div>
+            <label class="sort-wrap">Sort
+              <select id="projectSort" aria-label="Sort hospitality projects">
+                <option value="featured">Featured first</option>
+                <option value="newest">Newest year</option>
+                <option value="oldest">Oldest year</option>
+                <option value="az">Name A–Z</option>
+                <option value="za">Name Z–A</option>
+              </select>
+            </label>
+          </div>
           <div class="gallery" id="gallery"></div>
           <div class="reveal center" style="margin-top:40px">
-            <a class="btn btn--dark" href="https://www.base-4.com/portfolio/" target="_blank" rel="noopener" data-ev="see_all_projects">See All Projects →</a>
+            <button class="btn btn--dark" type="button" id="seeAllProjects" data-ev="see_all_projects" aria-expanded="false">See All Hospitality Projects →</button>
           </div>
         </div>
       </section>
@@ -807,23 +1544,47 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     }
 
     /* ---------- gallery + filters ---------- */
-    const FILTERS = ['All','Hyatt','Marriott','Hilton','IHG','Choice','Wyndham'];
+    const FILTERS = ['All','Hyatt','Marriott','Hilton','IHG','Choice','Wyndham','Other'];
     function buildGallery(){
       const fc = document.getElementById('filters');
-      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
-      const projects = sheet('Projects');
       const grid = document.getElementById('gallery');
-      const render = (filter)=>{
-        const list = filter==='All' ? projects : projects.filter(p=>p.franchise===filter);
-        grid.innerHTML = list.map((p,idx)=>{
-          const eager = idx<3 ? 'eager' : 'lazy';
-          const fp = idx<3 ? ' fetchpriority="high"' : '';
-          return `
-          <article class="pcard reveal in" data-project="${esc(p.name)}" data-url="${p.url}">
-            <div class="ph"><span class="flag-tag">${esc(p.franchise)}</span><img src="${p.primary_image}" alt="${esc(p.name)}" loading="${eager}"${fp}></div>
+      const sortEl = document.getElementById('projectSort');
+      const seeAll = document.getElementById('seeAllProjects');
+      const projects = sheet('Projects');
+      let activeFilter = 'All';
+      let expanded = false;
+
+      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
+
+      const yearNum = p => /^\d{4}$/.test(p.year||'') ? Number(p.year) : null;
+      const sourceOrder = p => Number(p.catalog_order)||9999;
+      const sortList = (list, mode) => [...list].sort((a,b)=>{
+        if(mode==='az') return a.name.localeCompare(b.name);
+        if(mode==='za') return b.name.localeCompare(a.name);
+        if(mode==='newest' || mode==='oldest'){
+          const ay=yearNum(a), by=yearNum(b);
+          if(ay===null && by===null) return sourceOrder(a)-sourceOrder(b) || a.name.localeCompare(b.name);
+          if(ay===null) return 1;
+          if(by===null) return -1;
+          return mode==='newest' ? (by-ay || sourceOrder(a)-sourceOrder(b)) : (ay-by || sourceOrder(a)-sourceOrder(b));
+        }
+        const ao=Number(a.featured_order)||999, bo=Number(b.featured_order)||999;
+        return ao-bo || sourceOrder(a)-sourceOrder(b) || a.name.localeCompare(b.name);
+      });
+
+      const card = (p,idx)=>{
+        const eager = idx<3 ? 'eager' : 'lazy';
+        const fp = idx<3 ? ' fetchpriority="high"' : '';
+        const img = p.primary_image || asset('base4-hero-poster.jpg');
+        const locBits = [];
+        if(p.location && p.location!=='—') locBits.push(esc(p.location));
+        if(p.type && p.type!=='—') locBits.push(esc(p.type));
+        return `
+          <article class="pcard reveal in" data-project="${esc(p.name)}" data-url="${p.url||''}">
+            <div class="ph"><span class="flag-tag">${esc(p.franchise||'Other')}</span><img src="${img}" alt="${esc(p.name)}" loading="${eager}"${fp}></div>
             <div class="body">
               <h3>${esc(p.name)}</h3>
-              <div class="loc">${p.location && p.location!=='—' ? esc(p.location)+' · ' : ''}${esc(p.type)}</div>
+              <div class="loc">${locBits.join(' · ') || 'Hospitality'}</div>
               <div class="meta-row">
                 ${p.keys && p.keys!=='—' ? `<span><b class="tnum">${esc(p.keys)}</b> keys</span>`:''}
                 ${p.stories && p.stories!=='—' ? `<span><b class="tnum">${esc(p.stories)}</b> stories</span>`:''}
@@ -833,18 +1594,47 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <span class="view">View project <span class="arw">→</span></span>
             </div>
           </article>`;
-        }).join('') || '<p style="color:var(--muted)">No projects in this category yet.</p>';
       };
-      render('All');
+
+      function render(){
+        const filtered = projects.filter(p=>activeFilter==='All' || p.franchise===activeFilter);
+        const featured = sortList(filtered.filter(p=>p.featured==='1'), sortEl.value);
+        const more = sortList(filtered.filter(p=>p.featured!=='1'), sortEl.value);
+        let html = featured.map(card).join('');
+        if(expanded && more.length){
+          html += `<div class="more-projects-label">More hospitality projects</div>` + more.map((p,i)=>card(p,featured.length+i)).join('');
+        }
+        if(!html) html = `<p style="color:var(--muted)">${expanded ? 'No projects in this category yet.' : 'No featured projects in this category. Select See All Hospitality Projects to view the full catalog.'}</p>`;
+        grid.innerHTML = html;
+        seeAll.textContent = expanded ? 'Show Featured Projects ↑' : 'See All Hospitality Projects →';
+        seeAll.setAttribute('aria-expanded', String(expanded));
+        seeAll.hidden = !more.length && !expanded;
+      }
+
+      render();
       fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
         fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        render(btn.dataset.f);
-        track('project_filter',{filter:btn.dataset.f});
+        activeFilter = btn.dataset.f;
+        render();
+        track('project_filter',{filter:activeFilter,expanded});
       }));
+      sortEl.addEventListener('change',()=>{
+        render();
+        track('project_sort',{sort:sortEl.value,expanded});
+      });
+      seeAll.addEventListener('click',()=>{
+        expanded = !expanded;
+        render();
+        track(expanded?'see_all_projects':'show_featured_projects',{filter:activeFilter,sort:sortEl.value});
+        if(expanded){
+          const moreLabel = grid.querySelector('.more-projects-label');
+          if(moreLabel) moreLabel.scrollIntoView({behavior:'smooth',block:'nearest'});
+        }
+      });
       grid.addEventListener('click', e=>{
-        const card = e.target.closest('.pcard');
-        if(card) openLightbox(card.dataset.project, card.dataset.url);
+        const c = e.target.closest('.pcard');
+        if(c) openLightbox(c.dataset.project, c.dataset.url);
       });
     }
 
@@ -856,10 +1646,11 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       document.getElementById('lbTitle').textContent = name;
       document.getElementById('lbMeta').textContent = [proj.location && proj.location!=='—'?proj.location:'', proj.keys?proj.keys+' keys':'', proj.type].filter(Boolean).join(' · ');
       const stage = document.getElementById('lbStage');
-      stage.src = imgs[0]||proj.primary_image;
+      stage.src = imgs[0]||proj.primary_image||asset('base4-hero-poster.jpg');
       document.getElementById('lbThumbs').innerHTML = imgs.map((u,i)=>`<img src="${u}" data-i="${i}" class="${i===0?'active':''}" alt="">`).join('');
       const lbLink = document.getElementById('lbLink');
-      lbLink.href = url; lbLink.style.display = '';
+      if(url){ lbLink.href = url; lbLink.style.display = ''; }
+      else { lbLink.removeAttribute('href'); lbLink.style.display = 'none'; }
       document.getElementById('lbThumbs').querySelectorAll('img').forEach(t=>t.addEventListener('click',()=>{
         stage.src = imgs[t.dataset.i];
         document.getElementById('lbThumbs').querySelectorAll('img').forEach(x=>x.classList.remove('active'));
@@ -962,7 +1753,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         track('generate_lead',{flag:d.flag||'', keys:d.keys||'', has_company:!!d.company});
         if(FORM_ENDPOINT){
           try{
-            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+            const r = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d, source:'Hospitality Project Consultation'})});
             if(!r.ok) throw new Error();
             status.textContent='Thanks — your request was sent. We\'ll be in touch shortly.';
           }catch(_){ status.textContent='Something went wrong. Please email '+kv('Site').Email+'.'; }
