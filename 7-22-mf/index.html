@@ -488,10 +488,10 @@ Mixed-Use	1 featured project
 
 # SHEET: Testimonials
 quote	who	role
+Rick, Adalberto and the entire team of Base4 is amazing. They are knowledgeable and quick. We truly enjoy working with them.	Divya Patel	★★★★★ · Google review
 Worked with this firm on my first construction project. They were able to provide me advice through every step of the way and garned rave reviews from the brand. They are highly experienced and know exactly what they are doing. Available to you whenever you may need and will design the project exactly as you wished. This is who you will want to use.	Simar Singh	★★★★★ · Google review
-Base4 has always been great to work with, as they are professional, work within defined budgets, quick to review shop drawings, change orders, and answer contractor's questions. I highly recommend Base4 and look forward to working with them on our next hotel project.	Philip Richardson	★★★★★ · Google review
-Witness Investment has partnered with the BASE4 team on multiple hotel developments and they've been an outstanding design partner every time. Their team is incredibly responsive allowing us to move quickly on projects, especially during the critical early phases when speed and clarity matter most. Their BIM/3D process is a major advantage. The level of detail within their models and designs reduces surprises in the field and creates a smoother path from design through construction. A strong partner for any developer looking for reliability, speed, and precision.	Ethan Palazzo	★★★★★ · Google review
-Our company has worked with Base4 on several hospitality projects with great success. Blair and his team remember that architecture is a service business as well as a profession that balances art, program and function. They understand innovation, cost and deadlines. They are efficient and effective in their approach to a project which serves the entire team very well.	Brian Walsh	★★★★★ · Google review
+Based is amazing to work with period. Very efficient, professional, knowledgeable and accommodating to our requirements. They are going to be our go to company for all our future projects.	Amit Desai	★★★★★ · Google review
+A terrific firm to work with. All personnel are very professional and responsive in a timely manner. Luis Almonte in particular is guiding us on a challenging project with a hotel and has been great to work with. I would gladly recommend this firm.	Murali Veeramachaneni	★★★★★ · Google review
 
 # SHEET: Projects
 name	type	location	units	stories	year	note	url	primary_image	featured	featured_order
@@ -815,7 +815,9 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <h2>Multifamily portfolio.</h2>
           </div>
           <div class="portfolio-tools reveal">
-            <div class="filters" id="filters"></div>
+            <!-- Category filters hidden per request; kept (commented) so they can be re-enabled.
+                 To restore: uncomment this div AND the two "category filter" blocks in buildGallery(). -->
+            <!-- <div class="filters" id="filters"></div> -->
             <label class="sort-wrap">Sort
               <select id="projectSort" aria-label="Sort multifamily projects">
                 <option value="featured">Featured first</option>
@@ -916,15 +918,16 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
     /* ---------- gallery + filters ---------- */
     const FILTERS = ['All','Garden','Mid-Rise','Townhome','Mixed-Use','Other'];
     function buildGallery(){
-      const fc = document.getElementById('filters');
+      // const fc = document.getElementById('filters');   // category filter (hidden per request)
       const grid = document.getElementById('gallery');
       const sortEl = document.getElementById('projectSort');
       const seeAll = document.getElementById('seeAllProjects');
       const projects = sheet('Projects');
-      let activeFilter = 'All';
+      let activeFilter = 'All';   // stays 'All' while the category filter is hidden -> shows every project
       let expanded = false;
 
-      fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
+      // --- category filter buttons (hidden per request; uncomment to re-enable) ---
+      // fc.innerHTML = FILTERS.map((f,i)=>`<button class="filter${i===0?' active':''}" data-f="${f}">${f}</button>`).join('');
 
       const yearNum = p => /^\d{4}$/.test(p.year||'') ? Number(p.year) : null;
       const sortList = (list, mode) => [...list].sort((a,b)=>{
@@ -977,13 +980,14 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       }
 
       render();
-      fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
-        fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter = btn.dataset.f;
-        render();
-        track('project_filter',{filter:activeFilter,expanded});
-      }));
+      // --- category filter click handler (hidden per request; uncomment to re-enable) ---
+      // fc.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+      //   fc.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+      //   btn.classList.add('active');
+      //   activeFilter = btn.dataset.f;
+      //   render();
+      //   track('project_filter',{filter:activeFilter,expanded});
+      // }));
       sortEl.addEventListener('change',()=>{
         render();
         track('project_sort',{sort:sortEl.value,expanded});
