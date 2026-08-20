@@ -1189,6 +1189,21 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
       const overlayObserver = new MutationObserver(()=>{ requestViewport(); placeOverlays(); });
       document.querySelectorAll('.modal, .lb').forEach(o=> overlayObserver.observe(o, {attributes:true, attributeFilter:['class']}));
       requestViewport();
+
+      /* In-page anchor links (e.g. "View Multifamily Portfolio" -> #projects) can't scroll the
+         iframe itself — it has no scrollbar, the parent does. Intercept them and ask the parent
+         to scroll to the target's position within the iframe. */
+      document.addEventListener('click', e=>{
+        const a = e.target.closest && e.target.closest('a[href^="#"]');
+        if(!a) return;
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return;
+        const target = document.getElementById(id);
+        if(!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
+        try{ window.parent.postMessage({type:'base4-embed-scroll', top:top}, '*'); }catch(err){}
+      });
     }
 
     document.addEventListener('DOMContentLoaded', boot);
