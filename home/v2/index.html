@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>BASE4 | Architecture, Engineering & Interior Design</title>
+<meta name="description" content="BASE4 helps developers, owners, and general contractors build cheaper and faster through integrated architecture, engineering, interior design, BIM, and construction support.">
+<link rel="canonical" href="https://www.base-4.com/">
+<meta name="theme-color" content="#8dc63f">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="BASE4 | Helping Developers Build Cheaper & Faster">
+<meta property="og:description" content="One coordinated AEC team built around developer priorities.">
+<meta property="og:url" content="https://www.base-4.com/">
+<meta property="og:image" content="https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Helping-Developers-and-General-Contractors-Build-Faster-and-Cheaper-1.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#8dc63f;
+  --ink:#101814;
+  --forest:#17392d;
+  --forest2:#0d241b;
+  --paper:#f4f5f1;
+  --white:#fff;
+  --line:#dfe4dc;
+  --muted:#68736c;
+  --max:1320px;
+  --pad:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.display{font-family:'Inter Tight','Inter',sans-serif;letter-spacing:-.035em;line-height:.98}
+h1,h2,h3,p{margin-top:0}
+img{display:block;width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+.wrap{max-width:var(--max);padding:0 var(--pad);margin:auto}
+.kicker{font-family:'Inter Tight';font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;color:var(--green)}
+.kicker.dark{color:var(--forest)}
+.section{padding:110px 0}
+.section-title{font-size:clamp(2.4rem,5vw,4.8rem);max-width:900px;margin:0}
+.lead{color:var(--muted);font-size:1.1rem;max-width:650px}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(5px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;font-family:'Inter Tight';font-weight:800;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:#102013}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-outline-light{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.btn-outline-dark{border-color:var(--line);background:#fff;color:var(--ink)}
+.textlink{display:inline-flex;gap:8px;align-items:center;font-family:'Inter Tight';font-weight:800;text-decoration:none}
+
+/* header */
+header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid transparent}
+header.scrolled{border-color:var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.logo img{height:30px;width:auto}
+.mainnav{display:flex;gap:4px;align-items:center}
+.navitem{position:relative}
+.navlink{display:flex;align-items:center;gap:6px;padding:10px 11px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.93rem}
+.navlink:hover{background:var(--paper)}
+.caret{width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-3px}
+.drop{position:absolute;left:0;top:100%;min-width:230px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 50px rgba(16,24,20,.14);opacity:0;visibility:hidden;transform:translateY(7px);transition:.18s}
+.navitem:hover .drop{opacity:1;visibility:visible;transform:translateY(3px)}
+.drop a{display:block;padding:9px 11px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.drop a:hover{background:var(--paper)}
+.navright{display:flex;align-items:center;gap:10px}
+.navcta{padding:11px 17px}
+.toggle{display:none;width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer}
+.toggle i,.toggle i:before,.toggle i:after{content:'';display:block;width:18px;height:2px;background:var(--ink);position:relative;margin:auto}
+.toggle i:before{position:absolute;top:-6px}.toggle i:after{position:absolute;top:6px}
+
+/* hero */
+.hero{background:var(--forest2);color:#fff;overflow:hidden}
+.hero-grid{min-height:760px;display:grid;grid-template-columns:1.05fr .95fr}
+.hero-copy{padding:110px 70px 90px max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)));display:flex;flex-direction:column;justify-content:center}
+.hero-copy .kicker{margin-bottom:24px}
+.hero h1{font-size:clamp(4.2rem,8.2vw,8rem);max-width:9.5ch;margin:0 0 28px;color:#fff}
+.hero-sub{max-width:610px;color:rgba(255,255,255,.78);font-size:1.12rem;margin-bottom:31px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12)}
+.hero-shot{position:relative;overflow:hidden;min-height:380px;background:#203f33}
+.hero-shot:first-child{grid-column:1/-1}
+.hero-shot img{position:absolute;inset:0;height:100%;object-fit:cover}
+.hero-shot:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(8,20,14,.76))}
+.hero-caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.hero-caption small{display:block;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.hero-caption strong{font-family:'Inter Tight';font-size:1.15rem}
+.hero-index{position:absolute;right:16px;top:16px;z-index:2;width:34px;height:34px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;font-family:'Inter Tight';font-weight:800;font-size:.78rem}
+
+/* ticker */
+.ticker{background:var(--green);overflow:hidden;border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+.ticker-track{display:flex;width:max-content;animation:ticker 28s linear infinite}
+.ticker-item{font-family:'Inter Tight';font-size:.92rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:17px 26px;white-space:nowrap}
+.ticker-dot{color:#fff;padding-left:26px}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* manifesto */
+.manifesto{background:#fff}
+.manifesto-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:90px}
+.manifesto-side{padding-top:10px}
+.manifesto-copy{font-family:'Inter Tight';font-size:clamp(2rem,4vw,3.8rem);font-weight:700;line-height:1.09;letter-spacing:-.035em}
+.manifesto-copy .soft{color:#9ca59f}
+.manifesto-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:70px}
+.stat{padding:28px 24px 0 0;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-family:'Inter Tight';font-size:2.25rem;line-height:1;color:var(--forest)}
+.stat span{display:block;color:var(--muted);font-size:.85rem;margin-top:8px}
+
+/* problem solver */
+.problems{background:var(--paper)}
+.problem-head{display:grid;grid-template-columns:1fr .7fr;gap:70px;align-items:end;margin-bottom:52px}
+.problem-shell{display:grid;grid-template-columns:.68fr 1.32fr;border:1px solid var(--line);background:#fff;min-height:500px}
+.problem-tabs{border-right:1px solid var(--line)}
+.problem-tab{width:100%;border:0;border-bottom:1px solid var(--line);background:#fff;text-align:left;padding:26px 24px;cursor:pointer;display:flex;gap:17px;align-items:flex-start}
+.problem-tab:hover,.problem-tab.active{background:var(--forest);color:#fff}
+.problem-tab .no{font-family:'Inter Tight';font-weight:800;color:var(--green);font-size:.78rem;padding-top:3px}
+.problem-tab strong{font-family:'Inter Tight';font-size:1.12rem}
+.problem-panel{position:relative;overflow:hidden;padding:46px;display:flex;flex-direction:column;justify-content:space-between}
+.problem-panel:before{content:'';position:absolute;width:340px;height:340px;border-radius:50%;right:-150px;top:-130px;background:var(--green);opacity:.12}
+.problem-response{position:relative;z-index:2;max-width:740px}
+.problem-response .kicker{margin-bottom:20px}
+.problem-response h3{font-size:clamp(2.3rem,4vw,4.2rem);margin:0 0 20px}
+.problem-response p{font-size:1.06rem;color:var(--muted);max-width:640px}
+.problem-details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+.detail{background:var(--paper);padding:16px 18px;font-size:.88rem;font-weight:600}
+
+/* markets */
+.market-intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:end;margin-bottom:48px}
+.market-stack{border-top:1px solid var(--line)}
+.market-row{display:grid;grid-template-columns:1.05fr .75fr 1.2fr;gap:34px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:.2s}
+.market-row:hover{padding-left:12px}
+.market-name{font-family:'Inter Tight';font-size:clamp(2.3rem,4vw,4rem);font-weight:700;letter-spacing:-.04em}
+.market-img{height:200px;overflow:hidden;background:var(--paper)}
+.market-img img{height:100%;object-fit:cover;transition:transform .35s}
+.market-row:hover .market-img img{transform:scale(1.05)}
+.market-copy p{color:var(--muted);font-size:.94rem;margin-bottom:12px}
+
+/* work */
+.work{background:var(--forest2);color:#fff}
+.work .section-title{color:#fff}
+.work .lead{color:rgba(255,255,255,.62)}
+.work-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:46px}
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:250px;gap:14px}
+.project{position:relative;overflow:hidden;background:#244737}
+.project:nth-child(1){grid-column:span 7;grid-row:span 2}
+.project:nth-child(2){grid-column:span 5}
+.project:nth-child(3){grid-column:span 5}
+.project:nth-child(4){grid-column:span 4}
+.project:nth-child(5){grid-column:span 4}
+.project:nth-child(6){grid-column:span 4}
+.project img{position:absolute;inset:0;height:100%;object-fit:cover;transition:transform .4s}
+.project:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(5,16,10,.86))}
+.project:hover img{transform:scale(1.04)}
+.project-body{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
+.project-type{color:var(--green);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+.project h3{font-size:1.4rem;margin:5px 0 1px;color:#fff}
+.project p{font-size:.82rem;color:rgba(255,255,255,.64);margin:0}
+.project a{position:absolute;inset:0;z-index:3;text-indent:-9999px}
+
+/* system */
+.system{background:#fff}
+.system-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.system-rail{margin-top:60px;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.discipline{min-height:220px;padding:24px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.discipline:last-child{border-right:0}
+.discipline:hover{background:var(--forest);color:#fff}
+.discipline .num{color:var(--green);font-family:'Inter Tight';font-weight:800}
+.discipline strong{font-family:'Inter Tight';font-size:1.2rem;line-height:1.1}
+.system-band{display:grid;grid-template-columns:1.1fr .9fr;margin-top:60px;background:var(--green)}
+.system-band-copy{padding:46px}
+.system-band-copy h3{font-size:clamp(2rem,4vw,3.6rem);max-width:13ch;margin-bottom:18px}
+.system-band-copy p{max-width:650px}
+.system-band-side{background:var(--forest);color:#fff;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sys-proof strong{display:block;font-family:'Inter Tight';font-size:2.1rem;color:var(--green)}
+.sys-proof span{font-size:.82rem;color:rgba(255,255,255,.65)}
+
+/* insights */
+.insights{background:var(--paper)}
+.insights-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.insight{background:#fff;padding:30px;min-height:330px;display:flex;flex-direction:column}
+.insight-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.insight h3{font-size:1.65rem;line-height:1.08;margin:44px 0 14px}
+.insight p{color:var(--muted);font-size:.93rem}
+.insight .textlink{margin-top:auto}
+
+/* newsletter */
+.nl{background:var(--green)}
+.nl-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+.nl h2{font-size:clamp(2.6rem,5vw,5rem);max-width:10ch;margin-bottom:18px}
+.nl p{max-width:600px}
+.nl-card{background:#fff;padding:34px}
+.nl-card strong{font-family:'Inter Tight';display:block;font-size:2.5rem;color:var(--forest)}
+.nl-card span{display:block;font-weight:700;margin-bottom:25px}
+.nl-form{display:flex;gap:9px}
+.nl-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:14px 16px}
+.nl-form button{border:0}
+
+/* closing */
+.closing{background:var(--forest2);color:#fff}
+.closing-grid{display:grid;grid-template-columns:1.2fr .8fr;min-height:500px}
+.closing-copy{padding:100px 70px 90px max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)))}
+.closing-copy h2{font-size:clamp(3rem,6vw,6rem);max-width:9ch;margin-bottom:25px;color:#fff}
+.closing-copy p{color:rgba(255,255,255,.7);max-width:630px}
+.closing-side{position:relative;min-height:500px}
+.closing-side img{position:absolute;inset:0;height:100%;object-fit:cover}
+.closing-side:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--forest2),transparent 38%)}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:120;background:rgba(5,13,9,.82);backdrop-filter:blur(5px);display:none;align-items:flex-start;justify-content:center;padding:38px 18px;overflow-y:auto}
+.modal.open{display:flex}
+html.is-embedded .modal{position:absolute}
+html.is-embedded #header,html.is-embedded #footer,html.is-embedded #toTop{display:none}
+.modal-card{width:min(570px,100%);background:#fff;padding:32px;position:relative}
+.modal-close{position:absolute;right:14px;top:14px;border:0;width:38px;height:38px;border-radius:50%;background:var(--paper);font-size:1.3rem;cursor:pointer}
+.modal-card h3{font-size:1.8rem;margin-bottom:6px}
+.modal-card .sub{color:var(--muted);font-size:.93rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin:13px 0}
+.field label{display:block;font-size:.79rem;font-weight:700;margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid var(--line);background:#fff}
+.form-foot{display:flex;flex-direction:column;gap:10px}
+.form-status{font-size:.86rem;font-weight:600;color:var(--forest)}
+.mailto{font-size:.83rem;color:var(--muted)}
+
+/* footer */
+footer{background:#091710;color:rgba(255,255,255,.68);padding:60px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:42px}
+.footer-logo img{width:auto;height:29px;filter:brightness(0) invert(1)}
+footer h4{color:#fff;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;margin:0 0 15px}
+footer a{display:block;color:rgba(255,255,255,.68);text-decoration:none;padding:4px 0;font-size:.9rem}
+footer a:hover{color:var(--green)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:23px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem}
+#toTop{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border:0;border-radius:50%;background:var(--forest);color:#fff;z-index:60;opacity:0;visibility:hidden;transition:.2s;cursor:pointer}
+#toTop.show{opacity:1;visibility:visible}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1050px){
+  .hero-grid,.manifesto-grid,.problem-head,.market-intro,.system-head,.nl-grid,.closing-grid{grid-template-columns:1fr}
+  .hero-copy{padding:90px var(--pad)}
+  .hero-visual{min-height:650px}
+  .hero-grid{min-height:auto}
+  .problem-shell{grid-template-columns:1fr}
+  .problem-tabs{border-right:0;display:grid;grid-template-columns:1fr 1fr}
+  .problem-tab{border-right:1px solid var(--line)}
+  .system-rail{grid-template-columns:repeat(3,1fr)}
+  .discipline:nth-child(3){border-right:0}
+  .discipline:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:320px}
+  .project,.project:nth-child(1),.project:nth-child(2),.project:nth-child(3),.project:nth-child(4),.project:nth-child(5),.project:nth-child(6){grid-column:auto;grid-row:auto}
+  .project:nth-child(1){grid-column:1/-1}
+  .closing-copy{padding:90px var(--pad)}
+  .closing-side:after{background:linear-gradient(180deg,var(--forest2),transparent 28%)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:850px){
+  .mainnav{display:none}
+  .mainnav.open{display:flex;position:absolute;top:74px;left:0;right:0;background:#fff;padding:12px var(--pad);flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}
+  .mainnav.open .navitem{width:100%}
+  .mainnav.open .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding-left:14px}
+  .navright .navcta{display:none}
+  .toggle{display:block}
+  .hero-visual{grid-template-columns:1fr;min-height:0}
+  .hero-shot,.hero-shot:first-child{min-height:360px;grid-column:auto}
+  .manifesto-stats{grid-template-columns:1fr 1fr}
+  .stat{border-bottom:1px solid var(--line);padding:25px 15px}
+  .market-row{grid-template-columns:1fr}
+  .market-img{height:290px}
+  .market-row:hover{padding-left:0}
+  .insights-grid{grid-template-columns:1fr}
+  .system-band{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  :root{--pad:20px}
+  .section{padding:78px 0}
+  .hero h1{font-size:clamp(3.3rem,17vw,5rem)}
+  .hero-copy{padding:72px var(--pad)}
+  .hero-visual{display:block}
+  .hero-shot{min-height:330px;border-top:1px solid rgba(255,255,255,.12)}
+  .manifesto-stats,.problem-tabs,.problem-details,.system-rail,.system-band-side,.work-grid,.footer-grid,.form-row{grid-template-columns:1fr}
+  .discipline,.discipline:nth-child(3),.discipline:nth-child(-n+3){border-right:0;border-bottom:1px solid var(--line)}
+  .discipline{min-height:150px}
+  .problem-panel{padding:28px 22px}
+  .work-grid{grid-auto-rows:320px}
+  .project:nth-child(1){grid-column:auto}
+  .work-head,.insights-head{display:block}
+  .work-head .textlink,.insights-head .textlink{margin-top:18px}
+  .nl-form{flex-direction:column}
+  .closing-copy h2{font-size:3.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .ticker-track{animation:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="logo" href="https://www.base-4.com/" aria-label="BASE4 home">
+      <img src="https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/logos/base4-logo.png" alt="BASE4">
+    </a>
+    <nav class="mainnav" id="mainNav"></nav>
+    <div class="navright">
+      <button class="btn btn-green navcta js-consult" type="button">Discuss Your Project</button>
+      <button class="toggle" id="navToggle" aria-label="Toggle navigation"><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="app"><div class="wrap" style="padding:120px 0">Loading...</div></main>
+<footer id="footer"></footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<div class="modal" id="consultModal">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h3 id="formTitle"></h3>
+    <p class="sub" id="formSub"></p>
+    <form id="leadForm">
+      <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="form-row">
+        <div class="field"><label id="nameLabel"></label><input name="name" required></div>
+        <div class="field"><label id="companyLabel"></label><input name="company"></div>
+      </div>
+      <div class="field"><label id="emailLabel"></label><input name="email" type="email" required></div>
+      <div class="form-row">
+        <div class="field"><label id="locationLabel"></label><input name="location" id="locationInput"></div>
+        <div class="field"><label id="typeLabel"></label><select name="project_type" id="projectType"></select></div>
+      </div>
+      <div class="field"><label id="messageLabel"></label><textarea name="message" rows="4" id="messageInput"></textarea></div>
+      <div class="form-foot">
+        <button class="btn btn-green" type="submit" id="submitLabel"></button>
+        <span class="mailto" id="mailFallback"></span>
+      </div>
+      <p class="form-status" id="formStatus" hidden></p>
+    </form>
+  </div>
+</div>
+
+<!-- STUDY 02: all editable homepage content is stored in TSV below. -->
+<script id="content-tsv" type="text/tab-separated-values">
+# SHEET: Site
+Parameter	Value
+Org Name	BASE4
+Email	info@base-4.com
+Mailto Subject	I Have a Project I Want to Discuss | BASE4
+Florida Registration	Florida Registered Architectural Firm - AA26003324
+Copyright	© 2026 BASE4 | All rights reserved.
+Footer Blurb	Architecture, engineering, interior design, BIM/VIZ, and construction support built around developer priorities.
+Lead Source	Homepage Study 02
+
+# SHEET: Hero
+Parameter	Value
+Eyebrow	ARCHITECTS · ENGINEERS · INTERIOR DESIGNERS
+H1	Build Cheaper. Move Faster.
+Subhead	BASE4 combines the disciplines that shape cost, coordination, approvals, and constructability into one integrated design team for developers, owners, and general contractors.
+Primary CTA	Discuss Your Project
+Secondary CTA	Explore Projects
+Secondary URL	https://www.base-4.com/projects/
+
+# SHEET: HeroImages
+index	name	type	image	href
+01	StudioRes – Shalimar	Hospitality	https://www.base-4.com/wp-content/uploads/2026/08/StudioRes-Shalimar-FL-01-555x358_c.jpg	https://www.base-4.com/portfolio/studiores-shalimar-fl/
+02	50MW Modular Data Center	Data Center	https://www.base-4.com/wp-content/uploads/2026/07/50MW-Modular-Data-Center-Frosty-Valley-01-555x358_c.jpg	https://www.base-4.com/portfolio/50mw-modular-data-center-frosty-valley-pa/
+03	Uptown East and West	Multifamily	https://www.base-4.com/wp-content/uploads/2026/06/Uptown-East-and-West-01-555x358_c.jpg	https://www.base-4.com/portfolio/uptown-east-and-west/
+
+# SHEET: Ticker
+label
+Architecture
+Structural Engineering
+MEP Engineering
+Interior Design
+BIM / Visualization
+Construction Administration
+Industrialized Construction
+
+# SHEET: Manifesto
+Parameter	Value
+Eyebrow	BASE4
+Body	We organize around the decisions that move projects forward.
+Soft Body	Architecture, engineering, interiors, BIM, and construction support align from the start.
+
+# SHEET: Stats
+num	label
+225+	Full-Time Designers
+50	States With Design Experience
+100%	Revit / 3D Design
+24 HR	Global Work Cycle
+
+# SHEET: ProblemsIntro
+Parameter	Value
+Eyebrow	START WITH THE PROBLEM
+Title	What is putting pressure on your project?
+Body	BASE4 is most useful when the design team understands what the developer is trying to protect. Pick the pressure point and see how an integrated team changes the response.
+
+# SHEET: Problems
+num	tab	kicker	title	body	detail1	detail2
+01	Cost Pressure	COST	Design choices should be tested before they become expensive commitments.	Architecture, structure, MEP, interiors, and constructability decisions affect one another. Bringing them together earlier gives the team more opportunities to simplify, standardize, and avoid late redesign.	Coordinate scope before design lock	Review systems with architecture
+02	Speed to Market	SCHEDULE	Keep decisions moving without multiplying handoffs.	A global production model and integrated disciplines help reduce the stop-start pattern that can happen when teams wait on separate consultants, disconnected models, or late coordination.	24-hour global work cycle	One coordinated BIM environment
+03	Coordination Risk	COORDINATION	Solve conflicts in the model, not in the field.	BASE4 works in Revit and 3D so architecture, structural, MEP, interiors, and constructability can be understood together before conflicts become RFIs, change orders, or field workarounds.	100% Revit / 3D design	Cross-discipline model reviews
+04	Repeatability	SCALE	Make a good building easier to repeat.	Prototype thinking, standardization, prefab, modular, and repeatable systems can help pipeline developers carry successful decisions from one project to the next without blindly copying conditions that changed.	Prototype and rollout thinking	Industrialized construction strategy
+
+# SHEET: MarketsIntro
+Parameter	Value
+Eyebrow	WHERE WE WORK
+Title	Three markets. One coordination problem.
+Body	Hotels, multifamily communities, and data centers are very different buildings. What they share is a high cost of late decisions.
+
+# SHEET: Markets
+name	tag	body	image	href
+Hospitality	HOTELS	Brand standards, guest experience, key count, operations, structure, and MEP systems compete for the same space and budget.	https://www.base-4.com/wp-content/uploads/2026/08/StudioRes-Shalimar-FL-01-555x358_c.jpg	https://www.base-4.com/hospitality/
+Multifamily	RESIDENTIAL	Unit yield, rentable area, parking, amenities, building systems, and repeatability need to work as one development strategy.	https://www.base-4.com/wp-content/uploads/2026/06/Uptown-East-and-West-01-555x358_c.jpg	https://www.base-4.com/multifamily/
+Data Centers	MISSION-CRITICAL	Power, cooling, equipment, structure, phasing, site constraints, and speed to energization demand early multidisciplinary alignment.	https://www.base-4.com/wp-content/uploads/2026/07/50MW-Modular-Data-Center-Frosty-Valley-01-555x358_c.jpg	https://www.base-4.com/data-centers/
+
+# SHEET: WorkIntro
+Parameter	Value
+Eyebrow	SELECTED WORK
+Title	Recent projects across the BASE4 portfolio.
+Body	The current BASE4 homepage features work across hospitality, data centers, and multifamily.
+
+# SHEET: Projects
+name	type	location	image	href
+StudioRes – Shalimar	Hospitality	Shalimar, FL	https://www.base-4.com/wp-content/uploads/2026/08/StudioRes-Shalimar-FL-01-555x358_c.jpg	https://www.base-4.com/portfolio/studiores-shalimar-fl/
+50MW Modular Data Center	Data Center	Frosty Valley, PA	https://www.base-4.com/wp-content/uploads/2026/07/50MW-Modular-Data-Center-Frosty-Valley-01-555x358_c.jpg	https://www.base-4.com/portfolio/50mw-modular-data-center-frosty-valley-pa/
+Hyatt Studios	Hospitality	Clarksville, TN	https://www.base-4.com/wp-content/uploads/2026/07/Hyatt-Studios-Clarksville-TN-01-555x358_c.jpg	https://www.base-4.com/portfolio/hyatt-studios-clarksville-tn/
+TownePlace Suites & Fairfield Inn	Hospitality	Greenville, SC	https://www.base-4.com/wp-content/uploads/2026/07/Towneplace-Suites-Fairfield-Inn-Greenville-SC-01-555x358_c.jpg	https://www.base-4.com/portfolio/towneplace-suites-fairfield-inn-greenville-sc/
+Uptown East and West	Multifamily	Normal, IL	https://www.base-4.com/wp-content/uploads/2026/06/Uptown-East-and-West-01-555x358_c.jpg	https://www.base-4.com/portfolio/uptown-east-and-west/
+Hyatt Studios	Hospitality	Glendale, AZ	https://www.base-4.com/wp-content/uploads/2026/05/Hyatt-Studios-Glendale-AZ-01-555x358_c.jpg	https://www.base-4.com/projects/
+
+# SHEET: System
+Parameter	Value
+Eyebrow	ONE TEAM
+Title	The building does not separate architecture from engineering. Neither should the design process.
+Body	BASE4 keeps the core design disciplines connected so a decision in one part of the building can be understood across the whole project.
+Band Title	Design service, not design silos.
+Band Body	Our operating model combines multidisciplinary design, a global 24-hour work cycle, Revit-based coordination, and industrialized construction thinking where it improves the project.
+
+# SHEET: Disciplines
+num	name
+01	Architecture
+02	Structural
+03	MEP
+04	Interior Design
+05	BIM / VIZ
+06	Construction Administration
+
+# SHEET: SystemProof
+num	label
+225+	Full-Time Designers
+50	States
+100%	Revit / 3D
+24 HR	Work Cycle
+
+# SHEET: InsightsIntro
+Parameter	Value
+Eyebrow	INSIGHTS
+Title	Useful before the next design decision.
+Body	Recent guidance currently featured on BASE4.com.
+
+# SHEET: Insights
+date	topic	title	body	href
+05 AUG 2026	HOSPITALITY	How Prefab Hotel Guestrooms Save Construction Time	Where prefab can help hotel schedules, and what needs to be coordinated before modules reach the site.	https://www.base-4.com/prefab-hotel-guestrooms-save-construction-time/
+30 JUL 2026	HOSPITALITY	Smarter Hotel Room Planning Reduces Costly Surprises	Why repeatable guestroom planning can make coordination, systems, and construction more predictable.	https://www.base-4.com/hotel-room-planning-repeatable-guestroom-layouts/
+22 JUL 2026	HOSPITALITY	Hotel Site Analysis: Cheap Land Can Hide Major Costs	Early site assumptions can create downstream cost, access, utility, and building impacts.	https://www.base-4.com/hotel-site-analysis-hidden-costs/
+
+# SHEET: Newsletter
+Parameter	Value
+Eyebrow	BASE4 INSIGHTS
+Title	Join 95,000 industry professionals.
+Body	Practical project guidance, development ideas, market context, and BASE4 insights delivered by email.
+Stat	500K+
+Stat Label	Website visitors reached
+Placeholder	Enter your work email
+Button	Stay Updated
+
+# SHEET: Closing
+Parameter	Value
+Eyebrow	YOUR NEXT PROJECT
+Title	Start with what needs to work.
+Body	Tell us the development objective, the constraint, or the decision that is holding the project back. We will connect you with the right BASE4 team.
+Button	Discuss Your Project
+Image	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Helping-Developers-and-General-Contractors-Build-Faster-and-Cheaper-1.jpg
+
+# SHEET: Form
+Parameter	Value
+Title	Schedule a Project Consultation
+Subhead	Tell us about the project, site, development stage, and the issue you are trying to solve. We will route it to the right BASE4 team.
+Name Label	Full name*
+Company Label	Company
+Email Label	Work email*
+Location Label	Project location
+Location Placeholder	City, State
+Type Label	Project type
+Type Options	Select...||Hospitality||Multifamily||Data Center||Industrialized Construction||Other / TBD
+Message Label	What would you like to discuss?
+Message Placeholder	Project scope, timeline, challenge, or decision you need help with...
+Submit Label	Send Consultation Request
+Fallback Prefix	Prefer email?
+
+# SHEET: Nav
+label	href	children
+Projects	https://www.base-4.com/projects/	
+Data Centers	https://www.base-4.com/data-centers/	Data Center Insights::https://www.base-4.com/data-center-insights/
+Markets	#	Hospitality::https://www.base-4.com/hospitality/||Multifamily::https://www.base-4.com/multifamily/
+Innovation Lab	#	Destination::https://www.base-4.com/destination/||Industrialized Construction::https://www.base-4.com/industrialized-construction-systems/
+Blog	https://www.base-4.com/blog/	Infographics::https://www.base-4.com/infographics/
+About	https://www.base-4.com/about-us/	Our Clients::https://www.base-4.com/our-clients/
+Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
+</script>
+
+<script>
+const FORM_ENDPOINT='https://www.base-4.com/wp-json/base4/v1/lead';
+const db={};
+const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function parseTSV(text){
+  text.split('# SHEET: ').map(x=>x.trim()).filter(Boolean).forEach(block=>{
+    const lines=block.split(/\r?\n/).filter(l=>l.length&&!l.startsWith('#'));
+    if(!lines.length)return;
+    const name=lines.shift().trim();
+    const heads=lines.shift().split('\t').map(x=>x.trim());
+    db[name]=lines.map(line=>{
+      const cells=line.split('\t'),row={};
+      heads.forEach((h,i)=>row[h]=(cells[i]||'').trim());
+      return row;
+    });
+  });
+}
+function kv(name){const o={};(db[name]||[]).forEach(r=>o[r.Parameter]=r.Value);return o}
+
+function nav(){
+  document.getElementById('mainNav').innerHTML=(db.Nav||[]).map(n=>{
+    const kids=(n.children||'').split('||').filter(Boolean).map(c=>{
+      const [l,h]=c.split('::');return `<a href="${esc(h)}">${esc(l)}</a>`;
+    }).join('');
+    return `<div class="navitem"><a class="navlink" href="${esc(n.href)}">${esc(n.label)}${kids?'<span class="caret"></span>':''}</a>${kids?`<div class="drop">${kids}</div>`:''}</div>`;
+  }).join('');
+}
+function footer(){
+  const s=kv('Site'),n=db.Nav||[];
+  document.getElementById('footer').innerHTML=`<div class="wrap">
+    <div class="footer-grid">
+      <div><a class="footer-logo" href="https://www.base-4.com/"><img src="https://ohshtnvm.github.io/innolab-rebuild/6-29-iteration/logos/base4-logo.png" alt="BASE4"></a><p style="max-width:34ch;font-size:.9rem;margin-top:15px">${esc(s['Footer Blurb'])}</p></div>
+      <div><h4>Explore</h4>${n.slice(0,3).map(x=>`<a href="${esc(x.href)}">${esc(x.label)}</a>`).join('')}</div>
+      <div><h4>Company</h4>${n.slice(3,6).map(x=>`<a href="${esc(x.href)}">${esc(x.label)}</a>`).join('')}</div>
+      <div><h4>Start a Project</h4><p style="font-size:.9rem">Have a site, concept, prototype, or project challenge?</p><button class="btn btn-green js-consult" type="button">Discuss Your Project</button></div>
+    </div>
+    <div class="footer-bottom"><span>${esc(s.Copyright)}</span><span>${esc(s['Florida Registration'])}</span></div>
+  </div>`;
+}
+
+function render(){
+  const H=kv('Hero'),M=kv('Manifesto'),PI=kv('ProblemsIntro'),MI=kv('MarketsIntro'),WI=kv('WorkIntro'),S=kv('System'),II=kv('InsightsIntro'),N=kv('Newsletter'),C=kv('Closing');
+
+  const heroImgs=(db.HeroImages||[]).map(r=>`<div class="hero-shot">
+    <img src="${esc(r.image)}" alt="${esc(r.name)}" loading="eager">
+    <span class="hero-index">${esc(r.index)}</span>
+    <div class="hero-caption"><small>${esc(r.type)}</small><strong>${esc(r.name)}</strong></div>
+  </div>`).join('');
+
+  const labels=(db.Ticker||[]).map(r=>`<span class="ticker-item">${esc(r.label)} <span class="ticker-dot">●</span></span>`).join('');
+  const ticker=labels+labels;
+
+  const stats=(db.Stats||[]).map(r=>`<div class="stat"><strong>${esc(r.num)}</strong><span>${esc(r.label)}</span></div>`).join('');
+
+  const problems=db.Problems||[];
+  const tabs=problems.map((r,i)=>`<button class="problem-tab${i===0?' active':''}" data-p="${i}" type="button"><span class="no">${esc(r.num)}</span><strong>${esc(r.tab)}</strong></button>`).join('');
+
+  const markets=(db.Markets||[]).map(r=>`<a class="market-row reveal" href="${esc(r.href)}">
+    <div><div class="kicker dark">${esc(r.tag)}</div><div class="market-name">${esc(r.name)}</div></div>
+    <div class="market-img"><img src="${esc(r.image)}" alt="${esc(r.name)} project by BASE4" loading="lazy"></div>
+    <div class="market-copy"><p>${esc(r.body)}</p><span class="textlink">Explore market <span class="arrow">→</span></span></div>
+  </a>`).join('');
+
+  const projects=(db.Projects||[]).map(r=>`<article class="project reveal">
+    <img src="${esc(r.image)}" alt="${esc(r.name)}" loading="lazy">
+    <div class="project-body"><div class="project-type">${esc(r.type)}</div><h3>${esc(r.name)}</h3><p>${esc(r.location)}</p></div>
+    <a href="${esc(r.href)}" aria-label="View ${esc(r.name)}">View project</a>
+  </article>`).join('');
+
+  const disciplines=(db.Disciplines||[]).map(r=>`<div class="discipline reveal"><span class="num">${esc(r.num)}</span><strong>${esc(r.name)}</strong></div>`).join('');
+  const sysproof=(db.SystemProof||[]).map(r=>`<div class="sys-proof"><strong>${esc(r.num)}</strong><span>${esc(r.label)}</span></div>`).join('');
+
+  const insights=(db.Insights||[]).map(r=>`<article class="insight reveal">
+    <div class="insight-meta"><span>${esc(r.date)}</span><span>${esc(r.topic)}</span></div>
+    <h3>${esc(r.title)}</h3><p>${esc(r.body)}</p>
+    <a class="textlink" href="${esc(r.href)}">Read insight <span class="arrow">→</span></a>
+  </article>`).join('');
+
+  document.getElementById('app').innerHTML=`
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="kicker reveal">${esc(H.Eyebrow)}</div>
+        <h1 class="reveal">${esc(H.H1)}</h1>
+        <p class="hero-sub reveal">${esc(H.Subhead)}</p>
+        <div class="hero-actions reveal"><button class="btn btn-green js-consult" type="button">${esc(H['Primary CTA'])}</button><a class="btn btn-outline-light" href="${esc(H['Secondary URL'])}">${esc(H['Secondary CTA'])}</a></div>
+      </div>
+      <div class="hero-visual">${heroImgs}</div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker-track">${ticker}</div></div>
+
+  <section class="section manifesto">
+    <div class="wrap">
+      <div class="manifesto-grid">
+        <div class="manifesto-side reveal"><div class="kicker dark">${esc(M.Eyebrow)}</div></div>
+        <div class="manifesto-copy reveal">${esc(M.Body)} <span class="soft">${esc(M['Soft Body'])}</span></div>
+      </div>
+      <div class="manifesto-stats">${stats}</div>
+    </div>
+  </section>
+
+  <section class="section problems">
+    <div class="wrap">
+      <div class="problem-head">
+        <div><div class="kicker dark reveal">${esc(PI.Eyebrow)}</div><h2 class="section-title reveal">${esc(PI.Title)}</h2></div>
+        <p class="lead reveal">${esc(PI.Body)}</p>
+      </div>
+      <div class="problem-shell reveal">
+        <div class="problem-tabs">${tabs}</div>
+        <div class="problem-panel" id="problemPanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="market-intro">
+        <div><div class="kicker dark reveal">${esc(MI.Eyebrow)}</div><h2 class="section-title reveal">${esc(MI.Title)}</h2></div>
+        <p class="lead reveal">${esc(MI.Body)}</p>
+      </div>
+      <div class="market-stack">${markets}</div>
+    </div>
+  </section>
+
+  <section class="section work">
+    <div class="wrap">
+      <div class="work-head">
+        <div><div class="kicker reveal">${esc(WI.Eyebrow)}</div><h2 class="section-title reveal">${esc(WI.Title)}</h2></div>
+        <div><p class="lead reveal">${esc(WI.Body)}</p><a class="textlink reveal" href="https://www.base-4.com/projects/">View all projects <span class="arrow">→</span></a></div>
+      </div>
+      <div class="work-grid">${projects}</div>
+    </div>
+  </section>
+
+  <section class="section system">
+    <div class="wrap">
+      <div class="system-head">
+        <div><div class="kicker dark reveal">${esc(S.Eyebrow)}</div><h2 class="section-title reveal">${esc(S.Title)}</h2></div>
+        <p class="lead reveal">${esc(S.Body)}</p>
+      </div>
+      <div class="system-rail">${disciplines}</div>
+      <div class="system-band reveal">
+        <div class="system-band-copy"><h3>${esc(S['Band Title'])}</h3><p>${esc(S['Band Body'])}</p><a class="btn btn-light" href="https://www.base-4.com/about-us/">How BASE4 Works</a></div>
+        <div class="system-band-side">${sysproof}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section insights">
+    <div class="wrap">
+      <div class="insights-head">
+        <div><div class="kicker dark reveal">${esc(II.Eyebrow)}</div><h2 class="section-title reveal">${esc(II.Title)}</h2></div>
+        <div><p class="lead reveal">${esc(II.Body)}</p><a class="textlink reveal" href="https://www.base-4.com/blog/">View all insights <span class="arrow">→</span></a></div>
+      </div>
+      <div class="insights-grid">${insights}</div>
+    </div>
+  </section>
+
+  <section class="section nl">
+    <div class="wrap nl-grid">
+      <div class="reveal"><div class="kicker dark">${esc(N.Eyebrow)}</div><h2>${esc(N.Title)}</h2><p>${esc(N.Body)}</p></div>
+      <div class="nl-card reveal"><strong>${esc(N.Stat)}</strong><span>${esc(N['Stat Label'])}</span><form class="nl-form" id="newsletterForm"><input type="email" name="email" required placeholder="${esc(N.Placeholder)}"><button class="btn btn-green" type="submit">${esc(N.Button)}</button></form><p id="nlStatus" hidden style="font-size:.84rem;margin-top:12px"></p></div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="closing-grid">
+      <div class="closing-copy reveal"><div class="kicker">${esc(C.Eyebrow)}</div><h2>${esc(C.Title)}</h2><p>${esc(C.Body)}</p><button class="btn btn-green js-consult" type="button">${esc(C.Button)}</button></div>
+      <div class="closing-side"><img src="${esc(C.Image)}" alt="BASE4 project design" loading="lazy"></div>
+    </div>
+  </section>`;
+
+  wireProblem(0);
+  document.querySelectorAll('.problem-tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.problem-tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');wireProblem(+b.dataset.p)}));
+  document.querySelectorAll('.js-consult').forEach(b=>b.addEventListener('click',openModal));
+  reveals();
+  newsletter();
+}
+function wireProblem(i){
+  const r=(db.Problems||[])[i]; if(!r)return;
+  document.getElementById('problemPanel').innerHTML=`<div class="problem-response"><div class="kicker dark">${esc(r.kicker)}</div><h3>${esc(r.title)}</h3><p>${esc(r.body)}</p><div class="problem-details"><div class="detail">${esc(r.detail1)}</div><div class="detail">${esc(r.detail2)}</div></div></div><a class="textlink" href="https://www.base-4.com/about-us/">Why BASE4 <span class="arrow">→</span></a>`;
+}
+function form(){
+  const f=kv('Form'),s=kv('Site');
+  formTitle.textContent=f.Title;formSub.textContent=f.Subhead;nameLabel.textContent=f['Name Label'];companyLabel.textContent=f['Company Label'];emailLabel.textContent=f['Email Label'];locationLabel.textContent=f['Location Label'];locationInput.placeholder=f['Location Placeholder'];typeLabel.textContent=f['Type Label'];projectType.innerHTML=(f['Type Options']||'').split('||').map(x=>`<option>${esc(x)}</option>`).join('');messageLabel.textContent=f['Message Label'];messageInput.placeholder=f['Message Placeholder'];submitLabel.textContent=f['Submit Label'];mailFallback.innerHTML=`${esc(f['Fallback Prefix'])} <a href="mailto:${esc(s.Email)}?subject=${encodeURIComponent(s['Mailto Subject']||'')}">${esc(s.Email)}</a>`;
+}
+function openModal(){consultModal.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.querySelector('[name="name"]')?.focus(),80)}
+function closeModal(){consultModal.classList.remove('open');document.body.style.overflow=''}
+function reveals(){
+  const els=[...document.querySelectorAll('.reveal')];
+  if(!('IntersectionObserver'in window)){els.forEach(x=>x.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.07});
+  els.forEach(x=>io.observe(x));
+}
+function newsletter(){
+  const form=document.getElementById('newsletterForm');if(!form)return;
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();const status=document.getElementById('nlStatus'),email=new FormData(form).get('email');
+    status.hidden=false;status.textContent='Submitting...';
+    try{const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'Homepage Study 02 Newsletter',newsletter_opt_in:true})});if(!r.ok)throw 0;status.textContent='Thank you. You are on the BASE4 updates list.';form.reset()}catch(err){status.textContent='Could not submit automatically. Please try again later.'}
+  });
+}
+function embed(){
+  try{if(self!==top){document.documentElement.classList.add('is-embedded');const send=()=>parent.postMessage({type:'base4-height',height:document.documentElement.scrollHeight},'*');new ResizeObserver(send).observe(document.body);send()}}catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  parseTSV(contentTSV=document.getElementById('content-tsv').textContent);
+  nav();footer();form();render();embed();
+
+  navToggle.addEventListener('click',()=>mainNav.classList.toggle('open'));
+  addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>16);toTop.classList.toggle('show',scrollY>700)},{passive:true});
+  toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+  modalClose.addEventListener('click',closeModal);
+  consultModal.addEventListener('click',e=>{if(e.target===consultModal)closeModal()});
+  addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+  leadForm.addEventListener('submit',async e=>{
+    e.preventDefault();const s=kv('Site'),data=Object.fromEntries(new FormData(leadForm).entries());
+    if(data.company_website)return;
+    formStatus.hidden=false;formStatus.textContent='Sending...';
+    try{const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...data,source:s['Lead Source']})});if(!r.ok)throw 0;formStatus.textContent='Thank you. The BASE4 team will follow up.';leadForm.reset()}catch(err){formStatus.innerHTML=`Could not submit automatically. Please email <a href="mailto:${esc(s.Email)}">${esc(s.Email)}</a>.`}
+  });
+});
+</script>
+</body>
+</html>
