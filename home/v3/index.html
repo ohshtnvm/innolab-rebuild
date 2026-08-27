@@ -231,12 +231,47 @@
     .innovation-main p{color:rgba(255,255,255,.70);max-width:55ch}
     .innovation-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0}
     .innovation-point{padding:16px;border:1px solid rgba(255,255,255,.12);border-radius:12px;font-family:'Inter Tight';font-size:.92rem;color:rgba(255,255,255,.84)}
-    .innovation-side{background:#fff;border:1px solid var(--hairline);padding:36px;display:flex;flex-direction:column;justify-content:space-between}
-    .innovation-side .tag{font-family:'Inter Tight';font-weight:800;color:var(--accent);letter-spacing:.12em;font-size:.74rem;text-transform:uppercase}
-    .innovation-side h3{font-size:2rem;max-width:12ch;margin-top:18px}
-    .innovation-side p{color:var(--muted)}
-    .innovation-side-media{margin:-36px -36px 28px;aspect-ratio:1.75/1;overflow:hidden;border-bottom:1px solid var(--hairline);background:var(--surface-alt)}
-    .innovation-side-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .innovation-side{
+      background:#fff;
+      border:1px solid var(--hairline);
+      padding:0;
+      display:grid;
+      grid-template-rows:65% 35%;
+      min-height:560px;
+    }
+    .innovation-side .tag{font-family:'Inter Tight';font-weight:800;color:var(--accent);letter-spacing:.12em;font-size:.67rem;text-transform:uppercase}
+    .innovation-side h3{font-size:1.42rem;line-height:1.04;max-width:none;margin:7px 0 6px}
+    .innovation-side p{color:var(--muted);font-size:.76rem;line-height:1.32;margin:0}
+    .innovation-side-media{
+      display:block;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      border-bottom:1px solid var(--hairline);
+      background:var(--surface-alt);
+    }
+    .innovation-side-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .35s ease;
+    }
+    .innovation-side-content{
+      padding:14px 20px 16px;
+      min-height:0;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .innovation-side-copy{min-height:0}
+    .innovation-side-content .text-link{
+      margin-top:auto;
+      padding-top:8px;
+      font-size:.78rem;
+      line-height:1.2;
+      flex:0 0 auto;
+    }
     .innovation-side:hover .innovation-side-media img{transform:scale(1.035)}
 
     .latest-blog-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:38px}
@@ -425,7 +460,8 @@
       .hero-grid{gap:36px}
       .hero h1{font-size:clamp(2.75rem,14vw,4.5rem)}
       .intro-note{position:static;width:auto;margin:-24px 16px 0}
-      .innovation-main,.innovation-side{padding:30px}
+      .innovation-main{padding:30px}
+      .innovation-side{min-height:600px}
       .innovation-points{grid-template-columns:1fr}
       .newsletter-form{flex-direction:column}
       .project-card,.project-card:nth-child(1),.project-card:nth-child(2),.project-card:nth-child(n+3){min-height:340px}
@@ -1025,7 +1061,7 @@ Primary CTA	Explore Innovation Lab
 Primary URL	https://www.base-4.com/industrialized-construction-systems/
 Side Kicker	DATA CENTERS
 Side Title	A new building type is changing where capital goes.
-Side Body	BASE4 works with developers and landowners on data center site viability, power, phasing, building systems, and modular delivery strategy.
+Side Body	BASE4 helps developers coordinate data center site viability, power, phasing, building systems, and modular delivery.
 Side CTA	Explore Data Centers
 Side URL	https://www.base-4.com/data-centers/
 Side Image	https://www.base-4.com/wp-content/uploads/2026/07/50MW-Modular-Data-Center-Frosty-Valley-01-555x358_c.jpg
@@ -1368,15 +1404,17 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <a class="btn btn--primary" href="${esc(inn['Primary URL'])}">${esc(inn['Primary CTA'])}</a>
             </div>
             <div class="innovation-side reveal">
-              <div>
-                <a class="innovation-side-media" href="${esc(inn['Side URL'])}" aria-label="${esc(inn['Side CTA'])}">
-                  <img src="${esc(inn['Side Image'])}" alt="50MW Modular Data Center, Frosty Valley, PA" loading="lazy">
-                </a>
-                <div class="tag">${esc(inn['Side Kicker'])}</div>
-                <h3>${esc(inn['Side Title'])}</h3>
-                <p>${esc(inn['Side Body'])}</p>
+              <a class="innovation-side-media" href="${esc(inn['Side URL'])}" aria-label="${esc(inn['Side CTA'])}">
+                <img src="${esc(inn['Side Image'])}" alt="50MW Modular Data Center, Frosty Valley, PA" loading="lazy">
+              </a>
+              <div class="innovation-side-content">
+                <div class="innovation-side-copy">
+                  <div class="tag">${esc(inn['Side Kicker'])}</div>
+                  <h3>${esc(inn['Side Title'])}</h3>
+                  <p>${esc(inn['Side Body'])}</p>
+                </div>
+                <a class="text-link" href="${esc(inn['Side URL'])}">${esc(inn['Side CTA'])} <span class="arr">→</span></a>
               </div>
-              <a class="text-link" href="${esc(inn['Side URL'])}">${esc(inn['Side CTA'])} <span class="arr">→</span></a>
             </div>
           </div>
         </section>
