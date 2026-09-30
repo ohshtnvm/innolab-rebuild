@@ -362,12 +362,12 @@ Body	Traditional delivery can split decisions across firms, disciplines, and tim
 
 # SHEET: Differentiators
 index	title	body	image
-01	Developer-first by design	We start with the development objective, then test design choices against cost, schedule, constructability, operations, and long-term value.	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Helping-Developers-and-General-Contractors-Build-Faster-and-Cheaper-1.jpg
-02	All services in-house	Architecture, structural, MEP, interior design, visualization, and construction support coordinate within one team for clearer accountability and fewer handoffs.	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-All-Services-In-House.jpg
-03	100% Revit / 3D design	BIM lets multiple disciplines work inside a coordinated model so issues can be identified, visualized, and resolved before they become field problems.	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Revit-3D-Design-Services.jpg
-04	24-hour work cycle	A global production team keeps work progressing across time zones, helping active projects maintain momentum when schedules are compressed.	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Fast-Design-24Hour.jpg
-05	Experience wherever projects go	Broad geographic experience helps BASE4 adapt designs to local jurisdictions, construction conditions, and project requirements across markets.	https://www.base-4.com/wp-content/uploads/2024/10/Global-Reach-Local-Expertise.jpg
-06	Built for repeatable project types	Deep experience in hospitality and multifamily, plus growing data center work, helps teams apply lessons from one project to the next without treating every building as a blank slate.	https://www.base-4.com/wp-content/uploads/2024/10/BASE4-Hospitality-Multifamily-Experts.gif
+01	Developer-first by design	We start with the development objective, then test design choices against cost, schedule, constructability, operations, and long-term value.	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-%E2%80%93-Casa-Grande-AZ-01.jpg
+02	All services in-house	Architecture, structural, MEP, interior design, visualization, and construction support coordinate within one team for clearer accountability and fewer handoffs.	https://www.base-4.com/wp-content/uploads/2024/09/Element-Albuquerque-NM-005.jpg
+03	100% Revit / 3D design	BIM lets multiple disciplines work inside a coordinated model so issues can be identified, visualized, and resolved before they become field problems.	https://innolab-rebuild.pages.dev/6-29-iteration/usp/bim-integrated.png
+04	24-hour work cycle	A global production team keeps work progressing across time zones, helping active projects maintain momentum when schedules are compressed.	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
+05	Experience wherever projects go	Broad geographic experience helps BASE4 adapt designs to local jurisdictions, construction conditions, and project requirements across markets.	https://innolab-rebuild.pages.dev/6-29-iteration/usp/usp-2.webp
+06	Built for repeatable project types	Deep experience in hospitality and multifamily, plus growing data center work, helps teams apply lessons from one project to the next without treating every building as a blank slate.	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
 
 # SHEET: DisciplinesIntro
 Parameter	Value
@@ -537,25 +537,6 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           </div>
         </div>
 
-        <section class="section">
-          <div class="wrap story-grid">
-            <div class="story-media reveal">
-              <img src="${asset(story.Image)}" alt="${esc(story['Image Alt'])}" loading="lazy">
-              <div class="story-badge">${esc(story['Pull Quote']).replace('building','<span>building</span>')}</div>
-            </div>
-            <div class="story-copy reveal">
-              <p class="eyebrow">${esc(story.Eyebrow)}</p>
-              <h2>${esc(story.Title)}</h2>
-              <p class="lead">${esc(story.Body)}</p>
-              <p>${esc(story['Body 2'])}</p>
-              <div class="story-actions">
-                <a class="btn btn--dark" href="${story['Primary URL']}" data-ev="story_primary">${esc(story['Primary CTA'])}</a>
-                <a class="btn btn--outline" href="${story['Secondary URL']}" data-ev="story_secondary">${esc(story['Secondary CTA'])}</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section class="section section--alt" id="advantage">
           <div class="wrap">
             <div class="section-head reveal">
@@ -575,15 +556,8 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <p class="lead">${esc(discIntro.Body)}</p>
             </div>
             <div class="disc-grid reveal">
-              ${disciplines.map(d=>`<article class="disc"><div class="ico">${ico(d.icon)}</div><h3>${esc(d.name)}</h3><p>${esc(d.body)}</p><a href="${d.href}">Explore service →</a></article>`).join('')}
+              ${disciplines.map(d=>`<article class="disc"><div class="ico">${ico(d.icon)}</div><h3>${esc(d.name)}</h3><p>${esc(d.body)}</p></article>`).join('')}
             </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="wrap model-grid">
-            <div class="model-copy reveal"><p class="eyebrow">${esc(opIntro.Eyebrow)}</p><h2>${esc(opIntro.Title)}</h2><p class="lead">${esc(opIntro.Body)}</p></div>
-            <div class="steps reveal">${steps.map(s=>`<div class="step"><div class="step-num">${esc(s.num)}</div><div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></div></div>`).join('')}</div>
           </div>
         </section>
 

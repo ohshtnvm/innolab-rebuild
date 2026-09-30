@@ -131,7 +131,7 @@
     .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:
       linear-gradient(98deg,rgba(8,22,15,.97) 0%,rgba(18,46,34,.91) 43%,rgba(21,55,40,.62) 68%,rgba(21,55,40,.28) 100%)}
     .hero-inner{min-height:720px;padding:110px 0 125px;display:flex;align-items:center}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.62fr);gap:72px;align-items:end;width:100%}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:72px;align-items:end;width:100%}
     .hero-copy{max-width:820px}
     .hero .eyebrow{color:rgba(255,255,255,.76)}
     .hero h1{color:#fff;max-width:11.5ch}
@@ -403,7 +403,7 @@
 
     /* Footer */
     footer{background:var(--ink);color:rgba(255,255,255,.72);padding:64px 0 32px}
-    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:36px;margin-bottom:44px}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;margin-bottom:44px}
     footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
     footer a{color:rgba(255,255,255,.72);text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
     footer a:hover{color:var(--accent)}
@@ -1211,11 +1211,6 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             </div>
             <div><h4>Explore</h4>${cols[0].map(n=>`<a href="${esc(n.href)}">${esc(n.label)}</a>`).join('')}</div>
             <div><h4>Company</h4>${cols[1].map(n=>`<a href="${esc(n.href)}">${esc(n.label)}</a>`).join('')}</div>
-            <div>
-              <h4>Start a Project</h4>
-              <p style="font-size:.92rem">Have a site, concept, brand, prototype, or project challenge to evaluate?</p>
-              <button class="btn btn--primary js-consult" type="button">Discuss Your Project</button>
-            </div>
           </div>
           <div class="footer-bottom">
             <span>${esc(site.Copyright)}</span>
@@ -1351,11 +1346,6 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
                   <a class="btn btn--ghost" href="${esc(hero['Secondary URL'])}">${esc(hero['Secondary CTA'])}</a>
                 </div>
               </div>
-              <aside class="hero-panel reveal">
-                <div class="mini">${esc(hero['Panel Kicker'])}</div>
-                <h3>${esc(hero['Panel Title'])}</h3>
-                <ul>${heroItems}</ul>
-              </aside>
             </div>
           </div>
         </section>
@@ -1363,17 +1353,6 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         <div class="proof-wrap">
           <div class="wrap"><div class="proof-bar">${proof}</div></div>
         </div>
-
-        <section class="section difference-section">
-          <div class="wrap">
-            <div class="difference-head reveal">
-              <div class="eyebrow"><span class="dot">●</span> ${esc(di.Eyebrow)}</div>
-              <h2>${esc(di.Title)}</h2>
-              <p class="lead center">${esc(di.Body)}</p>
-            </div>
-            <div class="difference-grid">${differenceCards}</div>
-          </div>
-        </section>
 
         <section class="section latest-section">
           <div class="wrap">
