@@ -309,7 +309,7 @@
     .latest-projects-head p{margin:8px 0 0;color:var(--muted);font-size:.96rem;max-width:52ch}
     .latest-heading{font-family:'Inter Tight';font-weight:800;font-size:clamp(1.8rem,3vw,2.65rem);letter-spacing:.01em;color:var(--accent);text-transform:uppercase;margin:0 0 38px}
     .latest-project-action{flex:0 0 auto}
-    .projects-toggle{border:1px solid var(--deep);background:transparent;color:var(--deep);padding:11px 18px;border-radius:999px;font-family:'Inter Tight';font-weight:800;cursor:pointer;transition:.18s}
+    .projects-toggle{display:inline-block;border:1px solid var(--deep);background:transparent;color:var(--deep);padding:11px 18px;border-radius:999px;font-family:'Inter Tight';font-weight:800;cursor:pointer;text-decoration:none;transition:.18s}
     .projects-toggle:hover{background:var(--deep);color:#fff}
 
     .featured-project-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-template-rows:repeat(2,minmax(210px,1fr));gap:16px}
@@ -1362,14 +1362,10 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
                 <p>Featured work from across the BASE4 portfolio.</p>
               </div>
               <div class="latest-project-action">
-                <button class="projects-toggle" id="projectsToggle" type="button" aria-expanded="false">See All Projects</button>
+                <a class="projects-toggle" href="https://www.base-4.com/projects/">See All Projects</a>
               </div>
             </div>
             <div class="featured-project-grid">${featuredProjects}</div>
-            <div class="all-projects-wrap" id="allProjectsWrap">
-              <div class="all-projects-label">All Projects</div>
-              <div class="latest-project-grid">${latestProjects}</div>
-            </div>
           </div>
         </section>
 
@@ -1401,20 +1397,10 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         <section class="section latest-blog">
           <div class="wrap">
             <div class="latest-blog-head reveal">
-              <h2 class="latest-heading">Latest Blog Updates</h2>
+              <h2 class="latest-heading">Latest Blog</h2>
               <a class="text-link" href="https://www.base-4.com/blog/">View All Blogs <span class="arr">→</span></a>
             </div>
             <div class="latest-blog-grid">${latestPosts}</div>
-          </div>
-        </section>
-
-        <section class="recognition">
-          <div class="wrap recognition-grid">
-            <div class="reveal">
-              <div class="eyebrow"><span class="dot">●</span> ${esc(rec.Eyebrow)}</div>
-              <h2>${esc(rec.Title)}</h2>
-            </div>
-            <div class="award-grid">${awards}</div>
           </div>
         </section>
 
@@ -1435,6 +1421,16 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
               <div class="label">${esc(nl['Stat Label'])}</div>
               <p style="margin-top:18px">BASE4 publishes practical guidance for developers, owners, general contractors, and project teams across hospitality, multifamily, data centers, and industrialized construction.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="recognition">
+          <div class="wrap recognition-grid">
+            <div class="reveal">
+              <div class="eyebrow"><span class="dot">●</span> ${esc(rec.Eyebrow)}</div>
+              <h2>${esc(rec.Title)}</h2>
+            </div>
+            <div class="award-grid">${awards}</div>
           </div>
         </section>
 
