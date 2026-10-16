@@ -359,6 +359,26 @@
     .award{border:1px solid var(--hairline);border-radius:14px;min-height:96px;display:grid;place-items:center;text-align:center;padding:14px;font-family:'Inter Tight';font-weight:800;color:var(--deep);background:var(--surface-alt)}
 
     /* Newsletter */
+    /* Services strip */
+    .services-strip{padding:40px 0;background:var(--surface-alt);border-bottom:1px solid var(--hairline)}
+    .services-strip-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+    .services-strip-label{font-family:'Inter Tight';font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem;color:var(--deep)}
+    .services-strip-list{list-style:none;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:0;margin:0}
+    .services-strip-list li{font-family:'Inter Tight';font-weight:700;font-size:.9rem;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:999px;padding:8px 14px}
+    .services-strip-note{flex-basis:100%;margin:2px 0 0;color:var(--muted);font-size:.9rem}
+
+    /* Predevelopment */
+    .predev{padding:88px 0}
+    .predev-inner{max-width:760px}
+    .predev h2{margin:0 0 .35em}
+    .predev p{color:var(--muted);font-size:1.12rem;max-width:62ch}
+    .predev .btn{margin-top:22px}
+
+    /* Header CTA */
+    .header-cta{padding:10px 18px;font-size:.92rem}
+    @media(max-width:600px){.header-cta{display:none}}
+
+    /* Newsletter */
     .newsletter{background:var(--deep-2);color:#fff}
     .newsletter-grid{display:grid;grid-template-columns:1fr .85fr;gap:72px;align-items:center}
     .newsletter .eyebrow{color:rgba(255,255,255,.62)}
@@ -482,7 +502,7 @@
       </a>
       <nav class="main-nav" id="mainNav"></nav>
       <div class="header-right">
-        <div class="socials" id="headerSocials"></div>
+        <button class="btn btn--primary js-consult header-cta" type="button">Discuss Your Project</button>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span></button>
       </div>
     </div>
@@ -541,7 +561,7 @@ Lead Source	Homepage Project Consultation
 Parameter	Value
 Eyebrow	ARCHITECTURE · ENGINEERING · INTERIOR DESIGN
 H1	Helping Developers Build Cheaper & Faster
-Subhead	BASE4 is a team of award-winning architects, engineers, and interior designers who will help you build faster and cheaper through the intersection of technological innovation and premier building design.
+Subhead	Architecture, structural, MEP, interior design, and BIM/VIZ in one integrated team — helping developers make better decisions earlier, head off coordination problems before the field, and keep projects moving.
 Primary CTA	Discuss Your Project
 Secondary CTA	Explore Our Work
 Secondary URL	https://www.base-4.com/projects/
@@ -558,8 +578,8 @@ Panel Items	Architecture||Structural Engineering||MEP Engineering||Interior Desi
 num	label	desc
 225+	Full-Time Designers	Global production capacity across disciplines
 50	States	Design experience across the U.S.
-100%	Revit / 3D	BIM-first coordination and visualization
-24 HR	Work Cycle	Projects keep moving across time zones
+100%	Revit Across Disciplines	One coordinated model means fewer field conflicts
+24 HR	Global Work Cycle	Production continues so active projects keep moving
 
 # SHEET: Intro
 Parameter	Value
@@ -1060,7 +1080,7 @@ Points	Industrialized Construction||Prefab / Modular Strategy||BIM Coordination|
 Primary CTA	Explore Innovation Lab
 Primary URL	https://www.base-4.com/industrialized-construction-systems/
 Side Kicker	DATA CENTERS
-Side Title	A new building type is changing where capital goes.
+Side Title	Data center feasibility starts with power, site, and phasing.
 Side Body	BASE4 helps developers coordinate data center site viability, power, phasing, building systems, and modular delivery.
 Side CTA	Explore Data Centers
 Side URL	https://www.base-4.com/data-centers/
@@ -1191,7 +1211,7 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           ${children?`<div class="dropdown">${children}</div>`:''}
         </div>`;
       }).join('');
-      document.getElementById('headerSocials').innerHTML = SOCIALS.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${n}">${ico(n)}</a>`).join('');
+      // Header socials replaced by the Discuss Your Project CTA.
     }
 
     function renderFooter(){
@@ -1354,6 +1374,16 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
           <div class="wrap"><div class="proof-bar">${proof}</div></div>
         </div>
 
+        <section class="services-strip">
+          <div class="wrap services-strip-inner reveal">
+            <span class="services-strip-label">All in-house</span>
+            <ul class="services-strip-list">
+              <li>Architecture</li><li>Structural</li><li>MEP</li><li>Interior Design</li><li>BIM/VIZ</li><li>Construction Administration</li>
+            </ul>
+            <p class="services-strip-note">One integrated team — fewer handoffs, clearer accountability.</p>
+          </div>
+        </section>
+
         <section class="section latest-section">
           <div class="wrap">
             <div class="latest-projects-head reveal">
@@ -1391,6 +1421,15 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
                 <a class="text-link" href="${esc(inn['Side URL'])}">${esc(inn['Side CTA'])} <span class="arr">→</span></a>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section class="section predev">
+          <div class="wrap predev-inner reveal">
+            <div class="eyebrow"><span class="dot">●</span> Before full design</div>
+            <h2>Predevelopment that de-risks the deal.</h2>
+            <p>We pressure-test site fit, density, key or unit count, and brand or prototype fit before full design — so capital decisions are grounded before significant spend.</p>
+            <button class="btn btn--primary js-consult" type="button">Discuss a Site</button>
           </div>
         </section>
 

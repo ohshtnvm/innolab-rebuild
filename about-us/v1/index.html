@@ -185,6 +185,10 @@
     .market p{color:var(--muted);font-size:.96rem;position:relative;max-width:31ch}
     .market a{position:relative;font-family:'Inter Tight';font-weight:700;color:var(--deep);text-decoration:none;margin-top:8px}
 
+    /* Repeat clients */
+    .repeat-client{max-width:720px;margin:0 auto;text-align:center}
+    .repeat-client .lead{margin-left:auto;margin-right:auto}
+
     /* Closing */
     .closing{position:relative;color:#fff;text-align:center;overflow:hidden;isolation:isolate}
     .closing-bg{position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover}
@@ -338,7 +342,7 @@ num	label	sub
 50	States	Design experience across the U.S.
 100%	Revit / 3D	A coordinated BIM-first workflow
 24 HR	Work Cycle	A global team keeps projects moving
-ONE	Integrated Team	From concept through construction administration
+225+	Full-Time Designers	Global production capacity across disciplines
 
 # SHEET: Story
 Parameter	Value
@@ -357,14 +361,14 @@ Secondary URL	https://www.base-4.com/our-clients/
 # SHEET: AdvantageIntro
 Parameter	Value
 Eyebrow	THE BASE4 ADVANTAGE
-Title	A different operating model for AEC delivery.
-Body	Traditional delivery can split decisions across firms, disciplines, and time zones with no single team accountable for the whole picture. BASE4 is structured to reduce those handoffs and keep design moving around the priorities that matter to developers.
+Title	A different operating model for project delivery.
+Body	Traditional delivery splits decisions across separate firms and disciplines, with handoffs and no single team accountable for the whole picture. BASE4 is structured to reduce those handoffs and keep design moving around the priorities that matter to developers.
 
 # SHEET: Differentiators
 index	title	body	image
 01	Developer-first by design	We start with the development objective, then test design choices against cost, schedule, constructability, operations, and long-term value.	https://www.base-4.com/wp-content/uploads/2025/02/Flatz308-%E2%80%93-Casa-Grande-AZ-01.jpg
 02	All services in-house	Architecture, structural, MEP, interior design, visualization, and construction support coordinate within one team for clearer accountability and fewer handoffs.	https://www.base-4.com/wp-content/uploads/2024/09/Element-Albuquerque-NM-005.jpg
-03	100% Revit / 3D design	BIM lets multiple disciplines work inside a coordinated model so issues can be identified, visualized, and resolved before they become field problems.	https://innolab-rebuild.pages.dev/6-29-iteration/usp/bim-integrated.png
+03	100% Revit / 3D design	Multiple disciplines work inside one coordinated Revit model, so conflicts are identified and resolved early — before they become field problems.	https://innolab-rebuild.pages.dev/6-29-iteration/usp/bim-integrated.png
 04	24-hour work cycle	A global production team keeps work progressing across time zones, helping active projects maintain momentum when schedules are compressed.	https://www.base-4.com/wp-content/uploads/2025/07/Multifamily-Townhomes-01.jpg
 05	Experience wherever projects go	Broad geographic experience helps BASE4 adapt designs to local jurisdictions, construction conditions, and project requirements across markets.	https://innolab-rebuild.pages.dev/6-29-iteration/usp/usp-2.webp
 06	Built for repeatable project types	Deep experience in hospitality and multifamily, plus growing data center work, helps teams apply lessons from one project to the next without treating every building as a blank slate.	https://www.base-4.com/wp-content/uploads/2022/11/Riverbend-North-Phase-2-Otsego-MN-01.jpg
@@ -405,9 +409,9 @@ Body	BASE4 works across multiple project types, with deep experience in repeatab
 
 # SHEET: Markets
 name	kicker	body	href
-Hospitality	HOTELS	Brand standards, guest experience, MEP systems, operations, and opening schedules all compete for the same floor area and budget. BASE4 coordinates them as one project.	https://www.base-4.com/hospitality/
-Multifamily	RESIDENTIAL	Unit yield, repeatability, constructability, amenities, parking, and building systems are evaluated together to support scalable residential delivery.	https://www.base-4.com/multifamily/
-Data Centers	MISSION-CRITICAL	Power, cooling, structural loads, phasing, and equipment coordination demand early alignment. BASE4 brings multidisciplinary design thinking to those dependencies.	https://www.base-4.com/data-centers/
+Hospitality	HOTELS	Will the brand, key count, and guest experience fit the site and the pro forma? We resolve program, structure, and MEP against the budget before design locks.	https://www.base-4.com/hospitality/
+Multifamily	RESIDENTIAL	Does the unit mix, parking, and rentable area pencil? We test yield and buildability together so the deal still works when design is set.	https://www.base-4.com/multifamily/
+Data Centers	MISSION-CRITICAL	Can the site carry the power, cooling, and phasing the deal assumes? We align those dependencies early, before they turn into cost surprises.	https://www.base-4.com/data-centers/
 
 # SHEET: Closing
 Parameter	Value
@@ -570,6 +574,14 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
             <div class="market-grid">
               ${markets.map(m=>`<article class="market reveal"><div class="market-kicker">${esc(m.kicker)}</div><h3>${esc(m.name)}</h3><p>${esc(m.body)}</p><a href="${m.href}">Explore ${esc(m.name)} →</a></article>`).join('')}
             </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="wrap repeat-client reveal">
+            <p class="eyebrow">Repeat Clients</p>
+            <h2>Every project makes the next one better.</h2>
+            <p class="lead">We carry forward lessons learned, approved details, and your preferences — so your team isn't re-solving the same problems on every deal.</p>
           </div>
         </section>
 
