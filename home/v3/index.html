@@ -369,10 +369,13 @@
 
     /* Predevelopment */
     .predev{padding:88px 0}
-    .predev-inner{max-width:760px}
-    .predev h2{margin:0 0 .35em}
-    .predev p{color:var(--muted);font-size:1.12rem;max-width:62ch}
-    .predev .btn{margin-top:22px}
+    .predev-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .predev-copy{max-width:60ch}
+    .predev-copy h2{margin:0 0 .35em}
+    .predev-copy p{color:var(--muted);font-size:1.12rem}
+    .predev-copy .btn{margin-top:22px}
+    .predev-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/10;background:var(--deep)}
+    .predev-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
     /* Header CTA */
     .header-cta{padding:10px 18px;font-size:.92rem}
@@ -443,7 +446,7 @@
     .reveal.in{opacity:1;transform:none}
 
     @media(max-width:1040px){
-      .hero-grid,.intro-grid,.how-grid,.newsletter-grid,.innovation-grid{grid-template-columns:1fr}
+      .hero-grid,.intro-grid,.how-grid,.newsletter-grid,.innovation-grid,.predev-grid{grid-template-columns:1fr}
       .hero-panel{max-width:540px}
       .section-head,.recognition-grid{grid-template-columns:1fr;gap:18px}
       .section-head h2{max-width:18ch}
@@ -1425,11 +1428,18 @@ Contact	https://www.base-4.com/contact/	Careers::https://www.base-4.com/careers/
         </section>
 
         <section class="section predev">
-          <div class="wrap predev-inner reveal">
-            <div class="eyebrow"><span class="dot">●</span> Before full design</div>
-            <h2>Predevelopment that de-risks the deal.</h2>
-            <p>We pressure-test site fit, density, key or unit count, and brand or prototype fit before full design — so capital decisions are grounded before significant spend.</p>
-            <button class="btn btn--primary js-consult" type="button">Discuss a Site</button>
+          <div class="wrap predev-grid reveal">
+            <div class="predev-copy">
+              <div class="eyebrow"><span class="dot">●</span> Before full design</div>
+              <h2>Predevelopment that de-risks the deal.</h2>
+              <p>We pressure-test site fit, density, key or unit count, and brand or prototype fit before full design — so capital decisions are grounded before significant spend.</p>
+              <button class="btn btn--primary js-consult" type="button">Discuss a Site</button>
+            </div>
+            <div class="predev-media">
+              <video autoplay muted loop playsinline preload="metadata" poster="${esc(hero['Hospitality Poster'])}" aria-hidden="true">
+                <source src="${esc(hero['Hospitality Video'])}" type="video/mp4">
+              </video>
+            </div>
           </div>
         </section>
 
