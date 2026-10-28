@@ -30,8 +30,8 @@ PAGES = {
     # TEST pages (drafts) - safe to deploy while testing
     "wp-pages/home.html": 16061,         # Test Home Rebuild
     "wp-pages/about.html": 16060,        # Test About Us Rebuild
-    "wp-pages/hospitality.html": 0,      # TODO: Test Hospitality Rebuild page ID
-    "wp-pages/multifamily.html": 0,      # TODO: Test Multifamily Rebuild page ID
+    "wp-pages/hospitality.html": 16070,  # Test Hospitality Rebuild
+    "wp-pages/multifamily.html": 16068,  # Test Multifamily Rebuild
 
     # LIVE pages - swap these in (and remove the test lines) once the tests look right
     # "wp-pages/home.html": 11485,       # Home (live)
