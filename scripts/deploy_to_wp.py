@@ -15,6 +15,7 @@ Title, meta description, canonical and OG tags are set in Yoast on each WordPres
 import base64
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -57,8 +58,7 @@ def main() -> int:
             continue
 
         html = Path(file_path).read_text(encoding="utf-8").strip()
-        lowered = html.lower()
-        if "<html" in lowered or "<head" in lowered or "<body" in lowered:
+        if re.search(r"<(html|head|body)[\s>]", html, re.IGNORECASE):
             report("error", f"FAIL {file_path}: remove <html>/<head>/<body> tags (body content only)")
             failed = True
             continue
