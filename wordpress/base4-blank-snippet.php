@@ -2,7 +2,9 @@
  * BASE4 Blank page template
  *
  * Adds a "BASE4 Blank" page template that shows only the page content:
- * no theme header, footer or sidebar, and no theme stylesheets.
+ * no theme header, footer or sidebar, and no theme stylesheets. The page code
+ * is output exactly as published (no content filters), so its scripts run intact.
+ * Password-protected pages still show the password form.
  * WordPress essentials (wp_head / wp_footer) still load, so Yoast SEO tags,
  * analytics and plugins keep working.
  *
@@ -56,9 +58,14 @@ add_action( 'template_redirect', function () {
 	if ( function_exists( 'wp_body_open' ) ) {
 		wp_body_open();
 	}
-	while ( have_posts() ) {
-		the_post();
-		the_content();
+	$base4_post = get_queried_object();
+	if ( post_password_required( $base4_post ) ) {
+		echo get_the_password_form( $base4_post );
+	} else {
+		// Output the page code exactly as published. WordPress content filters
+		// (smart quotes, image attributes, shortcodes) rewrite markup inside the
+		// page's JavaScript and break it, so they are skipped on these pages.
+		echo $base4_post->post_content; // phpcs:ignore WordPress.Security.EscapeOutput -- admin-published page code
 	}
 	wp_footer();
 ?>
