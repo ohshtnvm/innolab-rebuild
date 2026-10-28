@@ -28,12 +28,16 @@ TEMPLATE = "base4-blank"
 # file in repo -> WordPress page ID
 PAGES = {
     # TEST pages (drafts) - safe to deploy while testing
-    "wp-pages/home.html": 16061,   # Test Home Rebuild
-    "wp-pages/about.html": 16060,  # Test About Us Rebuild
+    "wp-pages/home.html": 16061,         # Test Home Rebuild
+    "wp-pages/about.html": 16060,        # Test About Us Rebuild
+    "wp-pages/hospitality.html": 0,      # TODO: Test Hospitality Rebuild page ID
+    "wp-pages/multifamily.html": 0,      # TODO: Test Multifamily Rebuild page ID
 
     # LIVE pages - swap these in (and remove the test lines) once the tests look right
-    # "wp-pages/home.html": 11485,   # Home (live)
-    # "wp-pages/about.html": 13200,  # About (live)
+    # "wp-pages/home.html": 11485,       # Home (live)
+    # "wp-pages/about.html": 13200,      # About (live)
+    # "wp-pages/hospitality.html": 0,    # Hospitality (live) - TODO page ID
+    # "wp-pages/multifamily.html": 0,    # Multifamily (live) - TODO page ID
 }
 
 

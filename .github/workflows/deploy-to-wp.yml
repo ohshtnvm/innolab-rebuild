@@ -1,4 +1,4 @@
-# Publishes the Home and About pages into WordPress whenever their source changes.
+# Publishes the Home, About, Hospitality and Multifamily pages into WordPress whenever their source changes.
 # 1. Renders each page in headless Chromium so the full text is in the HTML (for SEO)
 # 2. Pushes the result into the WordPress pages listed in scripts/deploy_to_wp.py
 
@@ -10,6 +10,8 @@ on:
     paths:
       - "home/v3/**"
       - "about-us/v1/**"
+      - "6-29-iteration/index.html"
+      - "7-22-mf/**"
       - "scripts/build_wp_pages.py"
       - "scripts/deploy_to_wp.py"
       - ".github/workflows/deploy-to-wp.yml"

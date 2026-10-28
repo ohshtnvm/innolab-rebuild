@@ -7,9 +7,7 @@ page in headless Chromium, lets it render, and saves the rendered markup, so the
 full text is in the HTML that WordPress serves. The original scripts are kept,
 so menus, modal, forms and animations still work on the live page.
 
-Output (body content only, ready for a Custom HTML block):
-  wp-pages/home.html
-  wp-pages/about.html
+Output (body content only, ready for a Custom HTML block): see SOURCES below.
 
 Usage:  python scripts/build_wp_pages.py
 Needs:  pip install playwright && python -m playwright install chromium
@@ -27,6 +25,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCES = {
     "home/v3/index.html": "wp-pages/home.html",
     "about-us/v1/index.html": "wp-pages/about.html",
+    "6-29-iteration/index.html": "wp-pages/hospitality.html",
+    "7-22-mf/index.html": "wp-pages/multifamily.html",
 }
 
 # Removes runtime state so the saved markup is clean, then returns body markup without scripts.
