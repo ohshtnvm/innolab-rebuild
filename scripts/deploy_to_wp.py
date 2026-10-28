@@ -32,22 +32,34 @@ PAGES = {
 }
 
 
+def report(level: str, msg: str) -> None:
+    """Print, and also surface as a GitHub Actions annotation so it shows on the run page."""
+    print(msg)
+    if os.environ.get("GITHUB_ACTIONS"):
+        safe = msg.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::{level}::{safe}")
+
+
 def main() -> int:
-    wp_url = os.environ["WP_URL"].rstrip("/")
-    user = os.environ["WP_USER"]
-    app_password = os.environ["WP_APP_PASSWORD"].replace(" ", "")
+    missing = [k for k in ("WP_URL", "WP_USER", "WP_APP_PASSWORD") if not os.environ.get(k, "").strip()]
+    if missing:
+        report("error", f"Missing repo secrets: {', '.join(missing)}")
+        return 1
+    wp_url = os.environ["WP_URL"].strip().rstrip("/")
+    user = os.environ["WP_USER"].strip()
+    app_password = os.environ["WP_APP_PASSWORD"].replace(" ", "").strip()
     auth = base64.b64encode(f"{user}:{app_password}".encode()).decode()
 
     failed = False
     for file_path, page_id in PAGES.items():
         if not page_id:
-            print(f"SKIP {file_path}: no page ID set")
+            report("warning", f"SKIP {file_path}: no page ID set")
             continue
 
         html = Path(file_path).read_text(encoding="utf-8").strip()
         lowered = html.lower()
         if "<html" in lowered or "<head" in lowered or "<body" in lowered:
-            print(f"FAIL {file_path}: remove <html>/<head>/<body> tags (body content only)")
+            report("error", f"FAIL {file_path}: remove <html>/<head>/<body> tags (body content only)")
             failed = True
             continue
 
@@ -67,9 +79,13 @@ def main() -> int:
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
                 result = json.load(resp)
-                print(f"OK   {file_path} -> {result.get('link', page_id)}")
+                report("notice", f"OK {file_path} -> page {page_id} ({result.get('status')}) {result.get('link', '')}")
         except urllib.error.HTTPError as e:
-            print(f"FAIL {file_path}: HTTP {e.code} {e.read().decode(errors='replace')[:300]}")
+            body = e.read().decode(errors="replace")[:400]
+            report("error", f"FAIL {file_path} -> page {page_id}: HTTP {e.code} {body}")
+            failed = True
+        except urllib.error.URLError as e:
+            report("error", f"FAIL {file_path} -> page {page_id}: could not reach {wp_url} ({e.reason})")
             failed = True
 
     return 1 if failed else 0
