@@ -1,0 +1,79 @@
+"""
+Pushes each HTML file in wp-pages/ (built by scripts/build_wp_pages.py) into its WordPress page as a single
+Custom HTML block, so the content lives in WordPress itself and Google
+indexes it as part of base-4.com.
+
+Setup:
+  1. Fill in PAGES below with the WordPress page ID for each file.
+     The ID is the number in the page's edit URL: .../post.php?post=123&action=edit
+  2. Add the repo secrets WP_URL, WP_USER, WP_APP_PASSWORD
+     (Settings -> Secrets and variables -> Actions).
+
+Title, meta description, canonical and OG tags are set in Yoast on each WordPress page.
+"""
+
+import base64
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+# file in repo -> WordPress page ID
+PAGES = {
+    # TEST pages (drafts) - safe to deploy while testing
+    "wp-pages/home.html": 16061,   # Test Home Rebuild
+    "wp-pages/about.html": 16060,  # Test About Us Rebuild
+
+    # LIVE pages - swap these in (and remove the test lines) once the tests look right
+    # "wp-pages/home.html": 11485,   # Home (live)
+    # "wp-pages/about.html": 13200,  # About (live)
+}
+
+
+def main() -> int:
+    wp_url = os.environ["WP_URL"].rstrip("/")
+    user = os.environ["WP_USER"]
+    app_password = os.environ["WP_APP_PASSWORD"].replace(" ", "")
+    auth = base64.b64encode(f"{user}:{app_password}".encode()).decode()
+
+    failed = False
+    for file_path, page_id in PAGES.items():
+        if not page_id:
+            print(f"SKIP {file_path}: no page ID set")
+            continue
+
+        html = Path(file_path).read_text(encoding="utf-8").strip()
+        lowered = html.lower()
+        if "<html" in lowered or "<head" in lowered or "<body" in lowered:
+            print(f"FAIL {file_path}: remove <html>/<head>/<body> tags (body content only)")
+            failed = True
+            continue
+
+        # Wrap as a Custom HTML block so the editor doesn't reformat the markup
+        content = f"<!-- wp:html -->\n{html}\n<!-- /wp:html -->"
+
+        req = urllib.request.Request(
+            f"{wp_url}/wp-json/wp/v2/pages/{page_id}",
+            data=json.dumps({"content": content}).encode("utf-8"),
+            method="POST",
+            headers={
+                "Authorization": f"Basic {auth}",
+                "Content-Type": "application/json",
+                "User-Agent": "base4-github-deploy",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.load(resp)
+                print(f"OK   {file_path} -> {result.get('link', page_id)}")
+        except urllib.error.HTTPError as e:
+            print(f"FAIL {file_path}: HTTP {e.code} {e.read().decode(errors='replace')[:300]}")
+            failed = True
+
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

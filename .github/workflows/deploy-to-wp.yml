@@ -1,0 +1,45 @@
+# Publishes the Home and About pages into WordPress whenever their source changes.
+# 1. Renders each page in headless Chromium so the full text is in the HTML (for SEO)
+# 2. Pushes the result into the WordPress pages listed in scripts/deploy_to_wp.py
+
+name: Publish pages to WordPress
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "home/v3/**"
+      - "about-us/v1/**"
+      - "scripts/build_wp_pages.py"
+      - "scripts/deploy_to_wp.py"
+      - ".github/workflows/deploy-to-wp.yml"
+  workflow_dispatch: # run it manually from the Actions tab
+
+concurrency:
+  group: publish-to-wordpress
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install headless browser
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+
+      - name: Build WordPress-ready pages
+        run: python scripts/build_wp_pages.py
+
+      - name: Push pages to WordPress
+        run: python scripts/deploy_to_wp.py
+        env:
+          WP_URL: ${{ secrets.WP_URL }}                 # https://www.base-4.com
+          WP_USER: ${{ secrets.WP_USER }}               # WordPress username
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
