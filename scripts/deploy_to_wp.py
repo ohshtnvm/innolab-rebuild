@@ -21,6 +21,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+# Page template that hides the theme header/footer/sidebar.
+# Comes from the "BASE4 Blank" snippet in Code Snippets; set to "" to leave the template alone.
+TEMPLATE = "base4-blank"
+
 # file in repo -> WordPress page ID
 PAGES = {
     # TEST pages (drafts) - safe to deploy while testing
@@ -39,6 +43,21 @@ def report(level: str, msg: str) -> None:
     if os.environ.get("GITHUB_ACTIONS"):
         safe = msg.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
         print(f"::{level}::{safe}")
+
+
+def update_page(wp_url: str, auth: str, page_id: int, payload: dict) -> dict:
+    req = urllib.request.Request(
+        f"{wp_url}/wp-json/wp/v2/pages/{page_id}",
+        data=json.dumps(payload).encode("utf-8"),
+        method="POST",
+        headers={
+            "Authorization": f"Basic {auth}",
+            "Content-Type": "application/json",
+            "User-Agent": "base4-github-deploy",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.load(resp)
 
 
 def main() -> int:
@@ -66,20 +85,23 @@ def main() -> int:
         # Wrap as a Custom HTML block so the editor doesn't reformat the markup
         content = f"<!-- wp:html -->\n{html}\n<!-- /wp:html -->"
 
-        req = urllib.request.Request(
-            f"{wp_url}/wp-json/wp/v2/pages/{page_id}",
-            data=json.dumps({"content": content}).encode("utf-8"),
-            method="POST",
-            headers={
-                "Authorization": f"Basic {auth}",
-                "Content-Type": "application/json",
-                "User-Agent": "base4-github-deploy",
-            },
-        )
+        payload = {"content": content}
+        if TEMPLATE:
+            payload["template"] = TEMPLATE
         try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                result = json.load(resp)
-                report("notice", f"OK {file_path} -> page {page_id} ({result.get('status')}) {result.get('link', '')}")
+            try:
+                result = update_page(wp_url, auth, page_id, payload)
+            except urllib.error.HTTPError as e:
+                # Template not registered yet (snippet inactive): publish content anyway.
+                if e.code == 400 and "template" in payload:
+                    report("warning", f"{file_path}: template '{TEMPLATE}' not available; "
+                                      "activate the BASE4 Blank snippet in Code Snippets. Publishing content only.")
+                    payload.pop("template")
+                    result = update_page(wp_url, auth, page_id, payload)
+                else:
+                    raise
+            report("notice", f"OK {file_path} -> page {page_id} ({result.get('status')}, template: "
+                             f"{result.get('template') or 'default'}) {result.get('link', '')}")
         except urllib.error.HTTPError as e:
             body = e.read().decode(errors="replace")[:400]
             report("error", f"FAIL {file_path} -> page {page_id}: HTTP {e.code} {body}")
