@@ -19,6 +19,14 @@ def get(page_id):
 def scripts(html):
     return re.findall(r"(?s)<script\b[^>]*>(.*?)</script>", html)
 
+# Optional: look up pages by slug (DIAG_SLUGS="hospitality,multifamily")
+for slug in filter(None, os.environ.get("DIAG_SLUGS", "").split(",")):
+    req = urllib.request.Request(f"{wp_url}/wp-json/wp/v2/pages?slug={slug.strip()}&status=publish,draft,private&context=edit&_fields=id,slug,status,link,template,title",
+        headers={"Authorization": f"Basic {auth}", "User-Agent": "base4-github-deploy"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        for pg in json.load(r):
+            report("notice", f"slug {slug}: id={pg['id']} status={pg['status']} template={pg.get('template')!r} title={pg['title']['raw']!r} {pg['link']}")
+
 for file_path, page_id in PAGES.items():
     if not page_id:
         continue

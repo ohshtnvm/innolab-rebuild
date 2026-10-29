@@ -3,6 +3,11 @@ name: Diagnose WordPress output
 
 on:
   workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Comma-separated page slugs to look up (optional)"
+        required: false
+        default: ""
 
 jobs:
   diagnose:
@@ -17,3 +22,4 @@ jobs:
           WP_URL: ${{ secrets.WP_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DIAG_SLUGS: ${{ inputs.slugs }}
