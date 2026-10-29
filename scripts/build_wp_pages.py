@@ -48,6 +48,22 @@ SNAPSHOT_JS = """
 """
 
 
+# Font stacks used when a page names only the web font. Without a fallback, the
+# browser drops to its default serif whenever the web font is slow or blocked.
+FONT_FALLBACKS = {
+    "Inter Tight": "'Inter Tight','Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif",
+    "Inter": "'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif",
+}
+
+
+def add_font_fallbacks(css: str) -> str:
+    def fix(m: re.Match) -> str:
+        family = m.group(2)
+        return f"{m.group(1)}{FONT_FALLBACKS[family]}" if family in FONT_FALLBACKS else m.group(0)
+    # font-family:'X' with nothing after it (no existing fallback list)
+    return re.sub(r"(font-family:\s*)['\"]([^'\",;}]+)['\"]\s*(?=[;}!])", fix, css)
+
+
 def build(src: Path, out: Path, browser) -> None:
     raw = src.read_text(encoding="utf-8")
     head = re.search(r"(?s)<head[^>]*>(.*?)</head>", raw).group(1)
@@ -59,7 +75,7 @@ def build(src: Path, out: Path, browser) -> None:
         l for l in re.findall(r"<link[^>]+>", head)
         if "fonts.googleapis.com/css" in l
     ]
-    styles = re.findall(r"(?s)<style[^>]*>.*?</style>", head)
+    styles = [add_font_fallbacks(s) for s in re.findall(r"(?s)<style[^>]*>.*?</style>", head)]
     scripts = re.findall(r"(?s)<script[^>]*>.*?</script>", body)
 
     page = browser.new_page(viewport={"width": 1440, "height": 900})
