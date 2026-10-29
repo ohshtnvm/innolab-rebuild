@@ -98,8 +98,8 @@
     /* ===================== HEADER ===================== */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:padding .2s ease,border-color .2s ease,box-shadow .2s ease}
     header.scrolled{border-color:var(--hairline);box-shadow:0 1px 0 rgba(14,26,20,.04)}
-    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0;transition:padding .2s ease}
-    header.scrolled .nav-bar{padding:9px 0}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px;transition:padding .2s ease}
+    header.scrolled .nav-bar{padding-top:9px;padding-bottom:9px}
     .brand{display:flex;align-items:center;text-decoration:none}
     .brand img{height:32px;width:auto;display:block}
     header.scrolled .brand img{height:28px}
@@ -254,7 +254,7 @@
     .closing{position:relative;color:#fff;text-align:center;overflow:hidden;isolation:isolate}
     .closing-bg{position:absolute;inset:0;z-index:-2;background:var(--deep) center/cover no-repeat}
     .closing::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,26,20,.82),rgba(28,58,46,.86))}
-    .closing .inner{padding:96px 0;max-width:60ch;margin:0 auto}
+    .closing .inner{padding-top:96px;padding-bottom:96px;max-width:60ch;margin:0 auto}
     .closing h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.5rem)}
     .closing p{color:rgba(255,255,255,.86)}
 
