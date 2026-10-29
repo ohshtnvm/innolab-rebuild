@@ -1,5 +1,5 @@
-"""Read-only: list recent revisions of the live pages and whether an earlier one still holds the old iframe version."""
-import base64, json, os, sys, urllib.request
+"""Read-only: show where the pre-rebuild versions of the live pages are stored."""
+import base64, json, os, re, sys, urllib.request
 sys.path.insert(0, os.path.dirname(__file__))
 from deploy_to_wp import PAGES, report
 
@@ -11,12 +11,23 @@ def get(path):
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
 
+def summarize(html):
+    html = html or ""
+    iframes = re.findall(r'<iframe[^>]*src="([^"]+)"', html)
+    built = "Built from" in html
+    return f"{len(html)} chars, iframes={iframes[:2]}, rebuild={'yes' if built else 'no'}, starts={html[:90]!r}"
+
 for file_path, page_id in PAGES.items():
     if not page_id:
         continue
-    revs = get(f"pages/{page_id}/revisions?per_page=100&context=edit&_fields=id,date,content")
-    old = [r for r in revs if "<iframe" in r["content"]["raw"] and "base4-blank" not in r["content"]["raw"]]
-    newest_old = old[0] if old else None
-    report("notice", f"page {page_id} ({file_path}): {len(revs)} revisions; "
-           + (f"last pre-rebuild version = revision {newest_old['id']} from {newest_old['date']} "
-              f"({len(newest_old['content']['raw'])} chars, has iframe)" if newest_old else "NO revision with the old iframe version found"))
+    page = get(f"pages/{page_id}?context=edit")
+    meta_keys = sorted((page.get("meta") or {}).keys()) if isinstance(page.get("meta"), dict) else page.get("meta")
+    report("notice", f"page {page_id} current: template={page.get('template')!r} meta_keys={meta_keys} modified={page.get('modified')}")
+    for r in get(f"pages/{page_id}/revisions?per_page=100&context=edit"):
+        report("notice", f"page {page_id} revision {r['id']} ({r['date']}): {summarize(r['content']['raw'])}")
+    try:
+        ar = get(f"pages/{page_id}/autosaves?context=edit")
+        for a in ar:
+            report("notice", f"page {page_id} autosave {a['id']} ({a['date']}): {summarize(a['content']['raw'])}")
+    except Exception as e:
+        report("notice", f"page {page_id} autosaves: {e}")
