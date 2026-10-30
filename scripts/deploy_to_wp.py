@@ -23,21 +23,21 @@ from pathlib import Path
 
 # Page template that hides the theme header/footer/sidebar.
 # Comes from the "BASE4 Blank" snippet in Code Snippets; set to "" to leave the template alone.
-TEMPLATE = "base4-blank"
+TEMPLATE = "base4-themed"   # "base4-blank" = no site header; "base4-themed" = site header + page
 
 # file in repo -> WordPress page ID
 PAGES = {
-    # LIVE pages
-    "wp-pages/home.html": 11485,         # Home
-    "wp-pages/about.html": 13200,        # About Us
-    "wp-pages/hospitality.html": 15573,  # Hospitality
-    "wp-pages/multifamily.html": 15816,  # Multifamily
+    # TEST pages (password-protected drafts) - preview changes here first
+    "wp-pages/home.html": 16061,         # Test Home Rebuild
+    "wp-pages/about.html": 16060,        # Test About Us Rebuild
+    "wp-pages/hospitality.html": 16070,  # Test Hospitality Rebuild
+    "wp-pages/multifamily.html": 16068,  # Test Multifamily Rebuild
 
-    # TEST pages (password-protected drafts) - swap back in to preview big changes first
-    # "wp-pages/home.html": 16061,       # Test Home Rebuild
-    # "wp-pages/about.html": 16060,      # Test About Us Rebuild
-    # "wp-pages/hospitality.html": 16070,  # Test Hospitality Rebuild
-    # "wp-pages/multifamily.html": 16068,  # Test Multifamily Rebuild
+    # LIVE pages - swap these in (and comment out the test lines) to go live
+    # "wp-pages/home.html": 11485,       # Home
+    # "wp-pages/about.html": 13200,      # About Us
+    # "wp-pages/hospitality.html": 15573,  # Hospitality
+    # "wp-pages/multifamily.html": 15816,  # Multifamily
 }
 
 

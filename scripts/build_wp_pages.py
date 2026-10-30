@@ -19,6 +19,9 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from scope_css import RESET, SCOPE, scope_css  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # source page in this repo -> built file for WordPress
@@ -64,8 +67,28 @@ def add_font_fallbacks(css: str) -> str:
     return re.sub(r"(font-family:\s*)['\"]([^'\",;}]+)['\"]\s*(?=[;}!])", fix, css)
 
 
+# The WordPress theme also uses id="header"/"footer", so the page's own get renamed.
+ID_RENAMES = {"header": "b4-header", "footer": "b4-footer"}
+
+
+def rename_ids(html: str) -> str:
+    for old, new in ID_RENAMES.items():
+        html = re.sub(rf'\bid=(["\']){old}\1', f'id="{new}"', html)
+        html = re.sub(rf"getElementById\((['\"]){old}\1\)", f"getElementById('{new}')", html)
+        html = re.sub(rf"#{old}(?![\w-])", f"#{new}", html)
+    return html
+
+
+def rem_to_px(html: str) -> str:
+    """The theme sets the root font size (Bootstrap: 10px), so rem would shrink the page. Pin 1rem = 16px."""
+    def px(m: re.Match) -> str:
+        v = float(m.group(1)) * 16
+        return f"{v:.2f}".rstrip("0").rstrip(".") + "px"
+    return re.sub(r"(?<![\w.])(\d*\.?\d+)rem\b", px, html)
+
+
 def build(src: Path, out: Path, browser) -> None:
-    raw = src.read_text(encoding="utf-8")
+    raw = rem_to_px(rename_ids(src.read_text(encoding="utf-8")))
     head = re.search(r"(?s)<head[^>]*>(.*?)</head>", raw).group(1)
     body = re.search(r"(?s)<body[^>]*>(.*)</body>", raw).group(1)
 
@@ -75,13 +98,20 @@ def build(src: Path, out: Path, browser) -> None:
         l for l in re.findall(r"<link[^>]+>", head)
         if "fonts.googleapis.com/css" in l
     ]
-    styles = [add_font_fallbacks(s) for s in re.findall(r"(?s)<style[^>]*>.*?</style>", head)]
+    css = "\n".join(re.findall(r"(?s)<style[^>]*>(.*?)</style>", head))
+    styles = ["<style>\n" + RESET + scope_css(add_font_fallbacks(css)) + "\n</style>"]
     scripts = re.findall(r"(?s)<script[^>]*>.*?</script>", body)
 
+    # Render a renamed copy next to the source so relative asset paths still work.
+    tmp = src.with_name(f".wpbuild-{src.name}")
+    tmp.write_text(raw, encoding="utf-8")
     page = browser.new_page(viewport={"width": 1440, "height": 900})
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
-    page.goto(src.as_uri(), wait_until="networkidle")
+    try:
+        page.goto(tmp.as_uri(), wait_until="networkidle")
+    finally:
+        tmp.unlink(missing_ok=True)
     page.wait_for_function(
         "() => !document.querySelector('#app')?.textContent.includes('Loading...')",
         timeout=20000,
@@ -99,7 +129,9 @@ def build(src: Path, out: Path, browser) -> None:
         "Edit the source page, not this file or the WordPress page. -->",
         *font_links,
         *styles,
+        f'<div id="{SCOPE[1:]}">',
         rendered,
+        "</div>",
         *scripts,
     ]
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -14,6 +14,7 @@ on:
       - "7-22-mf/**"
       - "scripts/build_wp_pages.py"
       - "scripts/deploy_to_wp.py"
+      - "scripts/scope_css.py"
       - ".github/workflows/deploy-to-wp.yml"
   workflow_dispatch: # run it manually from the Actions tab
 
@@ -33,7 +34,7 @@ jobs:
 
       - name: Install headless browser
         run: |
-          pip install playwright==1.48.0
+          pip install playwright==1.48.0 tinycss2==1.4.0
           python -m playwright install --with-deps chromium
 
       - name: Build WordPress-ready pages
