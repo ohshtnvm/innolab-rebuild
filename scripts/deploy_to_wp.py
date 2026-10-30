@@ -27,17 +27,17 @@ TEMPLATE = "base4-themed"   # "base4-blank" = no site header; "base4-themed" = s
 
 # file in repo -> WordPress page ID
 PAGES = {
-    # TEST pages (password-protected drafts) - preview changes here first
-    "wp-pages/home.html": 16061,         # Test Home Rebuild
-    "wp-pages/about.html": 16060,        # Test About Us Rebuild
-    "wp-pages/hospitality.html": 16070,  # Test Hospitality Rebuild
-    "wp-pages/multifamily.html": 16068,  # Test Multifamily Rebuild
+    # LIVE pages
+    "wp-pages/home.html": 11485,         # Home
+    "wp-pages/about.html": 13200,        # About Us
+    "wp-pages/hospitality.html": 15573,  # Hospitality
+    "wp-pages/multifamily.html": 15816,  # Multifamily
 
-    # LIVE pages - swap these in (and comment out the test lines) to go live
-    # "wp-pages/home.html": 11485,       # Home
-    # "wp-pages/about.html": 13200,      # About Us
-    # "wp-pages/hospitality.html": 15573,  # Hospitality
-    # "wp-pages/multifamily.html": 15816,  # Multifamily
+    # TEST pages (password-protected drafts) - swap back in to preview big changes first
+    # "wp-pages/home.html": 16061,       # Test Home Rebuild
+    # "wp-pages/about.html": 16060,      # Test About Us Rebuild
+    # "wp-pages/hospitality.html": 16070,  # Test Hospitality Rebuild
+    # "wp-pages/multifamily.html": 16068,  # Test Multifamily Rebuild
 }
 
 
