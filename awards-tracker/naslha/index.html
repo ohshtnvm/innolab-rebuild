@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naslha Espinal | Interior Design & Marketing Awards Tracker</title>
+<style>
+  :root{
+    --charcoal:#231f20;
+    --bg:#f4f5f2;
+    --panel:#ffffff;
+    --ink:#231f20;
+    --muted:#686868;
+    --line:#d9ddd5;
+    --green:#8dc63f;
+    --green-dark:#5e9120;
+    --soft-green:#eef7df;
+    --danger:#b33a3a;
+    --warning:#c48700;
+    --shadow:0 18px 48px rgba(35,31,32,.12);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+  button,input,textarea,select{font:inherit}
+  button{cursor:pointer}
+  .app{max-width:1500px;margin:0 auto;padding:28px}
+  .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:20px}
+  h1{font-size:clamp(28px,4vw,48px);line-height:1;margin:0 0 8px;letter-spacing:-.035em}
+  .subtitle{margin:0;color:var(--muted);max-width:820px;line-height:1.5}
+  .brand-mark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;white-space:nowrap}
+  .brand-dot{width:16px;height:16px;background:var(--green);border-radius:3px;transform:rotate(45deg)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:11px 15px;border-radius:10px;font-weight:700;box-shadow:0 2px 8px rgba(35,31,32,.04)}
+  .btn:hover{border-color:#aeb5aa;transform:translateY(-1px)}
+  .btn.primary{background:var(--green);border-color:var(--green);color:#17200e}
+  .btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+  .btn.danger{color:var(--danger)}
+  .grid{display:block}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .chart-panel{min-height:700px}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .panel-head h2{margin:0;font-size:20px}
+  .mini{font-size:12px;color:var(--muted)}
+  .help{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;border:1px solid #aeb5aa;font-size:12px;font-weight:800;color:#566052;position:relative;vertical-align:middle;margin-left:4px}
+  .help:hover::after,.help:focus::after{content:attr(data-tip);position:absolute;z-index:20;left:0;bottom:130%;transform:none;width:min(280px,70vw);padding:10px 12px;border-radius:9px;background:#231f20;color:#fff;font-weight:400;line-height:1.4;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .chart-wrap{position:relative;width:100%;height:660px;overflow:visible;background:transparent}
+  svg{width:100%;height:100%;display:block}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:12px;color:var(--muted);font-size:13px}
+  .legend-item{display:flex;align-items:center;gap:7px}
+  .preparedness-legend{display:grid;grid-template-columns:auto 220px auto;align-items:center;gap:8px 12px}
+  .preparedness-scale{display:grid;gap:5px}
+  .preparedness-gradient{display:block;width:220px;height:12px;border-radius:999px;background:linear-gradient(90deg,#d63031 0%,#f58220 25%,#f5cd30 50%,#62b15b 75%,#1e88a8 100%);border:1px solid rgba(35,31,32,.18)}
+  .preparedness-endpoints{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);white-space:nowrap}
+  .filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+  .filter-label{font-size:12px;font-weight:800;color:var(--muted);margin-right:2px}
+  .filter-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;cursor:pointer}
+  .filter-btn.active{background:var(--charcoal);border-color:var(--charcoal);color:#fff}
+  .target-badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:900;letter-spacing:.02em;margin-top:5px;background:#eef1eb;color:#4a5147}
+  .dot{width:12px;height:12px;border-radius:50%}
+  .size-demo{border:1px solid #444;border-radius:50%;display:inline-block;background:rgba(141,198,63,.22)}
+  .csv-modal textarea{width:100%;min-height:360px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:12px;line-height:1.45;background:#fbfcfa}
+  .csv-modal textarea:focus,input:focus,textarea:focus{outline:3px solid rgba(141,198,63,.22);border-color:var(--green-dark)}
+  .csv-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .format-note{margin:12px 0 0;padding:10px;border-radius:10px;background:var(--soft-green);font-size:12px;line-height:1.45}
+  .ranking{margin-top:18px;padding:18px}
+  .ranking-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:12px}
+  .ranking h2{margin:0;font-size:24px}
+  .ranking-table{width:100%;border-collapse:collapse}
+  .ranking-table th,.ranking-table td{padding:12px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+  .ranking-table th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .rank{font-size:20px;font-weight:900;width:52px}
+  .opportunity-link{border:0;background:none;padding:0;font-weight:800;color:var(--ink);text-align:left;text-decoration:underline;text-decoration-color:rgba(141,198,63,.7);text-decoration-thickness:3px;text-underline-offset:3px}
+  .score-pill{display:inline-block;border-radius:999px;padding:5px 9px;background:var(--soft-green);font-weight:800;white-space:nowrap}
+  .next-step{min-width:280px;line-height:1.45}
+  .empty{padding:30px;text-align:center;color:var(--muted)}
+  .modal-backdrop{position:fixed;inset:0;background:rgba(20,20,20,.62);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+  .modal-backdrop.open{display:flex}
+  .modal{width:min(860px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .modal-head{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:22px;border-bottom:1px solid var(--line)}
+  .modal-head h3{margin:0;font-size:26px}
+  .close{border:0;background:#f0f1ef;width:40px;height:40px;border-radius:50%;font-size:23px}
+  .modal-body{padding:22px}
+  .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+  .tab{padding:11px 8px;border:1px solid var(--line);background:#fff;border-radius:10px;font-weight:800}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:800;margin-bottom:7px}
+  .field input[type="number"],.field input[type="text"],.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+  .field textarea{min-height:140px;resize:vertical}
+  .score-row{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center}
+  .range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:4px}
+  .modal-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid var(--line);padding:18px 22px}
+  .status{font-size:13px;color:var(--muted)}
+  .toast{position:fixed;right:24px;bottom:24px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s;z-index:200}
+  .toast.show{opacity:1;transform:translateY(0)}
+  .axis-label{font-size:13px;font-weight:800;fill:#343434}
+  .tick{font-size:11px;fill:#6b6b6b}
+  .quadrant-label{font-size:12px;font-weight:900;letter-spacing:.04em;fill:#7a7a7a}
+  .bubble-label{font-size:10px;font-weight:800;fill:#231f20;pointer-events:none}
+  .bubble{cursor:pointer;stroke:#231f20;stroke-width:1.2;transition:opacity .15s,stroke-width .15s}
+  .bubble:hover{stroke-width:3;opacity:1}
+  .chart-explainers{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:4px 0 12px;color:var(--muted);font-size:13px}
+  .chart-explainer{display:inline-flex;align-items:center;gap:4px}
+
+  .chart-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;align-items:stretch}
+  .opportunity-sidebar{height:660px;overflow:auto;border-right:1px solid var(--line);padding-right:14px}
+  .opportunity-sidebar-head{position:sticky;top:0;z-index:2;background:var(--bg);padding:0 0 10px}
+  .opportunity-sidebar-head h3{margin:0 0 4px;font-size:15px}
+  .opportunity-sidebar-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}
+  .opportunity-list{display:flex;flex-direction:column;gap:5px}
+  .opportunity-item{width:100%;border:1px solid transparent;background:transparent;color:var(--ink);padding:9px 10px;border-radius:9px;text-align:left;font-size:12px;font-weight:700;line-height:1.25;transition:background .15s,border-color .15s,box-shadow .15s,opacity .15s,transform .15s}
+  .opportunity-item:hover,.opportunity-item:focus,.opportunity-item.active{outline:none;background:#fff;border-color:rgba(141,198,63,.75);box-shadow:0 0 0 3px rgba(141,198,63,.16),0 7px 18px rgba(35,31,32,.09);transform:translateX(2px)}
+  .opportunity-item.dimmed{opacity:.22}
+  .chart-main{min-width:0}
+  .bubble-group{transition:opacity .18s}
+  .bubble-group.dimmed{opacity:.08}
+  .bubble-group.active .bubble{stroke:var(--green-dark);stroke-width:4;filter:drop-shadow(0 0 8px rgba(141,198,63,.95)) drop-shadow(0 0 18px rgba(141,198,63,.55))}
+  .bubble-group.active .bubble-label{opacity:1;font-size:11px;font-weight:900;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+  .bubble-label{opacity:.18;transition:opacity .18s,font-size .18s}
+  .chart-hover-note{font-size:12px;color:var(--muted);margin-top:5px}
+  @media (max-width:1050px){.chart-layout{grid-template-columns:240px minmax(0,1fr)}.chart-wrap,.opportunity-sidebar{height:600px}}
+  @media (max-width:720px){.app{padding:14px}.chart-layout{display:block}.opportunity-sidebar{height:220px;border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;margin-bottom:14px}.topbar{display:block}.brand-mark{margin-top:14px}.tabs{grid-template-columns:1fr 1fr}.chart-wrap{height:540px}.ranking-table thead{display:none}.ranking-table,.ranking-table tbody,.ranking-table tr,.ranking-table td{display:block;width:100%}.ranking-table tr{border-top:1px solid var(--line);padding:10px 0}.ranking-table td{border:0;padding:5px 0}.next-step{min-width:0}.score-row{grid-template-columns:1fr}}
+  .schedule-table{width:100%;border-collapse:collapse;font-size:13px;} .schedule-table th,.schedule-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;} .schedule-table th{color:var(--muted);font-size:11px;text-transform:uppercase;} .schedule-table a,.award-detail a{color:#41681a;font-weight:700;} .award-detail dl{display:grid;grid-template-columns:160px 1fr;gap:8px 14px;line-height:1.4;font-size:13px;} .award-detail dt{font-weight:800;color:#4c5348;} .award-detail dd{margin:0;} .schedule-table .past{color:#ad6c03;} @media(max-width:720px){.award-detail dl{grid-template-columns:1fr}.schedule-table{display:block;overflow:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div>
+      <h1>Naslha Espinal | Awards Tracker</h1>
+      <p class="subtitle">Personal and firm-backed awards curated for Naslha Espinal. Explore Interior Design and Marketing opportunities, compare priorities, and review eligibility, fees, deadlines, and application links.</p>
+    </div>
+    <div class="brand-mark"><span class="brand-dot"></span>BASE4</div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn primary" id="openCsvModalBtn">Paste CSV</button>
+    <button class="btn" id="copyCsvBtn">Copy current CSV</button>
+  </div>
+
+  <div class="grid">
+    <section class="chart-panel">
+      <div class="panel-head">
+        <h2>Priority quadrant</h2>
+        <span class="mini" id="countLabel"></span>
+      </div>
+      <div class="chart-explainers" aria-label="Chart scoring explanations">
+        <span class="chart-explainer">Strategic relevance <span class="help" tabindex="0" data-tip="Scored from 1 to 5 based on fit with BASE4 markets, services, differentiators, and target decision-makers.">?</span></span>
+        <span class="chart-explainer">Urgency <span class="help" tabindex="0" data-tip="Scored from 1 to 5 based on deadline proximity, submission lead time, and how soon approvals or assets must be secured.">?</span></span>
+        <span class="chart-explainer">Impact <span class="help" tabindex="0" data-tip="Controls bubble area using an exponential scale. A small score increase at the high end creates a much larger bubble, making major impact differences easier to see.">?</span></span>
+        <span class="chart-explainer">Preparedness <span class="help" tabindex="0" data-tip="Controls bubble color on a red-to-blue-green scale. Red means unprepared. Orange and yellow mean partially prepared. Green means mostly prepared. Blue-green means fully verified and nearly submission-ready.">?</span></span>
+      </div>
+      <div class="filter-row" aria-label="Filter opportunities by target">
+        <span class="filter-label">Show:</span>
+        <button class="filter-btn active" data-target-filter="All">All</button>
+        <button class="filter-btn" data-target-filter="Naslha ID">Naslha · ID</button>
+        <button class="filter-btn" data-target-filter="Naslha MKT">Naslha · MKT</button>
+      </div>
+      <div class="chart-layout">
+        <aside class="opportunity-sidebar" aria-label="Opportunity list">
+          <div class="opportunity-sidebar-head">
+            <h3>Opportunities</h3>
+            <p>Hover a name to isolate its position and score.</p>
+          </div>
+          <div class="opportunity-list" id="opportunityList"></div>
+        </aside>
+        <div class="chart-main">
+          <div class="chart-wrap" id="chartWrap">
+            <svg id="chart" role="img" aria-label="Interactive awards priority bubble chart"></svg>
+          </div>
+          <div class="chart-hover-note">Hover the list or a bubble to isolate one opportunity. Click either to edit its scores.</div>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item preparedness-legend">
+          <span>Preparedness</span>
+          <span class="preparedness-scale">
+            <span class="preparedness-gradient" aria-hidden="true"></span>
+            <span class="preparedness-endpoints"><span>1 · Unprepared</span><span>5 · Super prepared</span></span>
+          </span>
+          <span class="help" tabindex="0" data-tip="Bubble color follows a red-to-blue-green spectrum: red means the entry lacks verified materials or eligibility; orange and yellow indicate partial readiness; green means most requirements are available; blue-green means the submission is fully verified and nearly ready to send.">?</span>
+        </div>
+        <div class="legend-item"><span>Impact</span><span class="size-demo" style="width:10px;height:10px"></span><span class="size-demo" style="width:24px;height:24px"></span><span class="size-demo" style="width:64px;height:64px"></span><span class="help" tabindex="0" data-tip="Bubble area uses an exponential scale. Impact 5 is dramatically larger than Impact 4, while Impact 1 and 2 remain visible.">?</span></div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="panel ranking" style="margin-bottom:18px">
+    <div class="ranking-head"><div><h2>Naslha award calendar</h2><div class="mini">Confirmed dated entries first. Entry-specific deadlines and reminders are in each opportunity record.</div></div></div>
+    <div id="scheduleContainer"></div>
+  </section>
+
+  <section class="panel ranking">
+    <div class="ranking-head">
+      <div>
+        <h2>Priority ranking <span class="help" tabindex="0" data-tip="Priority score equals 30% relevance, 30% impact, 30% urgency, and 10% preparedness. It updates whenever a score changes.">?</span></h2>
+        <div class="mini">Sorted by weighted priority score</div>
+      </div>
+    </div>
+    <div id="rankingContainer"></div>
+  </section>
+</div>
+
+<div class="modal-backdrop" id="csvModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="csvModalTitle">
+  <div class="modal csv-modal">
+    <div class="modal-head">
+      <div>
+        <h3 id="csvModalTitle">Paste CSV</h3>
+        <div class="mini">Closing this window plots the current CSV.</div>
+      </div>
+      <button class="close" id="closeCsvModal" aria-label="Close and plot">×</button>
+    </div>
+    <div class="modal-body">
+      <textarea id="csvInput" spellcheck="false" aria-label="CSV input"></textarea>
+      <div class="format-note">
+        <strong>Required headers:</strong> Opportunity, Target, Relevance, Urgency, Impact, Preparedness<br><br>
+        <strong>Optional:</strong> Scoring justifications, Next Step, Fee fields, Discipline, Entry Type, Categories, Eligibility Gates, Opens, Final Deadline, 90-Day Reminder, Required Materials, Proposed Entry, Application Link, Cycle Status.
+      </div>
+    </div>
+    <div class="modal-foot">
+      <div class="status">Scores must be between 1 and 5.</div>
+      <button class="btn dark" id="plotCsvBtn">Load Naslha CSV</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h3 id="modalTitle">Opportunity</h3>
+        <div class="mini" id="modalScore"></div>
+      </div>
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="tabs" id="tabs"></div>
+      <div id="tabPanels"></div>
+      <section class="award-detail" id="awardDetail" style="border:1px solid #d9ddd5;border-radius:12px;padding:16px;background:#fbfcfa;margin-top:14px"></section>
+      <div class="field" style="margin-top:20px">
+        <label for="nextStepInput">Next step for submission or application</label>
+        <textarea id="nextStepInput" placeholder="Example: Confirm eligibility, assign an owner, collect project data, and begin the draft."></textarea>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <div class="status">Changes update the chart and ranking immediately.</div>
+      <div>
+        <button class="btn danger" id="deleteBtn">Delete opportunity</button>
+        <button class="btn dark" id="doneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const fields = [
+    {key:'relevance', label:'Relevance', help:'Direct strategic fit after considering eligibility, BASE4 authorship, applicant control, and relevance to target decision-makers.'},
+    {key:'urgency', label:'Urgency', help:'Deadline proximity, lead time, and how quickly approvals, data, or assets must be secured.'},
+    {key:'impact', label:'Impact', help:'Realistic value if selected, including decision-maker reach, credibility, reuse, and the strength of the awarding body.'},
+    {key:'preparedness', label:'Preparedness', help:'Verified readiness today. Do not award points for materials that are merely assumed to exist.'}
+  ];
+
+  const sampleCsv = "Opportunity,Target,Relevance,Urgency,Impact,Preparedness,Relevance Justification,Urgency Justification,Impact Justification,Preparedness Justification,Next Step,Fee Min USD,Fee Max USD,Fee Model,Fee Verification,Fee Notes,Fee Source,Discipline,Entry Type,Categories,Eligibility Gates,Opens,Final Deadline,90-Day Reminder,Required Materials,Proposed Entry,Application Link,Cycle Status\nLIV Hospitality Design Awards,Naslha ID,4.4,4.7,3.6,2.7,Hospitality specialty and completed BASE4 interiors work align well.,December 2026 deadline approaching; further closing window reported.,Hospitality niche credibility and reusable interior design recognition.,Project images and owner credit/permission have not been verified.,\"Choose category and audit project images, designer credits and owner approvals.\",,,CHF (non-USD),Confirm at organizer,CHF 240 professional base entry + late surcharge; final closing period through Jan 31 2027,,ID,BASE4 firm-backed,Interior Design of the Year; Hotel - Midscale & Lifestyle; Bar Lounge / Cocktail Bar,\"No membership requirement; concepts, in-progress and completed designs considered\",Not confirmed,2026-12-20,2026-09-21,Up to 10 project images; design narrative; project/team credits,Element by Westin + Volaré Rooftop Bar,https://livawards.com/categories/,Current/announced 2026–2027 cycle\nMUSE Hotel Awards 2027,Naslha ID,4.6,4.3,3.7,2.8,Relevant hospitality categories fit BASE4 hotel interiors.,Early-bird deadline Nov 19; final extension reported Feb 25.,Specific hospitality category adds project and firm visibility.,\"Project visuals available in some form, but entry-rights and finished photos unverified.\",Confirm category/entry fee and secure the finished photography; prepare rooftop narrative.,219,259,Published USD tier/approx.,Confirm at organizer,$219–$259 by tier plus $30 administrative fee where applicable,,ID,BASE4 firm-backed,ID2750 Rooftop Bar & Lounge Interiors; ID2738 Lobby Interior Design; ID2716 Contemporary Suite & Room Design,No membership requirement; category/project scope must fit,2026-10-16,2027-02-25,2026-11-27,Images or visuals; up to ~350-word narrative; project/team credits,Element by Westin + Volaré rooftop; eligible Hilton Garden Inn interiors for lobby category,https://musehotelawards.com/hospitality-design-awards.php,Current/announced 2026–2027 cycle\nIIDA Interior Design Awards 2027,Naslha ID,4.8,4.5,4.3,1.8,Direct interiors-profession credibility; finished hotel option possible.,Deadline Feb 9; 90-day reminder already past Nov 11.,High-value design industry recognition.,\"Completion proof, interior scope and completed photography not yet verified.\",Verify project scope and completion date; request final photography and floor plans.,350,650,Published USD tier/approx.,Confirm at organizer,$350–$650 depending on member status and tier,,ID,BASE4 firm-backed,\"Hotels; Restaurants, Lounges and Bars; Multi-family project types\",U.S. project must be completed Dec 2024 or later; actual finished photography; IIDA membership not required,2026-12-01,2027-02-09,2026-11-11,7–10 finished interior photographs; plans; challenges/solution narrative; team credits,\"Hilton Garden Inn Cape Canaveral, conditional on interior design credit and date\",https://iida.org/submissions/2027-iida-interior-design-awards,Current/announced 2026–2027 cycle\nINT Interior Design Awards 2027,Naslha ID,4.4,2.8,3.3,3.0,Flexible project entry and interior design focus.,May deadline allows project package development.,Useful secondary international design validation.,Project imagery likely accessible but exact rights/scope unverified.,Select project and compare with prior winners; verify concept rules and later payment terms.,,,EUR (non-USD),Confirm at organizer,\"Free initial submission; if longlisted, €225–€300\",,ID,BASE4 firm-backed,Commercial Interior Design / Hospitality; Residential Interior Design / Multifamily,No membership; confirm built vs concept rules directly,2026-10-01,2027-05-31,2027-03-02,Project narrative; credits; up to 10 images; optional PDF presentation,Element + Volaré or another strong completed hospitality interior,https://intdesignaward.com/,Current/announced 2026–2027 cycle\nASID Designer of the Year 2027,Naslha ID,4.0,1.8,4.1,1.7,Excellent personal leadership narrative but gated by ASID membership.,2027 schedule not published.,National individual design leadership credential.,\"Active ASID standing, nominator and portfolio not established.\",Confirm ASID dues-paid status/category and build 20-page design leadership portfolio.,,,TBA,Confirm at organizer,2027 fee unconfirmed; 2026 no fee listed,,ID,Naslha personal,Designer of the Year,\"Requires current qualifying ASID membership, five+ years of design practice; verify member tier\",TBA,,,\"Professional portfolio, leadership story, design history, references\",\"Naslha leadership of BASE4 interior design, hotel experience and mentorship\",https://www.asid.org/resources/awards/annual,2027 dates TBA\nHospitality Design (HD) Awards 2027,Naslha ID,4.3,1.7,4.0,1.7,Hospitality-specific prestige but projects must meet window.,2027 deadline unconfirmed.,High visibility for hotel-owner audience.,No qualifying 2027 project yet verified against opening window.,Monitor 2027 window and select a recent project with final photography.,,,TBA,Confirm at organizer,2026 fee $320 first entry / $220 additional; 2027 TBA,,ID,BASE4 firm-backed,\"Hotel (Budget/Select Service); Hotel Public Spaces; Guestrooms; Bar, Club + Lounge\",Completed and opened within new 2027 eligibility window; photography required,TBA,,,\"Finished project photographs, design credits and owner signoff\",New eligible BASE4 hotel interior; recheck Hilton Garden Inn Cape Canaveral date,https://hdprojectawards.secure-platform.com/a/page/rules,2027 dates TBA\nRagan Marketing Awards 2026,Naslha MKT,4.8,5.0,4.1,2.6,Exact CMO award plus strong B2B firm categories.,December 2 deadline imminent.,Recognizable personal marketing leadership proof.,Strong narrative exists; performance metrics and references still needed.,\"Prioritize personal CMO nomination; secure KPIs, biography, and supporting evidence.\",550,600,Published USD tier/approx.,Confirm at organizer,$550 standard category / $600 distinction; $325 late surcharge,,MKT,Naslha personal + BASE4 firm-backed,Marketing Leader of the Year (CMO or VP); B2B Marketing Campaign; Content Marketing Strategy; In-House Marketing Team of the Year,Marketing leadership and demonstrable outcomes; no association membership,Not confirmed,2026-12-02,2026-09-03,\"Leadership bio; responsibility and results; campaigns, creative assets, metrics\",Naslha CMO leadership linking ID and developer education; BASE4 newsletter,https://www.ragan.com/awards/marketing-awards/2026/,Current/announced 2026–2027 cycle\nAVA Digital Awards 2027,Naslha MKT,4.6,4.9,3.0,3.6,Direct fit for mature BASE4 email newsletter program.,December 10 deadline close.,Affordable way to test strong creative work against peers.,Published newsletter creative exists; metrics need final pull.,Select 3–6 best newsletter editions and produce concise results summary.,125,195,Published USD tier/approx.,Confirm at organizer,$125 single entry / $195 campaign entry,,MKT,BASE4 firm-backed,E-Newsletter; Email Campaign; Blog Series; Digital Marketing Campaign; LinkedIn Engagement,Published digital work; no membership requirement,2026-11-01,2026-12-10,2026-09-11,\"Newsletter links/PDFs, screenshots, campaign objective and results\",BASE4 educational hospitality newsletter program,https://avaawards.com/,Current/announced 2026–2027 cycle\nCommunicator Awards 2027,Naslha MKT,4.6,4.1,3.5,3.2,Strong fit with editorial and communication craftsmanship.,January 29 deadline.,Good communication industry credibility and reuse.,Issues and graphics available; analytics narrative needs assembly.,Assemble three newsletter issues plus design/engagement brief.,225,415,Published USD tier/approx.,Confirm at organizer,$225 single through $415 marketing effectiveness entries,,MKT,BASE4 firm-backed,Newsletter; Email Marketing; Writing - Newsletter or Email Series; Blogs & Newsletters; B2B integrated campaigns,Published communications work; no membership gate,Open (date unconfirmed),2027-01-29,2026-10-31,Newsletter series/URLs; creative rationale; audience and engagement results,BASE4 hotel developer educational newsletter,https://www.communicatorawards.com/about/categories/,Current/announced 2026–2027 cycle\nPR Daily Social Media Marketing Awards 2027,Naslha MKT,4.2,4.1,3.5,2.2,Potential fit if BASE4 social program has business outcomes.,January 22 deadline.,Personal and firm PR visibility.,Attributable leads and documented team results not yet verified.,Audit 2026 LinkedIn strategy and measurable leads before submitting.,550,600,Published USD tier/approx.,Confirm at organizer,$550 standard / $600 individual; $325 late surcharge,,MKT,Naslha personal + BASE4 firm-backed,Professional of the Year; Content Marketing; AI-Powered Social Strategy; Brand Awareness; Team of the Year,Social program and personal leadership evidence; no association membership,2026-10-02,2027-01-22,2026-10-24,\"Posts, platform metrics, strategy, results, leadership evidence\",LinkedIn executive-led developer education; Naslha personal professional of year,https://www.prdaily.com/awards/social-media-marketing-awards/2027/,Current/announced 2026–2027 cycle\nSMPS Marketing Communications Awards 2027,Naslha MKT,4.9,2.4,4.2,3.4,Strongest awards audience match for AEC marketing.,2027 cycle not announced; planning check Dec 1.,Highly relevant peer recognition among AEC marketers.,Creative library is extensive; performance KPIs need validation.,Check 2027 call December 1 and compile three issues and metrics.,,,TBA,Confirm at organizer,2026 first entry $255 early / $330 standard; 2027 TBA,,MKT,BASE4 firm-backed,Newsletter/Publication - External; Brand Awareness Campaign; Social Media; Project Pursuit Marketing; Website,AEC industry; membership not required for MCA (discounts may vary),TBA,,,\"Three newsletter editions; objectives, creative, campaign results\",BASE4 hospitality and multifamily developer newsletter,https://smps.secure-platform.com/mca/page/categories,2027 dates TBA\nContent Marketing Awards 2027,Naslha MKT,4.7,2.2,4.3,2.9,Highly relevant for serious content-led B2B marketing.,2027 call not available.,\"Credible content industry recognition, including personal award.\",Published content exists; leadership evidence and conversion KPIs need compilation.,Build program case and track 2027 rules and marketer award dependency.,,,TBA,Confirm at organizer,2027 TBA; 2026 late fee $449 (not current),,MKT,Naslha personal + BASE4 firm-backed,Best E-Newsletter; Best Content Marketing Program; Thought Leadership Campaign; Content Marketer of the Year - B2B and B2C,Personal nomination linked to qualifying paid program entry under last rules; 2027 rules TBA,TBA,,,Editorial strategy; published work; subscriber and lead outcomes; leadership narrative,BASE4 newsletter program and Naslha B2B content leadership,https://contentmarketingawards.com/categories/,2027 dates TBA\nZweig Group Marketing Excellence Awards 2027,Naslha MKT,4.5,2.0,3.3,3.1,Direct AEC fit and reusable marketing material.,2027 dates unknown.,Peer AEC marketing reputation.,Creative material exists but proof of business impact incomplete.,Check 2027 call March; assemble marketing results story.,,,TBA,Confirm at organizer,2026 $300 entry; 2027 TBA,,MKT,BASE4 firm-backed,Newsletter; Integrated Marketing + Brand Awareness; Social Media; Website; Brand Identity,AEC marketing; no association membership generally required,TBA,,,\"Marketing challenge, strategy, creatives, campaign KPIs\",BASE4 newsletter or integrated BIM/offsite developer content initiative,https://zweiggroup.com/products/marketing-excellence-award-2026,2027 dates TBA\nSMPS Andy Zinsmeyer AI Advancement Award,Naslha MKT,4.0,1.8,3.2,1.4,Applied AI positioning relevant if evidence is strong.,\"2026 deadline passed Oct 15, next cycle unconfirmed.\",Meaningful AI/marketing specialty credential.,No specific measured AI marketing workflow documented yet.,Choose an actual measurable AI marketing use case and instrument results.,,,TBA,Confirm at organizer,2026 $50; 2027 TBA,,MKT,Naslha personal or BASE4 firm-backed,Andy Zinsmeyer AI Advancement Award,Applied AI innovation in AEC marketing/BD with measured results; 2027 renewal unconfirmed,TBA,,,\"Workflow, baseline/time saved, improved quality, measurable ROI\",BASE4 marketing automation or AI-supported content workflow with KPI proof,https://smps.org/individual-awards/andy-zinsmeyer-ai-advancement-award/,2027 renewal unconfirmed\nHD Awards: Visual Identity,Naslha MKT,2.7,1.5,3.1,1.0,Branding category superficially related but may not fit BASE4 actual scope.,2027 dates unconfirmed.,Hospitality brand design award has some marketing value.,No eligible BASE4 brand-identity engagement verified.,Ask interior design team if a branded property identity was actually within scope.,,,TBA,Confirm at organizer,2026 $320 first / $220 additional; 2027 TBA,,MKT,BASE4 firm-backed (conditional),\"Visual Identity (hospitality property branding, not firm brand)\",Requires actual hospitality-project visual identity work; specific BASE4 authorship not verified,TBA,,,\"Hotel identity system, branded touchpoints, finished assets, project credits\",Only if BASE4 created a hotel property visual identity; no verified candidate,https://hdprojectawards.secure-platform.com/a/page/rules,2027 dates TBA\nASID Fellowship,Naslha ID,3.1,1.1,4.1,1.0,Leadership path potentially relevant but requires association-service history.,Not a near-term entry.,High career prestige.,Long-tenure membership/service evidence unverified.,Verify member eligibility and map multiyear ASID service plan.,,,TBA,Confirm at organizer,No current verified fee,,ID,Naslha personal (stretch),ASID Fellowship / professional leadership recognition,Longstanding ASID membership and professional contribution/service eligibility requirements,TBA,,,\"Multiyear professional contributions, design leadership, professional nomination\",Naslha long-term professional leadership and ASID service,https://www.asid.org/resources/awards/annual,Long-term stretch; 2027 details unconfirmed\nAHEAD Americas 2027,Naslha ID,3.4,1.4,4.0,1.2,High-prestige hospitality fit only for standout completed work.,Dates unconfirmed.,Strong international hospitality design visibility.,No shortlisted recent project with elite photography and design story.,Build future hotel-project photography pipeline and monitor award window.,,,TBA,Confirm at organizer,Fee not confirmed,,ID,BASE4 firm-backed (stretch),Hotel / hospitality interior design categories (verify live list),\"Completed hotel, high quality images and competitive design evidence; 2027 criteria pending\",TBA,,,\"Professional finished photography, project story, hospitality credentials\",Exceptional newly completed hotel property with verified BASE4 interior scope,https://www.aheadawards.com/,Long-term/stretch; 2027 details unconfirmed\n";
+
+  let data = [];
+  let activeIndex = null;
+  let activeTargetFilter = 'All';
+
+  const el = id => document.getElementById(id);
+  const csvInput = el('csvInput');
+  const chart = el('chart');
+  const rankingContainer = el('rankingContainer');
+  const modalBackdrop = el('modalBackdrop');
+  const csvModalBackdrop = el('csvModalBackdrop');
+  const tabsEl = el('tabs');
+  const panelsEl = el('tabPanels');
+  const nextStepInput = el('nextStepInput');
+
+  function clamp(v){ const n = Number(v); return Number.isFinite(n) ? Math.max(1, Math.min(5, n)) : 1; }
+  function priority(d){ return +(d.relevance*.30 + d.impact*.30 + d.urgency*.30 + d.preparedness*.10).toFixed(2); }
+  function esc(s=''){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
+
+  const detailCols = ["Fee Min USD", "Fee Max USD", "Fee Model", "Fee Verification", "Fee Notes", "Fee Source", "Discipline", "Entry Type", "Categories", "Eligibility Gates", "Opens", "Final Deadline", "90-Day Reminder", "Required Materials", "Proposed Entry", "Application Link", "Cycle Status"];
+  function parseCSV(text){
+    const rows=[]; let row=[], field='', inQuotes=false;
+    for(let i=0;i<text.length;i++){
+      const c=text[i], n=text[i+1];
+      if(c==='"' && inQuotes && n==='"'){ field+='"'; i++; }
+      else if(c==='"'){ inQuotes=!inQuotes; }
+      else if(c===',' && !inQuotes){ row.push(field); field=''; }
+      else if((c==='\n' || c==='\r') && !inQuotes){
+        if(c==='\r' && n==='\n') i++;
+        row.push(field); field='';
+        if(row.some(v=>v.trim()!=='')) rows.push(row);
+        row=[];
+      } else field+=c;
+    }
+    row.push(field); if(row.some(v=>v.trim()!=='')) rows.push(row);
+    if(rows.length<2) throw new Error('CSV needs a header and at least one opportunity.');
+    const headers=rows[0].map(h=>h.trim().toLowerCase().replace(/[^a-z0-9]+/g,' '));
+    const find=(...names)=>headers.findIndex(h=>names.includes(h));
+    const idx={
+      opportunity:find('opportunity','award','recognition','name'), target:find('target','owner','for'),
+      relevance:find('relevance','strategic relevance'), urgency:find('urgency'), impact:find('impact','potential impact'), preparedness:find('preparedness','readiness'),
+      relevanceJustification:find('relevance justification','relevance rationale'), urgencyJustification:find('urgency justification','urgency rationale'),
+      impactJustification:find('impact justification','impact rationale'), preparednessJustification:find('preparedness justification','preparedness rationale'),
+      nextStep:find('next step','next action','action')
+    };
+    ['opportunity','target','relevance','urgency','impact','preparedness'].forEach(k=>{ if(idx[k]<0) throw new Error(`Missing required column: ${k}`); });
+    return rows.slice(1).map((r,i)=>({
+      id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()+i),
+      opportunity:(r[idx.opportunity]||'').trim() || `Opportunity ${i+1}`,
+      target:idx.target>=0 ? ((r[idx.target]||'Naslha MKT').trim()||'Naslha MKT') : 'Naslha MKT',
+      relevance:clamp(r[idx.relevance]), urgency:clamp(r[idx.urgency]), impact:clamp(r[idx.impact]), preparedness:clamp(r[idx.preparedness]),
+      justifications:{
+        relevance:idx.relevanceJustification>=0 ? (r[idx.relevanceJustification]||'').trim() : '',
+        urgency:idx.urgencyJustification>=0 ? (r[idx.urgencyJustification]||'').trim() : '',
+        impact:idx.impactJustification>=0 ? (r[idx.impactJustification]||'').trim() : '',
+        preparedness:idx.preparednessJustification>=0 ? (r[idx.preparednessJustification]||'').trim() : ''
+      },
+      nextStep:idx.nextStep>=0 ? (r[idx.nextStep]||'').trim() : 'Confirm eligibility, deadline, submission owner, required assets, and the strongest story before proceeding.',
+      meta:Object.fromEntries(detailCols.map(c=>{const ix=headers.indexOf(c.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim());return [c,ix>=0?(r[ix]||'').trim():''];}))
+    })).filter(d=>d.target==='Naslha ID'||d.target==='Naslha MKT');
+  }
+
+  function csvEscape(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
+  function toCSV(){
+    const header=['Opportunity','Target','Relevance','Urgency','Impact','Preparedness','Relevance Justification','Urgency Justification','Impact Justification','Preparedness Justification','Next Step',...detailCols];
+    return [header.map(csvEscape).join(','),...data.map(d=>[
+      d.opportunity,d.target||'Naslha MKT',d.relevance,d.urgency,d.impact,d.preparedness,d.justifications.relevance,d.justifications.urgency,d.justifications.impact,d.justifications.preparedness,d.nextStep,...detailCols.map(c=>d.meta?.[c]||'')
+    ].map(csvEscape).join(','))].join('\n');
+  }
+
+  function preparednessColor(v){
+    const stops=[
+      {v:1,c:[214,48,49]},
+      {v:2,c:[245,130,32]},
+      {v:3,c:[245,205,48]},
+      {v:4,c:[98,177,91]},
+      {v:5,c:[30,136,168]}
+    ];
+    const s=Math.max(1,Math.min(5,Number(v)||1));
+    let a=stops[0], b=stops[stops.length-1];
+    for(let i=0;i<stops.length-1;i++){
+      if(s>=stops[i].v && s<=stops[i+1].v){ a=stops[i]; b=stops[i+1]; break; }
+    }
+    const t=(s-a.v)/(b.v-a.v||1);
+    const mix=(x,y)=>Math.round(x+(y-x)*t);
+    return `rgb(${mix(a.c[0],b.c[0])},${mix(a.c[1],b.c[1])},${mix(a.c[2],b.c[2])})`;
+  }
+
+
+  function visibleEntries(){
+    return data.map((d,i)=>({d,i})).filter(({d})=>activeTargetFilter==='All'||(d.target||'Naslha MKT')===activeTargetFilter);
+  }
+
+  function setFocusedOpportunity(index){
+    const groups=chart.querySelectorAll('.bubble-group');
+    const items=opportunityList.querySelectorAll('.opportunity-item');
+    groups.forEach(g=>{
+      const isActive=Number(g.dataset.index)===Number(index);
+      g.classList.toggle('active',isActive);
+      g.classList.toggle('dimmed',!isActive);
+    });
+    items.forEach(item=>{
+      const isActive=Number(item.dataset.opportunityIndex)===Number(index);
+      item.classList.toggle('active',isActive);
+      item.classList.toggle('dimmed',!isActive);
+    });
+  }
+
+  function clearFocusedOpportunity(){
+    chart.querySelectorAll('.bubble-group').forEach(g=>g.classList.remove('active','dimmed'));
+    opportunityList.querySelectorAll('.opportunity-item').forEach(item=>item.classList.remove('active','dimmed'));
+  }
+
+  function renderOpportunityList(){
+    const entries=visibleEntries();
+    opportunityList.innerHTML=entries.map(({d,i})=>`
+      <button class="opportunity-item" data-opportunity-index="${i}" title="${esc(d.opportunity)}">
+        ${esc(d.opportunity)}<br><span class="target-badge">${esc(d.target||'Naslha MKT')}</span>
+      </button>`).join('') || '<div class="empty">No opportunities match this filter.</div>';
+    opportunityList.querySelectorAll('[data-opportunity-index]').forEach(item=>{
+      const index=+item.dataset.opportunityIndex;
+      item.addEventListener('mouseenter',()=>setFocusedOpportunity(index));
+      item.addEventListener('mouseleave',clearFocusedOpportunity);
+      item.addEventListener('focus',()=>setFocusedOpportunity(index));
+      item.addEventListener('blur',clearFocusedOpportunity);
+      item.addEventListener('click',()=>openModal(index));
+    });
+  }
+
+  function renderChart(){
+    const W=1200,H=660,m={l:88,r:190,t:52,b:78};
+    chart.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const x=v=>m.l+(v-1)/4*(W-m.l-m.r);
+    const y=v=>H-m.b-(v-1)/4*(H-m.t-m.b);
+    const threshold=3.25, midX=x(threshold),midY=y(threshold);
+    let s='';
+    s+=`<rect x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.t-m.b}" rx="12" fill="#fcfdfb"/>`;
+    for(let i=1;i<=5;i++){
+      s+=`<line x1="${x(i)}" y1="${m.t}" x2="${x(i)}" y2="${H-m.b}" stroke="#e4e7e1"/>`;
+      s+=`<line x1="${m.l}" y1="${y(i)}" x2="${W-m.r}" y2="${y(i)}" stroke="#e4e7e1"/>`;
+      s+=`<text x="${x(i)}" y="${H-m.b+24}" text-anchor="middle" class="tick">${i}</text>`;
+      s+=`<text x="${m.l-18}" y="${y(i)+4}" text-anchor="end" class="tick">${i}</text>`;
+    }
+    s+=`<line x1="${midX}" y1="${m.t}" x2="${midX}" y2="${H-m.b}" stroke="#8dc63f" stroke-width="2"/>`;
+    s+=`<line x1="${m.l}" y1="${midY}" x2="${W-m.r}" y2="${midY}" stroke="#8dc63f" stroke-width="2"/>`;
+    s+=`<text x="${(midX+W-m.r)/2}" y="${m.t+24}" text-anchor="middle" class="quadrant-label">ACT NOW</text>`;
+    s+=`<text x="${(m.l+midX)/2}" y="${m.t+24}" text-anchor="middle" class="quadrant-label">SELECTIVE ACTION</text>`;
+    s+=`<text x="${(midX+W-m.r)/2}" y="${H-m.b-16}" text-anchor="middle" class="quadrant-label">BUILD THE CASE</text>`;
+    s+=`<text x="${(m.l+midX)/2}" y="${H-m.b-16}" text-anchor="middle" class="quadrant-label">MONITOR / PARTNER-LED</text>`;
+    s+=`<text x="${(m.l+W-m.r)/2}" y="${H-20}" text-anchor="middle" class="axis-label">Strategic relevance</text>`;
+    s+=`<text x="20" y="${(m.t+H-m.b)/2}" text-anchor="middle" transform="rotate(-90 20 ${(m.t+H-m.b)/2})" class="axis-label">Urgency</text>`;
+
+    visibleEntries().forEach(({d,i})=>{
+      const normalized=(Math.max(1,Math.min(5,d.impact))-1)/4;
+      const r=9+57*Math.pow(normalized,1.85);
+      const label=d.opportunity.length>25 ? d.opportunity.slice(0,23)+'…' : d.opportunity;
+      s+=`<g class="bubble-group" data-index="${i}" tabindex="0" role="button" aria-label="Edit ${esc(d.opportunity)}">`;
+      s+=`<circle class="bubble" cx="${x(d.relevance)}" cy="${y(d.urgency)}" r="${r}" fill="${preparednessColor(d.preparedness)}" fill-opacity=".82"/>`;
+      s+=`<title>${esc(d.opportunity)} | ${esc(d.target||'Naslha MKT')} | Priority ${priority(d)} | Relevance ${d.relevance} | Urgency ${d.urgency} | Impact ${d.impact} | Preparedness ${d.preparedness}</title>`;
+      s+=`<text x="${x(d.relevance)+r+5}" y="${y(d.urgency)+4}" class="bubble-label">${esc(label)}</text></g>`;
+    });
+    chart.innerHTML=s;
+    chart.querySelectorAll('g[data-index]').forEach(g=>{
+      const index=+g.dataset.index;
+      g.addEventListener('mouseenter',()=>setFocusedOpportunity(index));
+      g.addEventListener('mouseleave',clearFocusedOpportunity);
+      g.addEventListener('focus',()=>setFocusedOpportunity(index));
+      g.addEventListener('blur',clearFocusedOpportunity);
+      g.addEventListener('click',()=>openModal(index));
+      g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(index)}});
+    });
+    const shown=visibleEntries().length; el('countLabel').textContent=`${shown} of ${data.length} opportunities plotted`;
+  }
+
+  function renderRanking(){
+    if(!data.length){ rankingContainer.innerHTML='<div class="empty">Paste a valid CSV to create the ranking.</div>'; return; }
+    const sorted=visibleEntries().map(({d,i})=>({...d,_index:i,_priority:priority(d)})).sort((a,b)=>b._priority-a._priority);
+    rankingContainer.innerHTML=`<table class="ranking-table"><thead><tr><th>Rank</th><th>Opportunity</th><th>Target</th><th>Priority</th><th>Next step</th></tr></thead><tbody>${sorted.map((d,i)=>`
+      <tr><td class="rank">${i+1}</td><td><button class="opportunity-link" data-open="${d._index}">${esc(d.opportunity)}</button><div class="mini">R ${d.relevance} · U ${d.urgency} · I ${d.impact} · P ${d.preparedness}</div></td><td><span class="target-badge">${esc(d.target||'Naslha MKT')}</span></td><td><span class="score-pill">${d._priority}</span></td><td class="next-step">${esc(d.nextStep)}</td></tr>`).join('')}</tbody></table>`;
+    rankingContainer.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openModal(+b.dataset.open)));
+  }
+
+
+  function renderSchedule(){
+    const items=data.filter(d=>/^Naslha /.test(d.target||'')).map(d=>({d,m:d.meta||{}}));
+    items.sort((a,b)=>(a.m['Final Deadline']||'9999').localeCompare(b.m['Final Deadline']||'9999'));
+    const lines=items.map(({d,m})=>{
+      const date=m['Final Deadline']||'To be announced';
+      const reminder=m['90-Day Reminder']||'TBA';
+      const url=m['Application Link'];
+      const title=url&&/^https?:\/\//i.test(url)?`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(d.opportunity)}</a>`:esc(d.opportunity);
+      return `<tr><td>${title}</td><td>${esc(m.Discipline||'')}</td><td>${esc(m['Entry Type']||'')}</td><td>${esc(date)}</td><td>${esc(reminder)}</td></tr>`;
+    });
+    el('scheduleContainer').innerHTML=`<div style="overflow:auto"><table class="schedule-table"><thead><tr><th>Award (official link)</th><th>ID / MKT</th><th>Entry</th><th>Final deadline</th><th>90-day reminder</th></tr></thead><tbody>${lines.join('')}</tbody></table></div>`;
+  }
+
+  document.querySelectorAll('[data-target-filter]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      activeTargetFilter=btn.dataset.targetFilter;
+      document.querySelectorAll('[data-target-filter]').forEach(b=>b.classList.toggle('active',b===btn));
+      renderChart(); renderOpportunityList(); renderRanking();
+    });
+  });
+
+  function render(){ renderChart(); renderOpportunityList(); renderRanking(); renderSchedule(); localStorage.setItem('naslha-espinal-id-mkt-awards-v1',JSON.stringify(data)); }
+
+  function openModal(index){
+    activeIndex=index; const d=data[index]; if(!d)return;
+    el('modalTitle').textContent=d.opportunity;
+    d.target=d.target||'Naslha MKT';
+    el('modalScore').innerHTML=`Weighted priority score: ${priority(d)} · Target: <select id="targetSelect" aria-label="Target"><option ${d.target==='Naslha ID'?'selected':''}>Naslha ID</option><option ${d.target==='Naslha MKT'?'selected':''}>Naslha MKT</option></select>`;
+    tabsEl.innerHTML=fields.map((f,i)=>`<button class="tab ${i===0?'active':''}" data-tab="${f.key}">${f.label}</button>`).join('');
+    panelsEl.innerHTML=fields.map((f,i)=>`<section class="tab-panel ${i===0?'active':''}" data-panel="${f.key}">
+      <div class="field"><label>${f.label} score <span class="help" tabindex="0" data-tip="${esc(f.help)}">?</span></label>
+        <div class="score-row"><input type="number" min="1" max="5" step="0.1" value="${d[f.key]}" data-score="${f.key}"><input type="range" min="1" max="5" step="0.1" value="${d[f.key]}" data-range="${f.key}"></div>
+        <div class="range-labels"><span>1, very low</span><span>5, very high</span></div>
+      </div>
+      <div class="field"><label>Score justification</label><textarea data-justification="${f.key}" placeholder="Explain the evidence and reasoning behind this score.">${esc(d.justifications[f.key]||'')}</textarea></div>
+    </section>`).join('');
+    const m = d.meta || {};
+    const detailRows=[
+      ['Discipline','Discipline'],['Entry type','Entry Type'],['Specific categories','Categories'],['Eligibility','Eligibility Gates'],
+      ['Application opens','Opens'],['Final deadline','Final Deadline'],['90-day reminder','90-Day Reminder'],
+      ['Fee (notes)','Fee Notes'],['Fee range USD','Fee Min USD'],['Fee verification','Fee Verification'],
+      ['Required materials','Required Materials'],['Best story / project','Proposed Entry'],['Cycle status','Cycle Status']
+    ].filter(([label,key])=>m[key]);
+    const detailHtml = detailRows.map(([label,key])=>`<dt>${esc(label)}</dt><dd>${esc(m[key])}</dd>`).join('');
+    const url=m['Application Link'] || m['Fee Source'];
+    const safeUrl=url&&/^https?:\/\//i.test(url)?url:'';
+    el('awardDetail').innerHTML = `<h4 style="margin:0 0 12px;font-size:16px">Entry requirements and links</h4>`+
+       (detailHtml?`<dl>${detailHtml}</dl>`:`<p class="mini">Legacy opportunity. Use its original scoring notes and validate current program requirements before applying.</p>`)+
+       (safeUrl?`<p><a href="${esc(safeUrl)}" target="_blank" rel="noopener noreferrer">Official application / program information</a></p>`:'');
+    nextStepInput.value=d.nextStep||'';
+    tabsEl.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+      tabsEl.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===t));
+      panelsEl.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===t.dataset.tab));
+    }));
+    panelsEl.querySelectorAll('[data-score]').forEach(inp=>inp.addEventListener('input',()=>syncScore(inp.dataset.score,inp.value,'number')));
+    panelsEl.querySelectorAll('[data-range]').forEach(inp=>inp.addEventListener('input',()=>syncScore(inp.dataset.range,inp.value,'range')));
+    panelsEl.querySelectorAll('[data-justification]').forEach(inp=>inp.addEventListener('input',()=>{data[activeIndex].justifications[inp.dataset.justification]=inp.value;renderSoft();}));
+    nextStepInput.oninput=()=>{data[activeIndex].nextStep=nextStepInput.value;renderSoft();};
+    const targetSelect=el('targetSelect');
+    if(targetSelect){
+      targetSelect.onchange=()=>{
+        data[activeIndex].target=targetSelect.value;
+        renderSoft();
+        el('modalScore').innerHTML=`Weighted priority score: ${priority(data[activeIndex])} · Target: <select id="targetSelect" aria-label="Target"><option ${data[activeIndex].target==='Naslha ID'?'selected':''}>Naslha ID</option><option ${data[activeIndex].target==='Naslha MKT'?'selected':''}>Naslha MKT</option></select>`;
+        el('targetSelect').onchange=targetSelect.onchange;
+      };
+    }
+    modalBackdrop.classList.add('open');
+  }
+
+  function syncScore(key,value,source){
+    const v=clamp(value); data[activeIndex][key]=v;
+    const num=panelsEl.querySelector(`[data-score="${key}"]`), range=panelsEl.querySelector(`[data-range="${key}"]`);
+    if(source!=='number') num.value=v; if(source!=='range') range.value=v;
+    const currentTarget=data[activeIndex].target||'Naslha MKT';
+    el('modalScore').innerHTML=`Weighted priority score: ${priority(data[activeIndex])} · Target: <select id="targetSelect" aria-label="Target"><option ${currentTarget==='Naslha ID'?'selected':''}>Naslha ID</option><option ${currentTarget==='Naslha MKT'?'selected':''}>Naslha MKT</option></select>`;
+    el('targetSelect').onchange=e=>{data[activeIndex].target=e.target.value;renderSoft();};
+    renderSoft();
+  }
+  function renderSoft(){ renderChart(); renderOpportunityList(); renderRanking(); renderSchedule(); localStorage.setItem('naslha-espinal-id-mkt-awards-v1',JSON.stringify(data)); }
+  function closeModal(){ modalBackdrop.classList.remove('open'); activeIndex=null; }
+  function openCsvModal(){
+    csvInput.value=toCSV();
+    csvModalBackdrop.classList.add('open');
+    setTimeout(()=>csvInput.focus(),50);
+  }
+  function applyCsvAndClose(){
+    try{
+      data=parseCSV(csvInput.value);
+      render();
+      csvModalBackdrop.classList.remove('open');
+      toast(`Plotted ${data.length} opportunities.`);
+      return true;
+    }catch(err){
+      alert(err.message);
+      return false;
+    }
+  }
+  async function copyText(text,msg){ try{await navigator.clipboard.writeText(text);toast(msg)}catch{const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();toast(msg)} }
+  function toast(msg){const t=el('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+
+  el('openCsvModalBtn').onclick=openCsvModal;
+  el('copyCsvBtn').onclick=()=>copyText(toCSV(),'Current CSV copied.');
+  el('plotCsvBtn').onclick=applyCsvAndClose;
+  el('closeCsvModal').onclick=applyCsvAndClose;
+  el('closeModal').onclick=closeModal; el('doneBtn').onclick=closeModal;
+  el('deleteBtn').onclick=()=>{if(activeIndex!==null&&confirm('Delete this opportunity?')){data.splice(activeIndex,1);closeModal();render();toast('Opportunity deleted.')}};
+  modalBackdrop.addEventListener('click',e=>{if(e.target===modalBackdrop)closeModal()});
+  csvModalBackdrop.addEventListener('click',e=>{if(e.target===csvModalBackdrop)applyCsvAndClose()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(csvModalBackdrop.classList.contains('open')) applyCsvAndClose(); else closeModal();}});
+
+  const saved=localStorage.getItem('naslha-espinal-id-mkt-awards-v1');
+  if(saved){ try{data=JSON.parse(saved).map(d=>({...d,target:d.target||'Naslha MKT'}));renderChart();renderOpportunityList();renderRanking();renderSchedule();}catch{data=parseCSV(sampleCsv);render();} }
+  else{data=parseCSV(sampleCsv);render();}
+})();
+</script>
+</body>
+</html>
